@@ -167,7 +167,7 @@ people-as-vectors
             :color ["#7F5F3F"]
             :data [23 24 18 25 27 28 25]}]})
 
-;; ## Delays
+;; ### Delays
 
 (delay
   (Thread/sleep 500)
@@ -176,7 +176,7 @@ people-as-vectors
 (delay
   [:div [:big "hi......."]])
 
-;; ## Tests
+;; ### Tests
 
 (-> 2
     (+ 3)
@@ -186,7 +186,7 @@ people-as-vectors
     (+ 3)
     (clay/check = 5))
 
-;; ## Viz.clj
+;; ### Viz.clj
 
 (-> [{:x 1 :y 2}
      {:x 2 :y 4}
