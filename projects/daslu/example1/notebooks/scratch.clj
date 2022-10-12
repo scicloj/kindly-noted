@@ -2,7 +2,7 @@
 
 ;; ## Setup
 
-(ns daslu.example1
+(ns scratch
   (:require [scicloj.clay.v2.api :as clay]
             [scicloj.viz.api :as viz]
             [tablecloth.api :as tc]
@@ -14,10 +14,10 @@
 (clay/start!)
 
 (comment
-  (do (clay/show-doc! "notebooks/daslu/example1.clj"
+  (do (clay/show-doc! "notebooks/scratch.clj"
                       {:toc? true})
-      (clay/write-html! "docs/daslu/example1.html")))
-      
+      (clay/write-html! "docs/scratch.html")))
+
 
 ;; ## Examples
 
@@ -31,7 +31,7 @@
                {:preferred-language (["clojure" "clojurescript" "babashka"]
                                      (rand-int 3))
                 :age (rand-int 100)}))))
-
+nvi
 (def people-as-vectors
   (->> people-as-maps
        (mapv (juxt :preferred-language :age))))
