@@ -31,7 +31,7 @@
                {:preferred-language (["clojure" "clojurescript" "babashka"]
                                      (rand-int 3))
                 :age (rand-int 100)}))))
-nvi
+
 (def people-as-vectors
   (->> people-as-maps
        (mapv (juxt :preferred-language :age))))
