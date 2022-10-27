@@ -11,8 +11,6 @@
 
 ;; ## Useful commands
 
-(clay/start!)
-
 (comment
   (do (clay/show-doc! "notebooks/scratch.clj"
                       {:toc? true})
@@ -176,5 +174,15 @@ people-as-vectors
     (viz/viz :viz/type :point
              :COLOR "x"
              :MSIZE 200))
+
+;; ### Images
+
+(import javax.imageio.ImageIO
+        java.net.URL)
+
+(->  "https://upload.wikimedia.org/wikipedia/commons/2/2c/Clay-ss-2005.jpg"
+     (URL.)
+     (ImageIO/read))
+
 
 :bye
