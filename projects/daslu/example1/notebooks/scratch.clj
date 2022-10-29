@@ -3,16 +3,15 @@
 ;; ## Setup
 
 (ns scratch
-  (:require [scicloj.clay.v2.api :as clay]
-            [scicloj.viz.api :as viz]
+  (:require [scicloj.viz.api :as viz]
             [tablecloth.api :as tc]
-            [scicloj.kindly.v3.api :as kindly]
             [scicloj.kindly.v3.kind :as kind]))
 
 ;; ## Useful commands
 
 (comment
-  (do (clay/show-doc! "notebooks/scratch.clj"
+  (do (require '[scicloj.clay.v2.api :as clay])
+      (clay/show-doc! "notebooks/scratch.clj"
                       {:toc? true})
       (clay/write-html! "docs/scratch.html")))
 
@@ -137,24 +136,6 @@ people-as-vectors
             :color ["#7F5F3F"]
             :data [23 24 18 25 27 28 25]}]})
 
-;; ### Delays
-
-(delay
-  (Thread/sleep 500)
-  (+ 1 2))
-
-(delay
-  [:div [:big "hi......."]])
-
-;; ### Tests
-
-(-> 2
-    (+ 3)
-    (clay/check = 4))
-
-(-> 2
-    (+ 3)
-    (clay/check = 5))
 
 ;; ### Viz.clj
 
