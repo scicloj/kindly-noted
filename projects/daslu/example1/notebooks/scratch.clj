@@ -7,15 +7,6 @@
             [tablecloth.api :as tc]
             [scicloj.kindly.v3.kind :as kind]))
 
-;; ## Useful commands
-
-(comment
-  (do (require '[scicloj.clay.v2.api :as clay])
-      (clay/show-doc! "notebooks/scratch.clj"
-                      {:toc? true})
-      (clay/write-html! "docs/scratch.html")))
-
-
 ;; ## Examples
 
 ;; ### Plain values
