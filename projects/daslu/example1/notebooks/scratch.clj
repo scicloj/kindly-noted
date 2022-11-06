@@ -1,4 +1,4 @@
-;; # Clay demo
+;; # Kindly demo
 
 ;; ## Setup
 
