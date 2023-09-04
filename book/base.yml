@@ -1,0 +1,12 @@
+project:
+  type: book
+
+format:
+  html:
+    theme: cosmo
+
+book:
+  title: "Kindly Noted"
+  chapters:
+    - index.qmd
+

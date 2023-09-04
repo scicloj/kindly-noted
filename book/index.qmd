@@ -1,0 +1,26 @@
+
+---
+format:
+  html: {toc: true}
+embed-resources: true
+---
+
+## Preface {.unnumbered}
+
+This is a space for documenting the Kindly convention and the stack of tools and libraries emerging around it.
+
+![kindly logo](images/Kindly_squashed_clear.svg){width=30} [kindly](./chapters/kindly.html) - a convention for expressing in what kind of way clojure values should be displayed
+
+![kindly-advice logo](images/squashed.svg){width=30} [kindly-advice](./chapters/kindly_advice.html) - inferring kinds to instruct data visualization and notebook tools
+
+![note-to-test logo](images/squashed.svg){width=30} [note-to-test](./chapters/note_to_test.html) - turning code examples into tests
+
+![clay logo](images/Clay_squashed_clear.svg){width=30} [clay](./chapters/clay.html) - a namespace-as-a-notebook tool to visualize values and render namespaces as documents
+
+![portal logo](images/portal-splash.svg){width=30} [kind-portal](./chapters/kind_portal.html) - adapting [Portal](https://github.com/djblue/portal) to the kindly convention
+
+![noj logo](images/squashed.svg){width=30} [noj](./chapters/noj.html) (short for scinojure) - an opinionated way to combine a few of the main clojure libraries for data & science - generates kindly-compliant visualizations
+
+![clojure data scrapbook logo](images/squashed.svg){width=30} [clojure-data-scrapbook](./chapters/clojure_data_scrapbook.html) - community-contributed examples for the emerging Clojure data stack
+
+
