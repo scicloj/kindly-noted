@@ -206,10 +206,10 @@ my-dataset
 ;;;
 ;; Examples:
 
-'(1 "A" :B 'C)
+(list 1 "A" :B 'C)
 
 (clay/in-portal
- '(1 "A" :B 'C))
+ (list 1 "A" :B 'C))
 
 [1 "A" :B 'C]
 
