@@ -4,6 +4,7 @@
   (:require [scicloj.kindly.v4.api :as kindly]
             [scicloj.kindly.v4.kind :as kind]
             [scicloj.note-to-test.v1.api :as note-to-test]
+            [scicloj.clay.v2.api :as clay]
             [tablecloth.api :as tc]))
 
 ^:kindly/hide-code?
@@ -99,6 +100,11 @@ clj-image
      (apply array-map)
      kind/pprint)
 
+(->> (range 30)
+     (apply array-map)
+     kind/pprint
+     clay/in-portal)
+
 ;; ### Hidden
 (->> {:x 9}
      kind/hidden)
@@ -106,10 +112,16 @@ clj-image
 ;; ### Web development
 
 ;; #### Hiccup
-(kind/hiccup
- [:div {:style
-        {:background-color "floralwhite"}}
-  [:p "hello"]])
+(-> [:div {:style
+           {:background-color "floralwhite"}}
+     [:p "hello"]]
+    kind/hiccup)
+
+(-> [:div {:style
+           {:background-color "floralwhite"}}
+     [:p "hello"]]
+    kind/hiccup
+    clay/in-portal)
 
 ;;; #### Reagent
 ;; coming soon: `kind/reagent`
@@ -122,24 +134,41 @@ clj-image
 ;; ### Visual formats
 
 ;; #### Markdown
-(kind/md
- "hello *hello* **hello**")
+(-> "hello *hello* **hello**"
+    kind/md)
+
+(-> "hello *hello* **hello**"
+    kind/md
+    clay/in-portal)
 
 ;; #### Code
-(kind/code
- "(defn f [x] (+ x 9))")
+
+(-> "(defn f [x] (+ x 9))"
+    kind/code)
+
+(-> "(defn f [x] (+ x 9))"
+    kind/code
+    clay/in-portal)
 
 ;; #### Vega-Lite
-(kind/vega-lite
- {:encoding
-  {:y {:field "y", :type "quantitative"},
-   :size {:value 400},
-   :x {:field "x", :type "quantitative"}},
-  :mark {:type "circle", :tooltip true},
-  :width 400,
-  :background "floralwhite",
-  :height 100,
-  :data {:values "x,y\n1,1\n2,-4\n3,9\n", :format {:type "csv"}}})
+
+(def my-plot
+  {:encoding
+   {:y {:field "y", :type "quantitative"},
+    :size {:value 400},
+    :x {:field "x", :type "quantitative"}},
+   :mark {:type "circle", :tooltip true},
+   :width 400,
+   :background "floralwhite",
+   :height 100,
+   :data {:values "x,y\n1,1\n2,-4\n3,9\n", :format {:type "csv"}}})
+
+(-> my-plot
+    kind/vega-lite)
+
+(-> my-plot
+    kind/vega-lite
+    clay/in-portal)
 
 ;; #### Coming soon
 ;; Vega, Cytoscape, ECharts, Plotly, 3Dmol
@@ -149,12 +178,21 @@ clj-image
 ;;; #### Images
 clj-image
 
+(-> clj-image
+    clay/in-portal)
+
 ;;; #### Datasets
-(-> {:x (range 3)}
-    tc/dataset
-    (tc/map-columns :y
-                    [:x]
-                    (fn [x] (* x x))))
+(def my-dataset
+  (-> {:x (range 3)}
+      tc/dataset
+      (tc/map-columns :y
+                      [:x]
+                      (fn [x] (* x x)))))
+
+my-dataset
+
+(-> my-dataset
+    clay/in-portal)
 
 ;; ### Recursive kinds
 ;; Some kinds are to display recursively, interpreting values as data structures whose internal values may have their own kind semantics.
@@ -170,11 +208,23 @@ clj-image
 
 '(1 "A" :B 'C)
 
+(clay/in-portal
+ '(1 "A" :B 'C))
+
 [1 "A" :B 'C]
+
+(clay/in-portal
+ [1 "A" :B 'C])
 
 #{1 "A" :B 'C}
 
+(clay/in-portal
+ #{1 "A" :B 'C})
+
 {1 "A" :B 'C}
+
+(clay/in-portal
+ {1 "A" :B 'C})
 
 [(kind/hiccup
   [:div {:style
@@ -185,10 +235,26 @@ clj-image
  (kind/code
   "(defn f [x] (+ x 9))")]
 
+(clay/in-portal
+ [(kind/hiccup
+   [:div {:style
+          {:background-color "floralwhite"}}
+    [:p "hello"]])
+  (kind/md
+   "hello *hello* **hello**")
+  (kind/code
+   "(defn f [x] (+ x 9))")])
+
 {:x  (kind/md
       "**hello**")
  (kind/md
   "**hello**") :x}
+
+(clay/in-portal
+ {:x  (kind/md
+       "**hello**")
+  (kind/md
+   "**hello**") :x})
 
 ;; #### Tables
 
