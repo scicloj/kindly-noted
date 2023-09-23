@@ -12,3 +12,4 @@ book:
     - index.qmd
 
     - kindly.qmd
+    - kindly/index.qmd
