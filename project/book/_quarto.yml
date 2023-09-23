@@ -1,0 +1,14 @@
+
+project:
+  type: book
+
+format:
+  html:
+    theme: cosmo
+
+book:
+  title: "book"
+  chapters:
+    - index.qmd
+
+    - kindly.qmd

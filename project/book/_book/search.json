@@ -1,0 +1,51 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "book",
+    "section": "",
+    "text": "1 book index"
+  },
+  {
+    "objectID": "kindly.html#example",
+    "href": "kindly.html#example",
+    "title": "2  Kindly",
+    "section": "2.1 Example",
+    "text": "2.1 Example\n\n(kind/md\n \"hello *hello* **hello**\")\n\nhello hello hello\n\n(-> \"hello *hello* **hello**\"\n    kind/md\n    meta)\n\n\n#:kindly{:kind :kind/md}"
+  },
+  {
+    "objectID": "kindly.html#set-of-kinds",
+    "href": "kindly.html#set-of-kinds",
+    "title": "2  Kindly",
+    "section": "2.2 Set of kinds",
+    "text": "2.2 Set of kinds\n\nkindly/known-kinds\n\n\n#{:kind/code\n  :kind/vega\n  :kind/image\n  :kind/echarts\n  :kind/map\n  :kind/test\n  :kind/dataset\n  :kind/vega-lite\n  :kind/cytoscape\n  :kind/set\n  :kind/reagent\n  :kind/var\n  :kind/hidden\n  :kind/hiccup\n  :kind/md\n  :kind/seq\n  :kind/pprint\n  :kind/table\n  :kind/vector}"
+  },
+  {
+    "objectID": "kindly.html#how-to-use-kinds",
+    "href": "kindly.html#how-to-use-kinds",
+    "title": "2  Kindly",
+    "section": "2.3 How to use Kinds?",
+    "text": "2.3 How to use Kinds?\n\n2.3.1 Attaching metadata to forms\n\n^:kind/md\n[\"hello *hello* **hello**\"]\n\n\n\n\n\nhello hello hello\n\n\n\n\n\n(-> \"^:kind/md\n[\\\"hello *hello* **hello**\\\"]\n\"\n    read-string\n    meta)\n\n\n#:kind{:md true}\n\n\n(-> \"^kind/md\n[\\\"hello *hello* **hello**\\\"]\n\"\n    read-string\n    meta)\n\n\n{:tag kind/md}\n\n\n\n2.3.2 Attaching metadata to values\n\n(kind/md\n [\"hello *hello* **hello**\"])\n\nhello hello hello Values that cannot have metadata are wrapped in a vector before attaching metadata.\n\n(kind/md\n \"hello *hello* **hello**\")\n\nhello hello hello\n\n(kind/md\n \"hello *hello* **hello**\")\n\nhello hello hello\n\n^:kind/md\n[\"hello *hello* **hello**\"]\n\n\n\n\n\nhello hello hello\n\n\n\n\n\n\n2.3.3 Using values annotated by libraries\n\n(require '[scicloj.noj.v1.vis :as vis]\n         '[scicloj.noj.v1.datasets :as datasets])\n\n\nnil\n\n\n(-> datasets/iris\n    (vis/hanami-histogram :sepal-width\n                          {:nbins 10})\n    (assoc :height 100)\n    meta)\n\n\n#:kindly{:kind :kind/vega-lite}\n\n\n\n2.3.4 Automatically-inferred kinds\nIn certain situations, kinds are inferred without annotation. For example, images:\n\n(def clj-image\n  (->  \"https://clojure.org/images/clojure-logo-120b.png\"\n       (java.net.URL.)\n       (javax.imageio.ImageIO/read)))\n\n\nclj-image"
+  },
+  {
+    "objectID": "kindly.html#catalogue-of-visualisations",
+    "href": "kindly.html#catalogue-of-visualisations",
+    "title": "2  Kindly",
+    "section": "2.4 Catalogue of visualisations",
+    "text": "2.4 Catalogue of visualisations\n\n2.4.1 Markdown - :kind/md\n\n(-> \"hello *hello* **hello**\"\n    kind/md)\n\nhello hello hello\n\n(-> \"hello *hello* **hello**\"\n    kind/md\n    clay/in-portal)\n\n\n\n\n\n\n\n\n2.4.2 Code\n\n(-> \"(defn f [x] (+ x 9))\"\n    kind/code)\n\n\n(defn f [x] (+ x 9))\n\n\n(-> \"(defn f [x] (+ x 9))\"\n    kind/code\n    clay/in-portal)\n\n\n\n\n\n\n\n\n2.4.3 Vega-Lite\n\n(def my-plot\n  {:encoding\n   {:y {:field \"y\", :type \"quantitative\"},\n    :size {:value 400},\n    :x {:field \"x\", :type \"quantitative\"}},\n   :mark {:type \"circle\", :tooltip true},\n   :width 400,\n   :background \"floralwhite\",\n   :height 100,\n   :data {:values \"x,y\\n1,1\\n2,-4\\n3,9\\n\", :format {:type \"csv\"}}})\n\n\n(-> my-plot\n    kind/vega-lite)\n\n\n\nvega\n\n\n\n\n(-> my-plot\n    kind/vega-lite\n    clay/in-portal)\n\n\n\n\n\n\n\n\n2.4.4 Coming soon\nVega, Cytoscape, ECharts, Plotly, 3Dmol\n\n\n2.4.5 Images\n\nclj-image\n\n\n\n\n\n(-> clj-image\n    clay/in-portal)\n\n\n\n\n\n\n\n\n2.4.6 Datasets\n\n(def my-dataset\n  (-> {:x (range 3)}\n      tc/dataset\n      (tc/map-columns :y\n                      [:x]\n                      (fn [x] (* x x)))))\n\n\nmy-dataset\n\n\n\n\n\n\n_unnamed [3 2]:\n\n\n\n\n\n\n:x\n\n\n:y\n\n\n\n\n\n\n0\n\n\n0\n\n\n\n\n1\n\n\n1\n\n\n\n\n2\n\n\n4\n\n\n\n\n\n\n\n\n\n\n(-> my-dataset\n    clay/in-portal)\n\n\n\n\n\n\n\n\n2.4.7 Hiccup\n\n(-> [:div {:style\n           {:background-color \"floralwhite\"}}\n     [:p \"hello\"]]\n    kind/hiccup)\n\n\n\n\nhello\n\n\n\n\n(-> [:div {:style\n           {:background-color \"floralwhite\"}}\n     [:p \"hello\"]]\n    kind/hiccup\n    clay/in-portal)\n\n\n\n\n\n\n\n\n2.4.8 Reagent\ncoming soon: kind/reagent\n\n\n2.4.9 Pretty printing\n\n(->> (range 30)\n     (apply array-map)\n     kind/pprint)\n\n\n{0 1,\n 2 3,\n 4 5,\n 6 7,\n 8 9,\n 10 11,\n 12 13,\n 14 15,\n 16 17,\n 18 19,\n 20 21,\n 22 23,\n 24 25,\n 26 27,\n 28 29}\n\n\n(->> (range 30)\n     (apply array-map)\n     kind/pprint\n     clay/in-portal)\n\n\n\n\n\n\n\n\n2.4.10 Hidden\n\n(->> {:x 9}\n     kind/hidden)\n\n\n{:x 9}\n\n\n\n2.4.11 Plain data structures\nPlain Clojure data structures have recursive kind semantics: - Each tool has its own way to represent them visually (e.g., Clay just uses text, while Portal has a hierarchical navigation UI). - If the values inside them have kind information, they are handled accordingly.\nExamples:\n\n(list 1 \"A\" :B 'C)\n\n\n(1 \"A\" :B C)\n\n\n(clay/in-portal\n (list 1 \"A\" :B 'C))\n\n\n\n\n\n\n\n[1 \"A\" :B 'C]\n\n\n[1 \"A\" :B C]\n\n\n(clay/in-portal\n [1 \"A\" :B 'C])\n\n\n\n\n\n\n\n#{1 \"A\" :B 'C}\n\n\n#{1 :B C \"A\"}\n\n\n(clay/in-portal\n #{1 \"A\" :B 'C})\n\n\n\n\n\n\n\n{1 \"A\" :B 'C}\n\n\n{1 \"A\", :B C}\n\n\n(clay/in-portal\n {1 \"A\" :B 'C})\n\n\n\n\n\n\n\n[(kind/hiccup\n  [:div {:style\n         {:background-color \"floralwhite\"}}\n   [:p \"hello\"]])\n (kind/md\n  \"hello *hello* **hello**\")\n (kind/code\n  \"(defn f [x] (+ x 9))\")]\n\n\n\n\n[]\n\n\n\n\n(clay/in-portal\n [(kind/hiccup\n   [:div {:style\n          {:background-color \"floralwhite\"}}\n    [:p \"hello\"]])\n  (kind/md\n   \"hello *hello* **hello**\")\n  (kind/code\n   \"(defn f [x] (+ x 9))\")])\n\n\n\n\n\n\n\n{:x  (kind/md\n      \"**hello**\")\n (kind/md\n  \"**hello**\") :x}\n\n\n\n\n{\n\n\n\n\n\n\n:x\n\n\n\n\n\n\n\nhello\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nhello\n\n\n\n\n\n\n:x\n\n\n\n\n\n\n\n\n}\n\n\n\n\n(clay/in-portal\n {:x  (kind/md\n       \"**hello**\")\n  (kind/md\n   \"**hello**\") :x})\n\n\n\n\n\n\n\n\n2.4.12 Tables\nComing soon"
+  },
+  {
+    "objectID": "kindly.html#topics-in-discussion",
+    "href": "kindly.html#topics-in-discussion",
+    "title": "2  Kindly",
+    "section": "2.5 Topics in discussion",
+    "text": "2.5 Topics in discussion\n\nhiding code\nhandling styles around data visualizations\ncompatibility with Emmy-Viewers\nbackwards compatibility of kind inference"
+  },
+  {
+    "objectID": "kindly.html#old-notes",
+    "href": "kindly.html#old-notes",
+    "title": "2  Kindly",
+    "section": "2.6 Old notes",
+    "text": "2.6 Old notes\n\nDifferent tools have different ways of writing notes. For example:\nAnglican tutorials (source) - written in Gorilla REPL\nthi-ng/geom viz examples (source) - written in Org-babel-clojure\nClojure2d docs (source1, source2) - written in Codox and Metadoc\nTablecloth API docs (source) - written in rmarkdown-clojure\nR interop ClojisR examples (source) - written in Notespace v2\nBayesian optimization tutorial (source) - written in Nextjournal\nscicloj.ml tutorials (source) - written in Notespace v3\nClojure2d color tutorial (source) - written in Clerk\nViz.clj (source) - written in Kindly using Clay\n…\n\n\n\n\n\nsource: /home/daslu/projects/scicloj/kindly-noted/project/notebooks/kindly.clj"
+  }
+]
