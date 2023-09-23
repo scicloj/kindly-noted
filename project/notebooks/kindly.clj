@@ -36,8 +36,7 @@
 
 kindly/known-kinds
 
-;; ## Kind inference
-;; The logic to infer kinds is defined in the [kindly-advice](./kindly-advice.html) library.
+;; ## How to use Kinds?
 
 ;; ### Attaching metadata to forms
 ^:kind/md
@@ -83,7 +82,7 @@ kindly/known-kinds
     (assoc :height 100)
     meta)
 
-;; ### Custom inference
+;; ### Automatically-inferred kinds
 ;; In certain situations, kinds are inferred without annotation. For example, images:
 
 (def clj-image
@@ -93,47 +92,9 @@ kindly/known-kinds
 
 clj-image
 
-;; ## Kind semantics
+;; ## Catalogue of visualisations
 
-;; ### Pretty printing
-(->> (range 30)
-     (apply array-map)
-     kind/pprint)
-
-(->> (range 30)
-     (apply array-map)
-     kind/pprint
-     clay/in-portal)
-
-;; ### Hidden
-(->> {:x 9}
-     kind/hidden)
-
-;; ### Web development
-
-;; #### Hiccup
-(-> [:div {:style
-           {:background-color "floralwhite"}}
-     [:p "hello"]]
-    kind/hiccup)
-
-(-> [:div {:style
-           {:background-color "floralwhite"}}
-     [:p "hello"]]
-    kind/hiccup
-    clay/in-portal)
-
-;;; #### Reagent
-;; coming soon: `kind/reagent`
-
-#_(kind/reagent
-   ['(fn [data]
-       [:div [:h1 (count data)]])
-    (vec (range 99))])
-
-;; ### Visual formats
-
-;; #### Markdown
+;; ### Markdown - `:kind/md`
 (-> "hello *hello* **hello**"
     kind/md)
 
@@ -141,7 +102,7 @@ clj-image
     kind/md
     clay/in-portal)
 
-;; #### Code
+;; ### Code
 
 (-> "(defn f [x] (+ x 9))"
     kind/code)
@@ -150,7 +111,7 @@ clj-image
     kind/code
     clay/in-portal)
 
-;; #### Vega-Lite
+;; ### Vega-Lite
 
 (def my-plot
   {:encoding
@@ -170,18 +131,16 @@ clj-image
     kind/vega-lite
     clay/in-portal)
 
-;; #### Coming soon
+;; ### Coming soon
 ;; Vega, Cytoscape, ECharts, Plotly, 3Dmol
 
-;; ### Specific types
-
-;;; #### Images
+;;; ### Images
 clj-image
 
 (-> clj-image
     clay/in-portal)
 
-;;; #### Datasets
+;;; ### Datasets
 (def my-dataset
   (-> {:x (range 3)}
       tc/dataset
@@ -194,10 +153,42 @@ my-dataset
 (-> my-dataset
     clay/in-portal)
 
-;; ### Recursive kinds
-;; Some kinds are to display recursively, interpreting values as data structures whose internal values may have their own kind semantics.
+;; ### Hiccup
+(-> [:div {:style
+           {:background-color "floralwhite"}}
+     [:p "hello"]]
+    kind/hiccup)
 
-;; #### Plain data structures
+(-> [:div {:style
+           {:background-color "floralwhite"}}
+     [:p "hello"]]
+    kind/hiccup
+    clay/in-portal)
+
+;;; ### Reagent
+;; coming soon: `kind/reagent`
+
+#_(kind/reagent
+   ['(fn [data]
+       [:div [:h1 (count data)]])
+    (vec (range 99))])
+
+
+;; ### Pretty printing
+(->> (range 30)
+     (apply array-map)
+     kind/pprint)
+
+(->> (range 30)
+     (apply array-map)
+     kind/pprint
+     clay/in-portal)
+
+;; ### Hidden
+(->> {:x 9}
+     kind/hidden)
+
+;; ### Plain data structures
 
 ;; Plain Clojure data structures have recursive kind semantics:
 ;; - Each tool has its own way to represent them visually
@@ -256,7 +247,7 @@ my-dataset
   (kind/md
    "**hello**") :x})
 
-;; #### Tables
+;; ### Tables
 
 ;; Coming soon
 
@@ -273,3 +264,23 @@ my-dataset
   (note-to-test/gentest! "notebooks/kindly.clj"
                          {:accept true
                           :verbose true}))
+
+
+
+
+
+
+;; ## Old notes
+
+;; - Different tools have different ways of writing notes. For example:
+;;   - [Anglican tutorials](https://probprog.github.io/anglican/examples/index.html) ([source](https://bitbucket.org/probprog/anglican-examples/src/master/worksheets/)) - written in [Gorilla REPL](https://github.com/JonyEpsilon/gorilla-repl)
+;;   - [thi-ng/geom viz examples](https://github.com/thi-ng/geom/blob/feature/no-org/org/examples/viz/demos.org)  ([source](https://raw.githubusercontent.com/thi-ng/geom/feature/no-org/org/examples/viz/demos.org)) - written in [Org-babel-clojure](https://orgmode.org/worg/org-contrib/babel/languages/ob-doc-clojure.html)
+;;   - [Clojure2d docs](https://github.com/Clojure2D/clojure2d#Usage) ([source1](https://github.com/Clojure2D/clojure2d/blob/master/src/clojure2d), [source2](https://github.com/Clojure2D/clojure2d/blob/master/metadoc/clojure2d/)) - written in [Codox](https://github.com/weavejester/codox) and [Metadoc](https://github.com/generateme/metadoc)
+;;   - [Tablecloth API docs](https://scicloj.github.io/tablecloth/index.html) ([source](https://github.com/scicloj/tablecloth/blob/master/docs/index.Rmd)) - written in [rmarkdown-clojure](https://github.com/genmeblog/rmarkdown-clojure)
+;;   - [R interop ClojisR examples](https://github.com/scicloj/clojisr-examples) ([source](https://github.com/scicloj/clojisr-examples/tree/master/src/clojisr_examples)) - written in [Notespace v2](https://github.com/scicloj/notespace/blob/master/doc/v2.md)
+;;   - [Bayesian optimization tutorial](https://nextjournal.com/generateme/bayesian-optimization) ([source](https://nextjournal.com/generateme/bayesian-optimization)) - written in [Nextjournal](https://nextjournal.com/)
+;;   - [scicloj.ml tutorials](https://github.com/scicloj/scicloj.ml-tutorials#tutorials-for-sciclojml) ([source](https://github.com/scicloj/scicloj.ml-tutorials/tree/main/src/scicloj/ml)) - written in [Notespace v3](https://github.com/scicloj/notespace/blob/master/doc/v3.md)
+;;   - [Clojure2d color tutorial](https://clojure2d.github.io/clojure2d/docs/notebooks/index.html#/notebooks/color.clj) ([source](https://github.com/Clojure2D/clojure2d/blob/master/notebooks/color.clj)) - written in [Clerk](https://github.com/nextjournal/)
+;;   - [Viz.clj](https://scicloj.github.io/viz.clj/) ([source](https://github.com/scicloj/viz.clj/blob/master/notebooks/intro.clj)) - written in Kindly using [Clay](https://scicloj.github.io/viz.clj/)
+;;   - ...
+;
