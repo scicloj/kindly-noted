@@ -1,0 +1,710 @@
+
+---
+format:
+  html: {toc: true, toc-depth: 4, theme: spacelab, output-file: kindly.html}
+highlight-style: solarized
+code-block-background: true
+include-in-header: {text: '<link rel = "icon" href = "data:," />'}
+
+---
+<style>table {
+  border-style: thin;
+}
+th, td {
+  padding: 6px;
+}
+td {
+  text-align: left;
+}
+th {
+  text-align: center;
+  background-color: #ddd;
+}
+tr:nth-child(even) {
+  background-color: #f6f6f6;
+}
+</style><style>.printedClojure .sourceCode {
+  background-color: transparent;
+  border-style: none;
+}
+</style>
+<script src="kindly_files/md-default1.js" type="text/javascript"></script><script src="kindly_files/md-default2.js" type="text/javascript"></script><script src="kindly_files/vega3.js" type="text/javascript"></script><script src="kindly_files/vega4.js" type="text/javascript"></script><script src="kindly_files/vega5.js" type="text/javascript"></script><script src="kindly_files/reagent6.js" type="text/javascript"></script><script src="kindly_files/reagent7.js" type="text/javascript"></script><script src="kindly_files/reagent8.js" type="text/javascript"></script><script src="kindly_files/reagent9.js" type="text/javascript"></script><script src="kindly_files/reagent10.js" type="text/javascript"></script><script src="kindly_files/reagent11.js" type="text/javascript"></script><script src="kindly_files/portal12.js" type="text/javascript"></script>
+
+# Kindly
+WIP documentation for [kindly](https://github.com/scicloj/kindly)
+
+
+<div class="sourceClojure">
+```clojure
+(ns kindly
+  (:require [scicloj.kindly.v4.api :as kindly]
+            [scicloj.kindly.v4.kind :as kind]
+            [scicloj.clay.v2.api :as clay]
+            [tablecloth.api :as tc]))
+```
+</div>
+
+
+
+# Why
+* Different tools have different ways of writing notes. For example:
+* [Anglican tutorials](https://probprog.github.io/anglican/examples/index.html) ([source](https://bitbucket.org/probprog/anglican-examples/src/master/worksheets/)) - written in [Gorilla REPL](https://github.com/JonyEpsilon/gorilla-repl)
+* [thi-ng/geom viz examples](https://github.com/thi-ng/geom/blob/feature/no-org/org/examples/viz/demos.org)  ([source](https://raw.githubusercontent.com/thi-ng/geom/feature/no-org/org/examples/viz/demos.org)) - written in [Org-babel-clojure](https://orgmode.org/worg/org-contrib/babel/languages/ob-doc-clojure.html)
+* [Clojure2d docs](https://github.com/Clojure2D/clojure2d#Usage) ([source1](https://github.com/Clojure2D/clojure2d/blob/master/src/clojure2d), [source2](https://github.com/Clojure2D/clojure2d/blob/master/metadoc/clojure2d/)) - written in [Codox](https://github.com/weavejester/codox) and [Metadoc](https://github.com/generateme/metadoc)
+* [Tablecloth API docs](https://scicloj.github.io/tablecloth/index.html) ([source](https://github.com/scicloj/tablecloth/blob/master/docs/index.Rmd)) - written in [rmarkdown-clojure](https://github.com/genmeblog/rmarkdown-clojure)
+* [R interop ClojisR examples](https://github.com/scicloj/clojisr-examples) ([source](https://github.com/scicloj/clojisr-examples/tree/master/src/clojisr_examples)) - written in [Notespace v2](https://github.com/scicloj/notespace/blob/master/doc/v2.md)
+* [Bayesian optimization tutorial](https://nextjournal.com/generateme/bayesian-optimization) ([source](https://nextjournal.com/generateme/bayesian-optimization)) - written in [Nextjournal](https://nextjournal.com/)
+* [scicloj.ml tutorials](https://github.com/scicloj/scicloj.ml-tutorials#tutorials-for-sciclojml) ([source](https://github.com/scicloj/scicloj.ml-tutorials/tree/main/src/scicloj/ml)) - written in [Notespace v3](https://github.com/scicloj/notespace/blob/master/doc/v3.md)
+* [Clojure2d color tutorial](https://clojure2d.github.io/clojure2d/docs/notebooks/index.html#/notebooks/color.clj) ([source](https://github.com/Clojure2D/clojure2d/blob/master/notebooks/color.clj)) - written in [Clerk](https://github.com/nextjournal/)
+* [Viz.clj](https://scicloj.github.io/viz.clj/) ([source](https://github.com/scicloj/viz.clj/blob/master/notebooks/intro.clj)) - written in Kindly using [Clay](https://scicloj.github.io/viz.clj/)
+* ...
+
+# Goal
+* Have one way to express data visualizations
+* for blog posts, books, slideshows, reports, dashboards, and interactive analyses,
+* that just will work across different tools,
+* without mentioning those tools in the code.
+
+# Status
+* Supported by Clay & Claykind
+
+* Has adapters for Portal (kind-portal) & Clerk (kind-clerk)
+
+* Ready to explore on other tools
+
+
+# Example
+
+
+<div class="sourceClojure">
+```clojure
+(kind/md
+ "hello *hello* **hello**")
+```
+</div>
+
+
+hello *hello* **hello**
+
+
+# The set of kinds
+
+
+<div class="sourceClojure">
+```clojure
+kindly/known-kinds
+```
+</div>
+
+
+
+<div class="printedClojure">
+```clojure
+#{:kind/code
+  :kind/vega
+  :kind/image
+  :kind/plotly
+  :kind/echarts
+  :kind/map
+  :kind/portal
+  :kind/test
+  :kind/dataset
+  :kind/vega-lite
+  :kind/html
+  :kind/cytoscape
+  :kind/set
+  :kind/reagent
+  :kind/var
+  :kind/hidden
+  :kind/hiccup
+  :kind/md
+  :kind/seq
+  :kind/pprint
+  :kind/table
+  :kind/vector}
+
+```
+</div>
+
+
+
+# How to use Kinds?
+
+## Attaching metadata to forms
+
+
+<div class="sourceClojure">
+```clojure
+^:kind/md
+["hello *hello* **hello**"]
+```
+</div>
+
+
+hello *hello* **hello**
+
+
+<div class="sourceClojure">
+```clojure
+^kind/md
+["hello *hello* **hello**"]
+```
+</div>
+
+
+hello *hello* **hello**
+
+
+## Attaching metadata to values
+
+
+<div class="sourceClojure">
+```clojure
+(-> ["hello *hello* **hello**"]
+    kind/md)
+```
+</div>
+
+
+hello *hello* **hello**
+
+
+<div class="sourceClojure">
+```clojure
+(-> ["hello *hello* **hello**"]
+    kind/md
+    meta
+    :kindly/kind)
+```
+</div>
+
+
+
+<div class="printedClojure">
+```clojure
+:kind/md
+
+```
+</div>
+
+
+
+## Attaching metadata to values - cont.
+
+
+<div class="sourceClojure">
+```clojure
+(-> "hello *hello* **hello**"
+    kind/md
+    meta
+    :kindly/kind)
+```
+</div>
+
+
+
+<div class="printedClojure">
+```clojure
+:kind/md
+
+```
+</div>
+
+
+Values that cannot have metadata are wrapped in a vector before attaching metadata.
+
+
+<div class="sourceClojure">
+```clojure
+(-> "hello *hello* **hello**"
+    kind/md
+    kind/pprint)
+```
+</div>
+
+
+
+<div class="printedClojure">
+```clojure
+["hello *hello* **hello**"]
+
+```
+</div>
+
+
+
+<div class="sourceClojure">
+```clojure
+(-> "hello *hello* **hello**"
+    kind/md
+    meta)
+```
+</div>
+
+
+
+<div class="printedClojure">
+```clojure
+#:kindly{:kind :kind/md}
+
+```
+</div>
+
+
+
+## Using values annotated by libraries
+
+
+<div class="sourceClojure">
+```clojure
+(defn my-library-function-for-big-big-text [text]
+  (kind/hiccup
+   [:big {:style {:background "#ccddcc"}}
+    [:big text]]))
+```
+</div>
+
+
+
+<div class="sourceClojure">
+```clojure
+(-> "hello"
+    my-library-function-for-big-big-text)
+```
+</div>
+
+
+<big style="background:#ccddcc;"><big>hello</big></big>
+
+
+<div class="sourceClojure">
+```clojure
+(-> "hello"
+    my-library-function-for-big-big-text
+    (assoc-in [1 :style]
+              {:background "#ddccdd"}))
+```
+</div>
+
+
+<big style="background:#ddccdd;"><big>hello</big></big>
+
+
+## Automatically-inferred kinds
+In certain situations, kinds are inferred without annotation. For example, images:
+
+
+<div class="sourceClojure">
+```clojure
+(def clj-image
+  (->  "https://upload.wikimedia.org/wikipedia/commons/e/eb/Ash_Tree_-_geograph.org.uk_-_590710.jpg"
+       (java.net.URL.)
+       (javax.imageio.ImageIO/read)))
+```
+</div>
+
+
+
+<div class="sourceClojure">
+```clojure
+clj-image
+```
+</div>
+
+
+<img src="kindly_files/0.png" style="width:100%;" />
+
+
+<div class="sourceClojure">
+```clojure
+(require '[tablecloth.api :as tc])
+```
+</div>
+
+
+
+<div class="printedClojure">
+```clojure
+nil
+
+```
+</div>
+
+
+
+<div class="sourceClojure">
+```clojure
+(tc/dataset {:x (range 3)
+             :y (repeatedly 3 rand)})
+```
+</div>
+
+
+_unnamed [3 2]:
+
+| :x |         :y |
+|---:|-----------:|
+|  0 | 0.51658381 |
+|  1 | 0.98940583 |
+|  2 | 0.88149647 |
+
+
+
+
+# Catalogue of visualisations (WIP)
+
+## Markdown - `:kind/md`
+
+
+<div class="sourceClojure">
+```clojure
+(-> "hello *hello* **hello**"
+    kind/md)
+```
+</div>
+
+
+hello *hello* **hello**
+
+
+## Code
+
+
+<div class="sourceClojure">
+```clojure
+(-> "(defn f [x] (+ x 9))"
+    kind/code)
+```
+</div>
+
+
+
+<div class="sourceClojure">
+```clojure
+(defn f [x] (+ x 9))
+```
+</div>
+
+
+
+## Vega-Lite
+
+
+<div class="sourceClojure">
+```clojure
+(def my-plot
+  (-> {:encoding
+       {:y {:field "y", :type "quantitative"},
+        :size {:value 400},
+        :x {:field "x", :type "quantitative"}},
+       :mark {:type "circle", :tooltip true},
+       :width 400,
+       :background "floralwhite",
+       :height 100,
+       :data {:values "x,y\n1,1\n2,-4\n3,9\n", :format {:type "csv"}}}
+      kind/vega-lite))
+```
+</div>
+
+
+
+<div class="sourceClojure">
+```clojure
+my-plot
+```
+</div>
+
+
+<div><script>vegaEmbed(document.currentScript.parentElement, {"encoding":{"y":{"field":"y","type":"quantitative"},"size":{"value":400},"x":{"field":"x","type":"quantitative"}},"mark":{"type":"circle","tooltip":true},"width":400,"background":"floralwhite","height":100,"data":{"values":"x,y\n1,1\n2,-4\n3,9\n","format":{"type":"csv"}}});</script></div>
+
+
+## Images
+
+
+<div class="sourceClojure">
+```clojure
+clj-image
+```
+</div>
+
+
+<img src="kindly_files/0.png" style="width:100%;" />
+
+
+## Datasets
+
+
+<div class="sourceClojure">
+```clojure
+(def my-dataset
+  (-> {:x (range 3)}
+      tc/dataset
+      (tc/map-columns :y
+                      [:x]
+                      (fn [x] (* x x)))))
+```
+</div>
+
+
+
+<div class="sourceClojure">
+```clojure
+my-dataset
+```
+</div>
+
+
+_unnamed [3 2]:
+
+| :x | :y |
+|---:|---:|
+|  0 |  0 |
+|  1 |  1 |
+|  2 |  4 |
+
+
+
+
+## Reagent
+
+
+<div class="sourceClojure">
+```clojure
+(kind/reagent
+ ['(fn [data]
+     [:div {:style {:background "#ccddcc"}}
+      [:big (count data)]])
+  (vec (range 99))])
+```
+</div>
+
+
+<div id="id1"><script type="application/x-scittle">(reagent.dom/render [(fn [data] [:div {:style {:background "#ccddcc"}} [:big (count data)]]) [0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98]] (js/document.getElementById "id1"))</script></div>
+
+
+## Pretty printing
+
+
+<div class="sourceClojure">
+```clojure
+(->> (range 30)
+     (apply array-map)
+     kind/pprint)
+```
+</div>
+
+
+
+<div class="printedClojure">
+```clojure
+{0 1,
+ 2 3,
+ 4 5,
+ 6 7,
+ 8 9,
+ 10 11,
+ 12 13,
+ 14 15,
+ 16 17,
+ 18 19,
+ 20 21,
+ 22 23,
+ 24 25,
+ 26 27,
+ 28 29}
+
+```
+</div>
+
+
+
+## Hidden
+
+
+<div class="sourceClojure">
+```clojure
+(->> {:x 9}
+     kind/hidden)
+```
+</div>
+
+
+
+
+
+## Plain data structures
+Plain Clojure data structures have recursive kind semantics:
+* Each tool has its own way to represent them visually
+(e.g., Clay just uses text, while Portal has a hierarchical navigation UI).
+
+
+<div class="sourceClojure">
+```clojure
+(list 1 "A" :B 'C)
+```
+</div>
+
+
+
+<div class="printedClojure">
+```clojure
+(1 "A" :B C)
+
+```
+</div>
+
+
+
+<div class="sourceClojure">
+```clojure
+[1 "A" :B 'C]
+```
+</div>
+
+
+
+<div class="printedClojure">
+```clojure
+[1 "A" :B C]
+
+```
+</div>
+
+
+
+<div class="sourceClojure">
+```clojure
+#{1 "A" :B 'C}
+```
+</div>
+
+
+
+<div class="printedClojure">
+```clojure
+#{1 :B C "A"}
+
+```
+</div>
+
+
+
+<div class="sourceClojure">
+```clojure
+{1 "A" :B 'C}
+```
+</div>
+
+
+
+<div class="printedClojure">
+```clojure
+{1 "A", :B C}
+
+```
+</div>
+
+
+
+## Plain data structures - nesting
+* If the values inside them have kind information, they are handled accordingly.
+
+
+<div class="sourceClojure">
+```clojure
+[(kind/hiccup
+  [:div {:style
+         {:background-color "floralwhite"}}
+   [:p "hello"]])
+ (kind/md
+  "hello *hello* **hello**")
+ (kind/code
+  "(defn f [x] (+ x 9))")]
+```
+</div>
+
+
+<div><p>\[</p><div style="margin-left:10%;width:110%;"><div style="background-color:floralwhite;"><p>hello</p></div><div><p>hello <em>hello</em> <strong>hello</strong></p></div><div><pre><code class="language-clojure bg-light">(defn f [x] (+ x 9))</code></pre></div></div><p>\]</p></div>
+
+
+<div class="sourceClojure">
+```clojure
+{:x  (kind/md
+      "**hello**")
+ (kind/md
+  "**hello**") :x}
+```
+</div>
+
+
+<div><p>{</p><div style="margin-left:10%;width:110%;"><table><tr><td valign="top"><div><pre><code class="language-clojure">:x
+</code></pre></div></td><td><div style="margin-top:10px;"><div><p><strong>hello</strong></p></div></div></td></tr></table><table><tr><td valign="top"><div><p><strong>hello</strong></p></div></td><td><div style="margin-top:10px;"><div><pre><code class="language-clojure">:x
+</code></pre></div></div></td></tr></table></div><p>}</p></div>
+
+
+## Hiccup
+
+
+<div class="sourceClojure">
+```clojure
+(-> [:div {:style
+           {:background-color "floralwhite"}}
+     [:p "hello"]]
+    kind/hiccup)
+```
+</div>
+
+
+<div style="background-color:floralwhite;"><p>hello</p></div>
+
+
+## Hiccup - nesting
+
+
+<div class="sourceClojure">
+```clojure
+(-> [:div {:style
+           {:background-color "floralwhite"
+            :border-style "solid"}}
+     [:p {:style {:background-color "#ccddcc"
+                  :border-style "solid"}}
+      "hello"]
+     (kind/md
+      "hello *hello* **hello**")
+     (kind/code
+      "(defn f [x] (+ x 9))")
+     my-plot]
+    kind/hiccup)
+```
+</div>
+
+
+<div style="background-color:floralwhite;border-style:solid;"><p style="background-color:#ccddcc;border-style:solid;">hello</p><div><p>hello <em>hello</em> <strong>hello</strong></p></div><div><pre><code class="language-clojure bg-light">(defn f [x] (+ x 9))</code></pre></div><div><script>vegaEmbed(document.currentScript.parentElement, {"encoding":{"y":{"field":"y","type":"quantitative"},"size":{"value":400},"x":{"field":"x","type":"quantitative"}},"mark":{"type":"circle","tooltip":true},"width":400,"background":"floralwhite","height":100,"data":{"values":"x,y\n1,1\n2,-4\n3,9\n","format":{"type":"csv"}}});</script></div></div>
+
+
+## Portal
+
+
+<div class="sourceClojure">
+```clojure
+(-> [(kind/hiccup [:p {:style {:background-color "#ccddcc"
+                               :border-style "solid"}}
+                   "hello"])
+     (kind/md
+      "hello *hello* **hello**")
+     (kind/code
+      "(defn f [x] (+ x 9))")
+     my-plot]
+    kind/portal)
+```
+</div>
+
+
+<div><script>portal_api.embed().renderOutputItem(
+                {'mime': 'x-application/edn',
+                 'text': (() => "[^{:source \"[:p {:style {:background-color \\\"#ccddcc\\\"\\n                               :border-style \\\"solid\\\"}}\\n                   \\\"hello\\\"]\", :line 229, :column 19, :end-line 231, :end-column 28, :kindly/kind :kind/hiccup, :portal.viewer/default :portal.viewer/hiccup} [:p ^{:source \"{:style {:background-color \\\"#ccddcc\\\"\\n                               :border-style \\\"solid\\\"}}\", :line 229, :column 23, :end-line 230, :end-column 55} {:style ^{:source \"{:background-color \\\"#ccddcc\\\"\\n                               :border-style \\\"solid\\\"}\", :line 229, :column 31, :end-line 230, :end-column 54} {:background-color \"#ccddcc\", :border-style \"solid\"}} \"hello\"] ^#:portal.viewer{:default :portal.viewer/hiccup} [:div [:portal.viewer/markdown \"hello *hello* **hello**\"]] ^#:portal.viewer{:default :portal.viewer/hiccup} [:div [:portal.viewer/code \"(defn f [x] (+ x 9))\"]] ^#:portal.viewer{:default :portal.viewer/hiccup} [:portal.viewer/vega-lite ^{:source \"{:encoding\\n       {:y {:field \\\"y\\\", :type \\\"quantitative\\\"},\\n        :size {:value 400},\\n        :x {:field \\\"x\\\", :type \\\"quantitative\\\"}},\\n       :mark {:type \\\"circle\\\", :tooltip true},\\n       :width 400,\\n       :background \\\"floralwhite\\\",\\n       :height 100,\\n       :data {:values \\\"x,y\\\\n1,1\\\\n2,-4\\\\n3,9\\\\n\\\", :format {:type \\\"csv\\\"}}}\", :line 129, :column 7, :end-line 137, :end-column 71, :kindly/kind :kind/vega-lite} {:encoding ^{:source \"{:y {:field \\\"y\\\", :type \\\"quantitative\\\"},\\n        :size {:value 400},\\n        :x {:field \\\"x\\\", :type \\\"quantitative\\\"}}\", :line 130, :column 8, :end-line 132, :end-column 47} {:y ^{:source \"{:field \\\"y\\\", :type \\\"quantitative\\\"}\", :line 130, :column 12, :end-line 130, :end-column 46} {:field \"y\", :type \"quantitative\"}, :size ^{:source \"{:value 400}\", :line 131, :column 15, :end-line 131, :end-column 27} {:value 400}, :x ^{:source \"{:field \\\"x\\\", :type \\\"quantitative\\\"}\", :line 132, :column 12, :end-line 132, :end-column 46} {:field \"x\", :type \"quantitative\"}}, :mark ^{:source \"{:type \\\"circle\\\", :tooltip true}\", :line 133, :column 14, :end-line 133, :end-column 45} {:type \"circle\", :tooltip true}, :width 400, :background \"floralwhite\", :height 100, :data ^{:source \"{:values \\\"x,y\\\\n1,1\\\\n2,-4\\\\n3,9\\\\n\\\", :format {:type \\\"csv\\\"}}\", :line 137, :column 14, :end-line 137, :end-column 70} {:values \"x,y\\n1,1\\n2,-4\\n3,9\\n\", :format ^{:source \"{:type \\\"csv\\\"}\", :line 137, :column 56, :end-line 137, :end-column 69} {:type \"csv\"}}}]]")}
+                , document.currentScript.parentElement);</script></div>
+
+<div style="background-color:grey;height:2px;width:100%;"></div>
+
+<div><pre><small><small>source: /home/daslu/projects/scicloj/kindly-noted/notebooks/kindly.clj</small></small></pre></div>
