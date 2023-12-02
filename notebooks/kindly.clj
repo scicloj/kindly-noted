@@ -1,6 +1,7 @@
 ;; # Kindly
 
-;; #
+;; WIP documentation for [kindly](https://github.com/scicloj/kindly)
+
 (ns kindly
   (:require [scicloj.kindly.v4.api :as kindly]
             [scicloj.kindly.v4.kind :as kind]
