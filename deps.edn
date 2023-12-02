@@ -1,0 +1,4 @@
+{:deps {org.scicloj/clay {:mvn/version "2-alpha43"}
+        org.scicloj/kindly-advice {:mvn/version "1-alpha5"}
+        scicloj/tablecloth {:mvn/version "7.021"}}
+ :paths ["src" "notebooks"]}
