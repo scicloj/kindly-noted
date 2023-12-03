@@ -8,6 +8,8 @@
             [scicloj.clay.v2.api :as clay]
             [tablecloth.api :as tc]))
 
+;; ![Kindly logo](notebooks/images/Kindly.svg.png)
+
 ;; # Why
 
 ;; * Different tools have different ways of writing notes. For example:
