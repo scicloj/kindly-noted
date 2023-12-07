@@ -1,0 +1,1 @@
+[Kindly docs](./kindly.html)
