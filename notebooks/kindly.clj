@@ -1,6 +1,8 @@
 ;; # Kindly
 
-;; WIP documentation for [kindly](https://github.com/scicloj/kindly)
+;; Kindly is a proposed standard for requesting data visualizations in Clojure.
+
+;; It specifies in what kinds of way Clojure forms and values should be displayed.
 
 (ns kindly
   (:require [scicloj.kindly.v4.api :as kindly]
@@ -12,7 +14,7 @@
 
 ;; ## Why
 
-;; * Different tools have different ways of writing notes. For example:
+;; * Different tools have had different ways of writing notes. For example:
 ;;   * [Anglican tutorials](https://probprog.github.io/anglican/examples/index.html) ([source](https://bitbucket.org/probprog/anglican-examples/src/master/worksheets/)) - written in [Gorilla REPL](https://github.com/JonyEpsilon/gorilla-repl)
 ;;   * [thi-ng/geom viz examples](https://github.com/thi-ng/geom/blob/feature/no-org/org/examples/viz/demos.org)  ([source](https://raw.githubusercontent.com/thi-ng/geom/feature/no-org/org/examples/viz/demos.org)) - written in [Org-babel-clojure](https://orgmode.org/worg/org-contrib/babel/languages/ob-doc-clojure.html)
 ;;   * [Clojure2d docs](https://github.com/Clojure2D/clojure2d#Usage) ([source1](https://github.com/Clojure2D/clojure2d/blob/master/src/clojure2d), [source2](https://github.com/Clojure2D/clojure2d/blob/master/metadoc/clojure2d/)) - written in [Codox](https://github.com/weavejester/codox) and [Metadoc](https://github.com/generateme/metadoc)
@@ -26,10 +28,10 @@
 
 ;; ## Goal
 
-;; * Have one way to express data visualizations
+;; * Have a standard way to request data visualizations
 ;; * for blog posts, books, slideshows, reports, dashboards, and interactive analyses,
 ;; * that just will work across different tools,
-;; * without mentioning those tools in the code.
+;; * without even mentioning those tools in the code.
 
 ;; ## Status
 
@@ -40,6 +42,8 @@
 ;; * Ready to explore on other tools
                                         ;
 ;; ## Example
+
+;; Here is how one may request something of `kind/md`, which means Markdown:
 
 (kind/md
  "hello *hello* **hello**")
@@ -100,7 +104,10 @@ kindly/known-kinds
 
 
 ;; ### Automatically-inferred kinds
-;; In certain situations, kinds are inferred without annotation. For example, images:
+;; In certain situations, kinds are inferred without annotation.
+;; The kindly-advice library provides the default inference behaviour and an option to extend it.
+
+;; For example, images:
 
 (def clj-image
   (->  "https://upload.wikimedia.org/wikipedia/commons/e/eb/Ash_Tree_-_geograph.org.uk_-_590710.jpg"
@@ -113,127 +120,3 @@ clj-image
 
 (tc/dataset {:x (range 3)
              :y (repeatedly 3 rand)})
-
-;; ## Catalogue of visualisations (WIP)
-
-;; ### Markdown - `:kind/md`
-(-> "hello *hello* **hello**"
-    kind/md)
-
-;; ### Code
-
-(-> "(defn f [x] (+ x 9))"
-    kind/code)
-
-;; ### Vega-Lite
-
-(def my-plot
-  (-> {:encoding
-       {:y {:field "y", :type "quantitative"},
-        :size {:value 400},
-        :x {:field "x", :type "quantitative"}},
-       :mark {:type "circle", :tooltip true},
-       :width 400,
-       :background "floralwhite",
-       :height 100,
-       :data {:values "x,y\n1,1\n2,-4\n3,9\n", :format {:type "csv"}}}
-      kind/vega-lite))
-
-my-plot
-
-;;; ### Images
-clj-image
-
-;;; ### Datasets
-(def my-dataset
-  (-> {:x (range 3)}
-      tc/dataset
-      (tc/map-columns :y
-                      [:x]
-                      (fn [x] (* x x)))))
-
-my-dataset
-
-;;; ### Reagent
-
-(kind/reagent
- ['(fn [data]
-     [:div {:style {:background "#ccddcc"}}
-      [:big (count data)]])
-  (vec (range 99))])
-
-
-;; ### Pretty printing
-(->> (range 30)
-     (apply array-map)
-     kind/pprint)
-
-
-;; ### Hidden
-(->> {:x 9}
-     kind/hidden)
-
-;; ### Plain data structures
-
-;; Plain Clojure data structures have recursive kind semantics:
-;; * Each tool has its own way to represent them visually
-;; (e.g., Clay just uses text, while Portal has a hierarchical navigation UI).
-
-(list 1 "A" :B 'C)
-
-[1 "A" :B 'C]
-
-#{1 "A" :B 'C}
-
-{1 "A" :B 'C}
-
-
-;; ### Plain data structures - nesting
-
-;; * If the values inside them have kind information, they are handled accordingly.
-
-[(kind/hiccup
-  [:div {:style
-         {:background-color "floralwhite"}}
-   [:p "hello"]])
- (kind/md
-  "hello *hello* **hello**")
- (kind/code
-  "(defn f [x] (+ x 9))")]
-
-{:x  (kind/md
-      "**hello**")
- (kind/md
-  "**hello**") :x}
-
-;; ### Hiccup
-(-> [:div {:style
-           {:background-color "floralwhite"}}
-     [:p "hello"]]
-    kind/hiccup)
-
-;; ### Hiccup - nesting
-(-> [:div {:style
-           {:background-color "floralwhite"
-            :border-style "solid"}}
-     [:p {:style {:background-color "#ccddcc"
-                  :border-style "solid"}}
-      "hello"]
-     (kind/md
-      "hello *hello* **hello**")
-     (kind/code
-      "(defn f [x] (+ x 9))")
-     my-plot]
-    kind/hiccup)
-
-;; ### Portal
-
-(-> [(kind/hiccup [:p {:style {:background-color "#ccddcc"
-                               :border-style "solid"}}
-                   "hello"])
-     (kind/md
-      "hello *hello* **hello**")
-     (kind/code
-      "(defn f [x] (+ x 9))")
-     my-plot]
-    kind/portal)

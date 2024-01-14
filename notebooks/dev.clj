@@ -5,6 +5,7 @@
              :base-source-path "notebooks"
              :source-path ["index.clj"
                            "kindly.clj"
+                           "kinds.clj"
                            "kindly_advice.clj"]
              :base-target-path "docs"
              :book {:title "Kindly Noted"}
