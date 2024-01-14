@@ -6,4 +6,4 @@ format:
 project: {type: book}
 book:
   title: Kindly Noted
-  chapters: [index.qmd, kindly.qmd, kindly_advice.qmd]
+  chapters: [index.qmd, kindly.qmd, kinds.qmd, kindly_advice.qmd]
