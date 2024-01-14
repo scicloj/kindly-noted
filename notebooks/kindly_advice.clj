@@ -73,6 +73,8 @@ Kindly-advice is used by the following projects:
 
 - [Clay](https://scicloj.github.io/clay/)
 
+
+For tool makers looking to support Kindly, the `kind-portal` implementation is a good example to start from.
 ")
 
 

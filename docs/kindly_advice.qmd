@@ -65,8 +65,7 @@ Kindly-advice will stabilize soon and is currently getting feedback from tool-ma
  :meta-kind :kind/hiccup,
  :kind :kind/hiccup,
  :advice
- [[:kind/hiccup]
-  [:kind/hiccup {:reason :metadata}]
+ [[:kind/hiccup {:reason :metadata}]
   [:kind/vector {:reason :predicate}]
   [:kind/seq {:reason :predicate}]]}
 
@@ -103,8 +102,7 @@ Kindly-advice checks both the form and value for metadata. The metadata might no
  :meta-kind :kind/hiccup,
  :kind :kind/hiccup,
  :advice
- [[:kind/hiccup]
-  [:kind/hiccup {:reason :metadata}]
+ [[:kind/hiccup {:reason :metadata}]
   [:kind/vector {:reason :predicate}]
   [:kind/seq {:reason :predicate}]]}
 
@@ -189,6 +187,8 @@ Kindly-advice is used by the following projects:
 - [Clay](https://scicloj.github.io/clay/)
 
 
+For tool makers looking to support Kindly, the `kind-portal` implementation is a good example to start from.
+
 
 
 ## Extending
@@ -225,7 +225,7 @@ In the following example, we add our own advisor, which recognizes vectors begin
 ```clojure
 (#'kindly-advice/my-advisor
  #function[scicloj.kindly-advice.v1.advisors/meta-kind-advisor]
- #function[scicloj.kindly-advice.v1.advisors/predicate-based-advisor/fn--9308])
+ #function[scicloj.kindly-advice.v1.advisors/predicate-based-advisor/fn--10653])
 
 ```
 :::
