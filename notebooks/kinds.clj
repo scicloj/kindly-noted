@@ -5,6 +5,8 @@
 
 ;; # Catalogue of visualization kinds
 
+;; **WIP**
+
 ;; ## Markdown - `:kind/md`
 (-> "hello *hello* **hello**"
     kind/md)
