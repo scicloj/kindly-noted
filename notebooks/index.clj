@@ -18,6 +18,6 @@ This book documents the ecosystem of tools and libraries around the [Kindly](htt
 
 - [Catalogue of visualization kinds](./kinds.html)
 
-- [Kindly-advice](./kindly-advice.html) - to help tools support Kindly
+- [Kindly-advice](./kindly_advice.html) - to help tools support Kindly
 
  ")
