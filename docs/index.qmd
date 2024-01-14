@@ -22,6 +22,8 @@ include-in-header: {text: '<link rel = "icon" href = "data:," />'}
 
 This book documents the ecosystem of tools and libraries around the [Kindly](https://scicloj.github.io/kindly-noted/kindly) convention.
 
+## In this book
+
 - [Kindly](./kindly.html) intro
 
 - [Catalogue of visualization kinds](./kinds.html)
