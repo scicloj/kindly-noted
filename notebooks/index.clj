@@ -10,4 +10,14 @@
 (md "
 # Preface
 
-This book documents the ecosystem of tools and libraries around the [Kindly](https://scicloj.github.io/kindly-noted/kindly) convention. ")
+This book documents the ecosystem of tools and libraries around the [Kindly](https://scicloj.github.io/kindly-noted/kindly) convention.
+
+## In this book
+
+- [Kindly](./kindly.html) intro
+
+- [Catalogue of visualization kinds](./kinds.html)
+
+- [Kindly-advice](./kindly-advice.html) - to help tools support Kindly
+
+ ")
