@@ -11,6 +11,11 @@
  "
 # Kindly-advice
 
+Kindly-advice is a small library to advise Clojure data visualization and notebook tools how to display forms and values, following the Kindly convention.
+
+## Status
+Kindly-advice will stabilize soon and is currently getting feedback from tool-makers.
+
 ## Goal
 
 - provide **tools** with the necessary information to support Kindly
@@ -22,8 +27,10 @@
 ## Asking for advice
 ")
 
-(kindly-advice/advise {:value (kind/hiccup
-                               [:div [:h1 "hello"]])})
+(-> {:value (kind/hiccup
+             [:div [:h1 "hello"]])}
+    kindly-advice/advise
+    kind/pprint)
 
 (md "
 The `:kind` field is the important one, expressing the bottom line of the inference: Kindly-advice recommends the tool handles this value as Hiccup.
@@ -35,38 +42,58 @@ Kindly-advice evaluates the form and adds the resulting value to complete the co
 Kindly-advice checks both the form and value for metadata. The metadata might not be present on the value.
 ")
 
-(kindly-advice/advise {:form
-                       ^:kind/hiccup
-                       [:div [:h1 "hello"]]})
+(-> {:form ^:kind/hiccup
+     [:div [:h1 "hello"]]}
+    kindly-advice/advise
+    kind/pprint)
 
 (md "Sometimes, there is no inferred kind, as no metadata or relevant predicates say anything useful:")
 
-(kindly-advice/advise {:form '(+ 1 2)})
+(-> {:form '(+ 1 2)}
+    kindly-advice/advise
+    kind/pprint)
 
 (md "In some situations, the kind inferred by predicates. Kindly-advice has a list of default predicates, which can be extended by the user. In the following eexample, it recognizes a dataset created by Tablecloth.")
 
 (require '[tablecloth.api :as tc])
-(kindly-advice/advise {:value (tc/dataset {:x (range 4)})})
-
-
-;; ## Extending
-
-(kindly-advice/add-advisor!
- (fn [{:keys [value]}]
-   (if (and (vector? value)
-            (-> value first (= :div)))
-     [[:kind/hiccup]])))
-
-(kindly-advice/advise
- {:form '[:div [:p "hello"]]})
-
+(-> {:value (tc/dataset {:x (range 4)})}
+    kindly-advice/advise
+    kind/pprint)
 
 (md "
 ## Examples
 
 Kindly-advice is used by the following projects:
-* [kind-portal](https://github.com/scicloj/kind-portal)
-* [kind-clerk](https://github.com/scicloj/kind-clerk)
-* [read-kinds](https://github.com/scicloj/read-kinds)
-* [Clay](https://scicloj.github.io/clay/)
+
+- [kind-portal](https://github.com/scicloj/kind-portal)
+
+- [kind-clerk](https://github.com/scicloj/kind-clerk)
+
+- [read-kinds](https://github.com/scicloj/read-kinds)
+
+- [Clay](https://scicloj.github.io/clay/)
+
 ")
+
+
+(md "
+## Extending
+
+One my extend kindly-advice to perform custom kind inference.
+
+In the following example, we add our own advisor, which recognizes vectors beginning with a `:div` keyword as `:kind/hiccup`.
+")
+
+(def my-advisor
+  (fn [{:keys [value]}]
+    (if (and (vector? value)
+             (-> value first (= :div)))
+      [[:kind/hiccup]])))
+
+(kindly-advice/set-advisors!
+ (cons #'my-advisor
+       kindly-advice/default-advidors))
+
+(-> {:form '[:div [:p "hello"]]}
+    kindly-advice/advise
+    kind/pprint)
