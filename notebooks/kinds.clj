@@ -1,4 +1,7 @@
-(ns kinds)
+(ns kinds
+  (:require [scicloj.kindly.v4.api :as kindly]
+            [scicloj.kindly.v4.kind :as kind]
+            [tablecloth.api :as tc]))
 
 ;; # Catalogue of visualization kinds
 
@@ -28,6 +31,11 @@
 my-plot
 
 ;;; ## Images
+(def clj-image
+  (->  "https://upload.wikimedia.org/wikipedia/commons/e/eb/Ash_Tree_-_geograph.org.uk_-_590710.jpg"
+       (java.net.URL.)
+       (javax.imageio.ImageIO/read)))
+
 clj-image
 
 ;;; ## Datasets
@@ -74,7 +82,7 @@ my-dataset
 {1 "A" :B 'C}
 
 
-;; ## Plain data structures - nesting
+;; ## Plain data structures - nesting other kinds
 
 ;; * If the values inside them have kind information, they are handled accordingly.
 
@@ -98,7 +106,7 @@ my-dataset
      [:p "hello"]]
     kind/hiccup)
 
-;; ## Hiccup - nesting
+;; ## Hiccup - nesting other kinds
 (-> [:div {:style
            {:background-color "floralwhite"
             :border-style "solid"}}

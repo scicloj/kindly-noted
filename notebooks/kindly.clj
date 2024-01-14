@@ -7,7 +7,6 @@
 (ns kindly
   (:require [scicloj.kindly.v4.api :as kindly]
             [scicloj.kindly.v4.kind :as kind]
-            [scicloj.clay.v2.api :as clay]
             [tablecloth.api :as tc]))
 
 ;; ![Kindly logo](notebooks/images/Kindly.svg.png)
@@ -120,3 +119,39 @@ clj-image
 
 (tc/dataset {:x (range 3)
              :y (repeatedly 3 rand)})
+
+
+;; ## Hiding code
+
+;; To the the code and only show the output, one may either use `:kindly/hide-code true` in the form metadata, or apply `kindly/hide-code` to the value.
+
+
+;; ## Passing options
+
+;; The functions in the `kind` namespace may recieve an additiona map argument, which is attached at the `:kindly/options` key of a value's metadata.
+
+(def echarts-example
+  {:title {:text "Echarts Example"}
+   :tooltip {}
+   :legend {:data ["sales"]}
+   :xAxis {:data ["Shirts", "Cardigans", "Chiffons",
+                  "Pants", "Heels", "Socks"]}
+   :yAxis {}
+   :series [{:name "sales"
+             :type "bar"
+             :data [5 20 36
+                    10 10 20]}]})
+
+(kind/echarts
+ echarts-example)
+
+(-> echarts-example
+    (kind/echarts {:element/style
+                   {:width "500px"
+                    :height "200px"}}))
+
+(-> echarts-example
+    (kind/echarts {:element/style
+                   {:width "500px"
+                    :height "200px"}})
+    meta)
