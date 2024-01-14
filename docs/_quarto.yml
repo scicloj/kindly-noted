@@ -1,0 +1,9 @@
+format:
+  html:
+    toc: true
+    toc-depth: 4
+    theme: [spacelab, notebooks/custom.scss]
+project: {type: book}
+book:
+  title: Kindly Noted
+  chapters: [index.qmd, kindly.qmd, kindly_advice.qmd]

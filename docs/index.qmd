@@ -1,0 +1,27 @@
+
+---
+format:
+  html:
+    toc: true
+    toc-depth: 4
+    theme: [spacelab, notebooks/custom.scss]
+    output-file: index.html
+highlight-style: solarized
+code-block-background: true
+include-in-header: {text: '<link rel = "icon" href = "data:," />'}
+
+---
+<style></style><style>.printedClojure .sourceCode {
+  background-color: transparent;
+  border-style: none;
+}
+</style>
+<script src="index_files/md-default0.js" type="text/javascript"></script><script src="index_files/md-default1.js" type="text/javascript"></script>
+
+# Preface
+
+This book documents the ecosystem of tools and libraries around the [Kindly](https://scicloj.github.io/kindly-noted/kindly) convention. 
+
+<div style="background-color:grey;height:2px;width:100%;"></div>
+
+<div><pre><small><small>source: <a href="https://github.com/scicloj/kindly-noted/blob/main/notebooks/index.clj">notebooks/index.clj</a></small></small></pre></div>

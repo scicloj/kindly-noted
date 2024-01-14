@@ -1,0 +1,93 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Kindly Noted",
+    "section": "",
+    "text": "1 Preface\nThis book documents the ecosystem of tools and libraries around the Kindly convention.\n\n\n\n\nsource: notebooks/index.clj"
+  },
+  {
+    "objectID": "kindly.html#why",
+    "href": "kindly.html#why",
+    "title": "2  Kindly",
+    "section": "2.1 Why",
+    "text": "2.1 Why\n\nDifferent tools have different ways of writing notes. For example:\nAnglican tutorials (source) - written in Gorilla REPL\nthi-ng/geom viz examples (source) - written in Org-babel-clojure\nClojure2d docs (source1, source2) - written in Codox and Metadoc\nTablecloth API docs (source) - written in rmarkdown-clojure\nR interop ClojisR examples (source) - written in Notespace v2\nBayesian optimization tutorial (source) - written in Nextjournal\nscicloj.ml tutorials (source) - written in Notespace v3\nClojure2d color tutorial (source) - written in Clerk\nViz.clj (source) - written in Kindly using Clay\n…"
+  },
+  {
+    "objectID": "kindly.html#goal",
+    "href": "kindly.html#goal",
+    "title": "2  Kindly",
+    "section": "2.2 Goal",
+    "text": "2.2 Goal\n\nHave one way to express data visualizations\nfor blog posts, books, slideshows, reports, dashboards, and interactive analyses,\nthat just will work across different tools,\nwithout mentioning those tools in the code."
+  },
+  {
+    "objectID": "kindly.html#status",
+    "href": "kindly.html#status",
+    "title": "2  Kindly",
+    "section": "2.3 Status",
+    "text": "2.3 Status\n\nSupported by Clay & Claykind\nHas adapters for Portal (kind-portal) & Clerk (kind-clerk)\nReady to explore on other tools"
+  },
+  {
+    "objectID": "kindly.html#example",
+    "href": "kindly.html#example",
+    "title": "2  Kindly",
+    "section": "2.4 Example",
+    "text": "2.4 Example\n\n(kind/md\n \"hello *hello* **hello**\")\n\nhello hello hello"
+  },
+  {
+    "objectID": "kindly.html#the-set-of-kinds",
+    "href": "kindly.html#the-set-of-kinds",
+    "title": "2  Kindly",
+    "section": "2.5 The set of kinds",
+    "text": "2.5 The set of kinds\n\nkindly/known-kinds\n\n\n#{:kind/code\n  :kind/vega\n  :kind/smile-model\n  :kind/image\n  :kind/plotly\n  :kind/echarts\n  :kind/map\n  :kind/portal\n  :kind/test\n  :kind/dataset\n  :kind/vega-lite\n  :kind/html\n  :kind/cytoscape\n  :kind/set\n  :kind/reagent\n  :kind/var\n  :kind/hidden\n  :kind/hiccup\n  :kind/md\n  :kind/seq\n  :kind/pprint\n  :kind/table\n  :kind/vector}"
+  },
+  {
+    "objectID": "kindly.html#how-to-use-kinds",
+    "href": "kindly.html#how-to-use-kinds",
+    "title": "2  Kindly",
+    "section": "2.6 How to use Kinds?",
+    "text": "2.6 How to use Kinds?\n\n2.6.1 Attaching metadata to forms\n\n^:kind/md\n[\"hello *hello* **hello**\"]\n\nhello hello hello\n\n^kind/md\n[\"hello *hello* **hello**\"]\n\nhello hello hello\n\n\n2.6.2 Attaching metadata to values\n\n(-> [\"hello *hello* **hello**\"]\n    kind/md)\n\nhello hello hello\n\n(-> [\"hello *hello* **hello**\"]\n    kind/md\n    meta\n    :kindly/kind)\n\n\n:kind/md\n\n\n\n2.6.3 Attaching metadata to values - cont.\n\n(-> \"hello *hello* **hello**\"\n    kind/md\n    meta\n    :kindly/kind)\n\n\n:kind/md\n\nValues that cannot have metadata are wrapped in a vector before attaching metadata.\n\n(-> \"hello *hello* **hello**\"\n    kind/md\n    kind/pprint)\n\n\n[\"hello *hello* **hello**\"]\n\n\n(-> \"hello *hello* **hello**\"\n    kind/md\n    meta)\n\n\n#:kindly{:kind :kind/md}\n\n\n\n2.6.4 Using values annotated by libraries\n\n(defn my-library-function-for-big-big-text [text]\n  (kind/hiccup\n   [:big {:style {:background \"#ccddcc\"}}\n    [:big text]]))\n\n\n(-> \"hello\"\n    my-library-function-for-big-big-text)\n\n\nhello\n\n\n(-> \"hello\"\n    my-library-function-for-big-big-text\n    (assoc-in [1 :style]\n              {:background \"#ddccdd\"}))\n\n\nhello\n\n\n\n2.6.5 Automatically-inferred kinds\nIn certain situations, kinds are inferred without annotation. For example, images:\n\n(def clj-image\n  (->  \"https://upload.wikimedia.org/wikipedia/commons/e/eb/Ash_Tree_-_geograph.org.uk_-_590710.jpg\"\n       (java.net.URL.)\n       (javax.imageio.ImageIO/read)))\n\n\nclj-image\n\n\n\n\n\n(require '[tablecloth.api :as tc])\n\n\n(tc/dataset {:x (range 3)\n             :y (repeatedly 3 rand)})\n\n_unnamed [3 2]:\n\n\n\n:x\n:y\n\n\n\n\n0\n0.29982747\n\n\n1\n0.59723840\n\n\n2\n0.14595150"
+  },
+  {
+    "objectID": "kindly.html#catalogue-of-visualisations-wip",
+    "href": "kindly.html#catalogue-of-visualisations-wip",
+    "title": "2  Kindly",
+    "section": "2.7 Catalogue of visualisations (WIP)",
+    "text": "2.7 Catalogue of visualisations (WIP)\n\n2.7.1 Markdown - :kind/md\n\n(-> \"hello *hello* **hello**\"\n    kind/md)\n\nhello hello hello\n\n\n2.7.2 Code\n\n(-> \"(defn f [x] (+ x 9))\"\n    kind/code)\n\n\n(defn f [x] (+ x 9))\n\n\n\n2.7.3 Vega-Lite\n\n(def my-plot\n  (-> {:encoding\n       {:y {:field \"y\", :type \"quantitative\"},\n        :size {:value 400},\n        :x {:field \"x\", :type \"quantitative\"}},\n       :mark {:type \"circle\", :tooltip true},\n       :width 400,\n       :background \"floralwhite\",\n       :height 100,\n       :data {:values \"x,y\\n1,1\\n2,-4\\n3,9\\n\", :format {:type \"csv\"}}}\n      kind/vega-lite))\n\n\nmy-plot\n\n\n\n\n\n\n\n\n2.7.4 Images\n\nclj-image\n\n\n\n\n\n\n2.7.5 Datasets\n\n(def my-dataset\n  (-> {:x (range 3)}\n      tc/dataset\n      (tc/map-columns :y\n                      [:x]\n                      (fn [x] (* x x)))))\n\n\nmy-dataset\n\n_unnamed [3 2]:\n\n\n\n:x\n:y\n\n\n\n\n0\n0\n\n\n1\n1\n\n\n2\n4\n\n\n\n\n\n2.7.6 Reagent\n\n(kind/reagent\n ['(fn [data]\n     [:div {:style {:background \"#ccddcc\"}}\n      [:big (count data)]])\n  (vec (range 99))])\n\n\n\n\n\n\n\n\n2.7.7 Pretty printing\n\n(->> (range 30)\n     (apply array-map)\n     kind/pprint)\n\n\n{0 1,\n 2 3,\n 4 5,\n 6 7,\n 8 9,\n 10 11,\n 12 13,\n 14 15,\n 16 17,\n 18 19,\n 20 21,\n 22 23,\n 24 25,\n 26 27,\n 28 29}\n\n\n\n2.7.8 Hidden\n\n(->> {:x 9}\n     kind/hidden)\n\n\n\n2.7.9 Plain data structures\nPlain Clojure data structures have recursive kind semantics: * Each tool has its own way to represent them visually (e.g., Clay just uses text, while Portal has a hierarchical navigation UI).\n\n(list 1 \"A\" :B 'C)\n\n\n(1 \"A\" :B C)\n\n\n[1 \"A\" :B 'C]\n\n\n[1 \"A\" :B C]\n\n\n#{1 \"A\" :B 'C}\n\n\n#{1 :B C \"A\"}\n\n\n{1 \"A\" :B 'C}\n\n\n{1 \"A\", :B C}\n\n\n\n2.7.10 Plain data structures - nesting\n\nIf the values inside them have kind information, they are handled accordingly.\n\n\n[(kind/hiccup\n  [:div {:style\n         {:background-color \"floralwhite\"}}\n   [:p \"hello\"]])\n (kind/md\n  \"hello *hello* **hello**\")\n (kind/code\n  \"(defn f [x] (+ x 9))\")]\n\n\n\n\n[\n\n\n\n\n\nhello\n\n\n\n\n\nhello hello hello\n\n\n\n\n(defn f [x] (+ x 9))\n\n\n\n\n]\n\n\n\n\n{:x  (kind/md\n      \"**hello**\")\n (kind/md\n  \"**hello**\") :x}\n\n\n\n\n{\n\n\n\n\n\n\n\n\n:x\n\n\n\n\n\n\n\n\nhello\n\n\n\n\n\n\n\n\n\n\n\n\nhello\n\n\n\n\n\n\n\n:x\n\n\n\n\n\n\n\n\n\n\n}\n\n\n\n\n\n2.7.11 Hiccup\n\n(-> [:div {:style\n           {:background-color \"floralwhite\"}}\n     [:p \"hello\"]]\n    kind/hiccup)\n\n\n\n\nhello\n\n\n\n\n\n2.7.12 Hiccup - nesting\n\n(-> [:div {:style\n           {:background-color \"floralwhite\"\n            :border-style \"solid\"}}\n     [:p {:style {:background-color \"#ccddcc\"\n                  :border-style \"solid\"}}\n      \"hello\"]\n     (kind/md\n      \"hello *hello* **hello**\")\n     (kind/code\n      \"(defn f [x] (+ x 9))\")\n     my-plot]\n    kind/hiccup)\n\n\n\n\nhello\n\n\n\nhello hello hello\n\n\n\n\n(defn f [x] (+ x 9))\n\n\n\n\n\n\n\n\n\n\n\n2.7.13 Portal\n\n(-> [(kind/hiccup [:p {:style {:background-color \"#ccddcc\"\n                               :border-style \"solid\"}}\n                   \"hello\"])\n     (kind/md\n      \"hello *hello* **hello**\")\n     (kind/code\n      \"(defn f [x] (+ x 9))\")\n     my-plot]\n    kind/portal)\n\n\n\n\n\n\n\n\n\n\nsource: notebooks/kindly.clj"
+  },
+  {
+    "objectID": "kindly_advice.html#status",
+    "href": "kindly_advice.html#status",
+    "title": "3  Kindly-advice",
+    "section": "3.1 Status",
+    "text": "3.1 Status\nKindly-advice will stabilize soon and is currently getting feedback from tool-makers."
+  },
+  {
+    "objectID": "kindly_advice.html#goal",
+    "href": "kindly_advice.html#goal",
+    "title": "3  Kindly-advice",
+    "section": "3.2 Goal",
+    "text": "3.2 Goal\n\nprovide tools with the necessary information to support Kindly\nhave sensible defaults\nbe user-extensible"
+  },
+  {
+    "objectID": "kindly_advice.html#asking-for-advice",
+    "href": "kindly_advice.html#asking-for-advice",
+    "title": "3  Kindly-advice",
+    "section": "3.3 Asking for advice",
+    "text": "3.3 Asking for advice\n\n(-> {:value (kind/hiccup\n             [:div [:h1 \"hello\"]])}\n    kindly-advice/advise\n    kind/pprint)\n\n\n{:value [:div [:h1 \"hello\"]],\n :meta-kind :kind/hiccup,\n :kind :kind/hiccup,\n :advice\n [[:kind/hiccup]\n  [:kind/hiccup {:reason :metadata}]\n  [:kind/vector {:reason :predicate}]\n  [:kind/seq {:reason :predicate}]]}\n\nThe :kind field is the important one, expressing the bottom line of the inference: Kindly-advice recommends the tool handles this value as Hiccup.\nThe tool’s job will usually be to display the :value field based on the :kind field.\nIn the following exmple, we are asking for advice for given form (annotated by Kindly in this example). Kindly-advice evaluates the form and adds the resulting value to complete the context. This completion will only take place if the value is missing. It is recommended that tools will take care of evaluation themselves and pass the complete context to Kindly-advice. Doing so allows the tool to handle Exceptions better, among other things. Kindly-advice checks both the form and value for metadata. The metadata might not be present on the value.\n\n(-> {:form ^:kind/hiccup\n     [:div [:h1 \"hello\"]]}\n    kindly-advice/advise\n    kind/pprint)\n\n\n{:form [:div [:h1 \"hello\"]],\n :value [:div [:h1 \"hello\"]],\n :meta-kind :kind/hiccup,\n :kind :kind/hiccup,\n :advice\n [[:kind/hiccup]\n  [:kind/hiccup {:reason :metadata}]\n  [:kind/vector {:reason :predicate}]\n  [:kind/seq {:reason :predicate}]]}\n\nSometimes, there is no inferred kind, as no metadata or relevant predicates say anything useful:\n\n(-> {:form '(+ 1 2)}\n    kindly-advice/advise\n    kind/pprint)\n\n\n{:form (+ 1 2), :value 3, :meta-kind nil, :advice []}\n\nIn some situations, the kind inferred by predicates. Kindly-advice has a list of default predicates, which can be extended by the user. In the following eexample, it recognizes a dataset created by Tablecloth.\n\n(require '[tablecloth.api :as tc])\n\n\n(-> {:value (tc/dataset {:x (range 4)})}\n    kindly-advice/advise\n    kind/pprint)\n\n\n{:value _unnamed [4 1]:\n\n| :x |\n|---:|\n|  0 |\n|  1 |\n|  2 |\n|  3 |\n,\n :meta-kind nil,\n :kind :kind/dataset,\n :advice\n [[:kind/dataset {:reason :predicate}]\n  [:kind/map {:reason :predicate}]]}"
+  },
+  {
+    "objectID": "kindly_advice.html#examples",
+    "href": "kindly_advice.html#examples",
+    "title": "3  Kindly-advice",
+    "section": "3.4 Examples",
+    "text": "3.4 Examples\nKindly-advice is used by the following projects:\n\nkind-portal\nkind-clerk\nread-kinds\nClay"
+  },
+  {
+    "objectID": "kindly_advice.html#extending",
+    "href": "kindly_advice.html#extending",
+    "title": "3  Kindly-advice",
+    "section": "3.5 Extending",
+    "text": "3.5 Extending\nOne my extend kindly-advice to perform custom kind inference.\nIn the following example, we add our own advisor, which recognizes vectors beginning with a :div keyword as :kind/hiccup.\n\n(def my-advisor\n  (fn [{:keys [value]}]\n    (if (and (vector? value)\n             (-> value first (= :div)))\n      [[:kind/hiccup]])))\n\n\n(kindly-advice/set-advisors!\n (cons #'my-advisor\n       kindly-advice/default-advidors))\n\n\n(#'kindly-advice/my-advisor\n #function[scicloj.kindly-advice.v1.advisors/meta-kind-advisor]\n #function[scicloj.kindly-advice.v1.advisors/predicate-based-advisor/fn--9308])\n\n\n(-> {:form '[:div [:p \"hello\"]]}\n    kindly-advice/advise\n    kind/pprint)\n\n\n{:form [:div [:p \"hello\"]],\n :value [:div [:p \"hello\"]],\n :meta-kind nil,\n :kind :kind/hiccup,\n :advice\n [[:kind/hiccup]\n  [:kind/vector {:reason :predicate}]\n  [:kind/seq {:reason :predicate}]]}\n\n\n\n\n\nsource: notebooks/kindly_advice.clj"
+  }
+]
