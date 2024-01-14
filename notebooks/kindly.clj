@@ -10,7 +10,7 @@
 
 ;; ![Kindly logo](notebooks/images/Kindly.svg.png)
 
-;; # Why
+;; ## Why
 
 ;; * Different tools have different ways of writing notes. For example:
 ;;   * [Anglican tutorials](https://probprog.github.io/anglican/examples/index.html) ([source](https://bitbucket.org/probprog/anglican-examples/src/master/worksheets/)) - written in [Gorilla REPL](https://github.com/JonyEpsilon/gorilla-repl)
@@ -24,14 +24,14 @@
 ;;   * [Viz.clj](https://scicloj.github.io/viz.clj/) ([source](https://github.com/scicloj/viz.clj/blob/master/notebooks/intro.clj)) - written in Kindly using [Clay](https://scicloj.github.io/viz.clj/)
 ;;   * ...
 
-;; # Goal
+;; ## Goal
 
 ;; * Have one way to express data visualizations
 ;; * for blog posts, books, slideshows, reports, dashboards, and interactive analyses,
 ;; * that just will work across different tools,
 ;; * without mentioning those tools in the code.
 
-;; # Status
+;; ## Status
 
 ;; * Supported by Clay & Claykind
 ;;
@@ -39,25 +39,25 @@
 ;;
 ;; * Ready to explore on other tools
                                         ;
-;; # Example
+;; ## Example
 
 (kind/md
  "hello *hello* **hello**")
 
-;; # The set of kinds
+;; ## The set of kinds
 
 kindly/known-kinds
 
-;; # How to use Kinds?
+;; ## How to use Kinds?
 
-;; ## Attaching metadata to forms
+;; ### Attaching metadata to forms
 ^:kind/md
 ["hello *hello* **hello**"]
 
 ^kind/md
 ["hello *hello* **hello**"]
 
-;; ## Attaching metadata to values
+;; ### Attaching metadata to values
 (-> ["hello *hello* **hello**"]
     kind/md)
 
@@ -66,7 +66,7 @@ kindly/known-kinds
     meta
     :kindly/kind)
 
-;; ## Attaching metadata to values - cont.
+;; ### Attaching metadata to values - cont.
 
 (-> "hello *hello* **hello**"
     kind/md
@@ -83,7 +83,7 @@ kindly/known-kinds
     kind/md
     meta)
 
-;; ## Using values annotated by libraries
+;; ### Using values annotated by libraries
 
 (defn my-library-function-for-big-big-text [text]
   (kind/hiccup
@@ -99,7 +99,7 @@ kindly/known-kinds
               {:background "#ddccdd"}))
 
 
-;; ## Automatically-inferred kinds
+;; ### Automatically-inferred kinds
 ;; In certain situations, kinds are inferred without annotation. For example, images:
 
 (def clj-image
@@ -114,18 +114,18 @@ clj-image
 (tc/dataset {:x (range 3)
              :y (repeatedly 3 rand)})
 
-;; # Catalogue of visualisations (WIP)
+;; ## Catalogue of visualisations (WIP)
 
-;; ## Markdown - `:kind/md`
+;; ### Markdown - `:kind/md`
 (-> "hello *hello* **hello**"
     kind/md)
 
-;; ## Code
+;; ### Code
 
 (-> "(defn f [x] (+ x 9))"
     kind/code)
 
-;; ## Vega-Lite
+;; ### Vega-Lite
 
 (def my-plot
   (-> {:encoding
@@ -141,10 +141,10 @@ clj-image
 
 my-plot
 
-;;; ## Images
+;;; ### Images
 clj-image
 
-;;; ## Datasets
+;;; ### Datasets
 (def my-dataset
   (-> {:x (range 3)}
       tc/dataset
@@ -154,7 +154,7 @@ clj-image
 
 my-dataset
 
-;;; ## Reagent
+;;; ### Reagent
 
 (kind/reagent
  ['(fn [data]
@@ -163,17 +163,17 @@ my-dataset
   (vec (range 99))])
 
 
-;; ## Pretty printing
+;; ### Pretty printing
 (->> (range 30)
      (apply array-map)
      kind/pprint)
 
 
-;; ## Hidden
+;; ### Hidden
 (->> {:x 9}
      kind/hidden)
 
-;; ## Plain data structures
+;; ### Plain data structures
 
 ;; Plain Clojure data structures have recursive kind semantics:
 ;; * Each tool has its own way to represent them visually
@@ -188,7 +188,7 @@ my-dataset
 {1 "A" :B 'C}
 
 
-;; ## Plain data structures - nesting
+;; ### Plain data structures - nesting
 
 ;; * If the values inside them have kind information, they are handled accordingly.
 
@@ -206,13 +206,13 @@ my-dataset
  (kind/md
   "**hello**") :x}
 
-;; ## Hiccup
+;; ### Hiccup
 (-> [:div {:style
            {:background-color "floralwhite"}}
      [:p "hello"]]
     kind/hiccup)
 
-;; ## Hiccup - nesting
+;; ### Hiccup - nesting
 (-> [:div {:style
            {:background-color "floralwhite"
             :border-style "solid"}}
@@ -226,7 +226,7 @@ my-dataset
      my-plot]
     kind/hiccup)
 
-;; ## Portal
+;; ### Portal
 
 (-> [(kind/hiccup [:p {:style {:background-color "#ccddcc"
                                :border-style "solid"}}
