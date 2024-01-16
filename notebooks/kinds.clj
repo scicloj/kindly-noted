@@ -103,9 +103,12 @@ my-plot
 
 clj-image
 
-;;; ## Datasets
+;;; ## Dataset
+
+;; A tech.ml.dataset / Tablecloth dataset is printed and rendered as Markdown.
+
 (def my-dataset
-  (-> {:x (range 3)}
+  (-> {:x (range 40)}
       tc/dataset
       (tc/map-columns :y
                       [:x]
@@ -113,7 +116,23 @@ clj-image
 
 my-dataset
 
+;;; ## Table
 
+;; A table uses the tool's UI for tables, if any.
+
+(kind/table my-dataset)
+
+;; Some tools support [datatables](https://datatables.net/) for displaying tables.
+
+(-> my-dataset
+    (kind/table {:use-datatables true}))
+
+;; and in this case the user may specify [datatables options](https://datatables.net/manual/options)
+;; (see [the full list](https://datatables.net/reference/option/)).
+
+(-> my-dataset
+    (kind/table {:use-datatables true
+                 :datatables {:scrollY 200}}))
 
 ;;; ## Reagent
 
