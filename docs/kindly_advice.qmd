@@ -225,7 +225,7 @@ In the following example, we add our own advisor, which recognizes vectors begin
 ```clojure
 (#'kindly-advice/my-advisor
  #function[scicloj.kindly-advice.v1.advisors/meta-kind-advisor]
- #function[scicloj.kindly-advice.v1.advisors/predicate-based-advisor/fn--10653])
+ #function[scicloj.kindly-advice.v1.advisors/predicate-based-advisor/fn--12333])
 
 ```
 :::
