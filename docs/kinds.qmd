@@ -240,6 +240,100 @@ clj-image
 <div style="max-height:600px;overflow-y:auto;"><img src="kinds_files/1.png" style="width:100%;" /></div>
 
 
+## Smile Regression models
+A [Smile](https://haifengl.github.io/) regression model is displayed
+by turning it into a String
+and higlighting the output as printed Clojure.
+
+
+::: {.sourceClojure}
+```clojure
+(smile.regression.OLS/fit
+ (smile.data.formula.Formula/lhs "y")
+ (smile.data.DataFrame/of (into-array [(double-array [1 1 2])
+                                       (double-array [2 4 5])
+                                       (double-array [3 9 13])
+                                       (double-array [4 16 19])])
+                          (into-array ["w" "x" "y"])))
+```
+:::
+
+
+
+::: {.printedClojure}
+```clojure
+Linear Model:
+
+Residuals:
+       Min          1Q      Median          3Q         Max
+   -1.0500     -0.3500      0.3500      1.0500      1.0500
+
+Coefficients:
+                  Estimate Std. Error    t value   Pr(>|t|)
+Intercept          -1.2500     4.3575    -0.2869     0.8222 
+w                   2.1500     3.9752     0.5408     0.6844 
+x                   0.7500     0.7826     0.9583     0.5135 
+---------------------------------------------------------------------
+Significance codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 1.5652 on 1 degrees of freedom
+Multiple R-squared: 0.9863,    Adjusted R-squared: 0.9589
+F-statistic: 35.9796 on 3 and 1 DF,  p-value: 0.1171
+
+```
+:::
+
+
+
+::: {.sourceClojure}
+```clojure
+(require '[scicloj.noj.v1.datasets :as datasets]
+         '[scicloj.noj.v1.stats :as noj.stats]
+         '[scicloj.ml.core :as ml])
+```
+:::
+
+
+
+::: {.sourceClojure}
+```clojure
+(-> datasets/iris
+    (noj.stats/linear-regression-model :sepal-length
+                                       [:sepal-width
+                                        :petal-width
+                                        :petal-length])
+    ml/thaw-model)
+```
+:::
+
+
+
+::: {.printedClojure}
+```clojure
+Linear Model:
+
+Residuals:
+       Min          1Q      Median          3Q         Max
+   -0.8282     -0.2202      0.0191      0.1992      0.8457
+
+Coefficients:
+                  Estimate Std. Error    t value   Pr(>|t|)
+Intercept           1.8560     0.2508     7.4010     0.0000 ***
+sepal-width         0.6508     0.0666     9.7654     0.0000 ***
+petal-width        -0.5565     0.1275    -4.3629     0.0000 ***
+petal-length        0.7091     0.0567    12.5025     0.0000 ***
+---------------------------------------------------------------------
+Significance codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.3145 on 146 degrees of freedom
+Multiple R-squared: 0.8586,    Adjusted R-squared: 0.8557
+F-statistic: 295.5391 on 4 and 146 DF,  p-value: 8.588e-62
+
+```
+:::
+
+
+
 ## Dataset
 A tech.ml.dataset / Tablecloth dataset is printed and rendered as Markdown.
 
@@ -350,7 +444,7 @@ and in this case the user may specify [datatables options](https://datatables.ne
 :::
 
 
-<div style="max-height:600px;overflow-y:auto;"><div id="id8"><script type="application/x-scittle">(reagent.dom/render [(fn [data] [:div {:style {:background "#ccddcc"}} [:big (count data)]]) [0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98]] (js/document.getElementById "id8"))</script></div></div>
+<div style="max-height:600px;overflow-y:auto;"><div id="id3"><script type="application/x-scittle">(reagent.dom/render [(fn [data] [:div {:style {:background "#ccddcc"}} [:big (count data)]]) [0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98]] (js/document.getElementById "id3"))</script></div></div>
 
 
 ## Pretty printing
@@ -573,7 +667,7 @@ Plain Clojure data structures have recursive kind semantics:
 
 <div style="max-height:600px;overflow-y:auto;"><div><script>portal_api.embed().renderOutputItem(
                 {'mime': 'x-application/edn',
-                 'text': (() => "[^{:source \"[:p {:style {:background-color \\\"#ccddcc\\\"\\n                               :border-style \\\"solid\\\"}}\\n                   \\\"hello\\\"]\", :line 211, :column 19, :end-line 213, :end-column 28, :kindly/kind :kind/hiccup, :portal.viewer/default :portal.viewer/hiccup} [:p ^{:source \"{:style {:background-color \\\"#ccddcc\\\"\\n                               :border-style \\\"solid\\\"}}\", :line 211, :column 23, :end-line 212, :end-column 55} {:style ^{:source \"{:background-color \\\"#ccddcc\\\"\\n                               :border-style \\\"solid\\\"}\", :line 211, :column 31, :end-line 212, :end-column 54} {:background-color \"#ccddcc\", :border-style \"solid\"}} \"hello\"] ^#:portal.viewer{:default :portal.viewer/hiccup} [:div [:portal.viewer/markdown \"hello *hello* **hello**\"]] ^#:portal.viewer{:default :portal.viewer/hiccup} [:div [:portal.viewer/code \"(defn f [x] (+ x 9))\"]] ^#:portal.viewer{:default :portal.viewer/hiccup} [:portal.viewer/vega-lite ^{:source \"{:encoding\\n       {:y {:field \\\"y\\\", :type \\\"quantitative\\\"},\\n        :size {:value 400},\\n        :x {:field \\\"x\\\", :type \\\"quantitative\\\"}},\\n       :mark {:type \\\"circle\\\", :tooltip true},\\n       :width 400,\\n       :background \\\"floralwhite\\\",\\n       :height 100,\\n       :data {:values \\\"x,y\\\\n1,1\\\\n2,-4\\\\n3,9\\\\n\\\", :format {:type \\\"csv\\\"}}}\", :line 22, :column 7, :end-line 30, :end-column 71, :kindly/kind :kind/vega-lite} {:encoding ^{:source \"{:y {:field \\\"y\\\", :type \\\"quantitative\\\"},\\n        :size {:value 400},\\n        :x {:field \\\"x\\\", :type \\\"quantitative\\\"}}\", :line 23, :column 8, :end-line 25, :end-column 47} {:y ^{:source \"{:field \\\"y\\\", :type \\\"quantitative\\\"}\", :line 23, :column 12, :end-line 23, :end-column 46} {:field \"y\", :type \"quantitative\"}, :size ^{:source \"{:value 400}\", :line 24, :column 15, :end-line 24, :end-column 27} {:value 400}, :x ^{:source \"{:field \\\"x\\\", :type \\\"quantitative\\\"}\", :line 25, :column 12, :end-line 25, :end-column 46} {:field \"x\", :type \"quantitative\"}}, :mark ^{:source \"{:type \\\"circle\\\", :tooltip true}\", :line 26, :column 14, :end-line 26, :end-column 45} {:type \"circle\", :tooltip true}, :width 400, :background \"floralwhite\", :height 100, :data ^{:source \"{:values \\\"x,y\\\\n1,1\\\\n2,-4\\\\n3,9\\\\n\\\", :format {:type \\\"csv\\\"}}\", :line 30, :column 14, :end-line 30, :end-column 70} {:values \"x,y\\n1,1\\n2,-4\\n3,9\\n\", :format ^{:source \"{:type \\\"csv\\\"}\", :line 30, :column 56, :end-line 30, :end-column 69} {:type \"csv\"}}}]]")}
+                 'text': (() => "[^{:source \"[:p {:style {:background-color \\\"#ccddcc\\\"\\n                               :border-style \\\"solid\\\"}}\\n                   \\\"hello\\\"]\", :line 239, :column 19, :end-line 241, :end-column 28, :kindly/kind :kind/hiccup, :portal.viewer/default :portal.viewer/hiccup} [:p ^{:source \"{:style {:background-color \\\"#ccddcc\\\"\\n                               :border-style \\\"solid\\\"}}\", :line 239, :column 23, :end-line 240, :end-column 55} {:style ^{:source \"{:background-color \\\"#ccddcc\\\"\\n                               :border-style \\\"solid\\\"}\", :line 239, :column 31, :end-line 240, :end-column 54} {:background-color \"#ccddcc\", :border-style \"solid\"}} \"hello\"] ^#:portal.viewer{:default :portal.viewer/hiccup} [:div [:portal.viewer/markdown \"hello *hello* **hello**\"]] ^#:portal.viewer{:default :portal.viewer/hiccup} [:div [:portal.viewer/code \"(defn f [x] (+ x 9))\"]] ^#:portal.viewer{:default :portal.viewer/hiccup} [:portal.viewer/vega-lite ^{:source \"{:encoding\\n       {:y {:field \\\"y\\\", :type \\\"quantitative\\\"},\\n        :size {:value 400},\\n        :x {:field \\\"x\\\", :type \\\"quantitative\\\"}},\\n       :mark {:type \\\"circle\\\", :tooltip true},\\n       :width 400,\\n       :background \\\"floralwhite\\\",\\n       :height 100,\\n       :data {:values \\\"x,y\\\\n1,1\\\\n2,-4\\\\n3,9\\\\n\\\", :format {:type \\\"csv\\\"}}}\", :line 22, :column 7, :end-line 30, :end-column 71, :kindly/kind :kind/vega-lite} {:encoding ^{:source \"{:y {:field \\\"y\\\", :type \\\"quantitative\\\"},\\n        :size {:value 400},\\n        :x {:field \\\"x\\\", :type \\\"quantitative\\\"}}\", :line 23, :column 8, :end-line 25, :end-column 47} {:y ^{:source \"{:field \\\"y\\\", :type \\\"quantitative\\\"}\", :line 23, :column 12, :end-line 23, :end-column 46} {:field \"y\", :type \"quantitative\"}, :size ^{:source \"{:value 400}\", :line 24, :column 15, :end-line 24, :end-column 27} {:value 400}, :x ^{:source \"{:field \\\"x\\\", :type \\\"quantitative\\\"}\", :line 25, :column 12, :end-line 25, :end-column 46} {:field \"x\", :type \"quantitative\"}}, :mark ^{:source \"{:type \\\"circle\\\", :tooltip true}\", :line 26, :column 14, :end-line 26, :end-column 45} {:type \"circle\", :tooltip true}, :width 400, :background \"floralwhite\", :height 100, :data ^{:source \"{:values \\\"x,y\\\\n1,1\\\\n2,-4\\\\n3,9\\\\n\\\", :format {:type \\\"csv\\\"}}\", :line 30, :column 14, :end-line 30, :end-column 70} {:values \"x,y\\n1,1\\n2,-4\\n3,9\\n\", :format ^{:source \"{:type \\\"csv\\\"}\", :line 30, :column 56, :end-line 30, :end-column 69} {:type \"csv\"}}}]]")}
                 , document.currentScript.parentElement);</script></div></div>
 
 <div style="background-color:grey;height:2px;width:100%;"></div>

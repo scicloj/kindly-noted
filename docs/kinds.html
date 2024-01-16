@@ -193,16 +193,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li><a href="#echarts" id="toc-echarts" class="nav-link" data-scroll-target="#echarts"><span class="toc-section-number">3.5</span>  ECharts</a></li>
   <li><a href="#plotly" id="toc-plotly" class="nav-link" data-scroll-target="#plotly"><span class="toc-section-number">3.6</span>  Plotly</a></li>
   <li><a href="#images" id="toc-images" class="nav-link" data-scroll-target="#images"><span class="toc-section-number">3.7</span>  Images</a></li>
-  <li><a href="#dataset" id="toc-dataset" class="nav-link" data-scroll-target="#dataset"><span class="toc-section-number">3.8</span>  Dataset</a></li>
-  <li><a href="#table" id="toc-table" class="nav-link" data-scroll-target="#table"><span class="toc-section-number">3.9</span>  Table</a></li>
-  <li><a href="#reagent" id="toc-reagent" class="nav-link" data-scroll-target="#reagent"><span class="toc-section-number">3.10</span>  Reagent</a></li>
-  <li><a href="#pretty-printing" id="toc-pretty-printing" class="nav-link" data-scroll-target="#pretty-printing"><span class="toc-section-number">3.11</span>  Pretty printing</a></li>
-  <li><a href="#hidden" id="toc-hidden" class="nav-link" data-scroll-target="#hidden"><span class="toc-section-number">3.12</span>  Hidden</a></li>
-  <li><a href="#plain-data-structures" id="toc-plain-data-structures" class="nav-link" data-scroll-target="#plain-data-structures"><span class="toc-section-number">3.13</span>  Plain data structures</a></li>
-  <li><a href="#plain-data-structures---nesting-other-kinds" id="toc-plain-data-structures---nesting-other-kinds" class="nav-link" data-scroll-target="#plain-data-structures---nesting-other-kinds"><span class="toc-section-number">3.14</span>  Plain data structures - nesting other kinds</a></li>
-  <li><a href="#hiccup" id="toc-hiccup" class="nav-link" data-scroll-target="#hiccup"><span class="toc-section-number">3.15</span>  Hiccup</a></li>
-  <li><a href="#hiccup---nesting-other-kinds" id="toc-hiccup---nesting-other-kinds" class="nav-link" data-scroll-target="#hiccup---nesting-other-kinds"><span class="toc-section-number">3.16</span>  Hiccup - nesting other kinds</a></li>
-  <li><a href="#portal" id="toc-portal" class="nav-link" data-scroll-target="#portal"><span class="toc-section-number">3.17</span>  Portal</a></li>
+  <li><a href="#smile-regression-models" id="toc-smile-regression-models" class="nav-link" data-scroll-target="#smile-regression-models"><span class="toc-section-number">3.8</span>  Smile Regression models</a></li>
+  <li><a href="#dataset" id="toc-dataset" class="nav-link" data-scroll-target="#dataset"><span class="toc-section-number">3.9</span>  Dataset</a></li>
+  <li><a href="#table" id="toc-table" class="nav-link" data-scroll-target="#table"><span class="toc-section-number">3.10</span>  Table</a></li>
+  <li><a href="#reagent" id="toc-reagent" class="nav-link" data-scroll-target="#reagent"><span class="toc-section-number">3.11</span>  Reagent</a></li>
+  <li><a href="#pretty-printing" id="toc-pretty-printing" class="nav-link" data-scroll-target="#pretty-printing"><span class="toc-section-number">3.12</span>  Pretty printing</a></li>
+  <li><a href="#hidden" id="toc-hidden" class="nav-link" data-scroll-target="#hidden"><span class="toc-section-number">3.13</span>  Hidden</a></li>
+  <li><a href="#plain-data-structures" id="toc-plain-data-structures" class="nav-link" data-scroll-target="#plain-data-structures"><span class="toc-section-number">3.14</span>  Plain data structures</a></li>
+  <li><a href="#plain-data-structures---nesting-other-kinds" id="toc-plain-data-structures---nesting-other-kinds" class="nav-link" data-scroll-target="#plain-data-structures---nesting-other-kinds"><span class="toc-section-number">3.15</span>  Plain data structures - nesting other kinds</a></li>
+  <li><a href="#hiccup" id="toc-hiccup" class="nav-link" data-scroll-target="#hiccup"><span class="toc-section-number">3.16</span>  Hiccup</a></li>
+  <li><a href="#hiccup---nesting-other-kinds" id="toc-hiccup---nesting-other-kinds" class="nav-link" data-scroll-target="#hiccup---nesting-other-kinds"><span class="toc-section-number">3.17</span>  Hiccup - nesting other kinds</a></li>
+  <li><a href="#portal" id="toc-portal" class="nav-link" data-scroll-target="#portal"><span class="toc-section-number">3.18</span>  Portal</a></li>
   </ul>
 </nav>
     </div>
@@ -412,19 +413,84 @@ Plotly.newPlot(document.currentScript.parentElement,
 <img src="kinds_files/1.png" style="width:100%;">
 </div>
 </section>
-<section id="dataset" class="level2" data-number="3.8">
-<h2 data-number="3.8" class="anchored" data-anchor-id="dataset"><span class="header-section-number">3.8</span> Dataset</h2>
-<p>A tech.ml.dataset / Tablecloth dataset is printed and rendered as Markdown.</p>
+<section id="smile-regression-models" class="level2" data-number="3.8">
+<h2 data-number="3.8" class="anchored" data-anchor-id="smile-regression-models"><span class="header-section-number">3.8</span> Smile Regression models</h2>
+<p>A <a href="https://haifengl.github.io/">Smile</a> regression model is displayed by turning it into a String and higlighting the output as printed Clojure.</p>
 <div class="sourceClojure">
-<div class="sourceCode" id="cb15"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>(<span class="bu">def</span><span class="fu"> my-dataset</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">-&gt;</span> {<span class="at">:x</span> (<span class="kw">range</span> <span class="dv">40</span>)}</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>      tc/dataset</span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>      (tc/map-columns <span class="at">:y</span></span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>                      [<span class="at">:x</span>]</span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>                      (<span class="kw">fn</span> [x] (<span class="kw">*</span> x x)))))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>(smile.regression.OLS/fit</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a> (smile.data.formula.Formula/lhs <span class="st">"y"</span>)</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a> (smile.data.DataFrame/of (<span class="kw">into-array</span> [(<span class="kw">double-array</span> [<span class="dv">1</span> <span class="dv">1</span> <span class="dv">2</span>])</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>                                       (<span class="kw">double-array</span> [<span class="dv">2</span> <span class="dv">4</span> <span class="dv">5</span>])</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>                                       (<span class="kw">double-array</span> [<span class="dv">3</span> <span class="dv">9</span> <span class="dv">13</span>])</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>                                       (<span class="kw">double-array</span> [<span class="dv">4</span> <span class="dv">16</span> <span class="dv">19</span>])])</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>                          (<span class="kw">into-array</span> [<span class="st">"w"</span> <span class="st">"x"</span> <span class="st">"y"</span>])))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="printedClojure">
+<div class="sourceCode" id="cb16"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>Linear Model:</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>Residuals:</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>       Min          1Q      Median          3Q         Max</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>   -<span class="fl">1.0500</span>     -<span class="fl">0.3500</span>      <span class="fl">0.3500</span>      <span class="fl">1.0500</span>      <span class="fl">1.0500</span></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>Coefficients:</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>                  Estimate Std. Error    t value   Pr(<span class="kw">&gt;</span>|t|)</span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>Intercept          -<span class="fl">1.2500</span>     <span class="fl">4.3575</span>    -<span class="fl">0.2869</span>     <span class="fl">0.8222</span> </span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>w                   <span class="fl">2.1500</span>     <span class="fl">3.9752</span>     <span class="fl">0.5408</span>     <span class="fl">0.6844</span> </span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>x                   <span class="fl">0.7500</span>     <span class="fl">0.7826</span>     <span class="fl">0.9583</span>     <span class="fl">0.5135</span> </span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>---------------------------------------------------------------------</span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>Significance codes:  <span class="dv">0</span> <span class="at">'***'</span> <span class="fl">0.001</span> <span class="at">'**'</span> <span class="fl">0.01</span> <span class="at">'*'</span> <span class="fl">0.05</span> <span class="at">'.'</span> <span class="fl">0.1</span> ' ' <span class="dv">1</span></span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>Residual standard error: <span class="fl">1.5652</span> on <span class="dv">1</span> degrees of freedom</span>
+<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>Multiple R-squared: <span class="fl">0.9863</span>,    Adjusted R-squared: <span class="fl">0.9589</span></span>
+<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a>F-statistic: <span class="fl">35.9796</span> on <span class="dv">3</span> <span class="kw">and</span> <span class="dv">1</span> DF,  p-value: <span class="fl">0.1171</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="sourceClojure">
-<div class="sourceCode" id="cb16"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>my-dataset</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">require</span> '[scicloj.noj.v1.datasets <span class="at">:as</span> datasets]</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>         '[scicloj.noj.v1.stats <span class="at">:as</span> noj.stats]</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>         '[scicloj.ml.core <span class="at">:as</span> ml])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="sourceClojure">
+<div class="sourceCode" id="cb18"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">-&gt;</span> datasets/iris</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    (noj.stats/linear-regression-model <span class="at">:sepal-length</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>                                       [<span class="at">:sepal-width</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>                                        <span class="at">:petal-width</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>                                        <span class="at">:petal-length</span>])</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>    ml/thaw-model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="printedClojure">
+<div class="sourceCode" id="cb19"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>Linear Model:</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>Residuals:</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>       Min          1Q      Median          3Q         Max</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>   -<span class="fl">0.8282</span>     -<span class="fl">0.2202</span>      <span class="fl">0.0191</span>      <span class="fl">0.1992</span>      <span class="fl">0.8457</span></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>Coefficients:</span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>                  Estimate Std. Error    t value   Pr(<span class="kw">&gt;</span>|t|)</span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>Intercept           <span class="fl">1.8560</span>     <span class="fl">0.2508</span>     <span class="fl">7.4010</span>     <span class="fl">0.0000</span> ***</span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>sepal-width         <span class="fl">0.6508</span>     <span class="fl">0.0666</span>     <span class="fl">9.7654</span>     <span class="fl">0.0000</span> ***</span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>petal-width        -<span class="fl">0.5565</span>     <span class="fl">0.1275</span>    -<span class="fl">4.3629</span>     <span class="fl">0.0000</span> ***</span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>petal-length        <span class="fl">0.7091</span>     <span class="fl">0.0567</span>    <span class="fl">12.5025</span>     <span class="fl">0.0000</span> ***</span>
+<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a>---------------------------------------------------------------------</span>
+<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a>Significance codes:  <span class="dv">0</span> <span class="at">'***'</span> <span class="fl">0.001</span> <span class="at">'**'</span> <span class="fl">0.01</span> <span class="at">'*'</span> <span class="fl">0.05</span> <span class="at">'.'</span> <span class="fl">0.1</span> ' ' <span class="dv">1</span></span>
+<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a>Residual standard error: <span class="fl">0.3145</span> on <span class="dv">146</span> degrees of freedom</span>
+<span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a>Multiple R-squared: <span class="fl">0.8586</span>,    Adjusted R-squared: <span class="fl">0.8557</span></span>
+<span id="cb19-18"><a href="#cb19-18" aria-hidden="true" tabindex="-1"></a>F-statistic: <span class="fl">295.5391</span> on <span class="dv">4</span> <span class="kw">and</span> <span class="dv">146</span> DF,  p-value: <span class="fl">8.588e-62</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="dataset" class="level2" data-number="3.9">
+<h2 data-number="3.9" class="anchored" data-anchor-id="dataset"><span class="header-section-number">3.9</span> Dataset</h2>
+<p>A tech.ml.dataset / Tablecloth dataset is printed and rendered as Markdown.</p>
+<div class="sourceClojure">
+<div class="sourceCode" id="cb20"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>(<span class="bu">def</span><span class="fu"> my-dataset</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">-&gt;</span> {<span class="at">:x</span> (<span class="kw">range</span> <span class="dv">40</span>)}</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>      tc/dataset</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>      (tc/map-columns <span class="at">:y</span></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>                      [<span class="at">:x</span>]</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>                      (<span class="kw">fn</span> [x] (<span class="kw">*</span> x x)))))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="sourceClojure">
+<div class="sourceCode" id="cb21"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>my-dataset</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>_unnamed [40 2]:</p>
 <table class="table">
@@ -526,11 +592,11 @@ Plotly.newPlot(document.currentScript.parentElement,
 </tbody>
 </table>
 </section>
-<section id="table" class="level2" data-number="3.9">
-<h2 data-number="3.9" class="anchored" data-anchor-id="table"><span class="header-section-number">3.9</span> Table</h2>
+<section id="table" class="level2" data-number="3.10">
+<h2 data-number="3.10" class="anchored" data-anchor-id="table"><span class="header-section-number">3.10</span> Table</h2>
 <p>A table uses the tool’s UI for tables, if any.</p>
 <div class="sourceClojure">
-<div class="sourceCode" id="cb17"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>(kind/table my-dataset)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>(kind/table my-dataset)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div style="max-height:600px;overflow-y:auto;">
 
@@ -1192,8 +1258,8 @@ y
 </div>
 <p>Some tools support <a href="https://datatables.net/">datatables</a> for displaying tables.</p>
 <div class="sourceClojure">
-<div class="sourceCode" id="cb18"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">-&gt;</span> my-dataset</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    (kind/table {<span class="at">:use-datatables</span> <span class="va">true</span>}))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">-&gt;</span> my-dataset</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>    (kind/table {<span class="at">:use-datatables</span> <span class="va">true</span>}))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div style="max-height:600px;overflow-y:auto;">
 
@@ -1856,9 +1922,9 @@ y
 </div>
 <p>and in this case the user may specify <a href="https://datatables.net/manual/options">datatables options</a> (see <a href="https://datatables.net/reference/option/">the full list</a>).</p>
 <div class="sourceClojure">
-<div class="sourceCode" id="cb19"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">-&gt;</span> my-dataset</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>    (kind/table {<span class="at">:use-datatables</span> <span class="va">true</span></span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>                 <span class="at">:datatables</span> {<span class="at">:scrollY</span> <span class="dv">200</span>}}))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">-&gt;</span> my-dataset</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>    (kind/table {<span class="at">:use-datatables</span> <span class="va">true</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>                 <span class="at">:datatables</span> {<span class="at">:scrollY</span> <span class="dv">200</span>}}))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div style="max-height:600px;overflow-y:auto;">
 
@@ -2520,95 +2586,95 @@ y
 </table>
 </div>
 </section>
-<section id="reagent" class="level2" data-number="3.10">
-<h2 data-number="3.10" class="anchored" data-anchor-id="reagent"><span class="header-section-number">3.10</span> Reagent</h2>
+<section id="reagent" class="level2" data-number="3.11">
+<h2 data-number="3.11" class="anchored" data-anchor-id="reagent"><span class="header-section-number">3.11</span> Reagent</h2>
 <div class="sourceClojure">
-<div class="sourceCode" id="cb20"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>(kind/reagent</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a> ['(<span class="kw">fn</span> [data]</span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>     [<span class="at">:div</span> {<span class="at">:style</span> {<span class="at">:background</span> <span class="st">"#ccddcc"</span>}}</span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>      [<span class="at">:big</span> (<span class="kw">count</span> data)]])</span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">vec</span> (<span class="kw">range</span> <span class="dv">99</span>))])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>(kind/reagent</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a> ['(<span class="kw">fn</span> [data]</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>     [<span class="at">:div</span> {<span class="at">:style</span> {<span class="at">:background</span> <span class="st">"#ccddcc"</span>}}</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>      [<span class="at">:big</span> (<span class="kw">count</span> data)]])</span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">vec</span> (<span class="kw">range</span> <span class="dv">99</span>))])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div style="max-height:600px;overflow-y:auto;">
-<div id="id8">
-<script type="application/x-scittle">(reagent.dom/render [(fn [data] [:div {:style {:background "#ccddcc"}} [:big (count data)]]) [0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98]] (js/document.getElementById "id8"))</script>
+<div id="id3">
+<script type="application/x-scittle">(reagent.dom/render [(fn [data] [:div {:style {:background "#ccddcc"}} [:big (count data)]]) [0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98]] (js/document.getElementById "id3"))</script>
 </div>
 </div>
 </section>
-<section id="pretty-printing" class="level2" data-number="3.11">
-<h2 data-number="3.11" class="anchored" data-anchor-id="pretty-printing"><span class="header-section-number">3.11</span> Pretty printing</h2>
+<section id="pretty-printing" class="level2" data-number="3.12">
+<h2 data-number="3.12" class="anchored" data-anchor-id="pretty-printing"><span class="header-section-number">3.12</span> Pretty printing</h2>
 <div class="sourceClojure">
-<div class="sourceCode" id="cb21"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">-&gt;&gt;</span> (<span class="kw">range</span> <span class="dv">30</span>)</span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>     (<span class="kw">apply</span> <span class="kw">array-map</span>)</span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>     kind/pprint)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">-&gt;&gt;</span> (<span class="kw">range</span> <span class="dv">30</span>)</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>     (<span class="kw">apply</span> <span class="kw">array-map</span>)</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>     kind/pprint)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="printedClojure">
-<div class="sourceCode" id="cb22"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>{<span class="dv">0</span> <span class="dv">1</span>,</span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a> <span class="dv">2</span> <span class="dv">3</span>,</span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a> <span class="dv">4</span> <span class="dv">5</span>,</span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a> <span class="dv">6</span> <span class="dv">7</span>,</span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a> <span class="dv">8</span> <span class="dv">9</span>,</span>
-<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a> <span class="dv">10</span> <span class="dv">11</span>,</span>
-<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a> <span class="dv">12</span> <span class="dv">13</span>,</span>
-<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a> <span class="dv">14</span> <span class="dv">15</span>,</span>
-<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a> <span class="dv">16</span> <span class="dv">17</span>,</span>
-<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a> <span class="dv">18</span> <span class="dv">19</span>,</span>
-<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a> <span class="dv">20</span> <span class="dv">21</span>,</span>
-<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a> <span class="dv">22</span> <span class="dv">23</span>,</span>
-<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a> <span class="dv">24</span> <span class="dv">25</span>,</span>
-<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a> <span class="dv">26</span> <span class="dv">27</span>,</span>
-<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a> <span class="dv">28</span> <span class="dv">29</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>{<span class="dv">0</span> <span class="dv">1</span>,</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a> <span class="dv">2</span> <span class="dv">3</span>,</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a> <span class="dv">4</span> <span class="dv">5</span>,</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a> <span class="dv">6</span> <span class="dv">7</span>,</span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a> <span class="dv">8</span> <span class="dv">9</span>,</span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a> <span class="dv">10</span> <span class="dv">11</span>,</span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a> <span class="dv">12</span> <span class="dv">13</span>,</span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a> <span class="dv">14</span> <span class="dv">15</span>,</span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a> <span class="dv">16</span> <span class="dv">17</span>,</span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a> <span class="dv">18</span> <span class="dv">19</span>,</span>
+<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a> <span class="dv">20</span> <span class="dv">21</span>,</span>
+<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a> <span class="dv">22</span> <span class="dv">23</span>,</span>
+<span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a> <span class="dv">24</span> <span class="dv">25</span>,</span>
+<span id="cb27-14"><a href="#cb27-14" aria-hidden="true" tabindex="-1"></a> <span class="dv">26</span> <span class="dv">27</span>,</span>
+<span id="cb27-15"><a href="#cb27-15" aria-hidden="true" tabindex="-1"></a> <span class="dv">28</span> <span class="dv">29</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="hidden" class="level2" data-number="3.12">
-<h2 data-number="3.12" class="anchored" data-anchor-id="hidden"><span class="header-section-number">3.12</span> Hidden</h2>
+<section id="hidden" class="level2" data-number="3.13">
+<h2 data-number="3.13" class="anchored" data-anchor-id="hidden"><span class="header-section-number">3.13</span> Hidden</h2>
 <div class="sourceClojure">
-<div class="sourceCode" id="cb23"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">-&gt;&gt;</span> {<span class="at">:x</span> <span class="dv">9</span>}</span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>     kind/hidden)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">-&gt;&gt;</span> {<span class="at">:x</span> <span class="dv">9</span>}</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>     kind/hidden)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="plain-data-structures" class="level2" data-number="3.13">
-<h2 data-number="3.13" class="anchored" data-anchor-id="plain-data-structures"><span class="header-section-number">3.13</span> Plain data structures</h2>
+<section id="plain-data-structures" class="level2" data-number="3.14">
+<h2 data-number="3.14" class="anchored" data-anchor-id="plain-data-structures"><span class="header-section-number">3.14</span> Plain data structures</h2>
 <p>Plain Clojure data structures have recursive kind semantics: * Each tool has its own way to represent them visually (e.g., Clay just uses text, while Portal has a hierarchical navigation UI).</p>
 <div class="sourceClojure">
-<div class="sourceCode" id="cb24"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">list</span> <span class="dv">1</span> <span class="st">"A"</span> <span class="at">:B</span> <span class="at">'C</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">list</span> <span class="dv">1</span> <span class="st">"A"</span> <span class="at">:B</span> <span class="at">'C</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="printedClojure">
-<div class="sourceCode" id="cb25"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>(<span class="dv">1</span> <span class="st">"A"</span> <span class="at">:B</span> C)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>(<span class="dv">1</span> <span class="st">"A"</span> <span class="at">:B</span> C)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="sourceClojure">
-<div class="sourceCode" id="cb26"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span> <span class="st">"A"</span> <span class="at">:B</span> <span class="at">'C</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span> <span class="st">"A"</span> <span class="at">:B</span> <span class="at">'C</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="printedClojure">
-<div class="sourceCode" id="cb27"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span> <span class="st">"A"</span> <span class="at">:B</span> C]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span> <span class="st">"A"</span> <span class="at">:B</span> C]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="sourceClojure">
-<div class="sourceCode" id="cb28"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>#{<span class="dv">1</span> <span class="st">"A"</span> <span class="at">:B</span> <span class="at">'C</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>#{<span class="dv">1</span> <span class="st">"A"</span> <span class="at">:B</span> <span class="at">'C</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="printedClojure">
-<div class="sourceCode" id="cb29"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>#{<span class="dv">1</span> <span class="at">:B</span> C <span class="st">"A"</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>#{<span class="dv">1</span> <span class="at">:B</span> C <span class="st">"A"</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="sourceClojure">
-<div class="sourceCode" id="cb30"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>{<span class="dv">1</span> <span class="st">"A"</span> <span class="at">:B</span> <span class="at">'C</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>{<span class="dv">1</span> <span class="st">"A"</span> <span class="at">:B</span> <span class="at">'C</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="printedClojure">
-<div class="sourceCode" id="cb31"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>{<span class="dv">1</span> <span class="st">"A"</span>, <span class="at">:B</span> C}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>{<span class="dv">1</span> <span class="st">"A"</span>, <span class="at">:B</span> C}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="plain-data-structures---nesting-other-kinds" class="level2" data-number="3.14">
-<h2 data-number="3.14" class="anchored" data-anchor-id="plain-data-structures---nesting-other-kinds"><span class="header-section-number">3.14</span> Plain data structures - nesting other kinds</h2>
+<section id="plain-data-structures---nesting-other-kinds" class="level2" data-number="3.15">
+<h2 data-number="3.15" class="anchored" data-anchor-id="plain-data-structures---nesting-other-kinds"><span class="header-section-number">3.15</span> Plain data structures - nesting other kinds</h2>
 <ul>
 <li>If the values inside them have kind information, they are handled accordingly.</li>
 </ul>
 <div class="sourceClojure">
-<div class="sourceCode" id="cb32"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>[(kind/hiccup</span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>  [<span class="at">:div</span> {<span class="at">:style</span></span>
-<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>         {<span class="at">:background-color</span> <span class="st">"floralwhite"</span>}}</span>
-<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>   [<span class="at">:p</span> <span class="st">"hello"</span>]])</span>
-<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a> (kind/md</span>
-<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>  <span class="st">"hello *hello* **hello**"</span>)</span>
-<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a> (kind/code</span>
-<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a>  <span class="st">"(defn f [x] (+ x 9))"</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>[(kind/hiccup</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>  [<span class="at">:div</span> {<span class="at">:style</span></span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>         {<span class="at">:background-color</span> <span class="st">"floralwhite"</span>}}</span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>   [<span class="at">:p</span> <span class="st">"hello"</span>]])</span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a> (kind/md</span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a>  <span class="st">"hello *hello* **hello**"</span>)</span>
+<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a> (kind/code</span>
+<span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a>  <span class="st">"(defn f [x] (+ x 9))"</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div style="max-height:600px;overflow-y:auto;">
 <div>
@@ -2640,10 +2706,10 @@ hello <em>hello</em> <strong>hello</strong>
 </div>
 </div>
 <div class="sourceClojure">
-<div class="sourceCode" id="cb33"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>{<span class="at">:x</span>  (kind/md</span>
-<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>      <span class="st">"**hello**"</span>)</span>
-<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a> (kind/md</span>
-<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">"**hello**"</span>) <span class="at">:x</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>{<span class="at">:x</span>  (kind/md</span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>      <span class="st">"**hello**"</span>)</span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a> (kind/md</span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">"**hello**"</span>) <span class="at">:x</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div style="max-height:600px;overflow-y:auto;">
 <div>
@@ -2703,13 +2769,13 @@ hello <em>hello</em> <strong>hello</strong>
 </div>
 </div>
 </section>
-<section id="hiccup" class="level2" data-number="3.15">
-<h2 data-number="3.15" class="anchored" data-anchor-id="hiccup"><span class="header-section-number">3.15</span> Hiccup</h2>
+<section id="hiccup" class="level2" data-number="3.16">
+<h2 data-number="3.16" class="anchored" data-anchor-id="hiccup"><span class="header-section-number">3.16</span> Hiccup</h2>
 <div class="sourceClojure">
-<div class="sourceCode" id="cb34"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">-&gt;</span> [<span class="at">:div</span> {<span class="at">:style</span></span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>           {<span class="at">:background-color</span> <span class="st">"floralwhite"</span>}}</span>
-<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>     [<span class="at">:p</span> <span class="st">"hello"</span>]]</span>
-<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>    kind/hiccup)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">-&gt;</span> [<span class="at">:div</span> {<span class="at">:style</span></span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>           {<span class="at">:background-color</span> <span class="st">"floralwhite"</span>}}</span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>     [<span class="at">:p</span> <span class="st">"hello"</span>]]</span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>    kind/hiccup)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div style="max-height:600px;overflow-y:auto;">
 <div style="background-color:floralwhite;">
@@ -2719,21 +2785,21 @@ hello
 </div>
 </div>
 </section>
-<section id="hiccup---nesting-other-kinds" class="level2" data-number="3.16">
-<h2 data-number="3.16" class="anchored" data-anchor-id="hiccup---nesting-other-kinds"><span class="header-section-number">3.16</span> Hiccup - nesting other kinds</h2>
+<section id="hiccup---nesting-other-kinds" class="level2" data-number="3.17">
+<h2 data-number="3.17" class="anchored" data-anchor-id="hiccup---nesting-other-kinds"><span class="header-section-number">3.17</span> Hiccup - nesting other kinds</h2>
 <div class="sourceClojure">
-<div class="sourceCode" id="cb35"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">-&gt;</span> [<span class="at">:div</span> {<span class="at">:style</span></span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>           {<span class="at">:background-color</span> <span class="st">"floralwhite"</span></span>
-<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>            <span class="at">:border-style</span> <span class="st">"solid"</span>}}</span>
-<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>     [<span class="at">:p</span> {<span class="at">:style</span> {<span class="at">:background-color</span> <span class="st">"#ccddcc"</span></span>
-<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>                  <span class="at">:border-style</span> <span class="st">"solid"</span>}}</span>
-<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>      <span class="st">"hello"</span>]</span>
-<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>     (kind/md</span>
-<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a>      <span class="st">"hello *hello* **hello**"</span>)</span>
-<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a>     (kind/code</span>
-<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a>      <span class="st">"(defn f [x] (+ x 9))"</span>)</span>
-<span id="cb35-11"><a href="#cb35-11" aria-hidden="true" tabindex="-1"></a>     my-plot]</span>
-<span id="cb35-12"><a href="#cb35-12" aria-hidden="true" tabindex="-1"></a>    kind/hiccup)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">-&gt;</span> [<span class="at">:div</span> {<span class="at">:style</span></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>           {<span class="at">:background-color</span> <span class="st">"floralwhite"</span></span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>            <span class="at">:border-style</span> <span class="st">"solid"</span>}}</span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>     [<span class="at">:p</span> {<span class="at">:style</span> {<span class="at">:background-color</span> <span class="st">"#ccddcc"</span></span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>                  <span class="at">:border-style</span> <span class="st">"solid"</span>}}</span>
+<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a>      <span class="st">"hello"</span>]</span>
+<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a>     (kind/md</span>
+<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a>      <span class="st">"hello *hello* **hello**"</span>)</span>
+<span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a>     (kind/code</span>
+<span id="cb40-10"><a href="#cb40-10" aria-hidden="true" tabindex="-1"></a>      <span class="st">"(defn f [x] (+ x 9))"</span>)</span>
+<span id="cb40-11"><a href="#cb40-11" aria-hidden="true" tabindex="-1"></a>     my-plot]</span>
+<span id="cb40-12"><a href="#cb40-12" aria-hidden="true" tabindex="-1"></a>    kind/hiccup)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div style="max-height:600px;overflow-y:auto;">
 <div style="background-color:floralwhite;border-style:solid;">
@@ -2758,24 +2824,24 @@ hello <em>hello</em> <strong>hello</strong>
 </div>
 </div>
 </section>
-<section id="portal" class="level2" data-number="3.17">
-<h2 data-number="3.17" class="anchored" data-anchor-id="portal"><span class="header-section-number">3.17</span> Portal</h2>
+<section id="portal" class="level2" data-number="3.18">
+<h2 data-number="3.18" class="anchored" data-anchor-id="portal"><span class="header-section-number">3.18</span> Portal</h2>
 <div class="sourceClojure">
-<div class="sourceCode" id="cb36"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">-&gt;</span> [(kind/hiccup [<span class="at">:p</span> {<span class="at">:style</span> {<span class="at">:background-color</span> <span class="st">"#ccddcc"</span></span>
-<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>                               <span class="at">:border-style</span> <span class="st">"solid"</span>}}</span>
-<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>                   <span class="st">"hello"</span>])</span>
-<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>     (kind/md</span>
-<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>      <span class="st">"hello *hello* **hello**"</span>)</span>
-<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>     (kind/code</span>
-<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a>      <span class="st">"(defn f [x] (+ x 9))"</span>)</span>
-<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a>     my-plot]</span>
-<span id="cb36-9"><a href="#cb36-9" aria-hidden="true" tabindex="-1"></a>    kind/portal)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">-&gt;</span> [(kind/hiccup [<span class="at">:p</span> {<span class="at">:style</span> {<span class="at">:background-color</span> <span class="st">"#ccddcc"</span></span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>                               <span class="at">:border-style</span> <span class="st">"solid"</span>}}</span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>                   <span class="st">"hello"</span>])</span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>     (kind/md</span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>      <span class="st">"hello *hello* **hello**"</span>)</span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a>     (kind/code</span>
+<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a>      <span class="st">"(defn f [x] (+ x 9))"</span>)</span>
+<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a>     my-plot]</span>
+<span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a>    kind/portal)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div style="max-height:600px;overflow-y:auto;">
 <div>
 <script>portal_api.embed().renderOutputItem(
                 {'mime': 'x-application/edn',
-                 'text': (() => "[^{:source \"[:p {:style {:background-color \\\"#ccddcc\\\"\\n                               :border-style \\\"solid\\\"}}\\n                   \\\"hello\\\"]\", :line 211, :column 19, :end-line 213, :end-column 28, :kindly/kind :kind/hiccup, :portal.viewer/default :portal.viewer/hiccup} [:p ^{:source \"{:style {:background-color \\\"#ccddcc\\\"\\n                               :border-style \\\"solid\\\"}}\", :line 211, :column 23, :end-line 212, :end-column 55} {:style ^{:source \"{:background-color \\\"#ccddcc\\\"\\n                               :border-style \\\"solid\\\"}\", :line 211, :column 31, :end-line 212, :end-column 54} {:background-color \"#ccddcc\", :border-style \"solid\"}} \"hello\"] ^#:portal.viewer{:default :portal.viewer/hiccup} [:div [:portal.viewer/markdown \"hello *hello* **hello**\"]] ^#:portal.viewer{:default :portal.viewer/hiccup} [:div [:portal.viewer/code \"(defn f [x] (+ x 9))\"]] ^#:portal.viewer{:default :portal.viewer/hiccup} [:portal.viewer/vega-lite ^{:source \"{:encoding\\n       {:y {:field \\\"y\\\", :type \\\"quantitative\\\"},\\n        :size {:value 400},\\n        :x {:field \\\"x\\\", :type \\\"quantitative\\\"}},\\n       :mark {:type \\\"circle\\\", :tooltip true},\\n       :width 400,\\n       :background \\\"floralwhite\\\",\\n       :height 100,\\n       :data {:values \\\"x,y\\\\n1,1\\\\n2,-4\\\\n3,9\\\\n\\\", :format {:type \\\"csv\\\"}}}\", :line 22, :column 7, :end-line 30, :end-column 71, :kindly/kind :kind/vega-lite} {:encoding ^{:source \"{:y {:field \\\"y\\\", :type \\\"quantitative\\\"},\\n        :size {:value 400},\\n        :x {:field \\\"x\\\", :type \\\"quantitative\\\"}}\", :line 23, :column 8, :end-line 25, :end-column 47} {:y ^{:source \"{:field \\\"y\\\", :type \\\"quantitative\\\"}\", :line 23, :column 12, :end-line 23, :end-column 46} {:field \"y\", :type \"quantitative\"}, :size ^{:source \"{:value 400}\", :line 24, :column 15, :end-line 24, :end-column 27} {:value 400}, :x ^{:source \"{:field \\\"x\\\", :type \\\"quantitative\\\"}\", :line 25, :column 12, :end-line 25, :end-column 46} {:field \"x\", :type \"quantitative\"}}, :mark ^{:source \"{:type \\\"circle\\\", :tooltip true}\", :line 26, :column 14, :end-line 26, :end-column 45} {:type \"circle\", :tooltip true}, :width 400, :background \"floralwhite\", :height 100, :data ^{:source \"{:values \\\"x,y\\\\n1,1\\\\n2,-4\\\\n3,9\\\\n\\\", :format {:type \\\"csv\\\"}}\", :line 30, :column 14, :end-line 30, :end-column 70} {:values \"x,y\\n1,1\\n2,-4\\n3,9\\n\", :format ^{:source \"{:type \\\"csv\\\"}\", :line 30, :column 56, :end-line 30, :end-column 69} {:type \"csv\"}}}]]")}
+                 'text': (() => "[^{:source \"[:p {:style {:background-color \\\"#ccddcc\\\"\\n                               :border-style \\\"solid\\\"}}\\n                   \\\"hello\\\"]\", :line 239, :column 19, :end-line 241, :end-column 28, :kindly/kind :kind/hiccup, :portal.viewer/default :portal.viewer/hiccup} [:p ^{:source \"{:style {:background-color \\\"#ccddcc\\\"\\n                               :border-style \\\"solid\\\"}}\", :line 239, :column 23, :end-line 240, :end-column 55} {:style ^{:source \"{:background-color \\\"#ccddcc\\\"\\n                               :border-style \\\"solid\\\"}\", :line 239, :column 31, :end-line 240, :end-column 54} {:background-color \"#ccddcc\", :border-style \"solid\"}} \"hello\"] ^#:portal.viewer{:default :portal.viewer/hiccup} [:div [:portal.viewer/markdown \"hello *hello* **hello**\"]] ^#:portal.viewer{:default :portal.viewer/hiccup} [:div [:portal.viewer/code \"(defn f [x] (+ x 9))\"]] ^#:portal.viewer{:default :portal.viewer/hiccup} [:portal.viewer/vega-lite ^{:source \"{:encoding\\n       {:y {:field \\\"y\\\", :type \\\"quantitative\\\"},\\n        :size {:value 400},\\n        :x {:field \\\"x\\\", :type \\\"quantitative\\\"}},\\n       :mark {:type \\\"circle\\\", :tooltip true},\\n       :width 400,\\n       :background \\\"floralwhite\\\",\\n       :height 100,\\n       :data {:values \\\"x,y\\\\n1,1\\\\n2,-4\\\\n3,9\\\\n\\\", :format {:type \\\"csv\\\"}}}\", :line 22, :column 7, :end-line 30, :end-column 71, :kindly/kind :kind/vega-lite} {:encoding ^{:source \"{:y {:field \\\"y\\\", :type \\\"quantitative\\\"},\\n        :size {:value 400},\\n        :x {:field \\\"x\\\", :type \\\"quantitative\\\"}}\", :line 23, :column 8, :end-line 25, :end-column 47} {:y ^{:source \"{:field \\\"y\\\", :type \\\"quantitative\\\"}\", :line 23, :column 12, :end-line 23, :end-column 46} {:field \"y\", :type \"quantitative\"}, :size ^{:source \"{:value 400}\", :line 24, :column 15, :end-line 24, :end-column 27} {:value 400}, :x ^{:source \"{:field \\\"x\\\", :type \\\"quantitative\\\"}\", :line 25, :column 12, :end-line 25, :end-column 46} {:field \"x\", :type \"quantitative\"}}, :mark ^{:source \"{:type \\\"circle\\\", :tooltip true}\", :line 26, :column 14, :end-line 26, :end-column 45} {:type \"circle\", :tooltip true}, :width 400, :background \"floralwhite\", :height 100, :data ^{:source \"{:values \\\"x,y\\\\n1,1\\\\n2,-4\\\\n3,9\\\\n\\\", :format {:type \\\"csv\\\"}}\", :line 30, :column 14, :end-line 30, :end-column 70} {:values \"x,y\\n1,1\\n2,-4\\n3,9\\n\", :format ^{:source \"{:type \\\"csv\\\"}\", :line 30, :column 56, :end-line 30, :end-column 69} {:type \"csv\"}}}]]")}
                 , document.currentScript.parentElement);</script>
 </div>
 </div>
