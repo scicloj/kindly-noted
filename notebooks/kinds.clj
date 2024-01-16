@@ -105,9 +105,31 @@ clj-image
 
 
 
+;; ## Smile Regression models
+
+;; A [Smile](https://haifengl.github.io/) regression model is displayed
+;; by turning it into a String
+;; and higlighting the output as printed Clojure.
+
+(smile.regression.OLS/fit
+ (smile.data.formula.Formula/lhs "y")
+ (smile.data.DataFrame/of (into-array [(double-array [1 1 2])
+                                       (double-array [2 4 5])
+                                       (double-array [3 9 13])
+                                       (double-array [4 16 19])])
+                          (into-array ["w" "x" "y"])))
 
 
+(require '[scicloj.noj.v1.datasets :as datasets]
+         '[scicloj.noj.v1.stats :as noj.stats]
+         '[scicloj.ml.core :as ml])
 
+(-> datasets/iris
+    (noj.stats/linear-regression-model :sepal-length
+                                       [:sepal-width
+                                        :petal-width
+                                        :petal-length])
+    ml/thaw-model)
 
 ;; ## Dataset
 
