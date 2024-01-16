@@ -53,7 +53,7 @@
     "href": "kindly.html#how-to-use-kinds",
     "title": "2  Kindly",
     "section": "2.6 How to use Kinds?",
-    "text": "2.6 How to use Kinds?\n\n2.6.1 Attaching metadata to forms\n\n^:kind/md\n[\"hello *hello* **hello**\"]\n\nhello hello hello\n\n^kind/md\n[\"hello *hello* **hello**\"]\n\nhello hello hello\n\n\n2.6.2 Attaching metadata to values\n\n(-> [\"hello *hello* **hello**\"]\n    kind/md)\n\nhello hello hello\n\n(-> [\"hello *hello* **hello**\"]\n    kind/md\n    meta\n    :kindly/kind)\n\n\n:kind/md\n\n\n\n2.6.3 Attaching metadata to values - cont.\n\n(-> \"hello *hello* **hello**\"\n    kind/md\n    meta\n    :kindly/kind)\n\n\n:kind/md\n\nValues that cannot have metadata are wrapped in a vector before attaching metadata.\n\n(-> \"hello *hello* **hello**\"\n    kind/md\n    kind/pprint)\n\n\n[\"hello *hello* **hello**\"]\n\n\n(-> \"hello *hello* **hello**\"\n    kind/md\n    meta)\n\n\n#:kindly{:kind :kind/md}\n\n\n\n2.6.4 Using values annotated by libraries\n\n(defn my-library-function-for-big-big-text [text]\n  (kind/hiccup\n   [:big {:style {:background \"#ccddcc\"}}\n    [:big text]]))\n\n\n(-> \"hello\"\n    my-library-function-for-big-big-text)\n\n\nhello\n\n\n(-> \"hello\"\n    my-library-function-for-big-big-text\n    (assoc-in [1 :style]\n              {:background \"#ddccdd\"}))\n\n\nhello\n\n\n\n2.6.5 Automatically-inferred kinds\nIn certain situations, kinds are inferred without annotation. The kindly-advice library provides the default inference behaviour and an option to extend it. For example, images:\n\n(def clj-image\n  (->  \"https://upload.wikimedia.org/wikipedia/commons/e/eb/Ash_Tree_-_geograph.org.uk_-_590710.jpg\"\n       (java.net.URL.)\n       (javax.imageio.ImageIO/read)))\n\n\nclj-image\n\n\n\n\n\n(require '[tablecloth.api :as tc])\n\n\n(tc/dataset {:x (range 3)\n             :y (repeatedly 3 rand)})\n\n_unnamed [3 2]:\n\n\n\n:x\n:y\n\n\n\n\n0\n0.71249351\n\n\n1\n0.78129328\n\n\n2\n0.45500732"
+    "text": "2.6 How to use Kinds?\n\n2.6.1 Attaching metadata to forms\n\n^:kind/md\n[\"hello *hello* **hello**\"]\n\nhello hello hello\n\n^kind/md\n[\"hello *hello* **hello**\"]\n\nhello hello hello\n\n\n2.6.2 Attaching metadata to values\n\n(-> [\"hello *hello* **hello**\"]\n    kind/md)\n\nhello hello hello\n\n(-> [\"hello *hello* **hello**\"]\n    kind/md\n    meta\n    :kindly/kind)\n\n\n:kind/md\n\n\n\n2.6.3 Attaching metadata to values - cont.\n\n(-> \"hello *hello* **hello**\"\n    kind/md\n    meta\n    :kindly/kind)\n\n\n:kind/md\n\nValues that cannot have metadata are wrapped in a vector before attaching metadata.\n\n(-> \"hello *hello* **hello**\"\n    kind/md\n    kind/pprint)\n\n\n[\"hello *hello* **hello**\"]\n\n\n(-> \"hello *hello* **hello**\"\n    kind/md\n    meta)\n\n\n#:kindly{:kind :kind/md}\n\n\n\n2.6.4 Using values annotated by libraries\n\n(defn my-library-function-for-big-big-text [text]\n  (kind/hiccup\n   [:big {:style {:background \"#ccddcc\"}}\n    [:big text]]))\n\n\n(-> \"hello\"\n    my-library-function-for-big-big-text)\n\n\nhello\n\n\n(-> \"hello\"\n    my-library-function-for-big-big-text\n    (assoc-in [1 :style]\n              {:background \"#ddccdd\"}))\n\n\nhello\n\n\n\n2.6.5 Automatically-inferred kinds\nIn certain situations, kinds are inferred without annotation. The kindly-advice library provides the default inference behaviour and an option to extend it. For example, images:\n\n(def clj-image\n  (->  \"https://upload.wikimedia.org/wikipedia/commons/e/eb/Ash_Tree_-_geograph.org.uk_-_590710.jpg\"\n       (java.net.URL.)\n       (javax.imageio.ImageIO/read)))\n\n\nclj-image\n\n\n\n\n\n(require '[tablecloth.api :as tc])\n\n\n(tc/dataset {:x (range 3)\n             :y (repeatedly 3 rand)})\n\n_unnamed [3 2]:\n\n\n\n:x\n:y\n\n\n\n\n0\n0.78588182\n\n\n1\n0.64545622\n\n\n2\n0.23518066"
   },
   {
     "objectID": "kindly.html#hiding-code",
@@ -119,67 +119,74 @@
     "text": "3.7 Images\n\n(def clj-image\n  (->  \"https://upload.wikimedia.org/wikipedia/commons/e/eb/Ash_Tree_-_geograph.org.uk_-_590710.jpg\"\n       (java.net.URL.)\n       (javax.imageio.ImageIO/read)))\n\n\nclj-image"
   },
   {
-    "objectID": "kinds.html#datasets",
-    "href": "kinds.html#datasets",
+    "objectID": "kinds.html#dataset",
+    "href": "kinds.html#dataset",
     "title": "3  Catalogue of visualization kinds",
-    "section": "3.8 Datasets",
-    "text": "3.8 Datasets\n\n(def my-dataset\n  (-> {:x (range 3)}\n      tc/dataset\n      (tc/map-columns :y\n                      [:x]\n                      (fn [x] (* x x)))))\n\n\nmy-dataset\n\n_unnamed [3 2]:\n\n\n\n:x\n:y\n\n\n\n\n0\n0\n\n\n1\n1\n\n\n2\n4"
+    "section": "3.8 Dataset",
+    "text": "3.8 Dataset\nA tech.ml.dataset / Tablecloth dataset is printed and rendered as Markdown.\n\n(def my-dataset\n  (-> {:x (range 40)}\n      tc/dataset\n      (tc/map-columns :y\n                      [:x]\n                      (fn [x] (* x x)))))\n\n\nmy-dataset\n\n_unnamed [40 2]:\n\n\n\n:x\n:y\n\n\n\n\n0\n0\n\n\n1\n1\n\n\n2\n4\n\n\n3\n9\n\n\n4\n16\n\n\n5\n25\n\n\n6\n36\n\n\n7\n49\n\n\n8\n64\n\n\n9\n81\n\n\n…\n…\n\n\n29\n841\n\n\n30\n900\n\n\n31\n961\n\n\n32\n1024\n\n\n33\n1089\n\n\n34\n1156\n\n\n35\n1225\n\n\n36\n1296\n\n\n37\n1369\n\n\n38\n1444\n\n\n39\n1521"
+  },
+  {
+    "objectID": "kinds.html#table",
+    "href": "kinds.html#table",
+    "title": "3  Catalogue of visualization kinds",
+    "section": "3.9 Table",
+    "text": "3.9 Table\nA table uses the tool’s UI for tables, if any.\n\n(kind/table my-dataset)\n\n\n\n\n\n\n\nx\n\n\ny\n\n\n\n\n\n\n\n\n0\n\n\n\n\n\n\n0\n\n\n\n\n\n\n\n\n1\n\n\n\n\n\n\n1\n\n\n\n\n\n\n\n\n2\n\n\n\n\n\n\n4\n\n\n\n\n\n\n\n\n3\n\n\n\n\n\n\n9\n\n\n\n\n\n\n\n\n4\n\n\n\n\n\n\n16\n\n\n\n\n\n\n\n\n5\n\n\n\n\n\n\n25\n\n\n\n\n\n\n\n\n6\n\n\n\n\n\n\n36\n\n\n\n\n\n\n\n\n7\n\n\n\n\n\n\n49\n\n\n\n\n\n\n\n\n8\n\n\n\n\n\n\n64\n\n\n\n\n\n\n\n\n9\n\n\n\n\n\n\n81\n\n\n\n\n\n\n\n\n10\n\n\n\n\n\n\n100\n\n\n\n\n\n\n\n\n11\n\n\n\n\n\n\n121\n\n\n\n\n\n\n\n\n12\n\n\n\n\n\n\n144\n\n\n\n\n\n\n\n\n13\n\n\n\n\n\n\n169\n\n\n\n\n\n\n\n\n14\n\n\n\n\n\n\n196\n\n\n\n\n\n\n\n\n15\n\n\n\n\n\n\n225\n\n\n\n\n\n\n\n\n16\n\n\n\n\n\n\n256\n\n\n\n\n\n\n\n\n17\n\n\n\n\n\n\n289\n\n\n\n\n\n\n\n\n18\n\n\n\n\n\n\n324\n\n\n\n\n\n\n\n\n19\n\n\n\n\n\n\n361\n\n\n\n\n\n\n\n\n20\n\n\n\n\n\n\n400\n\n\n\n\n\n\n\n\n21\n\n\n\n\n\n\n441\n\n\n\n\n\n\n\n\n22\n\n\n\n\n\n\n484\n\n\n\n\n\n\n\n\n23\n\n\n\n\n\n\n529\n\n\n\n\n\n\n\n\n24\n\n\n\n\n\n\n576\n\n\n\n\n\n\n\n\n25\n\n\n\n\n\n\n625\n\n\n\n\n\n\n\n\n26\n\n\n\n\n\n\n676\n\n\n\n\n\n\n\n\n27\n\n\n\n\n\n\n729\n\n\n\n\n\n\n\n\n28\n\n\n\n\n\n\n784\n\n\n\n\n\n\n\n\n29\n\n\n\n\n\n\n841\n\n\n\n\n\n\n\n\n30\n\n\n\n\n\n\n900\n\n\n\n\n\n\n\n\n31\n\n\n\n\n\n\n961\n\n\n\n\n\n\n\n\n32\n\n\n\n\n\n\n1024\n\n\n\n\n\n\n\n\n33\n\n\n\n\n\n\n1089\n\n\n\n\n\n\n\n\n34\n\n\n\n\n\n\n1156\n\n\n\n\n\n\n\n\n35\n\n\n\n\n\n\n1225\n\n\n\n\n\n\n\n\n36\n\n\n\n\n\n\n1296\n\n\n\n\n\n\n\n\n37\n\n\n\n\n\n\n1369\n\n\n\n\n\n\n\n\n38\n\n\n\n\n\n\n1444\n\n\n\n\n\n\n\n\n39\n\n\n\n\n\n\n1521\n\n\n\n\n\n\n\n\nSome tools support datatables for displaying tables.\n\n(-> my-dataset\n    (kind/table {:use-datatables true}))\n\n\n\n\n\n\n\nx\n\n\ny\n\n\n\n\n\n\n\n\n0\n\n\n\n\n\n\n0\n\n\n\n\n\n\n\n\n1\n\n\n\n\n\n\n1\n\n\n\n\n\n\n\n\n2\n\n\n\n\n\n\n4\n\n\n\n\n\n\n\n\n3\n\n\n\n\n\n\n9\n\n\n\n\n\n\n\n\n4\n\n\n\n\n\n\n16\n\n\n\n\n\n\n\n\n5\n\n\n\n\n\n\n25\n\n\n\n\n\n\n\n\n6\n\n\n\n\n\n\n36\n\n\n\n\n\n\n\n\n7\n\n\n\n\n\n\n49\n\n\n\n\n\n\n\n\n8\n\n\n\n\n\n\n64\n\n\n\n\n\n\n\n\n9\n\n\n\n\n\n\n81\n\n\n\n\n\n\n\n\n10\n\n\n\n\n\n\n100\n\n\n\n\n\n\n\n\n11\n\n\n\n\n\n\n121\n\n\n\n\n\n\n\n\n12\n\n\n\n\n\n\n144\n\n\n\n\n\n\n\n\n13\n\n\n\n\n\n\n169\n\n\n\n\n\n\n\n\n14\n\n\n\n\n\n\n196\n\n\n\n\n\n\n\n\n15\n\n\n\n\n\n\n225\n\n\n\n\n\n\n\n\n16\n\n\n\n\n\n\n256\n\n\n\n\n\n\n\n\n17\n\n\n\n\n\n\n289\n\n\n\n\n\n\n\n\n18\n\n\n\n\n\n\n324\n\n\n\n\n\n\n\n\n19\n\n\n\n\n\n\n361\n\n\n\n\n\n\n\n\n20\n\n\n\n\n\n\n400\n\n\n\n\n\n\n\n\n21\n\n\n\n\n\n\n441\n\n\n\n\n\n\n\n\n22\n\n\n\n\n\n\n484\n\n\n\n\n\n\n\n\n23\n\n\n\n\n\n\n529\n\n\n\n\n\n\n\n\n24\n\n\n\n\n\n\n576\n\n\n\n\n\n\n\n\n25\n\n\n\n\n\n\n625\n\n\n\n\n\n\n\n\n26\n\n\n\n\n\n\n676\n\n\n\n\n\n\n\n\n27\n\n\n\n\n\n\n729\n\n\n\n\n\n\n\n\n28\n\n\n\n\n\n\n784\n\n\n\n\n\n\n\n\n29\n\n\n\n\n\n\n841\n\n\n\n\n\n\n\n\n30\n\n\n\n\n\n\n900\n\n\n\n\n\n\n\n\n31\n\n\n\n\n\n\n961\n\n\n\n\n\n\n\n\n32\n\n\n\n\n\n\n1024\n\n\n\n\n\n\n\n\n33\n\n\n\n\n\n\n1089\n\n\n\n\n\n\n\n\n34\n\n\n\n\n\n\n1156\n\n\n\n\n\n\n\n\n35\n\n\n\n\n\n\n1225\n\n\n\n\n\n\n\n\n36\n\n\n\n\n\n\n1296\n\n\n\n\n\n\n\n\n37\n\n\n\n\n\n\n1369\n\n\n\n\n\n\n\n\n38\n\n\n\n\n\n\n1444\n\n\n\n\n\n\n\n\n39\n\n\n\n\n\n\n1521\n\n\n\n\n\n\n\n\n\nand in this case the user may specify datatables options (see the full list).\n\n(-> my-dataset\n    (kind/table {:use-datatables true\n                 :datatables {:scrollY 200}}))\n\n\n\n\n\n\n\nx\n\n\ny\n\n\n\n\n\n\n\n\n0\n\n\n\n\n\n\n0\n\n\n\n\n\n\n\n\n1\n\n\n\n\n\n\n1\n\n\n\n\n\n\n\n\n2\n\n\n\n\n\n\n4\n\n\n\n\n\n\n\n\n3\n\n\n\n\n\n\n9\n\n\n\n\n\n\n\n\n4\n\n\n\n\n\n\n16\n\n\n\n\n\n\n\n\n5\n\n\n\n\n\n\n25\n\n\n\n\n\n\n\n\n6\n\n\n\n\n\n\n36\n\n\n\n\n\n\n\n\n7\n\n\n\n\n\n\n49\n\n\n\n\n\n\n\n\n8\n\n\n\n\n\n\n64\n\n\n\n\n\n\n\n\n9\n\n\n\n\n\n\n81\n\n\n\n\n\n\n\n\n10\n\n\n\n\n\n\n100\n\n\n\n\n\n\n\n\n11\n\n\n\n\n\n\n121\n\n\n\n\n\n\n\n\n12\n\n\n\n\n\n\n144\n\n\n\n\n\n\n\n\n13\n\n\n\n\n\n\n169\n\n\n\n\n\n\n\n\n14\n\n\n\n\n\n\n196\n\n\n\n\n\n\n\n\n15\n\n\n\n\n\n\n225\n\n\n\n\n\n\n\n\n16\n\n\n\n\n\n\n256\n\n\n\n\n\n\n\n\n17\n\n\n\n\n\n\n289\n\n\n\n\n\n\n\n\n18\n\n\n\n\n\n\n324\n\n\n\n\n\n\n\n\n19\n\n\n\n\n\n\n361\n\n\n\n\n\n\n\n\n20\n\n\n\n\n\n\n400\n\n\n\n\n\n\n\n\n21\n\n\n\n\n\n\n441\n\n\n\n\n\n\n\n\n22\n\n\n\n\n\n\n484\n\n\n\n\n\n\n\n\n23\n\n\n\n\n\n\n529\n\n\n\n\n\n\n\n\n24\n\n\n\n\n\n\n576\n\n\n\n\n\n\n\n\n25\n\n\n\n\n\n\n625\n\n\n\n\n\n\n\n\n26\n\n\n\n\n\n\n676\n\n\n\n\n\n\n\n\n27\n\n\n\n\n\n\n729\n\n\n\n\n\n\n\n\n28\n\n\n\n\n\n\n784\n\n\n\n\n\n\n\n\n29\n\n\n\n\n\n\n841\n\n\n\n\n\n\n\n\n30\n\n\n\n\n\n\n900\n\n\n\n\n\n\n\n\n31\n\n\n\n\n\n\n961\n\n\n\n\n\n\n\n\n32\n\n\n\n\n\n\n1024\n\n\n\n\n\n\n\n\n33\n\n\n\n\n\n\n1089\n\n\n\n\n\n\n\n\n34\n\n\n\n\n\n\n1156\n\n\n\n\n\n\n\n\n35\n\n\n\n\n\n\n1225\n\n\n\n\n\n\n\n\n36\n\n\n\n\n\n\n1296\n\n\n\n\n\n\n\n\n37\n\n\n\n\n\n\n1369\n\n\n\n\n\n\n\n\n38\n\n\n\n\n\n\n1444\n\n\n\n\n\n\n\n\n39\n\n\n\n\n\n\n1521"
   },
   {
     "objectID": "kinds.html#reagent",
     "href": "kinds.html#reagent",
     "title": "3  Catalogue of visualization kinds",
-    "section": "3.9 Reagent",
-    "text": "3.9 Reagent\n\n(kind/reagent\n ['(fn [data]\n     [:div {:style {:background \"#ccddcc\"}}\n      [:big (count data)]])\n  (vec (range 99))])"
+    "section": "3.10 Reagent",
+    "text": "3.10 Reagent\n\n(kind/reagent\n ['(fn [data]\n     [:div {:style {:background \"#ccddcc\"}}\n      [:big (count data)]])\n  (vec (range 99))])"
   },
   {
     "objectID": "kinds.html#pretty-printing",
     "href": "kinds.html#pretty-printing",
     "title": "3  Catalogue of visualization kinds",
-    "section": "3.10 Pretty printing",
-    "text": "3.10 Pretty printing\n\n(->> (range 30)\n     (apply array-map)\n     kind/pprint)\n\n\n{0 1,\n 2 3,\n 4 5,\n 6 7,\n 8 9,\n 10 11,\n 12 13,\n 14 15,\n 16 17,\n 18 19,\n 20 21,\n 22 23,\n 24 25,\n 26 27,\n 28 29}"
+    "section": "3.11 Pretty printing",
+    "text": "3.11 Pretty printing\n\n(->> (range 30)\n     (apply array-map)\n     kind/pprint)\n\n\n{0 1,\n 2 3,\n 4 5,\n 6 7,\n 8 9,\n 10 11,\n 12 13,\n 14 15,\n 16 17,\n 18 19,\n 20 21,\n 22 23,\n 24 25,\n 26 27,\n 28 29}"
   },
   {
     "objectID": "kinds.html#hidden",
     "href": "kinds.html#hidden",
     "title": "3  Catalogue of visualization kinds",
-    "section": "3.11 Hidden",
-    "text": "3.11 Hidden\n\n(->> {:x 9}\n     kind/hidden)"
+    "section": "3.12 Hidden",
+    "text": "3.12 Hidden\n\n(->> {:x 9}\n     kind/hidden)"
   },
   {
     "objectID": "kinds.html#plain-data-structures",
     "href": "kinds.html#plain-data-structures",
     "title": "3  Catalogue of visualization kinds",
-    "section": "3.12 Plain data structures",
-    "text": "3.12 Plain data structures\nPlain Clojure data structures have recursive kind semantics: * Each tool has its own way to represent them visually (e.g., Clay just uses text, while Portal has a hierarchical navigation UI).\n\n(list 1 \"A\" :B 'C)\n\n\n(1 \"A\" :B C)\n\n\n[1 \"A\" :B 'C]\n\n\n[1 \"A\" :B C]\n\n\n#{1 \"A\" :B 'C}\n\n\n#{1 :B C \"A\"}\n\n\n{1 \"A\" :B 'C}\n\n\n{1 \"A\", :B C}"
+    "section": "3.13 Plain data structures",
+    "text": "3.13 Plain data structures\nPlain Clojure data structures have recursive kind semantics: * Each tool has its own way to represent them visually (e.g., Clay just uses text, while Portal has a hierarchical navigation UI).\n\n(list 1 \"A\" :B 'C)\n\n\n(1 \"A\" :B C)\n\n\n[1 \"A\" :B 'C]\n\n\n[1 \"A\" :B C]\n\n\n#{1 \"A\" :B 'C}\n\n\n#{1 :B C \"A\"}\n\n\n{1 \"A\" :B 'C}\n\n\n{1 \"A\", :B C}"
   },
   {
     "objectID": "kinds.html#plain-data-structures---nesting-other-kinds",
     "href": "kinds.html#plain-data-structures---nesting-other-kinds",
     "title": "3  Catalogue of visualization kinds",
-    "section": "3.13 Plain data structures - nesting other kinds",
-    "text": "3.13 Plain data structures - nesting other kinds\n\nIf the values inside them have kind information, they are handled accordingly.\n\n\n[(kind/hiccup\n  [:div {:style\n         {:background-color \"floralwhite\"}}\n   [:p \"hello\"]])\n (kind/md\n  \"hello *hello* **hello**\")\n (kind/code\n  \"(defn f [x] (+ x 9))\")]\n\n\n\n\n[\n\n\n\n\n\nhello\n\n\n\n\n\nhello hello hello\n\n\n\n\n(defn f [x] (+ x 9))\n\n\n\n\n]\n\n\n\n\n{:x  (kind/md\n      \"**hello**\")\n (kind/md\n  \"**hello**\") :x}\n\n\n\n\n{\n\n\n\n\n\n\n\n\n:x\n\n\n\n\n\n\n\n\nhello\n\n\n\n\n\n\n\n\n\n\n\n\nhello\n\n\n\n\n\n\n\n:x\n\n\n\n\n\n\n\n\n\n\n}"
+    "section": "3.14 Plain data structures - nesting other kinds",
+    "text": "3.14 Plain data structures - nesting other kinds\n\nIf the values inside them have kind information, they are handled accordingly.\n\n\n[(kind/hiccup\n  [:div {:style\n         {:background-color \"floralwhite\"}}\n   [:p \"hello\"]])\n (kind/md\n  \"hello *hello* **hello**\")\n (kind/code\n  \"(defn f [x] (+ x 9))\")]\n\n\n\n\n[\n\n\n\n\n\nhello\n\n\n\n\n\nhello hello hello\n\n\n\n\n(defn f [x] (+ x 9))\n\n\n\n\n]\n\n\n\n\n{:x  (kind/md\n      \"**hello**\")\n (kind/md\n  \"**hello**\") :x}\n\n\n\n\n{\n\n\n\n\n\n\n\n\n:x\n\n\n\n\n\n\n\n\nhello\n\n\n\n\n\n\n\n\n\n\n\n\nhello\n\n\n\n\n\n\n\n:x\n\n\n\n\n\n\n\n\n\n\n}"
   },
   {
     "objectID": "kinds.html#hiccup",
     "href": "kinds.html#hiccup",
     "title": "3  Catalogue of visualization kinds",
-    "section": "3.14 Hiccup",
-    "text": "3.14 Hiccup\n\n(-> [:div {:style\n           {:background-color \"floralwhite\"}}\n     [:p \"hello\"]]\n    kind/hiccup)\n\n\n\n\nhello"
+    "section": "3.15 Hiccup",
+    "text": "3.15 Hiccup\n\n(-> [:div {:style\n           {:background-color \"floralwhite\"}}\n     [:p \"hello\"]]\n    kind/hiccup)\n\n\n\n\nhello"
   },
   {
     "objectID": "kinds.html#hiccup---nesting-other-kinds",
     "href": "kinds.html#hiccup---nesting-other-kinds",
     "title": "3  Catalogue of visualization kinds",
-    "section": "3.15 Hiccup - nesting other kinds",
-    "text": "3.15 Hiccup - nesting other kinds\n\n(-> [:div {:style\n           {:background-color \"floralwhite\"\n            :border-style \"solid\"}}\n     [:p {:style {:background-color \"#ccddcc\"\n                  :border-style \"solid\"}}\n      \"hello\"]\n     (kind/md\n      \"hello *hello* **hello**\")\n     (kind/code\n      \"(defn f [x] (+ x 9))\")\n     my-plot]\n    kind/hiccup)\n\n\n\n\nhello\n\n\n\nhello hello hello\n\n\n\n\n(defn f [x] (+ x 9))"
+    "section": "3.16 Hiccup - nesting other kinds",
+    "text": "3.16 Hiccup - nesting other kinds\n\n(-> [:div {:style\n           {:background-color \"floralwhite\"\n            :border-style \"solid\"}}\n     [:p {:style {:background-color \"#ccddcc\"\n                  :border-style \"solid\"}}\n      \"hello\"]\n     (kind/md\n      \"hello *hello* **hello**\")\n     (kind/code\n      \"(defn f [x] (+ x 9))\")\n     my-plot]\n    kind/hiccup)\n\n\n\n\nhello\n\n\n\nhello hello hello\n\n\n\n\n(defn f [x] (+ x 9))"
   },
   {
     "objectID": "kinds.html#portal",
     "href": "kinds.html#portal",
     "title": "3  Catalogue of visualization kinds",
-    "section": "3.16 Portal",
-    "text": "3.16 Portal\n\n(-> [(kind/hiccup [:p {:style {:background-color \"#ccddcc\"\n                               :border-style \"solid\"}}\n                   \"hello\"])\n     (kind/md\n      \"hello *hello* **hello**\")\n     (kind/code\n      \"(defn f [x] (+ x 9))\")\n     my-plot]\n    kind/portal)\n\n\n\n\n\n\n\n\n\n\nsource: notebooks/kinds.clj"
+    "section": "3.17 Portal",
+    "text": "3.17 Portal\n\n(-> [(kind/hiccup [:p {:style {:background-color \"#ccddcc\"\n                               :border-style \"solid\"}}\n                   \"hello\"])\n     (kind/md\n      \"hello *hello* **hello**\")\n     (kind/code\n      \"(defn f [x] (+ x 9))\")\n     my-plot]\n    kind/portal)\n\n\n\n\n\n\n\n\n\n\nsource: notebooks/kinds.clj"
   },
   {
     "objectID": "kindly_advice.html#status",

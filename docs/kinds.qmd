@@ -16,7 +16,7 @@ include-in-header: {text: '<link rel = "icon" href = "data:," />'}
   border-style: none;
 }
 </style>
-<script src="kinds_files/md-default2.js" type="text/javascript"></script><script src="kinds_files/md-default3.js" type="text/javascript"></script><script src="kinds_files/vega4.js" type="text/javascript"></script><script src="kinds_files/vega5.js" type="text/javascript"></script><script src="kinds_files/vega6.js" type="text/javascript"></script><script src="kinds_files/cytoscape7.js" type="text/javascript"></script><script src="kinds_files/echarts8.js" type="text/javascript"></script><script src="kinds_files/plotly9.js" type="text/javascript"></script><script src="kinds_files/reagent10.js" type="text/javascript"></script><script src="kinds_files/reagent11.js" type="text/javascript"></script><script src="kinds_files/reagent12.js" type="text/javascript"></script><script src="kinds_files/reagent13.js" type="text/javascript"></script><script src="kinds_files/reagent14.js" type="text/javascript"></script><script src="kinds_files/reagent15.js" type="text/javascript"></script><script src="kinds_files/portal16.js" type="text/javascript"></script>
+<script src="kinds_files/md-default2.js" type="text/javascript"></script><script src="kinds_files/md-default3.js" type="text/javascript"></script><script src="kinds_files/vega4.js" type="text/javascript"></script><script src="kinds_files/vega5.js" type="text/javascript"></script><script src="kinds_files/vega6.js" type="text/javascript"></script><script src="kinds_files/cytoscape7.js" type="text/javascript"></script><script src="kinds_files/echarts8.js" type="text/javascript"></script><script src="kinds_files/plotly9.js" type="text/javascript"></script><script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js" type="text/javascript"></script><script src="kinds_files/reagent10.js" type="text/javascript"></script><script src="kinds_files/reagent11.js" type="text/javascript"></script><script src="kinds_files/reagent12.js" type="text/javascript"></script><script src="kinds_files/reagent13.js" type="text/javascript"></script><script src="kinds_files/reagent14.js" type="text/javascript"></script><script src="kinds_files/reagent15.js" type="text/javascript"></script><script src="kinds_files/portal16.js" type="text/javascript"></script><link href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
 
 ::: {.sourceClojure}
 ```clojure
@@ -240,13 +240,14 @@ clj-image
 <div style="max-height:600px;overflow-y:auto;"><img src="kinds_files/1.png" style="width:100%;" /></div>
 
 
-## Datasets
+## Dataset
+A tech.ml.dataset / Tablecloth dataset is printed and rendered as Markdown.
 
 
 ::: {.sourceClojure}
 ```clojure
 (def my-dataset
-  (-> {:x (range 3)}
+  (-> {:x (range 40)}
       tc/dataset
       (tc/map-columns :y
                       [:x]
@@ -263,15 +264,76 @@ my-dataset
 :::
 
 
-_unnamed [3 2]:
+_unnamed [40 2]:
 
-| :x | :y |
-|---:|---:|
-|  0 |  0 |
-|  1 |  1 |
-|  2 |  4 |
+|  :x |   :y |
+|----:|-----:|
+|   0 |    0 |
+|   1 |    1 |
+|   2 |    4 |
+|   3 |    9 |
+|   4 |   16 |
+|   5 |   25 |
+|   6 |   36 |
+|   7 |   49 |
+|   8 |   64 |
+|   9 |   81 |
+| ... |  ... |
+|  29 |  841 |
+|  30 |  900 |
+|  31 |  961 |
+|  32 | 1024 |
+|  33 | 1089 |
+|  34 | 1156 |
+|  35 | 1225 |
+|  36 | 1296 |
+|  37 | 1369 |
+|  38 | 1444 |
+|  39 | 1521 |
 
 
+
+
+## Table
+A table uses the tool's UI for tables, if any.
+
+
+::: {.sourceClojure}
+```clojure
+(kind/table my-dataset)
+```
+:::
+
+
+<div style="max-height:600px;overflow-y:auto;"><table class="table"><thead><tr><th>x</th><th>y</th></tr></thead><tbody><tr><td><div><p>0</p></div></td><td><div><p>0</p></div></td></tr><tr><td><div><p>1</p></div></td><td><div><p>1</p></div></td></tr><tr><td><div><p>2</p></div></td><td><div><p>4</p></div></td></tr><tr><td><div><p>3</p></div></td><td><div><p>9</p></div></td></tr><tr><td><div><p>4</p></div></td><td><div><p>16</p></div></td></tr><tr><td><div><p>5</p></div></td><td><div><p>25</p></div></td></tr><tr><td><div><p>6</p></div></td><td><div><p>36</p></div></td></tr><tr><td><div><p>7</p></div></td><td><div><p>49</p></div></td></tr><tr><td><div><p>8</p></div></td><td><div><p>64</p></div></td></tr><tr><td><div><p>9</p></div></td><td><div><p>81</p></div></td></tr><tr><td><div><p>10</p></div></td><td><div><p>100</p></div></td></tr><tr><td><div><p>11</p></div></td><td><div><p>121</p></div></td></tr><tr><td><div><p>12</p></div></td><td><div><p>144</p></div></td></tr><tr><td><div><p>13</p></div></td><td><div><p>169</p></div></td></tr><tr><td><div><p>14</p></div></td><td><div><p>196</p></div></td></tr><tr><td><div><p>15</p></div></td><td><div><p>225</p></div></td></tr><tr><td><div><p>16</p></div></td><td><div><p>256</p></div></td></tr><tr><td><div><p>17</p></div></td><td><div><p>289</p></div></td></tr><tr><td><div><p>18</p></div></td><td><div><p>324</p></div></td></tr><tr><td><div><p>19</p></div></td><td><div><p>361</p></div></td></tr><tr><td><div><p>20</p></div></td><td><div><p>400</p></div></td></tr><tr><td><div><p>21</p></div></td><td><div><p>441</p></div></td></tr><tr><td><div><p>22</p></div></td><td><div><p>484</p></div></td></tr><tr><td><div><p>23</p></div></td><td><div><p>529</p></div></td></tr><tr><td><div><p>24</p></div></td><td><div><p>576</p></div></td></tr><tr><td><div><p>25</p></div></td><td><div><p>625</p></div></td></tr><tr><td><div><p>26</p></div></td><td><div><p>676</p></div></td></tr><tr><td><div><p>27</p></div></td><td><div><p>729</p></div></td></tr><tr><td><div><p>28</p></div></td><td><div><p>784</p></div></td></tr><tr><td><div><p>29</p></div></td><td><div><p>841</p></div></td></tr><tr><td><div><p>30</p></div></td><td><div><p>900</p></div></td></tr><tr><td><div><p>31</p></div></td><td><div><p>961</p></div></td></tr><tr><td><div><p>32</p></div></td><td><div><p>1024</p></div></td></tr><tr><td><div><p>33</p></div></td><td><div><p>1089</p></div></td></tr><tr><td><div><p>34</p></div></td><td><div><p>1156</p></div></td></tr><tr><td><div><p>35</p></div></td><td><div><p>1225</p></div></td></tr><tr><td><div><p>36</p></div></td><td><div><p>1296</p></div></td></tr><tr><td><div><p>37</p></div></td><td><div><p>1369</p></div></td></tr><tr><td><div><p>38</p></div></td><td><div><p>1444</p></div></td></tr><tr><td><div><p>39</p></div></td><td><div><p>1521</p></div></td></tr></tbody></table></div>
+
+Some tools support [datatables](https://datatables.net/) for displaying tables.
+
+
+::: {.sourceClojure}
+```clojure
+(-> my-dataset
+    (kind/table {:use-datatables true}))
+```
+:::
+
+
+<div style="max-height:600px;overflow-y:auto;"><table class="table"><thead><tr><th>x</th><th>y</th></tr></thead><tbody><tr><td><div><p>0</p></div></td><td><div><p>0</p></div></td></tr><tr><td><div><p>1</p></div></td><td><div><p>1</p></div></td></tr><tr><td><div><p>2</p></div></td><td><div><p>4</p></div></td></tr><tr><td><div><p>3</p></div></td><td><div><p>9</p></div></td></tr><tr><td><div><p>4</p></div></td><td><div><p>16</p></div></td></tr><tr><td><div><p>5</p></div></td><td><div><p>25</p></div></td></tr><tr><td><div><p>6</p></div></td><td><div><p>36</p></div></td></tr><tr><td><div><p>7</p></div></td><td><div><p>49</p></div></td></tr><tr><td><div><p>8</p></div></td><td><div><p>64</p></div></td></tr><tr><td><div><p>9</p></div></td><td><div><p>81</p></div></td></tr><tr><td><div><p>10</p></div></td><td><div><p>100</p></div></td></tr><tr><td><div><p>11</p></div></td><td><div><p>121</p></div></td></tr><tr><td><div><p>12</p></div></td><td><div><p>144</p></div></td></tr><tr><td><div><p>13</p></div></td><td><div><p>169</p></div></td></tr><tr><td><div><p>14</p></div></td><td><div><p>196</p></div></td></tr><tr><td><div><p>15</p></div></td><td><div><p>225</p></div></td></tr><tr><td><div><p>16</p></div></td><td><div><p>256</p></div></td></tr><tr><td><div><p>17</p></div></td><td><div><p>289</p></div></td></tr><tr><td><div><p>18</p></div></td><td><div><p>324</p></div></td></tr><tr><td><div><p>19</p></div></td><td><div><p>361</p></div></td></tr><tr><td><div><p>20</p></div></td><td><div><p>400</p></div></td></tr><tr><td><div><p>21</p></div></td><td><div><p>441</p></div></td></tr><tr><td><div><p>22</p></div></td><td><div><p>484</p></div></td></tr><tr><td><div><p>23</p></div></td><td><div><p>529</p></div></td></tr><tr><td><div><p>24</p></div></td><td><div><p>576</p></div></td></tr><tr><td><div><p>25</p></div></td><td><div><p>625</p></div></td></tr><tr><td><div><p>26</p></div></td><td><div><p>676</p></div></td></tr><tr><td><div><p>27</p></div></td><td><div><p>729</p></div></td></tr><tr><td><div><p>28</p></div></td><td><div><p>784</p></div></td></tr><tr><td><div><p>29</p></div></td><td><div><p>841</p></div></td></tr><tr><td><div><p>30</p></div></td><td><div><p>900</p></div></td></tr><tr><td><div><p>31</p></div></td><td><div><p>961</p></div></td></tr><tr><td><div><p>32</p></div></td><td><div><p>1024</p></div></td></tr><tr><td><div><p>33</p></div></td><td><div><p>1089</p></div></td></tr><tr><td><div><p>34</p></div></td><td><div><p>1156</p></div></td></tr><tr><td><div><p>35</p></div></td><td><div><p>1225</p></div></td></tr><tr><td><div><p>36</p></div></td><td><div><p>1296</p></div></td></tr><tr><td><div><p>37</p></div></td><td><div><p>1369</p></div></td></tr><tr><td><div><p>38</p></div></td><td><div><p>1444</p></div></td></tr><tr><td><div><p>39</p></div></td><td><div><p>1521</p></div></td></tr></tbody><script>new DataTable(document.currentScript.parentElement, {"paging":false,"scrollY":400,"sPaginationType":"full_numbers","order":[]});</script></table></div>
+
+and in this case the user may specify [datatables options](https://datatables.net/manual/options)
+(see [the full list](https://datatables.net/reference/option/)).
+
+
+::: {.sourceClojure}
+```clojure
+(-> my-dataset
+    (kind/table {:use-datatables true
+                 :datatables {:scrollY 200}}))
+```
+:::
+
+
+<div style="max-height:600px;overflow-y:auto;"><table class="table"><thead><tr><th>x</th><th>y</th></tr></thead><tbody><tr><td><div><p>0</p></div></td><td><div><p>0</p></div></td></tr><tr><td><div><p>1</p></div></td><td><div><p>1</p></div></td></tr><tr><td><div><p>2</p></div></td><td><div><p>4</p></div></td></tr><tr><td><div><p>3</p></div></td><td><div><p>9</p></div></td></tr><tr><td><div><p>4</p></div></td><td><div><p>16</p></div></td></tr><tr><td><div><p>5</p></div></td><td><div><p>25</p></div></td></tr><tr><td><div><p>6</p></div></td><td><div><p>36</p></div></td></tr><tr><td><div><p>7</p></div></td><td><div><p>49</p></div></td></tr><tr><td><div><p>8</p></div></td><td><div><p>64</p></div></td></tr><tr><td><div><p>9</p></div></td><td><div><p>81</p></div></td></tr><tr><td><div><p>10</p></div></td><td><div><p>100</p></div></td></tr><tr><td><div><p>11</p></div></td><td><div><p>121</p></div></td></tr><tr><td><div><p>12</p></div></td><td><div><p>144</p></div></td></tr><tr><td><div><p>13</p></div></td><td><div><p>169</p></div></td></tr><tr><td><div><p>14</p></div></td><td><div><p>196</p></div></td></tr><tr><td><div><p>15</p></div></td><td><div><p>225</p></div></td></tr><tr><td><div><p>16</p></div></td><td><div><p>256</p></div></td></tr><tr><td><div><p>17</p></div></td><td><div><p>289</p></div></td></tr><tr><td><div><p>18</p></div></td><td><div><p>324</p></div></td></tr><tr><td><div><p>19</p></div></td><td><div><p>361</p></div></td></tr><tr><td><div><p>20</p></div></td><td><div><p>400</p></div></td></tr><tr><td><div><p>21</p></div></td><td><div><p>441</p></div></td></tr><tr><td><div><p>22</p></div></td><td><div><p>484</p></div></td></tr><tr><td><div><p>23</p></div></td><td><div><p>529</p></div></td></tr><tr><td><div><p>24</p></div></td><td><div><p>576</p></div></td></tr><tr><td><div><p>25</p></div></td><td><div><p>625</p></div></td></tr><tr><td><div><p>26</p></div></td><td><div><p>676</p></div></td></tr><tr><td><div><p>27</p></div></td><td><div><p>729</p></div></td></tr><tr><td><div><p>28</p></div></td><td><div><p>784</p></div></td></tr><tr><td><div><p>29</p></div></td><td><div><p>841</p></div></td></tr><tr><td><div><p>30</p></div></td><td><div><p>900</p></div></td></tr><tr><td><div><p>31</p></div></td><td><div><p>961</p></div></td></tr><tr><td><div><p>32</p></div></td><td><div><p>1024</p></div></td></tr><tr><td><div><p>33</p></div></td><td><div><p>1089</p></div></td></tr><tr><td><div><p>34</p></div></td><td><div><p>1156</p></div></td></tr><tr><td><div><p>35</p></div></td><td><div><p>1225</p></div></td></tr><tr><td><div><p>36</p></div></td><td><div><p>1296</p></div></td></tr><tr><td><div><p>37</p></div></td><td><div><p>1369</p></div></td></tr><tr><td><div><p>38</p></div></td><td><div><p>1444</p></div></td></tr><tr><td><div><p>39</p></div></td><td><div><p>1521</p></div></td></tr></tbody><script>new DataTable(document.currentScript.parentElement, {"paging":false,"scrollY":200,"sPaginationType":"full_numbers","order":[]});</script></table></div>
 
 
 ## Reagent
@@ -288,7 +350,7 @@ _unnamed [3 2]:
 :::
 
 
-<div style="max-height:600px;overflow-y:auto;"><div id="id4"><script type="application/x-scittle">(reagent.dom/render [(fn [data] [:div {:style {:background "#ccddcc"}} [:big (count data)]]) [0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98]] (js/document.getElementById "id4"))</script></div></div>
+<div style="max-height:600px;overflow-y:auto;"><div id="id8"><script type="application/x-scittle">(reagent.dom/render [(fn [data] [:div {:style {:background "#ccddcc"}} [:big (count data)]]) [0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98]] (js/document.getElementById "id8"))</script></div></div>
 
 
 ## Pretty printing
@@ -511,7 +573,7 @@ Plain Clojure data structures have recursive kind semantics:
 
 <div style="max-height:600px;overflow-y:auto;"><div><script>portal_api.embed().renderOutputItem(
                 {'mime': 'x-application/edn',
-                 'text': (() => "[^{:source \"[:p {:style {:background-color \\\"#ccddcc\\\"\\n                               :border-style \\\"solid\\\"}}\\n                   \\\"hello\\\"]\", :line 192, :column 19, :end-line 194, :end-column 28, :kindly/kind :kind/hiccup, :portal.viewer/default :portal.viewer/hiccup} [:p ^{:source \"{:style {:background-color \\\"#ccddcc\\\"\\n                               :border-style \\\"solid\\\"}}\", :line 192, :column 23, :end-line 193, :end-column 55} {:style ^{:source \"{:background-color \\\"#ccddcc\\\"\\n                               :border-style \\\"solid\\\"}\", :line 192, :column 31, :end-line 193, :end-column 54} {:background-color \"#ccddcc\", :border-style \"solid\"}} \"hello\"] ^#:portal.viewer{:default :portal.viewer/hiccup} [:div [:portal.viewer/markdown \"hello *hello* **hello**\"]] ^#:portal.viewer{:default :portal.viewer/hiccup} [:div [:portal.viewer/code \"(defn f [x] (+ x 9))\"]] ^#:portal.viewer{:default :portal.viewer/hiccup} [:portal.viewer/vega-lite ^{:source \"{:encoding\\n       {:y {:field \\\"y\\\", :type \\\"quantitative\\\"},\\n        :size {:value 400},\\n        :x {:field \\\"x\\\", :type \\\"quantitative\\\"}},\\n       :mark {:type \\\"circle\\\", :tooltip true},\\n       :width 400,\\n       :background \\\"floralwhite\\\",\\n       :height 100,\\n       :data {:values \\\"x,y\\\\n1,1\\\\n2,-4\\\\n3,9\\\\n\\\", :format {:type \\\"csv\\\"}}}\", :line 22, :column 7, :end-line 30, :end-column 71, :kindly/kind :kind/vega-lite} {:encoding ^{:source \"{:y {:field \\\"y\\\", :type \\\"quantitative\\\"},\\n        :size {:value 400},\\n        :x {:field \\\"x\\\", :type \\\"quantitative\\\"}}\", :line 23, :column 8, :end-line 25, :end-column 47} {:y ^{:source \"{:field \\\"y\\\", :type \\\"quantitative\\\"}\", :line 23, :column 12, :end-line 23, :end-column 46} {:field \"y\", :type \"quantitative\"}, :size ^{:source \"{:value 400}\", :line 24, :column 15, :end-line 24, :end-column 27} {:value 400}, :x ^{:source \"{:field \\\"x\\\", :type \\\"quantitative\\\"}\", :line 25, :column 12, :end-line 25, :end-column 46} {:field \"x\", :type \"quantitative\"}}, :mark ^{:source \"{:type \\\"circle\\\", :tooltip true}\", :line 26, :column 14, :end-line 26, :end-column 45} {:type \"circle\", :tooltip true}, :width 400, :background \"floralwhite\", :height 100, :data ^{:source \"{:values \\\"x,y\\\\n1,1\\\\n2,-4\\\\n3,9\\\\n\\\", :format {:type \\\"csv\\\"}}\", :line 30, :column 14, :end-line 30, :end-column 70} {:values \"x,y\\n1,1\\n2,-4\\n3,9\\n\", :format ^{:source \"{:type \\\"csv\\\"}\", :line 30, :column 56, :end-line 30, :end-column 69} {:type \"csv\"}}}]]")}
+                 'text': (() => "[^{:source \"[:p {:style {:background-color \\\"#ccddcc\\\"\\n                               :border-style \\\"solid\\\"}}\\n                   \\\"hello\\\"]\", :line 211, :column 19, :end-line 213, :end-column 28, :kindly/kind :kind/hiccup, :portal.viewer/default :portal.viewer/hiccup} [:p ^{:source \"{:style {:background-color \\\"#ccddcc\\\"\\n                               :border-style \\\"solid\\\"}}\", :line 211, :column 23, :end-line 212, :end-column 55} {:style ^{:source \"{:background-color \\\"#ccddcc\\\"\\n                               :border-style \\\"solid\\\"}\", :line 211, :column 31, :end-line 212, :end-column 54} {:background-color \"#ccddcc\", :border-style \"solid\"}} \"hello\"] ^#:portal.viewer{:default :portal.viewer/hiccup} [:div [:portal.viewer/markdown \"hello *hello* **hello**\"]] ^#:portal.viewer{:default :portal.viewer/hiccup} [:div [:portal.viewer/code \"(defn f [x] (+ x 9))\"]] ^#:portal.viewer{:default :portal.viewer/hiccup} [:portal.viewer/vega-lite ^{:source \"{:encoding\\n       {:y {:field \\\"y\\\", :type \\\"quantitative\\\"},\\n        :size {:value 400},\\n        :x {:field \\\"x\\\", :type \\\"quantitative\\\"}},\\n       :mark {:type \\\"circle\\\", :tooltip true},\\n       :width 400,\\n       :background \\\"floralwhite\\\",\\n       :height 100,\\n       :data {:values \\\"x,y\\\\n1,1\\\\n2,-4\\\\n3,9\\\\n\\\", :format {:type \\\"csv\\\"}}}\", :line 22, :column 7, :end-line 30, :end-column 71, :kindly/kind :kind/vega-lite} {:encoding ^{:source \"{:y {:field \\\"y\\\", :type \\\"quantitative\\\"},\\n        :size {:value 400},\\n        :x {:field \\\"x\\\", :type \\\"quantitative\\\"}}\", :line 23, :column 8, :end-line 25, :end-column 47} {:y ^{:source \"{:field \\\"y\\\", :type \\\"quantitative\\\"}\", :line 23, :column 12, :end-line 23, :end-column 46} {:field \"y\", :type \"quantitative\"}, :size ^{:source \"{:value 400}\", :line 24, :column 15, :end-line 24, :end-column 27} {:value 400}, :x ^{:source \"{:field \\\"x\\\", :type \\\"quantitative\\\"}\", :line 25, :column 12, :end-line 25, :end-column 46} {:field \"x\", :type \"quantitative\"}}, :mark ^{:source \"{:type \\\"circle\\\", :tooltip true}\", :line 26, :column 14, :end-line 26, :end-column 45} {:type \"circle\", :tooltip true}, :width 400, :background \"floralwhite\", :height 100, :data ^{:source \"{:values \\\"x,y\\\\n1,1\\\\n2,-4\\\\n3,9\\\\n\\\", :format {:type \\\"csv\\\"}}\", :line 30, :column 14, :end-line 30, :end-column 70} {:values \"x,y\\n1,1\\n2,-4\\n3,9\\n\", :format ^{:source \"{:type \\\"csv\\\"}\", :line 30, :column 56, :end-line 30, :end-column 69} {:type \"csv\"}}}]]")}
                 , document.currentScript.parentElement);</script></div></div>
 
 <div style="background-color:grey;height:2px;width:100%;"></div>
