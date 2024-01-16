@@ -95,7 +95,7 @@ my-plot
 (kind/plotly
  plotly-example)
 
-;;; ## Images
+;; ## Images
 (def clj-image
   (->  "https://upload.wikimedia.org/wikipedia/commons/e/eb/Ash_Tree_-_geograph.org.uk_-_590710.jpg"
        (java.net.URL.)
@@ -103,7 +103,13 @@ my-plot
 
 clj-image
 
-;;; ## Dataset
+
+
+
+
+
+
+;; ## Dataset
 
 ;; A tech.ml.dataset / Tablecloth dataset is printed and rendered as Markdown.
 
@@ -116,7 +122,7 @@ clj-image
 
 my-dataset
 
-;;; ## Table
+;; ## Table
 
 ;; A table uses the tool's UI for tables, if any.
 
@@ -134,7 +140,7 @@ my-dataset
     (kind/table {:use-datatables true
                  :datatables {:scrollY 200}}))
 
-;;; ## Reagent
+;; ## Reagent
 
 (kind/reagent
  ['(fn [data]
