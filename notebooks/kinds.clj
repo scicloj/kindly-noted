@@ -32,6 +32,69 @@
 
 my-plot
 
+;; ## Cytoscape
+
+(def cytoscape-example
+  {:elements {:nodes [{:data {:id "a" :parent "b"} :position {:x 215 :y 85}}
+                      {:data {:id "b"}}
+                      {:data {:id "c" :parent "b"} :position {:x 300 :y 85}}
+                      {:data {:id "d"} :position {:x 215 :y 175}}
+                      {:data {:id "e"}}
+                      {:data {:id "f" :parent "e"} :position {:x 300 :y 175}}]
+              :edges [{:data {:id "ad" :source "a" :target "d"}}
+                      {:data {:id "eb" :source "e" :target "b"}}]}
+   :style [{:selector "node"
+            :css {:content "data(id)"
+                  :text-valign "center"
+                  :text-halign "center"}}
+           {:selector "parent"
+            :css {:text-valign "top"
+                  :text-halign "center"}}
+           {:selector "edge"
+            :css {:curve-style "bezier"
+                  :target-arrow-shape "triangle"}}]
+   :layout {:name "preset"
+            :padding 5}})
+
+(kind/cytoscape
+ cytoscape-example)
+
+;; ## ECharts
+
+;; This example is taken from Apache ECharts' [Getting Started](https://echarts.apache.org/handbook/en/get-started/).
+
+(def echarts-example
+  {:title {:text "Echarts Example"}
+   :tooltip {}
+   :legend {:data ["sales"]}
+   :xAxis {:data ["Shirts", "Cardigans", "Chiffons",
+                  "Pants", "Heels", "Socks"]}
+   :yAxis {}
+   :series [{:name "sales"
+             :type "bar"
+             :data [5 20 36
+                    10 10 20]}]})
+
+(kind/echarts
+ echarts-example)
+
+
+;; ## Plotly
+
+(def plotly-example
+  {:data [{:x [0 1 3 2]
+           :y [0 6 4 5]
+           :z [0 8 9 7]
+           :type :scatter3d
+           :mode :lines+markers
+           :opacity 0.5
+           :line {:width 5}
+           :marker {:size 4
+                    :colorscale :Viridis}}]})
+
+(kind/plotly
+ plotly-example)
+
 ;;; ## Images
 (def clj-image
   (->  "https://upload.wikimedia.org/wikipedia/commons/e/eb/Ash_Tree_-_geograph.org.uk_-_590710.jpg"
@@ -49,6 +112,8 @@ clj-image
                       (fn [x] (* x x)))))
 
 my-dataset
+
+
 
 ;;; ## Reagent
 
