@@ -65,7 +65,8 @@ Kindly-advice will stabilize soon and is currently getting feedback from tool-ma
  :meta-kind :kind/hiccup,
  :kind :kind/hiccup,
  :advice
- [[:kind/hiccup {:reason :metadata}]
+ [[:kind/hiccup]
+  [:kind/hiccup {:reason :metadata}]
   [:kind/vector {:reason :predicate}]
   [:kind/seq {:reason :predicate}]]}
 
@@ -102,7 +103,8 @@ Kindly-advice checks both the form and value for metadata. The metadata might no
  :meta-kind :kind/hiccup,
  :kind :kind/hiccup,
  :advice
- [[:kind/hiccup {:reason :metadata}]
+ [[:kind/hiccup]
+  [:kind/hiccup {:reason :metadata}]
   [:kind/vector {:reason :predicate}]
   [:kind/seq {:reason :predicate}]]}
 
