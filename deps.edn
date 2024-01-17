@@ -1,6 +1,6 @@
-{:deps {org.scicloj/kindly {:mvn/version "4-alpha12"}
+{:deps {org.scicloj/kindly {:mvn/version "4-alpha13"}
         org.scicloj/kindly-advice {:mvn/version "1-alpha7"}
         org.scicloj/kind-portal {:mvn/version "1-alpha11"}
-        org.scicloj/clay {:mvn/version "2-alpha66"}
-        org.scicloj/noj {:mvn/version "1-alpha22"}}
+        org.scicloj/clay {:mvn/version "2-alpha68"}
+        org.scicloj/noj {:mvn/version "1-alpha24"}}
  :paths ["src" "notebooks"]}
