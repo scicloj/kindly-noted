@@ -31,3 +31,7 @@
 project/docs
 book/chapters/*
 temp
+.clay.html
+clay_files
+*.qmd
+
