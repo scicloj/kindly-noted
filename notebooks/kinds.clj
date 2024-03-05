@@ -117,7 +117,8 @@ tree-image
               {:key-fn keyword}))
 
 
-(require '[scicloj.noj.v1.stats :as noj.stats])
+(require '[scicloj.noj.v1.stats :as noj.stats]
+         '[scicloj.metamorph.ml :as ml])
 
 (def marketing-model
   (-> marketing-dataset
@@ -230,44 +231,47 @@ hello-hiccup)
 tree-image)
 
 (kind/pprint
-kind/dataset)
+ kind/dataset)
 
 ;; ## Vega-Lite
 
-(kind/vega-lite
-{:encoding
- {:y {:field "y", :type "quantitative"},
-  :size {:value 400},
-  :x {:field "x", :type "quantitative"}},
- :mark {:type "circle", :tooltip true},
- :width 400,
- :background "floralwhite",
- :height 100,
- :data {:values "x,y\n1,1\n2,-4\n3,9\n", :format {:type "csv"}}})
+(def vega-lite-plot
+  (kind/vega-lite
+   {:encoding
+    {:y {:field "y", :type "quantitative"},
+     :size {:value 400},
+     :x {:field "x", :type "quantitative"}},
+    :mark {:type "circle", :tooltip true},
+    :width 400,
+    :background "floralwhite",
+    :height 100,
+    :data {:values "x,y\n1,1\n2,-4\n3,9\n", :format {:type "csv"}}}))
+
+vega-lite-plot
 
 ;; ## Cytoscape
 
 (kind/cytoscape
-{:elements {:nodes [{:data {:id "a" :parent "b"} :position {:x 215 :y 85}}
-                    {:data {:id "b"}}
-                    {:data {:id "c" :parent "b"} :position {:x 300 :y 85}}
-                    {:data {:id "d"} :position {:x 215 :y 175}}
-                    {:data {:id "e"}}
-                    {:data {:id "f" :parent "e"} :position {:x 300 :y 175}}]
-            :edges [{:data {:id "ad" :source "a" :target "d"}}
-                    {:data {:id "eb" :source "e" :target "b"}}]}
- :style [{:selector "node"
-          :css {:content "data(id)"
-                :text-valign "center"
-                :text-halign "center"}}
-         {:selector "parent"
-          :css {:text-valign "top"
-                :text-halign "center"}}
-         {:selector "edge"
-          :css {:curve-style "bezier"
-                :target-arrow-shape "triangle"}}]
- :layout {:name "preset"
-          :padding 5}})
+ {:elements {:nodes [{:data {:id "a" :parent "b"} :position {:x 215 :y 85}}
+                     {:data {:id "b"}}
+                     {:data {:id "c" :parent "b"} :position {:x 300 :y 85}}
+                     {:data {:id "d"} :position {:x 215 :y 175}}
+                     {:data {:id "e"}}
+                     {:data {:id "f" :parent "e"} :position {:x 300 :y 175}}]
+             :edges [{:data {:id "ad" :source "a" :target "d"}}
+                     {:data {:id "eb" :source "e" :target "b"}}]}
+  :style [{:selector "node"
+           :css {:content "data(id)"
+                 :text-valign "center"
+                 :text-halign "center"}}
+          {:selector "parent"
+           :css {:text-valign "top"
+                 :text-halign "center"}}
+          {:selector "edge"
+           :css {:curve-style "bezier"
+                 :target-arrow-shape "triangle"}}]
+  :layout {:name "preset"
+           :padding 5}})
 
 ;; ## ECharts
 
@@ -401,7 +405,7 @@ Plot.plot({
       "hello *hello* **hello**")
      (kind/code
       "(defn f [x] (+  x 9))")
-     my-plot]
+     vega-lite-plot]
     kind/hiccup)
 
 ;; ## Portal
@@ -413,5 +417,5 @@ Plot.plot({
       "hello *hello* **hello**")
      (kind/code
       "(defn f [x] (+  x 9))")
-     my-plot]
+     vega-lite-plot]
     kind/portal)
