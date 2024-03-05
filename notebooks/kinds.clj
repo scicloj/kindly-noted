@@ -10,7 +10,7 @@
 ;; Values with no kind are displayed the default way each tool would display them.
 ;; In Clay, they are simply pretty-printed.
 
-(+ 4 5)
+(+  4 5)
 
 (str "abcd" "efgh")
 
@@ -42,7 +42,7 @@
 ;; Values of `kind/code` are rendered as Clojure code.
 
 (kind/code
- "(defn f [x] {:y (+ x 9)})")
+ "(defn f [x] {:y (+  x 9)})")
 
 ;; ## Hiccup
 (def hello-hiccup
@@ -96,18 +96,40 @@ hello-hiccup
        (java.net.URL.)
        (javax.imageio.ImageIO/read)))
 
+(type tree-image)
+
 tree-image
 
 ;; ## ML models
 
 ;; By default (according to `kindly/advice`), a machine learning model of the [Smile](https://haifengl.github.io/) library is inferred to be of `kind/smile-model`.
 
-(-> datasets/iris
-    (noj.stats/linear-regression-model :sepal-length
-                                       [:sepal-width
-                                        :petal-width
-                                        :petal-length])
-    ml/thaw-model)
+(smile.regression.OLS/fit
+ (smile.data.formula.Formula/lhs "y")
+ (smile.data.DataFrame/of (into-array [(double-array [1 1 2])
+                                       (double-array [2 4 5])
+                                       (double-array [3 9 13])
+                                       (double-array [4 16 19])])
+                          (into-array ["w" "x" "y"])))
+
+(defonce marketing-dataset
+  (tc/dataset "https://github.com/scicloj/datarium-CSV/raw/main/data/marketing.csv.gz"
+              {:key-fn keyword}))
+
+
+(require '[scicloj.noj.v1.stats :as noj.stats])
+
+(def marketing-model
+  (-> marketing-dataset
+      (noj.stats/linear-regression-model :sales
+                                         [:youtube
+                                          :facebook
+                                          :newspaper])
+      ml/thaw-model))
+
+(type marketing-model)
+
+marketing-model
 
 ;; This kind is displayed by printing the value displaying it as code.
 
@@ -126,6 +148,7 @@ tree-image
                       (fn [x]
                         (* x x)))))
 
+
 ;; Datasets can have various printable values inside:
 
 (tc/dataset
@@ -140,7 +163,11 @@ tree-image
 
 ;; ## Tables
 
-;; A value of `kind/table` should be displayed as a table.
+
+
+
+;; A value of `kind/table` should be displayed as a table
+;; (using the tool's UI for tables, if any).
 
 ;; The table contents can be specified in different ways.
 
@@ -149,11 +176,11 @@ tree-image
 
 ;; A sequence of vectors and column-names information:
 (kind/table
- {:row-vectors (->> (range 25)
-                    (map (fn [x]
-                           [x
-                            (* x x)])))
-  :column-names [:x :y]})
+{:row-vectors (->> (range 25)
+                   (map (fn [x]
+                          [x
+                           (* x x)])))
+ :column-names [:x :y]})
 
 ;; A sequence of maps and column-names information:
 (kind/table
@@ -162,6 +189,19 @@ tree-image
                         {:x x
                          :y (* x x)})))
   :column-names [:x :y]})
+
+;; Some tools support [datatables](https://datatables.net/)
+;; for displaying tables.
+
+(-> squares-dataset
+    (kind/table {:use-datatables true}))
+
+(-> squares-dataset
+    (kind/table {:use-datatables true
+                 :datatables {:scrollY 200}}))
+
+;; and in this case the user may specify [datatables options](https://datatables.net/manual/options)
+;; (see [the full list](https://datatables.net/reference/option/)).
 
 ;; ## Pretty printing
 
@@ -175,7 +215,7 @@ tree-image
 ;; when there is no kind information.
 
 (->> (range 30)
-     (apply array-map))
+(apply array-map))
 
 ;; Still, it can be is useful to ensure the same behaviour
 ;; across different tools.
@@ -184,50 +224,50 @@ tree-image
 ;; specified or automatically inferred.
 
 (kind/pprint
- hello-hiccup)
+hello-hiccup)
 
 (kind/pprint
- tree-image)
+tree-image)
 
 (kind/pprint
- kind/dataset)
+kind/dataset)
 
 ;; ## Vega-Lite
 
 (kind/vega-lite
- {:encoding
-  {:y {:field "y", :type "quantitative"},
-   :size {:value 400},
-   :x {:field "x", :type "quantitative"}},
-  :mark {:type "circle", :tooltip true},
-  :width 400,
-  :background "floralwhite",
-  :height 100,
-  :data {:values "x,y\n1,1\n2,-4\n3,9\n", :format {:type "csv"}}})
+{:encoding
+ {:y {:field "y", :type "quantitative"},
+  :size {:value 400},
+  :x {:field "x", :type "quantitative"}},
+ :mark {:type "circle", :tooltip true},
+ :width 400,
+ :background "floralwhite",
+ :height 100,
+ :data {:values "x,y\n1,1\n2,-4\n3,9\n", :format {:type "csv"}}})
 
 ;; ## Cytoscape
 
 (kind/cytoscape
- {:elements {:nodes [{:data {:id "a" :parent "b"} :position {:x 215 :y 85}}
-                     {:data {:id "b"}}
-                     {:data {:id "c" :parent "b"} :position {:x 300 :y 85}}
-                     {:data {:id "d"} :position {:x 215 :y 175}}
-                     {:data {:id "e"}}
-                     {:data {:id "f" :parent "e"} :position {:x 300 :y 175}}]
-             :edges [{:data {:id "ad" :source "a" :target "d"}}
-                     {:data {:id "eb" :source "e" :target "b"}}]}
-  :style [{:selector "node"
-           :css {:content "data(id)"
-                 :text-valign "center"
-                 :text-halign "center"}}
-          {:selector "parent"
-           :css {:text-valign "top"
-                 :text-halign "center"}}
-          {:selector "edge"
-           :css {:curve-style "bezier"
-                 :target-arrow-shape "triangle"}}]
-  :layout {:name "preset"
-           :padding 5}})
+{:elements {:nodes [{:data {:id "a" :parent "b"} :position {:x 215 :y 85}}
+                    {:data {:id "b"}}
+                    {:data {:id "c" :parent "b"} :position {:x 300 :y 85}}
+                    {:data {:id "d"} :position {:x 215 :y 175}}
+                    {:data {:id "e"}}
+                    {:data {:id "f" :parent "e"} :position {:x 300 :y 175}}]
+            :edges [{:data {:id "ad" :source "a" :target "d"}}
+                    {:data {:id "eb" :source "e" :target "b"}}]}
+ :style [{:selector "node"
+          :css {:content "data(id)"
+                :text-valign "center"
+                :text-halign "center"}}
+         {:selector "parent"
+          :css {:text-valign "top"
+                :text-halign "center"}}
+         {:selector "edge"
+          :css {:curve-style "bezier"
+                :target-arrow-shape "triangle"}}]
+ :layout {:name "preset"
+          :padding 5}})
 
 ;; ## ECharts
 
@@ -248,63 +288,22 @@ tree-image
 ;; ## Plotly
 
 (kind/plotly
- {:data [{:x [0 1 3 2]
-          :y [0 6 4 5]
-          :z [0 8 9 7]
-          :type :scatter3d
-          :mode :lines+markers
-          :opacity 0.5
-          :line {:width 5}
-          :marker {:size 4
-                   :colorscale :Viridis}}]})
-
-
-
-
-;; ## Smile Regression models
-
-;; A [Smile](https://haifengl.github.io/) regression model is displayed
-;; by turning it into a String
-;; and higlighting the output as printed Clojure.
-
-(smile.regression.OLS/fit
- (smile.data.formula.Formula/lhs "y")
- (smile.data.DataFrame/of (into-array [(double-array [1 1 2])
-                                       (double-array [2 4 5])
-                                       (double-array [3 9 13])
-                                       (double-array [4 16 19])])
-                          (into-array ["w" "x" "y"])))
-
-
-(require '[scicloj.noj.v1.datasets :as datasets]
-         '[scicloj.noj.v1.stats :as noj.stats]
-         '[scicloj.ml.core :as ml])
-
-(-> datasets/iris
-    (noj.stats/linear-regression-model :sepal-length
-                                       [:sepal-width
-                                        :petal-width
-                                        :petal-length])
-    ml/thaw-model)
-
-;; ## Table
-
-;; A table uses the tool's UI for tables, if any.
-
-(kind/table squares-dataset)
-
-;; Some tools support [datatables](https://datatables.net/) for displaying tables.
-
-(-> squares-dataset
-    (kind/table {:use-datatables true}))
-
-;; and in this case the user may specify [datatables options](https://datatables.net/manual/options)
-;; (see [the full list](https://datatables.net/reference/option/)).
-
-(-> squares-dataset
-    (kind/table {:use-datatables true
-                 :datatables {:scrollY 200}}))
-
+ (let [n 20
+       walk (fn [bias]
+              (->> (repeatedly n #(-> (rand)
+                                      (- 0.5)
+                                      (+ bias)))
+                   (reductions +)))]
+   {:data [{:x (walk 1)
+            :y (walk -1)
+            :z (map #(* % %)
+                    (walk 2))
+            :type :scatter3d
+            :mode :lines+markers
+            :opacity 0.2
+            :line {:width 10}
+            :marker {:size 20
+                     :colorscale :Viridis}}]}))
 
 ;; ## Plain data structures
 
@@ -332,7 +331,7 @@ tree-image
  (kind/md
   "hello *hello* **hello**")
  (kind/code
-  "(defn f [x] (+ x 9))")]
+  "(defn f [x] (+  x 9))")]
 
 {:x  (kind/md
       "**hello**")
@@ -355,7 +354,7 @@ tree-image
      (kind/md
       "hello *hello* **hello**")
      (kind/code
-      "(defn f [x] (+ x 9))")
+      "(defn f [x] (+  x 9))")
      my-plot]
     kind/hiccup)
 
@@ -367,6 +366,6 @@ tree-image
      (kind/md
       "hello *hello* **hello**")
      (kind/code
-      "(defn f [x] (+ x 9))")
+      "(defn f [x] (+  x 9))")
      my-plot]
     kind/portal)
