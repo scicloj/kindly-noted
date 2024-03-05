@@ -305,6 +305,52 @@ kind/dataset)
             :marker {:size 20
                      :colorscale :Viridis}}]}))
 
+;; ## Observable
+
+;; [Observable](https://observablehq.com/) visualizations can be written as Javascript. Some of us are working on a Clojure DSL to express the same.
+
+
+;; Examples from [Quarto's Observable documentation](https://quarto.org/docs/interactive/ojs/):
+
+(kind/observable
+ "athletes = FileAttachment('notebooks/datasets/athletes.csv').csv({typed: true})")
+
+(kind/observable
+ "athletes")
+
+(kind/observable
+ "Inputs.table(athletes)")
+
+(kind/observable
+ "
+Plot.plot({
+  grid: true,
+  facet: {
+    data: athletes,
+    y: 'sex'
+  },
+  marks: [
+    Plot.rectY(
+      athletes,
+      Plot.binX({y: 'count'}, {x: 'weight', fill: 'sex'})
+    ),
+    Plot.ruleY([0])
+  ]
+})
+")
+
+(kind/observable
+ "population = FileAttachment('notebooks/datasets/population.json').json()")
+
+(kind/observable
+ "population")
+
+(kind/observable
+ " import { chart } with { population as data } from '@d3/zoomable-sunburst'
+ chart")
+
+
+
 ;; ## Plain data structures
 
 ;; Plain Clojure data structures have recursive kind semantics:
