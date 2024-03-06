@@ -32,7 +32,7 @@
 
 {1 "A" :B 'C}
 
-;; These kind have recursive kind semantics:
+;; These kinds have recursive kind semantics:
 ;; if the values inside them have kind information,
 ;; they should be handled accordingly.
 
@@ -117,8 +117,7 @@ hello-hiccup
   (kind/md
    "hello *hello* **hello**")
   (kind/code
-   "(defn f [x] (+  x 9))")
-  vega-lite-plot])
+   "(defn f [x] (+  x 9))")])
 
 ;; ## Reagent
 
@@ -149,153 +148,6 @@ hello-hiccup
 <svg height=100 width=100>
 <circle cx=50 cy=50 r=40 stroke='purple' stroke-width=3 fill='floralwhite' />
 </svg> ")
-
-;; ## Images
-
-;; By default (according to `kindly/advice`), `BufferedImage` objects
-;; are inferred to be of `kind/image`.
-
-(defonce tree-image
-  (->  "https://upload.wikimedia.org/wikipedia/commons/e/eb/Ash_Tree_-_geograph.org.uk_-_590710.jpg"
-       (java.net.URL.)
-       (javax.imageio.ImageIO/read)))
-
-(type tree-image)
-
-tree-image
-
-;; ## ML models
-
-;; By default (according to `kindly/advice`), a machine learning model of the [Smile](https://haifengl.github.io/) library is inferred to be of `kind/smile-model`.
-
-(smile.regression.OLS/fit
- (smile.data.formula.Formula/lhs "y")
- (smile.data.DataFrame/of (into-array [(double-array [1 1 2])
-                                       (double-array [2 4 5])
-                                       (double-array [3 9 13])
-                                       (double-array [4 16 19])])
-                          (into-array ["w" "x" "y"])))
-
-(defonce marketing-dataset
-  (tc/dataset "https://github.com/scicloj/datarium-CSV/raw/main/data/marketing.csv.gz"
-              {:key-fn keyword}))
-
-
-(require '[scicloj.noj.v1.stats :as noj.stats]
-         '[scicloj.metamorph.ml :as ml])
-
-(def marketing-model
-  (-> marketing-dataset
-      (noj.stats/linear-regression-model :sales
-                                         [:youtube
-                                          :facebook
-                                          :newspaper])
-      ml/thaw-model))
-
-(type marketing-model)
-
-marketing-model
-
-;; This kind is displayed by printing the value displaying it as code.
-
-;; ## Datasets
-
-;; By default (according to `kindly/advice`), [tech.ml.dataset](https://github.com/techascent/tech.ml.dataset) / [Tablecloth](https://scicloj.github.io/tablecloth) datasets are inferred to be of `kind/dataset`.
-
-;; This kind should be printed and rendered as Markdown,
-;; possibly with some tool-specific table styling.
-
-(def squares-dataset
-  (-> {:x (range 25)}
-      tc/dataset
-      (tc/map-columns :y
-                      [:x]
-                      (fn [x]
-                        (* x x)))))
-
-
-;; Datasets can have various printable values inside:
-
-(tc/dataset
- {:x [1 [2 3] 4]
-  :y [:A :B :C]})
-
-;; Some elements might be missing:
-
-(tc/dataset
- [{:x 1 :y 2 :z 3}
-  {:y 4 :z 5}])
-
-;; ## Tables
-
-
-
-
-;; A value of `kind/table` should be displayed as a table
-;; (using the tool's UI for tables, if any).
-
-;; The table contents can be specified in different ways.
-
-;; A dataset:
-(kind/table squares-dataset)
-
-;; A sequence of vectors and column-names information:
-(kind/table
- {:row-vectors (->> (range 25)
-                    (map (fn [x]
-                           [x
-                            (* x x)])))
-  :column-names [:x :y]})
-
-;; A sequence of maps and column-names information:
-(kind/table
- {:row-maps (->> (range 25)
-                 (map (fn [x]
-                        {:x x
-                         :y (* x x)})))
-  :column-names [:x :y]})
-
-;; Some tools support [datatables](https://datatables.net/)
-;; for displaying tables.
-
-(-> squares-dataset
-    (kind/table {:use-datatables true}))
-
-(-> squares-dataset
-    (kind/table {:use-datatables true
-                 :datatables {:scrollY 200}}))
-
-;; and in this case the user may specify [datatables options](https://datatables.net/manual/options)
-;; (see [the full list](https://datatables.net/reference/option/)).
-
-;; ## Pretty printing
-
-;; Values of kind `kind/pprint` should be pretty-printed.
-
-(->> (range 30)
-     (apply array-map)
-     kind/pprint)
-
-;; For some tool like Clay, this is the default
-;; when there is no kind information.
-
-(->> (range 30)
-     (apply array-map))
-
-;; Still, it can be is useful to ensure the same behaviour
-;; across different tools.
-
-;; It can also be useful to override other kinds previously
-;; specified or automatically inferred.
-
-(kind/pprint
- hello-hiccup)
-
-(kind/pprint
- tree-image)
-
-(kind/pprint
- kind/dataset)
 
 ;; ## Vega-Lite
 
@@ -457,14 +309,203 @@ filtered = data.filter(function(penguin) {
                                            })
 ")
 
+;; ## Images
+
+;; By default (according to `kindly/advice`), `BufferedImage` objects
+;; are inferred to be of `kind/image`.
+
+(defonce tree-image
+  (->  "https://upload.wikimedia.org/wikipedia/commons/e/eb/Ash_Tree_-_geograph.org.uk_-_590710.jpg"
+       (java.net.URL.)
+       (javax.imageio.ImageIO/read)))
+
+(type tree-image)
+
+tree-image
+
+;; ## ML models
+
+;; By default (according to `kindly/advice`), a machine learning model of the [Smile](https://haifengl.github.io/) library is inferred to be of `kind/smile-model`.
+
+(smile.regression.OLS/fit
+ (smile.data.formula.Formula/lhs "y")
+ (smile.data.DataFrame/of (into-array [(double-array [1 1 2])
+                                       (double-array [2 4 5])
+                                       (double-array [3 9 13])
+                                       (double-array [4 16 19])])
+                          (into-array ["w" "x" "y"])))
+
+(defonce marketing-dataset
+  (tc/dataset "https://github.com/scicloj/datarium-CSV/raw/main/data/marketing.csv.gz"
+              {:key-fn keyword}))
+
+
+(require '[scicloj.noj.v1.stats :as noj.stats]
+         '[scicloj.metamorph.ml :as ml])
+
+(def marketing-model
+  (-> marketing-dataset
+      (noj.stats/linear-regression-model :sales
+                                         [:youtube
+                                          :facebook
+                                          :newspaper])
+      ml/thaw-model))
+
+(type marketing-model)
+
+marketing-model
+
+;; This kind is displayed by printing the value displaying it as code.
+
+;; ## Datasets
+
+;; By default (according to `kindly/advice`), [tech.ml.dataset](https://github.com/techascent/tech.ml.dataset) / [Tablecloth](https://scicloj.github.io/tablecloth) datasets are inferred to be of `kind/dataset`.
+
+;; This kind should be printed and rendered as Markdown,
+;; possibly with some tool-specific table styling.
+
+(def squares-dataset
+  (-> {:x (range 25)}
+      tc/dataset
+      (tc/map-columns :y
+                      [:x]
+                      (fn [x]
+                        (* x x)))))
+
+
+;; Datasets can have various printable values inside:
+
+(tc/dataset
+ {:x [1 [2 3] 4]
+  :y [:A :B :C]})
+
+;; Some elements might be missing:
+
+(tc/dataset
+ [{:x 1 :y 2 :z 3}
+  {:y 4 :z 5}])
+
+;; ## Tables
+
+
+
+
+;; A value of `kind/table` should be displayed as a table
+;; (using the tool's UI for tables, if any).
+
+;; The table contents can be specified in different ways.
+
+;; A dataset:
+(kind/table squares-dataset)
+
+;; A sequence of vectors and column-names information:
+(kind/table
+ {:row-vectors (->> (range 25)
+                    (map (fn [x]
+                           [x
+                            (* x x)])))
+  :column-names [:x :y]})
+
+;; A sequence of maps and column-names information:
+(kind/table
+ {:row-maps (->> (range 25)
+                 (map (fn [x]
+                        {:x x
+                         :y (* x x)})))
+  :column-names [:x :y]})
+
+;; Some tools support [datatables](https://datatables.net/)
+;; for displaying tables.
+;; This can be expressed using the `:use-datatables` option.
+
+(-> squares-dataset
+    (kind/table {:use-datatables true}))
+
+;; In addition, the `:datatables` option can be used to control
+;; [datatables options](https://datatables.net/manual/options)
+;; (see [the full list](https://datatables.net/reference/option/)).
+
+(-> squares-dataset
+    (kind/table {:use-datatables true
+                 :datatables {:scrollY 200}}))
+
+;; and in this case the user may specify [datatables options](https://datatables.net/manual/options)
+;; (see [the full list](https://datatables.net/reference/option/)).
+
+;; The `kind/table` has recursive semantics:
+;; if the values inside them have kind information,
+;; they should be handled accordingly.
+
+(kind/table
+ {:column-names [:x :y]
+  :row-vectors [[(kind/md "*some text* **some more text**")
+                 (kind/code "{:x (1 2 [3 4])}")]
+                [(tc/dataset {:x (range 3)
+                              :y (map inc (range 3))})
+                 vega-lite-plot]
+                [(kind/hiccup [:div {:style {:height 200}}
+                               tree-image])
+                 (kind/md "$x^2$")]]})
+
+
+;; ## Pretty printing
+
+;; Values of kind `kind/pprint` should be pretty-printed.
+
+(->> (range 30)
+     (apply array-map)
+     kind/pprint)
+
+;; For some tool like Clay, this is the default
+;; when there is no kind information.
+
+(->> (range 30)
+     (apply array-map))
+
+;; Still, it can be is useful to ensure the same behaviour
+;; across different tools.
+
+;; It can also be useful to override other kinds previously
+;; specified or automatically inferred.
+
+(kind/pprint
+ hello-hiccup)
+
+(kind/pprint
+ tree-image)
+
+(kind/pprint
+ kind/dataset)
+
 ;; ## Portal
 
-(-> [(kind/hiccup [:p {:style {:background-color "#ccddcc"
-                               :border-style "solid"}}
-                   "hello"])
-     (kind/md
-      "hello *hello* **hello**")
-     (kind/code
-      "(defn f [x] (+  x 9))")
-     vega-lite-plot]
-    kind/portal)
+;; Values of `kind/portal` are displayed using an embedded
+;; [Portal](https://github.com/djblue/portal) viewer.
+
+(kind/portal
+ {:x (range 3)})
+
+;; This kind has recursive semantics:
+;; if the values inside them have kind information,
+;; they should be handled accordingly.
+
+;; Note that `kind/portal` applies the [kind-portal](https://github.com/scicloj/kind-portal) adapter to nested kinds.
+(kind/portal
+ [(kind/hiccup [:img {:height 50 :width 50
+                      :src "https://clojure.org/images/clojure-logo-120b.png"}])
+  (kind/hiccup [:img {:height 50 :width 50
+                      :src "https://raw.githubusercontent.com/djblue/portal/fbc54632adc06c6e94a3d059c858419f0063d1cf/resources/splash.svg"}])])
+
+(kind/portal
+ [(kind/hiccup [:big [:big "a plot"]])
+  vega-lite-plot])
+
+(kind/portal
+ [(kind/hiccup [:p {:style {:background-color "#ccddcc"
+                            :border-style "solid"}}
+                "hello"])
+  (kind/md
+   "hello *hello* **hello**")
+  (kind/code
+   "(defn f [x] (+  x 9))")
+  vega-lite-plot])
