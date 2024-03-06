@@ -84,6 +84,10 @@
 (kind/code
  "(defn f [x] {:y (+  x 9)})")
 
+;; ## Edn
+
+;; (will be documented soon)
+
 ;; ## Hiccup
 
 ;; Values of `kind/hiccup` should be displayed as the HTML this value defines according to [Hiccup](https://github.com/weavejester/hiccup) notation.
@@ -309,7 +313,30 @@ filtered = data.filter(function(penguin) {
                                            })
 ")
 
-;; ## Images
+;; ## Video
+
+;; Values of `kind/video` are specifications for embedded videos.
+;; See, e.g.,  [HTML Youtube Videos](https://www.w3schools.com/html/html_youtube.asp) on w3schools, for the relevant options.
+
+(kind/video
+ {:youtube-id "DAQnvAgBma8"})
+
+(kind/video
+ {:youtube-id "DAQnvAgBma8"
+  :allowfullscreen false})
+
+(kind/video
+ {:youtube-id "DAQnvAgBma8"
+  :iframe-width 480
+  :iframe-height 270})
+
+(kind/video
+ {:youtube-id "DAQnvAgBma8"
+  :embed-options {:mute 1
+                  :controls 0}})
+
+
+;; ## Image
 
 ;; By default (according to `kindly/advice`), `BufferedImage` objects
 ;; are inferred to be of `kind/image`.
@@ -509,3 +536,16 @@ marketing-model
   (kind/code
    "(defn f [x] (+  x 9))")
   vega-lite-plot])
+
+
+;; ## Fragment
+
+;; `kind/fragment` is a special kind. It expects a sequential value and generates multiple items, of potentially multiple kinds, from its elements.
+
+(->> ["purple" "darkgreen" "goldenrod"]
+     (mapcat (fn [color]
+               [(kind/md (str "### subsection: " color))
+                (kind/hiccup [:div {:style {:background-color color
+                                            :color "lightgrey"}}
+                              [:big [:p color]]])]))
+     kind/fragment)
