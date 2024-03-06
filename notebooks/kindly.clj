@@ -49,7 +49,7 @@
 
 ;; ## The set of kinds
 
-kindly/known-kinds
+(sort kindly/known-kinds)
 
 ;; ## How to use Kinds?
 
@@ -155,3 +155,16 @@ clj-image
                    {:width "500px"
                     :height "200px"}})
     meta)
+
+
+;; ## Fragments
+
+;; `kind/fragment` is a special kind. It expects a sequential value and generates multiple items, of potentially multiple kinds, from its elements.
+
+(->> ["purple" "darkgreen" "goldenrod"]
+     (mapcat (fn [color]
+               [(kind/md (str "### subsection: " color))
+                (kind/hiccup [:div {:style {:background-color color
+                                            :color "lightgrey"}}
+                              [:big [:p color]]])]))
+     kind/fragment)
