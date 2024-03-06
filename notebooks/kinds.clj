@@ -140,6 +140,9 @@ hello-hiccup
   {:initial-value 9
    :background-color "#d4ebe9"}])
 
+;; The `:reagent/deps` option can be used to provide additional dependencies.
+;; This should be documented better soon.
+
 ;; ## HTML
 
 ;; Values of `kind/html` are displayed as raw html.
