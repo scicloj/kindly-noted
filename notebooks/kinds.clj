@@ -14,6 +14,46 @@
 
 (str "abcd" "efgh")
 
+;; ## Plain data structures
+
+;; By default (according to `kindly/advice`), plain Clojure data structures: vectors, other sequentials (lists/seqs/ranges/etc.), sets, and maps, are assigned the kinds `kind/vector`, `kind/seq`, , `kind/set`, and `kind/map`, respectively.
+
+;; Each tool may have its own way to display these kinds.
+;; For example, Clay just uses text,
+;; while Portal has a hierarchical navigation UI.
+
+(list 1 "A" :B 'C)
+
+(range 9)
+
+[1 "A" :B 'C]
+
+#{1 "A" :B 'C}
+
+{1 "A" :B 'C}
+
+;; These kind have recursive kind semantics:
+;; if the values inside them have kind information,
+;; they should be handled accordingly.
+
+;; Here is a vector of things of different kinds inside:
+
+[(kind/hiccup
+  [:div {:style
+         {:background-color "floralwhite"}}
+   [:p "hello"]])
+ (kind/md
+  "hello *hello* **hello**")
+ (kind/code
+  "(defn f [x] (+  x 9))")]
+
+;; And here is a map:
+
+{:x  (kind/md
+      "**hello**")
+ (kind/md
+  "**hello**") :x}
+
 ;; ## Hidden
 
 ;; Values of `kind/hidden` are simply not displayed.
@@ -45,6 +85,9 @@
  "(defn f [x] {:y (+  x 9)})")
 
 ;; ## Hiccup
+
+;; Values of `kind/hiccup` should be displayed as the HTML this value defines according to [Hiccup](https://github.com/weavejester/hiccup) notation.
+
 (def hello-hiccup
   (kind/hiccup
    [:ul
@@ -58,7 +101,28 @@
 
 hello-hiccup
 
+;; This kind has recursive semantics:
+;; if the values inside them have kind information,
+;; they should be handled accordingly.
+
+;; Foe example:
+
+(kind/hiccup
+ [:div {:style
+        {:background-color "#eeddee"
+         :border-style "solid"}}
+  [:p {:style {:background-color "#ccddcc"
+               :border-style "solid"}}
+   "hello"]
+  (kind/md
+   "hello *hello* **hello**")
+  (kind/code
+   "(defn f [x] (+  x 9))")
+  vega-lite-plot])
+
 ;; ## Reagent
+
+;; Values of `kind/reagent` express [Reagent](https://reagent-project.github.io/) components.
 
 (kind/reagent
  ['(fn [{:keys [initial-value
@@ -177,11 +241,11 @@ marketing-model
 
 ;; A sequence of vectors and column-names information:
 (kind/table
-{:row-vectors (->> (range 25)
-                   (map (fn [x]
-                          [x
-                           (* x x)])))
- :column-names [:x :y]})
+ {:row-vectors (->> (range 25)
+                    (map (fn [x]
+                           [x
+                            (* x x)])))
+  :column-names [:x :y]})
 
 ;; A sequence of maps and column-names information:
 (kind/table
@@ -216,7 +280,7 @@ marketing-model
 ;; when there is no kind information.
 
 (->> (range 30)
-(apply array-map))
+     (apply array-map))
 
 ;; Still, it can be is useful to ensure the same behaviour
 ;; across different tools.
@@ -225,10 +289,10 @@ marketing-model
 ;; specified or automatically inferred.
 
 (kind/pprint
-hello-hiccup)
+ hello-hiccup)
 
 (kind/pprint
-tree-image)
+ tree-image)
 
 (kind/pprint
  kind/dataset)
@@ -354,59 +418,44 @@ Plot.plot({
  chart")
 
 
+(kind/observable
+ "
+//| panel: input
+viewof bill_length_min = Inputs.range(
+                                      [32, 50],
+                                      {value: 35, step: 1, label: 'Bill length (min):'}
+                                      )
+viewof islands = Inputs.checkbox(
+                                 ['Torgersen', 'Biscoe', 'Dream'],
+                                 { value: ['Torgersen', 'Biscoe'],
+                                  label: 'Islands:'
+                                  }
+                                 )
 
-;; ## Plain data structures
-
-;; Plain Clojure data structures have recursive kind semantics:
-;; * Each tool has its own way(range 20) to represent them visually
-;; (e.g., Clay just uses text, while Portal has a hierarchical navigation UI).
-
-(list 1 "A" :B 'C)
-
-[1 "A" :B 'C]
-
-#{1 "A" :B 'C}
-
-{1 "A" :B 'C}
-
-
-;; ## Plain data structures - nesting other kinds
-
-;; * If the values inside them have kind information, they are handled accordingly.
-
-[(kind/hiccup
-  [:div {:style
-         {:background-color "floralwhite"}}
-   [:p "hello"]])
- (kind/md
-  "hello *hello* **hello**")
- (kind/code
-  "(defn f [x] (+  x 9))")]
-
-{:x  (kind/md
-      "**hello**")
- (kind/md
-  "**hello**") :x}
-
-;; ## Hiccup
-(-> [:div {:style
-           {:background-color "floralwhite"}}
-     [:p "hello"]]
-    kind/hiccup)
-
-;; ## Hiccup - nesting other kinds
-(-> [:div {:style
-           {:background-color "floralwhite"
-            :border-style "solid"}}
-     [:p {:style {:background-color "#ccddcc"
-                  :border-style "solid"}}
-      "hello"]
-     (kind/md
-      "hello *hello* **hello**")
-     (kind/code
-      "(defn f [x] (+  x 9))")
-     vega-lite-plot]
-    kind/hiccup)
+Plot.rectY(filtered,
+            Plot.binX(
+                      {y: 'count'},
+                      {x: 'body_mass_g', fill: 'species', thresholds: 20}
+                      ))
+ .plot({
+        facet: {
+                data: filtered,
+                x: 'sex',
+                y: 'species',
+                marginRight: 80
+                },
+        marks: [
+                Plot.frame(),
+                ]
+        }
+       )
+Inputs.table(filtered)
+data = FileAttachment('notebooks/datasets/palmer-penguins.csv').csv({ typed: true })
+filtered = data.filter(function(penguin) {
+                                           return bill_length_min < penguin.bill_length_mm &&
+                                           islands.includes(penguin.island);
+                                           })
+")
 
 ;; ## Portal
 
