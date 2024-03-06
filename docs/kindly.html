@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.550">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -22,7 +22,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -81,7 +81,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -90,6 +96,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -106,12 +113,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./kindly.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Kindly</span></a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./kindly.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Kindly</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
@@ -121,7 +128,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Kindly Noted</a> 
@@ -161,7 +168,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -171,18 +178,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#why" id="toc-why" class="nav-link active" data-scroll-target="#why"><span class="header-section-number">2.1</span> Why</a></li>
   <li><a href="#goal" id="toc-goal" class="nav-link" data-scroll-target="#goal"><span class="header-section-number">2.2</span> Goal</a></li>
   <li><a href="#status" id="toc-status" class="nav-link" data-scroll-target="#status"><span class="header-section-number">2.3</span> Status</a></li>
-  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example"><span class="header-section-number">2.4</span> Example</a></li>
-  <li><a href="#the-set-of-kinds" id="toc-the-set-of-kinds" class="nav-link" data-scroll-target="#the-set-of-kinds"><span class="header-section-number">2.5</span> The set of kinds</a></li>
-  <li><a href="#how-to-use-kinds" id="toc-how-to-use-kinds" class="nav-link" data-scroll-target="#how-to-use-kinds"><span class="header-section-number">2.6</span> How to use Kinds?</a>
+  <li><a href="#existing-booknotebook-projects-using-kindly" id="toc-existing-booknotebook-projects-using-kindly" class="nav-link" data-scroll-target="#existing-booknotebook-projects-using-kindly"><span class="header-section-number">2.4</span> Existing book/notebook projects using Kindly</a></li>
+  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example"><span class="header-section-number">2.5</span> Example</a></li>
+  <li><a href="#the-set-of-kinds" id="toc-the-set-of-kinds" class="nav-link" data-scroll-target="#the-set-of-kinds"><span class="header-section-number">2.6</span> The set of kinds</a></li>
+  <li><a href="#how-to-use-kinds" id="toc-how-to-use-kinds" class="nav-link" data-scroll-target="#how-to-use-kinds"><span class="header-section-number">2.7</span> How to use Kinds?</a>
   <ul>
-  <li><a href="#attaching-metadata-to-forms" id="toc-attaching-metadata-to-forms" class="nav-link" data-scroll-target="#attaching-metadata-to-forms"><span class="header-section-number">2.6.1</span> Attaching metadata to forms</a></li>
-  <li><a href="#attaching-metadata-to-values" id="toc-attaching-metadata-to-values" class="nav-link" data-scroll-target="#attaching-metadata-to-values"><span class="header-section-number">2.6.2</span> Attaching metadata to values</a></li>
-  <li><a href="#attaching-metadata-to-values---cont." id="toc-attaching-metadata-to-values---cont." class="nav-link" data-scroll-target="#attaching-metadata-to-values---cont."><span class="header-section-number">2.6.3</span> Attaching metadata to values - cont.</a></li>
-  <li><a href="#using-values-annotated-by-libraries" id="toc-using-values-annotated-by-libraries" class="nav-link" data-scroll-target="#using-values-annotated-by-libraries"><span class="header-section-number">2.6.4</span> Using values annotated by libraries</a></li>
-  <li><a href="#automatically-inferred-kinds" id="toc-automatically-inferred-kinds" class="nav-link" data-scroll-target="#automatically-inferred-kinds"><span class="header-section-number">2.6.5</span> Automatically-inferred kinds</a></li>
+  <li><a href="#attaching-metadata-to-forms" id="toc-attaching-metadata-to-forms" class="nav-link" data-scroll-target="#attaching-metadata-to-forms"><span class="header-section-number">2.7.1</span> Attaching metadata to forms</a></li>
+  <li><a href="#attaching-metadata-to-values" id="toc-attaching-metadata-to-values" class="nav-link" data-scroll-target="#attaching-metadata-to-values"><span class="header-section-number">2.7.2</span> Attaching metadata to values</a></li>
+  <li><a href="#attaching-metadata-to-values---cont." id="toc-attaching-metadata-to-values---cont." class="nav-link" data-scroll-target="#attaching-metadata-to-values---cont."><span class="header-section-number">2.7.3</span> Attaching metadata to values - cont.</a></li>
+  <li><a href="#using-values-annotated-by-libraries" id="toc-using-values-annotated-by-libraries" class="nav-link" data-scroll-target="#using-values-annotated-by-libraries"><span class="header-section-number">2.7.4</span> Using values annotated by libraries</a></li>
+  <li><a href="#automatically-inferred-kinds" id="toc-automatically-inferred-kinds" class="nav-link" data-scroll-target="#automatically-inferred-kinds"><span class="header-section-number">2.7.5</span> Automatically-inferred kinds</a></li>
   </ul></li>
-  <li><a href="#hiding-code" id="toc-hiding-code" class="nav-link" data-scroll-target="#hiding-code"><span class="header-section-number">2.7</span> Hiding code</a></li>
-  <li><a href="#passing-options" id="toc-passing-options" class="nav-link" data-scroll-target="#passing-options"><span class="header-section-number">2.8</span> Passing options</a></li>
+  <li><a href="#hiding-code" id="toc-hiding-code" class="nav-link" data-scroll-target="#hiding-code"><span class="header-section-number">2.8</span> Hiding code</a></li>
+  <li><a href="#passing-options" id="toc-passing-options" class="nav-link" data-scroll-target="#passing-options"><span class="header-section-number">2.9</span> Passing options</a></li>
+  <li><a href="#fragments" id="toc-fragments" class="nav-link" data-scroll-target="#fragments"><span class="header-section-number">2.10</span> Fragments</a>
+  <ul>
+  <li><a href="#subsection-purple" id="toc-subsection-purple" class="nav-link" data-scroll-target="#subsection-purple"><span class="header-section-number">2.10.1</span> subsection: purple</a></li>
+  <li><a href="#subsection-darkgreen" id="toc-subsection-darkgreen" class="nav-link" data-scroll-target="#subsection-darkgreen"><span class="header-section-number">2.10.2</span> subsection: darkgreen</a></li>
+  <li><a href="#subsection-goldenrod" id="toc-subsection-goldenrod" class="nav-link" data-scroll-target="#subsection-goldenrod"><span class="header-section-number">2.10.3</span> subsection: goldenrod</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -204,7 +218,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
   
 
+
 </header>
+
 
 <style></style>
 <style>.printedClojure .sourceCode {
@@ -215,7 +231,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="kindly_files/md-default1.js" type="text/javascript"></script>
 <script src="kindly_files/md-default2.js" type="text/javascript"></script>
 <script src="kindly_files/echarts3.js" type="text/javascript"></script>
-<p>Kindly is a proposed standard for requesting data visualizations in Clojure. It specifies in what kinds of way Clojure forms and values should be displayed.</p>
+<p>Kindly is a proposed standard for requesting data visualizations in Clojure.</p>
+<p>It specifies in what kinds of way Clojure forms and values should be displayed.</p>
 <div class="sourceClojure">
 <div class="sourceCode" id="cb1"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">ns</span> kindly</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  (<span class="at">:require</span> [scicloj.kindly.v4.api <span class="at">:as</span> kindly]</span>
@@ -225,7 +242,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="notebooks/images/Kindly.svg.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Kindly logo</figcaption>
+<figcaption>Kindly logo</figcaption>
 </figure>
 </div>
 <section id="why" class="level2" data-number="2.1">
@@ -261,8 +278,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p>Ready to explore on other tools</p></li>
 </ul>
 </section>
-<section id="example" class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="example"><span class="header-section-number">2.4</span> Example</h2>
+<section id="existing-booknotebook-projects-using-kindly" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="existing-booknotebook-projects-using-kindly"><span class="header-section-number">2.4</span> Existing book/notebook projects using Kindly</h2>
+<ul>
+<li><a href="https://scicloj.github.io/tablecloth/">Tablecloth documentation</a></li>
+<li><a href="https://scicloj.github.io/clay/">Clay documentation</a></li>
+<li><a href="https://scicloj.github.io/kindly-noted/">Kindly-noted</a> - documenting the ecosystem around Kindly - WIP</li>
+<li><a href="https://scicloj.github.io/noj/">Noj documentation</a> - WIP</li>
+<li><a href="https://kiramclean.github.io/clojure-tidy-tuesdays/">Clojure Tidy Tuesdays</a> data-science explorations</li>
+<li><a href="https://scicloj.github.io/clojure-data-scrapbook/">Clojure Data Scrapbook</a></li>
+</ul>
+</section>
+<section id="example" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="example"><span class="header-section-number">2.5</span> Example</h2>
 <p>Here is how one may request something of <code>kind/md</code>, which means Markdown:</p>
 <div class="sourceClojure">
 <div class="sourceCode" id="cb2"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>(kind/md</span>
@@ -270,42 +298,45 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>hello <em>hello</em> <strong>hello</strong></p>
 </section>
-<section id="the-set-of-kinds" class="level2" data-number="2.5">
-<h2 data-number="2.5" class="anchored" data-anchor-id="the-set-of-kinds"><span class="header-section-number">2.5</span> The set of kinds</h2>
+<section id="the-set-of-kinds" class="level2" data-number="2.6">
+<h2 data-number="2.6" class="anchored" data-anchor-id="the-set-of-kinds"><span class="header-section-number">2.6</span> The set of kinds</h2>
 <div class="sourceClojure">
-<div class="sourceCode" id="cb3"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>kindly/known-kinds</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">sort</span> kindly/known-kinds)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="printedClojure">
-<div class="sourceCode" id="cb4"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>#{<span class="at">:kind/code</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">:kind/vega</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">:kind/smile-model</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">:kind/image</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">:kind/plotly</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">:kind/echarts</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">:kind/map</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">:kind/portal</span></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">:kind/test</span></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">:kind/dataset</span></span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">:kind/vega-lite</span></span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">:kind/html</span></span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">:kind/cytoscape</span></span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>  <span class="at">:kind/set</span></span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>  <span class="at">:kind/reagent</span></span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>  <span class="at">:kind/var</span></span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>  <span class="at">:kind/hidden</span></span>
-<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>  <span class="at">:kind/hiccup</span></span>
-<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>  <span class="at">:kind/md</span></span>
-<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>  <span class="at">:kind/seq</span></span>
-<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>  <span class="at">:kind/video</span></span>
-<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>  <span class="at">:kind/pprint</span></span>
-<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>  <span class="at">:kind/table</span></span>
-<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>  <span class="at">:kind/vector</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>(<span class="at">:kind/code</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a> <span class="at">:kind/cytoscape</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a> <span class="at">:kind/dataset</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a> <span class="at">:kind/echarts</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a> <span class="at">:kind/edn</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a> <span class="at">:kind/fragment</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a> <span class="at">:kind/hiccup</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a> <span class="at">:kind/hidden</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a> <span class="at">:kind/html</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a> <span class="at">:kind/image</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a> <span class="at">:kind/map</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a> <span class="at">:kind/md</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a> <span class="at">:kind/observable</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a> <span class="at">:kind/plotly</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a> <span class="at">:kind/portal</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a> <span class="at">:kind/pprint</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a> <span class="at">:kind/reagent</span></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a> <span class="at">:kind/seq</span></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a> <span class="at">:kind/set</span></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a> <span class="at">:kind/smile-model</span></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a> <span class="at">:kind/table</span></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a> <span class="at">:kind/test</span></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a> <span class="at">:kind/var</span></span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a> <span class="at">:kind/vector</span></span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a> <span class="at">:kind/vega</span></span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a> <span class="at">:kind/vega-lite</span></span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a> <span class="at">:kind/video</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="how-to-use-kinds" class="level2" data-number="2.6">
-<h2 data-number="2.6" class="anchored" data-anchor-id="how-to-use-kinds"><span class="header-section-number">2.6</span> How to use Kinds?</h2>
-<section id="attaching-metadata-to-forms" class="level3" data-number="2.6.1">
-<h3 data-number="2.6.1" class="anchored" data-anchor-id="attaching-metadata-to-forms"><span class="header-section-number">2.6.1</span> Attaching metadata to forms</h3>
+<section id="how-to-use-kinds" class="level2" data-number="2.7">
+<h2 data-number="2.7" class="anchored" data-anchor-id="how-to-use-kinds"><span class="header-section-number">2.7</span> How to use Kinds?</h2>
+<section id="attaching-metadata-to-forms" class="level3" data-number="2.7.1">
+<h3 data-number="2.7.1" class="anchored" data-anchor-id="attaching-metadata-to-forms"><span class="header-section-number">2.7.1</span> Attaching metadata to forms</h3>
 <div class="sourceClojure">
 <div class="sourceCode" id="cb5"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>^<span class="at">:kind/md</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>[<span class="st">"hello *hello* **hello**"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -317,8 +348,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>hello <em>hello</em> <strong>hello</strong></p>
 </section>
-<section id="attaching-metadata-to-values" class="level3" data-number="2.6.2">
-<h3 data-number="2.6.2" class="anchored" data-anchor-id="attaching-metadata-to-values"><span class="header-section-number">2.6.2</span> Attaching metadata to values</h3>
+<section id="attaching-metadata-to-values" class="level3" data-number="2.7.2">
+<h3 data-number="2.7.2" class="anchored" data-anchor-id="attaching-metadata-to-values"><span class="header-section-number">2.7.2</span> Attaching metadata to values</h3>
 <div class="sourceClojure">
 <div class="sourceCode" id="cb7"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">-&gt;</span> [<span class="st">"hello *hello* **hello**"</span>]</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    kind/md)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -334,8 +365,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode" id="cb9"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="at">:kind/md</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="attaching-metadata-to-values---cont." class="level3" data-number="2.6.3">
-<h3 data-number="2.6.3" class="anchored" data-anchor-id="attaching-metadata-to-values---cont."><span class="header-section-number">2.6.3</span> Attaching metadata to values - cont.</h3>
+<section id="attaching-metadata-to-values---cont." class="level3" data-number="2.7.3">
+<h3 data-number="2.7.3" class="anchored" data-anchor-id="attaching-metadata-to-values---cont."><span class="header-section-number">2.7.3</span> Attaching metadata to values - cont.</h3>
 <div class="sourceClojure">
 <div class="sourceCode" id="cb10"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">-&gt;</span> <span class="st">"hello *hello* **hello**"</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    kind/md</span>
@@ -363,8 +394,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode" id="cb15"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>#<span class="at">:kindly</span>{<span class="at">:kind</span> <span class="at">:kind/md</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="using-values-annotated-by-libraries" class="level3" data-number="2.6.4">
-<h3 data-number="2.6.4" class="anchored" data-anchor-id="using-values-annotated-by-libraries"><span class="header-section-number">2.6.4</span> Using values annotated by libraries</h3>
+<section id="using-values-annotated-by-libraries" class="level3" data-number="2.7.4">
+<h3 data-number="2.7.4" class="anchored" data-anchor-id="using-values-annotated-by-libraries"><span class="header-section-number">2.7.4</span> Using values annotated by libraries</h3>
 <div class="sourceClojure">
 <div class="sourceCode" id="cb16"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>(<span class="bu">defn</span><span class="fu"> my-library-function-for-big-big-text </span>[text]</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  (kind/hiccup</span>
@@ -375,22 +406,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode" id="cb17"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">-&gt;</span> <span class="st">"hello"</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    my-library-function-for-big-big-text)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div style="max-height:600px;overflow-y:auto;">
 <big style="background:#ccddcc;"><big>hello</big></big>
-</div>
 <div class="sourceClojure">
 <div class="sourceCode" id="cb18"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">-&gt;</span> <span class="st">"hello"</span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    my-library-function-for-big-big-text</span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>    (<span class="kw">assoc-in</span> [<span class="dv">1</span> <span class="at">:style</span>]</span>
 <span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>              {<span class="at">:background</span> <span class="st">"#ddccdd"</span>}))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div style="max-height:600px;overflow-y:auto;">
 <big style="background:#ddccdd;"><big>hello</big></big>
-</div>
 </section>
-<section id="automatically-inferred-kinds" class="level3" data-number="2.6.5">
-<h3 data-number="2.6.5" class="anchored" data-anchor-id="automatically-inferred-kinds"><span class="header-section-number">2.6.5</span> Automatically-inferred kinds</h3>
-<p>In certain situations, kinds are inferred without annotation. The kindly-advice library provides the default inference behaviour and an option to extend it. For example, images:</p>
+<section id="automatically-inferred-kinds" class="level3" data-number="2.7.5">
+<h3 data-number="2.7.5" class="anchored" data-anchor-id="automatically-inferred-kinds"><span class="header-section-number">2.7.5</span> Automatically-inferred kinds</h3>
+<p>In certain situations, kinds are inferred without annotation. The kindly-advice library provides the default inference behaviour and an option to extend it.</p>
+<p>For example, images:</p>
 <div class="sourceClojure">
 <div class="sourceCode" id="cb19"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>(<span class="bu">def</span><span class="fu"> clj-image</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">-&gt;</span>  <span class="st">"https://upload.wikimedia.org/wikipedia/commons/e/eb/Ash_Tree_-_geograph.org.uk_-_590710.jpg"</span></span>
@@ -400,9 +428,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceClojure">
 <div class="sourceCode" id="cb20"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>clj-image</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div style="max-height:600px;overflow-y:auto;">
 <img src="kindly_files/0.png" style="width:100%;">
-</div>
 <div class="sourceClojure">
 <div class="sourceCode" id="cb21"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">require</span> '[tablecloth.api <span class="at">:as</span> tc])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -421,26 +447,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <tbody>
 <tr class="odd">
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">0.35632005</td>
+<td style="text-align: right;">0.74980179</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">1</td>
-<td style="text-align: right;">0.68807482</td>
+<td style="text-align: right;">0.32467450</td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">2</td>
-<td style="text-align: right;">0.00299661</td>
+<td style="text-align: right;">0.12419251</td>
 </tr>
 </tbody>
 </table>
 </section>
 </section>
-<section id="hiding-code" class="level2" data-number="2.7">
-<h2 data-number="2.7" class="anchored" data-anchor-id="hiding-code"><span class="header-section-number">2.7</span> Hiding code</h2>
+<section id="hiding-code" class="level2" data-number="2.8">
+<h2 data-number="2.8" class="anchored" data-anchor-id="hiding-code"><span class="header-section-number">2.8</span> Hiding code</h2>
 <p>To the the code and only show the output, one may either use <code>:kindly/hide-code true</code> in the form metadata, or apply <code>kindly/hide-code</code> to the value.</p>
 </section>
-<section id="passing-options" class="level2" data-number="2.8">
-<h2 data-number="2.8" class="anchored" data-anchor-id="passing-options"><span class="header-section-number">2.8</span> Passing options</h2>
+<section id="passing-options" class="level2" data-number="2.9">
+<h2 data-number="2.9" class="anchored" data-anchor-id="passing-options"><span class="header-section-number">2.9</span> Passing options</h2>
 <p>The functions in the <code>kind</code> namespace may recieve an additiona map argument, which is attached at the <code>:kindly/options</code> key of a value’s metadata.</p>
 <div class="sourceClojure">
 <div class="sourceCode" id="cb23"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>(<span class="bu">def</span><span class="fu"> echarts-example</span></span>
@@ -459,30 +485,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode" id="cb24"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>(kind/echarts</span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a> echarts-example)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div style="max-height:600px;overflow-y:auto;">
-<div style="height:400px;width:400px;">
-<script>
+<div style="height:400px;width:400px;"><script>
 {
   var myChart = echarts.init(document.currentScript.parentElement);
   myChart.setOption({"title":{"text":"Echarts Example"},"tooltip":{},"legend":{"data":["sales"]},"xAxis":{"data":["Shirts","Cardigans","Chiffons","Pants","Heels","Socks"]},"yAxis":{},"series":[{"name":"sales","type":"bar","data":[5,20,36,10,10,20]}]});
-};</script>
-</div>
-</div>
+};</script></div>
 <div class="sourceClojure">
 <div class="sourceCode" id="cb25"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">-&gt;</span> echarts-example</span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>    (kind/echarts {<span class="at">:element/style</span></span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>                   {<span class="at">:width</span> <span class="st">"500px"</span></span>
 <span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>                    <span class="at">:height</span> <span class="st">"200px"</span>}}))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div style="max-height:600px;overflow-y:auto;">
-<div style="height:200px;width:500px;">
-<script>
+<div style="height:200px;width:500px;"><script>
 {
   var myChart = echarts.init(document.currentScript.parentElement);
   myChart.setOption({"title":{"text":"Echarts Example"},"tooltip":{},"legend":{"data":["sales"]},"xAxis":{"data":["Shirts","Cardigans","Chiffons","Pants","Heels","Socks"]},"yAxis":{},"series":[{"name":"sales","type":"bar","data":[5,20,36,10,10,20]}]});
-};</script>
-</div>
-</div>
+};</script></div>
 <div class="sourceClojure">
 <div class="sourceCode" id="cb26"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">-&gt;</span> echarts-example</span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>    (kind/echarts {<span class="at">:element/style</span></span>
@@ -493,21 +511,42 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="printedClojure">
 <div class="sourceCode" id="cb27"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>{<span class="at">:source</span></span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a> <span class="st">"{:title {:text </span><span class="sc">\"</span><span class="st">Echarts Example</span><span class="sc">\"</span><span class="st">}</span><span class="sc">\n</span><span class="st">   :tooltip {}</span><span class="sc">\n</span><span class="st">   :legend {:data [</span><span class="sc">\"</span><span class="st">sales</span><span class="sc">\"</span><span class="st">]}</span><span class="sc">\n</span><span class="st">   :xAxis {:data [</span><span class="sc">\"</span><span class="st">Shirts</span><span class="sc">\"</span><span class="st">, </span><span class="sc">\"</span><span class="st">Cardigans</span><span class="sc">\"</span><span class="st">, </span><span class="sc">\"</span><span class="st">Chiffons</span><span class="sc">\"</span><span class="st">,</span><span class="sc">\n</span><span class="st">                  </span><span class="sc">\"</span><span class="st">Pants</span><span class="sc">\"</span><span class="st">, </span><span class="sc">\"</span><span class="st">Heels</span><span class="sc">\"</span><span class="st">, </span><span class="sc">\"</span><span class="st">Socks</span><span class="sc">\"</span><span class="st">]}</span><span class="sc">\n</span><span class="st">   :yAxis {}</span><span class="sc">\n</span><span class="st">   :series [{:name </span><span class="sc">\"</span><span class="st">sales</span><span class="sc">\"\n</span><span class="st">             :type </span><span class="sc">\"</span><span class="st">bar</span><span class="sc">\"\n</span><span class="st">             :data [5 20 36</span><span class="sc">\n</span><span class="st">                    10 10 20]}]}"</span>,</span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a> <span class="at">:line</span> <span class="dv">134</span>,</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a> <span class="at">:line</span> <span class="dv">144</span>,</span>
 <span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a> <span class="at">:column</span> <span class="dv">3</span>,</span>
-<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a> <span class="at">:end-line</span> <span class="dv">143</span>,</span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a> <span class="at">:end-line</span> <span class="dv">153</span>,</span>
 <span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a> <span class="at">:end-column</span> <span class="dv">33</span>,</span>
 <span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a> <span class="at">:kindly/options</span> #<span class="at">:element</span>{<span class="at">:style</span> {<span class="at">:width</span> <span class="st">"500px"</span>, <span class="at">:height</span> <span class="st">"200px"</span>}},</span>
 <span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a> <span class="at">:kindly/kind</span> <span class="at">:kind/echarts</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div style="background-color:grey;height:2px;width:100%;">
-
+</section>
+<section id="fragments" class="level2" data-number="2.10">
+<h2 data-number="2.10" class="anchored" data-anchor-id="fragments"><span class="header-section-number">2.10</span> Fragments</h2>
+<p><code>kind/fragment</code> is a special kind. It expects a sequential value and generates multiple items, of potentially multiple kinds, from its elements.</p>
+<div class="sourceClojure">
+<div class="sourceCode" id="cb28"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">-&gt;&gt;</span> [<span class="st">"purple"</span> <span class="st">"darkgreen"</span> <span class="st">"goldenrod"</span>]</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>     (<span class="kw">mapcat</span> (<span class="kw">fn</span> [color]</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>               [(kind/md (<span class="kw">str</span> <span class="st">"### subsection: "</span> color))</span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>                (kind/hiccup [<span class="at">:div</span> {<span class="at">:style</span> {<span class="at">:background-color</span> color</span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>                                            <span class="at">:color</span> <span class="st">"lightgrey"</span>}}</span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>                              [<span class="at">:big</span> [<span class="at">:p</span> color]]])]))</span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>     kind/fragment)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div>
-<pre><small><small>source: <a href="https://github.com/scicloj/kindly-noted/blob/main/notebooks/kindly.clj">notebooks/kindly.clj</a></small></small></pre>
-</div>
+<section id="subsection-purple" class="level3" data-number="2.10.1">
+<h3 data-number="2.10.1" class="anchored" data-anchor-id="subsection-purple"><span class="header-section-number">2.10.1</span> subsection: purple</h3>
+<div style="background-color:purple;color:lightgrey;"><big><p>purple</p></big></div>
+</section>
+<section id="subsection-darkgreen" class="level3" data-number="2.10.2">
+<h3 data-number="2.10.2" class="anchored" data-anchor-id="subsection-darkgreen"><span class="header-section-number">2.10.2</span> subsection: darkgreen</h3>
+<div style="background-color:darkgreen;color:lightgrey;"><big><p>darkgreen</p></big></div>
+</section>
+<section id="subsection-goldenrod" class="level3" data-number="2.10.3">
+<h3 data-number="2.10.3" class="anchored" data-anchor-id="subsection-goldenrod"><span class="header-section-number">2.10.3</span> subsection: goldenrod</h3>
+<div style="background-color:goldenrod;color:lightgrey;"><big><p>goldenrod</p></big></div>
+<div style="background-color:grey;height:2px;width:100%;"></div>
+<div><pre><small><small>source: <a href="https://github.com/scicloj/kindly-noted/blob/main/notebooks/kindly.clj">notebooks/kindly.clj</a></small></small></pre></div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -590,10 +629,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -603,8 +641,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -617,6 +664,125 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -660,6 +826,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -685,6 +852,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -746,17 +939,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link">
+      <a href="./index.html" class="pagination-link" aria-label="Preface">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Preface</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./kinds.html" class="pagination-link">
+      <a href="./kinds.html" class="pagination-link" aria-label="Catalogue of visualization kinds">
         <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Catalogue of visualization kinds</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
+
 
 
 
