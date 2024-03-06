@@ -39,6 +39,16 @@
 ;; * Has adapters for Portal (kind-portal) & Clerk (kind-clerk)
 ;;
 ;; * Ready to explore on other tools
+
+;; ## Existing book/notebook projects using Kindly
+
+;; - [Tablecloth documentation](https://scicloj.github.io/tablecloth/)
+;; - [Clay documentation](https://scicloj.github.io/clay/)
+;; - [Kindly-noted](https://scicloj.github.io/kindly-noted/) - documenting the ecosystem around Kindly - WIP
+;; - [Noj documentation](https://scicloj.github.io/noj/) - WIP
+;; - [Clojure Tidy Tuesdays](https://kiramclean.github.io/clojure-tidy-tuesdays/) data-science explorations
+;; - [Clojure Data Scrapbook](https://scicloj.github.io/clojure-data-scrapbook/)
+
                                         ;
 ;; ## Example
 
