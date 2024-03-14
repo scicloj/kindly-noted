@@ -436,6 +436,13 @@ marketing-model
                             (* x x)])))
   :column-names [:x :y]})
 
+;; A sequence of vectors without column-names information:
+(kind/table
+ {:row-vectors (->> (range 25)
+                    (map (fn [x]
+                           [x
+                            (* x x)])))})
+
 ;; A sequence of maps and column-names information:
 (kind/table
  {:row-maps (->> (range 25)
@@ -467,7 +474,8 @@ marketing-model
 ;; they should be handled accordingly.
 
 (kind/table
- {:column-names [:x :y]
+ {:column-names [(kind/code ":x")
+                 (kind/code ":y")]
   :row-vectors [[(kind/md "*some text* **some more text**")
                  (kind/code "{:x (1 2 [3 4])}")]
                 [(tc/dataset {:x (range 3)
