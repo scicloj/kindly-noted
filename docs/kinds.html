@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.550">
+<meta name="generator" content="quarto-1.5.10">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Kindly Noted - 3&nbsp; Catalogue of visualization kinds</title>
+<title>Kindly Noted – 3&nbsp; Catalogue of visualization kinds</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -264,6 +264,8 @@ window.Quarto = {
   border-style: none;
 }
 </style>
+<style>.clay-limit-image-width .clay-image {max-width: 100%}
+</style>
 <script src="kinds_files/md-default2.js" type="text/javascript"></script>
 <script src="kinds_files/md-default3.js" type="text/javascript"></script>
 <script src="kinds_files/reagent4.js" type="text/javascript"></script>
@@ -349,7 +351,7 @@ window.Quarto = {
 <span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a> (kind/code</span>
 <span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>  <span class="st">"(defn f [x] (+  x 9))"</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div><p>[</p><div style="margin-left:10%;width:110%;"><div style="background-color:floralwhite;"><p>hello</p></div><span data-qmd="hello *hello* **hello**"></span><div><pre><code class="sourceCode language-clojure source-clojure bg-light">(defn f [x] (+  x 9))</code></pre></div></div><p>]</p></div>
+<div><p>[</p><div style="margin-left:10%;width:110%;"><div style="background-color:floralwhite;"><p>hello</p></div><div><p>hello <em>hello</em> <strong>hello</strong></p></div><div><pre><code class="sourceCode language-clojure source-clojure bg-light">(defn f [x] (+  x 9))</code></pre></div></div><p>]</p></div>
 <p>And here is a map:</p>
 <div class="sourceClojure">
 <div class="sourceCode" id="cb17"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>{<span class="at">:x</span>  (kind/md</span>
@@ -370,7 +372,9 @@ window.Quarto = {
 <pre class="sourceCode language-clojure printed-clojure code-with-copy"><code>:x</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre>
 </div></td>
 <td><div style="margin-left:10px;">
-<strong>hello</strong>
+<div>
+<p><strong>hello</strong></p>
+</div>
 </div></td>
 </tr>
 </tbody>
@@ -382,7 +386,9 @@ window.Quarto = {
 </colgroup>
 <tbody>
 <tr class="odd">
-<td data-valign="top"><strong>hello</strong></td>
+<td data-valign="top"><div>
+<p><strong>hello</strong></p>
+</div></td>
 <td><div style="margin-left:10px;">
 <div>
 <pre class="sourceCode language-clojure printed-clojure code-with-copy"><code>:x</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre>
@@ -476,7 +482,7 @@ window.Quarto = {
 <span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a>  (kind/code</span>
 <span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a>   <span class="st">"(defn f [x] (+  x 9))"</span>)])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div style="background-color:#eeddee;border-style:solid;"><p style="background-color:#ccddcc;border-style:solid;">hello</p><span data-qmd="hello *hello* **hello**"></span><div><pre><code class="sourceCode language-clojure source-clojure bg-light">(defn f [x] (+  x 9))</code></pre></div></div>
+<div style="background-color:#eeddee;border-style:solid;"><p style="background-color:#ccddcc;border-style:solid;">hello</p><div><p>hello <em>hello</em> <strong>hello</strong></p></div><div><pre><code class="sourceCode language-clojure source-clojure bg-light">(defn f [x] (+  x 9))</code></pre></div></div>
 </section>
 <section id="reagent" class="level2" data-number="3.8">
 <h2 data-number="3.8" class="anchored" data-anchor-id="reagent"><span class="header-section-number">3.8</span> Reagent</h2>
@@ -495,7 +501,7 @@ window.Quarto = {
 <span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a>  {<span class="at">:initial-value</span> <span class="dv">9</span></span>
 <span id="cb28-12"><a href="#cb28-12" aria-hidden="true" tabindex="-1"></a>   <span class="at">:background-color</span> <span class="st">"#d4ebe9"</span>}])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="id9"><script type="application/x-scittle">(reagent.dom/render [(fn [{:keys [initial-value background-color]}] (let [*click-count (reagent.core/atom initial-value)] (fn [] [:div {:style {:background-color background-color}} "The atom " [:code "*click-count"] " has value: " (clojure.core/deref *click-count) ". " [:input {:type "button", :value "Click me!", :on-click (fn* [] (swap! *click-count inc))}]]))) {:initial-value 9, :background-color "#d4ebe9"}] (js/document.getElementById "id9"))</script></div>
+<div id="id2"><script type="application/x-scittle">(reagent.dom/render [(fn [{:keys [initial-value background-color]}] (let [*click-count (reagent.core/atom initial-value)] (fn [] [:div {:style {:background-color background-color}} "The atom " [:code "*click-count"] " has value: " (clojure.core/deref *click-count) ". " [:input {:type "button", :value "Click me!", :on-click (fn* [] (swap! *click-count inc))}]]))) {:initial-value 9, :background-color "#d4ebe9"}] (js/document.getElementById "id2"))</script></div>
 <p>The <code>:reagent/deps</code> option can be used to provide additional dependencies. This should be documented better soon.</p>
 </section>
 <section id="html" class="level2" data-number="3.9">
@@ -615,7 +621,7 @@ window.Quarto = {
 </div>
 <div style="height:400px;width:400px;"><script>
 Plotly.newPlot(document.currentScript.parentElement,
- {"data":[{"x":[1.0887617643162044,1.943267197591675,2.6142029532864317,3.1331857390095585,4.136998317799578,4.940435555654196,6.371678601641622,7.6949959354588895,9.018550980746358,9.87048828287395,10.459743860220147,11.29249635484646,11.929322960765898,13.039421952523526,14.052449519110239,14.821523295006507,15.690189958617514,16.588779528690115,17.743097168770802,18.620705409648632],"y":[-0.9447414595982423,-2.0379740224604963,-3.169534021212108,-4.401706379773218,-5.412583034757581,-6.841121677259232,-7.542464485906443,-8.784571171428752,-9.41606422457124,-10.285153997687729,-11.222093532975931,-12.374042583456609,-13.042070325492274,-13.791325946634277,-14.859247638289752,-15.640956058496139,-16.47842693074104,-17.010904767773848,-17.719705549457434,-18.397252598793415],"z":[2.2656397946427527,11.939948601105488,29.177431129039647,50.91617146295767,77.32267076131258,121.760809314918,176.40006807879433,245.52051880147653,325.2810341296813,389.71183815815425,476.2505171173416,556.0295840884008,658.7917809914353,787.2767059304595,905.0081498262136,1017.2679566488063,1138.937807422479,1269.6443578536941,1401.5636003529835,1578.764565190249],"type":"scatter3d","mode":"lines+markers","opacity":0.2,"line":{"width":10},"marker":{"size":20,"colorscale":"Viridis"}}]}['data']
+ {"data":[{"x":[0.5584364296444564,1.1861831132714922,2.443614287170977,3.094869597373459,4.272191667387489,5.338089735804549,6.009315991220775,6.592253974867271,7.959003545597859,8.969332218271008,9.835482240932109,10.779821728920723,12.07235643836756,12.806163729449944,13.5363191390682,14.847689272795336,15.862215352802973,16.75581859468905,18.247481739311354,19.73491967283316],"y":[-0.6356500399737178,-1.226390790097874,-2.0547161308721416,-2.982774515747145,-3.8162344355155753,-4.355530750500852,-5.6151616996462606,-6.136575753856342,-6.900143589699093,-8.335403151767897,-9.1850695293737,-10.002710946470613,-11.241655974123326,-11.904286836197892,-12.797232445722544,-14.033185753184592,-14.909834411762768,-16.17978274683268,-17.272763666702353,-18.130303190182985],"z":[3.8628507756455037,17.685132922067154,37.57851569701213,70.01006514354529,113.85363956969832,156.43988936091156,221.11694689402404,290.9600814380976,355.66805423421147,440.4570097795167,514.1924697885962,617.4023968073958,715.5906632982801,802.2066682326628,906.7830263425219,1019.0707101830798,1174.7685218233887,1347.034044605462,1515.476294598549,1685.1150573927912],"type":"scatter3d","mode":"lines+markers","opacity":0.2,"line":{"width":10},"marker":{"size":20,"colorscale":"Viridis"}}]}['data']
 );
 </script></div>
 </section>
@@ -628,7 +634,7 @@ Plotly.newPlot(document.currentScript.parentElement,
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a> <span class="st">"athletes = FileAttachment('notebooks/datasets/athletes.csv').csv({typed: true})"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb37" data-startfrom="601" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 600;"><span id="cb37-601"><a href="#cb37-601" aria-hidden="true" tabindex="-1"></a>athletes <span class="op">=</span> <span class="fu">FileAttachment</span>(<span class="st">'notebooks/datasets/athletes.csv'</span>)<span class="op">.</span><span class="fu">csv</span>({<span class="dt">typed</span><span class="op">:</span> <span class="kw">true</span>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb37" data-startfrom="602" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 601;"><span id="cb37-602"><a href="#cb37-602" aria-hidden="true" tabindex="-1"></a>athletes <span class="op">=</span> <span class="fu">FileAttachment</span>(<span class="st">'notebooks/datasets/athletes.csv'</span>)<span class="op">.</span><span class="fu">csv</span>({<span class="dt">typed</span><span class="op">:</span> <span class="kw">true</span>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div id="ojs-cell-1" data-nodetype="declaration">
 
@@ -640,7 +646,7 @@ Plotly.newPlot(document.currentScript.parentElement,
 <span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a> <span class="st">"athletes"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb39" data-startfrom="616" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 615;"><span id="cb39-616"><a href="#cb39-616" aria-hidden="true" tabindex="-1"></a>athletes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb39" data-startfrom="617" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 616;"><span id="cb39-617"><a href="#cb39-617" aria-hidden="true" tabindex="-1"></a>athletes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div id="ojs-cell-2" data-nodetype="expression">
 
@@ -652,7 +658,7 @@ Plotly.newPlot(document.currentScript.parentElement,
 <span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a> <span class="st">"Inputs.table(athletes)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb41" data-startfrom="631" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 630;"><span id="cb41-631"><a href="#cb41-631" aria-hidden="true" tabindex="-1"></a>Inputs<span class="op">.</span><span class="fu">table</span>(athletes)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb41" data-startfrom="632" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 631;"><span id="cb41-632"><a href="#cb41-632" aria-hidden="true" tabindex="-1"></a>Inputs<span class="op">.</span><span class="fu">table</span>(athletes)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div id="ojs-cell-3" data-nodetype="expression">
 
@@ -679,20 +685,20 @@ Plotly.newPlot(document.currentScript.parentElement,
 <span id="cb42-17"><a href="#cb42-17" aria-hidden="true" tabindex="-1"></a><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb43" data-startfrom="661" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 660;"><span id="cb43-661"><a href="#cb43-661" aria-hidden="true" tabindex="-1"></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
-<span id="cb43-662"><a href="#cb43-662" aria-hidden="true" tabindex="-1"></a>  <span class="dt">grid</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span></span>
-<span id="cb43-663"><a href="#cb43-663" aria-hidden="true" tabindex="-1"></a>  <span class="dt">facet</span><span class="op">:</span> {</span>
-<span id="cb43-664"><a href="#cb43-664" aria-hidden="true" tabindex="-1"></a>    <span class="dt">data</span><span class="op">:</span> athletes<span class="op">,</span></span>
-<span id="cb43-665"><a href="#cb43-665" aria-hidden="true" tabindex="-1"></a>    <span class="dt">y</span><span class="op">:</span> <span class="st">'sex'</span></span>
-<span id="cb43-666"><a href="#cb43-666" aria-hidden="true" tabindex="-1"></a>  }<span class="op">,</span></span>
-<span id="cb43-667"><a href="#cb43-667" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
-<span id="cb43-668"><a href="#cb43-668" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">rectY</span>(</span>
-<span id="cb43-669"><a href="#cb43-669" aria-hidden="true" tabindex="-1"></a>      athletes<span class="op">,</span></span>
-<span id="cb43-670"><a href="#cb43-670" aria-hidden="true" tabindex="-1"></a>      Plot<span class="op">.</span><span class="fu">binX</span>({<span class="dt">y</span><span class="op">:</span> <span class="st">'count'</span>}<span class="op">,</span> {<span class="dt">x</span><span class="op">:</span> <span class="st">'weight'</span><span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> <span class="st">'sex'</span>})</span>
-<span id="cb43-671"><a href="#cb43-671" aria-hidden="true" tabindex="-1"></a>    )<span class="op">,</span></span>
-<span id="cb43-672"><a href="#cb43-672" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">ruleY</span>([<span class="dv">0</span>])</span>
-<span id="cb43-673"><a href="#cb43-673" aria-hidden="true" tabindex="-1"></a>  ]</span>
-<span id="cb43-674"><a href="#cb43-674" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb43" data-startfrom="662" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 661;"><span id="cb43-662"><a href="#cb43-662" aria-hidden="true" tabindex="-1"></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
+<span id="cb43-663"><a href="#cb43-663" aria-hidden="true" tabindex="-1"></a>  <span class="dt">grid</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span></span>
+<span id="cb43-664"><a href="#cb43-664" aria-hidden="true" tabindex="-1"></a>  <span class="dt">facet</span><span class="op">:</span> {</span>
+<span id="cb43-665"><a href="#cb43-665" aria-hidden="true" tabindex="-1"></a>    <span class="dt">data</span><span class="op">:</span> athletes<span class="op">,</span></span>
+<span id="cb43-666"><a href="#cb43-666" aria-hidden="true" tabindex="-1"></a>    <span class="dt">y</span><span class="op">:</span> <span class="st">'sex'</span></span>
+<span id="cb43-667"><a href="#cb43-667" aria-hidden="true" tabindex="-1"></a>  }<span class="op">,</span></span>
+<span id="cb43-668"><a href="#cb43-668" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
+<span id="cb43-669"><a href="#cb43-669" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">rectY</span>(</span>
+<span id="cb43-670"><a href="#cb43-670" aria-hidden="true" tabindex="-1"></a>      athletes<span class="op">,</span></span>
+<span id="cb43-671"><a href="#cb43-671" aria-hidden="true" tabindex="-1"></a>      Plot<span class="op">.</span><span class="fu">binX</span>({<span class="dt">y</span><span class="op">:</span> <span class="st">'count'</span>}<span class="op">,</span> {<span class="dt">x</span><span class="op">:</span> <span class="st">'weight'</span><span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> <span class="st">'sex'</span>})</span>
+<span id="cb43-672"><a href="#cb43-672" aria-hidden="true" tabindex="-1"></a>    )<span class="op">,</span></span>
+<span id="cb43-673"><a href="#cb43-673" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">ruleY</span>([<span class="dv">0</span>])</span>
+<span id="cb43-674"><a href="#cb43-674" aria-hidden="true" tabindex="-1"></a>  ]</span>
+<span id="cb43-675"><a href="#cb43-675" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div id="ojs-cell-4" data-nodetype="expression">
 
@@ -704,7 +710,7 @@ Plotly.newPlot(document.currentScript.parentElement,
 <span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a> <span class="st">"population = FileAttachment('notebooks/datasets/population.json').json()"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb45" data-startfrom="691" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 690;"><span id="cb45-691"><a href="#cb45-691" aria-hidden="true" tabindex="-1"></a>population <span class="op">=</span> <span class="fu">FileAttachment</span>(<span class="st">'notebooks/datasets/population.json'</span>)<span class="op">.</span><span class="fu">json</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb45" data-startfrom="692" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 691;"><span id="cb45-692"><a href="#cb45-692" aria-hidden="true" tabindex="-1"></a>population <span class="op">=</span> <span class="fu">FileAttachment</span>(<span class="st">'notebooks/datasets/population.json'</span>)<span class="op">.</span><span class="fu">json</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div id="ojs-cell-5" data-nodetype="declaration">
 
@@ -716,7 +722,7 @@ Plotly.newPlot(document.currentScript.parentElement,
 <span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a> <span class="st">"population"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb47" data-startfrom="706" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 705;"><span id="cb47-706"><a href="#cb47-706" aria-hidden="true" tabindex="-1"></a>population</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb47" data-startfrom="707" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 706;"><span id="cb47-707"><a href="#cb47-707" aria-hidden="true" tabindex="-1"></a>population</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div id="ojs-cell-6" data-nodetype="expression">
 
@@ -729,8 +735,8 @@ Plotly.newPlot(document.currentScript.parentElement,
 <span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a><span class="st"> chart"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb49" data-startfrom="723" data-source-offset="-1"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 722;"><span id="cb49-723"><a href="#cb49-723" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> { chart } <span class="cf">with</span> { population <span class="im">as</span> data } <span class="im">from</span> <span class="st">'@d3/zoomable-sunburst'</span></span>
-<span id="cb49-724"><a href="#cb49-724" aria-hidden="true" tabindex="-1"></a> chart</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb49" data-startfrom="724" data-source-offset="-1"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 723;"><span id="cb49-724"><a href="#cb49-724" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> { chart } <span class="cf">with</span> { population <span class="im">as</span> data } <span class="im">from</span> <span class="st">'@d3/zoomable-sunburst'</span></span>
+<span id="cb49-725"><a href="#cb49-725" aria-hidden="true" tabindex="-1"></a> chart</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-7-1" data-nodetype="declaration">
@@ -787,34 +793,34 @@ Plotly.newPlot(document.currentScript.parentElement,
 <span id="cb50-38"><a href="#cb50-38" aria-hidden="true" tabindex="-1"></a><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb51" data-startfrom="777" data-source-offset="-18"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 776;"><span id="cb51-777"><a href="#cb51-777" aria-hidden="true" tabindex="-1"></a>viewof bill_length_min <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>(</span>
-<span id="cb51-778"><a href="#cb51-778" aria-hidden="true" tabindex="-1"></a>                                      [<span class="dv">32</span><span class="op">,</span> <span class="dv">50</span>]<span class="op">,</span></span>
-<span id="cb51-779"><a href="#cb51-779" aria-hidden="true" tabindex="-1"></a>                                      {<span class="dt">value</span><span class="op">:</span> <span class="dv">35</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">'Bill length (min):'</span>}</span>
-<span id="cb51-780"><a href="#cb51-780" aria-hidden="true" tabindex="-1"></a>                                      )</span>
-<span id="cb51-781"><a href="#cb51-781" aria-hidden="true" tabindex="-1"></a>viewof islands <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">checkbox</span>(</span>
-<span id="cb51-782"><a href="#cb51-782" aria-hidden="true" tabindex="-1"></a>                                 [<span class="st">'Torgersen'</span><span class="op">,</span> <span class="st">'Biscoe'</span><span class="op">,</span> <span class="st">'Dream'</span>]<span class="op">,</span></span>
-<span id="cb51-783"><a href="#cb51-783" aria-hidden="true" tabindex="-1"></a>                                 { <span class="dt">value</span><span class="op">:</span> [<span class="st">'Torgersen'</span><span class="op">,</span> <span class="st">'Biscoe'</span>]<span class="op">,</span></span>
-<span id="cb51-784"><a href="#cb51-784" aria-hidden="true" tabindex="-1"></a>                                  <span class="dt">label</span><span class="op">:</span> <span class="st">'Islands:'</span></span>
-<span id="cb51-785"><a href="#cb51-785" aria-hidden="true" tabindex="-1"></a>                                  }</span>
-<span id="cb51-786"><a href="#cb51-786" aria-hidden="true" tabindex="-1"></a>                                 )</span>
-<span id="cb51-787"><a href="#cb51-787" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb51-788"><a href="#cb51-788" aria-hidden="true" tabindex="-1"></a>Plot<span class="op">.</span><span class="fu">rectY</span>(filtered<span class="op">,</span></span>
-<span id="cb51-789"><a href="#cb51-789" aria-hidden="true" tabindex="-1"></a>            Plot<span class="op">.</span><span class="fu">binX</span>(</span>
-<span id="cb51-790"><a href="#cb51-790" aria-hidden="true" tabindex="-1"></a>                      {<span class="dt">y</span><span class="op">:</span> <span class="st">'count'</span>}<span class="op">,</span></span>
-<span id="cb51-791"><a href="#cb51-791" aria-hidden="true" tabindex="-1"></a>                      {<span class="dt">x</span><span class="op">:</span> <span class="st">'body_mass_g'</span><span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> <span class="st">'species'</span><span class="op">,</span> <span class="dt">thresholds</span><span class="op">:</span> <span class="dv">20</span>}</span>
-<span id="cb51-792"><a href="#cb51-792" aria-hidden="true" tabindex="-1"></a>                      ))</span>
-<span id="cb51-793"><a href="#cb51-793" aria-hidden="true" tabindex="-1"></a> <span class="op">.</span><span class="fu">plot</span>({</span>
-<span id="cb51-794"><a href="#cb51-794" aria-hidden="true" tabindex="-1"></a>        <span class="dt">facet</span><span class="op">:</span> {</span>
-<span id="cb51-795"><a href="#cb51-795" aria-hidden="true" tabindex="-1"></a>                <span class="dt">data</span><span class="op">:</span> filtered<span class="op">,</span></span>
-<span id="cb51-796"><a href="#cb51-796" aria-hidden="true" tabindex="-1"></a>                <span class="dt">x</span><span class="op">:</span> <span class="st">'sex'</span><span class="op">,</span></span>
-<span id="cb51-797"><a href="#cb51-797" aria-hidden="true" tabindex="-1"></a>                <span class="dt">y</span><span class="op">:</span> <span class="st">'species'</span><span class="op">,</span></span>
-<span id="cb51-798"><a href="#cb51-798" aria-hidden="true" tabindex="-1"></a>                <span class="dt">marginRight</span><span class="op">:</span> <span class="dv">80</span></span>
-<span id="cb51-799"><a href="#cb51-799" aria-hidden="true" tabindex="-1"></a>                }<span class="op">,</span></span>
-<span id="cb51-800"><a href="#cb51-800" aria-hidden="true" tabindex="-1"></a>        <span class="dt">marks</span><span class="op">:</span> [</span>
-<span id="cb51-801"><a href="#cb51-801" aria-hidden="true" tabindex="-1"></a>                Plot<span class="op">.</span><span class="fu">frame</span>()<span class="op">,</span></span>
-<span id="cb51-802"><a href="#cb51-802" aria-hidden="true" tabindex="-1"></a>                ]</span>
-<span id="cb51-803"><a href="#cb51-803" aria-hidden="true" tabindex="-1"></a>        }</span>
-<span id="cb51-804"><a href="#cb51-804" aria-hidden="true" tabindex="-1"></a>       )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb51" data-startfrom="778" data-source-offset="-18"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 777;"><span id="cb51-778"><a href="#cb51-778" aria-hidden="true" tabindex="-1"></a>viewof bill_length_min <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>(</span>
+<span id="cb51-779"><a href="#cb51-779" aria-hidden="true" tabindex="-1"></a>                                      [<span class="dv">32</span><span class="op">,</span> <span class="dv">50</span>]<span class="op">,</span></span>
+<span id="cb51-780"><a href="#cb51-780" aria-hidden="true" tabindex="-1"></a>                                      {<span class="dt">value</span><span class="op">:</span> <span class="dv">35</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">'Bill length (min):'</span>}</span>
+<span id="cb51-781"><a href="#cb51-781" aria-hidden="true" tabindex="-1"></a>                                      )</span>
+<span id="cb51-782"><a href="#cb51-782" aria-hidden="true" tabindex="-1"></a>viewof islands <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">checkbox</span>(</span>
+<span id="cb51-783"><a href="#cb51-783" aria-hidden="true" tabindex="-1"></a>                                 [<span class="st">'Torgersen'</span><span class="op">,</span> <span class="st">'Biscoe'</span><span class="op">,</span> <span class="st">'Dream'</span>]<span class="op">,</span></span>
+<span id="cb51-784"><a href="#cb51-784" aria-hidden="true" tabindex="-1"></a>                                 { <span class="dt">value</span><span class="op">:</span> [<span class="st">'Torgersen'</span><span class="op">,</span> <span class="st">'Biscoe'</span>]<span class="op">,</span></span>
+<span id="cb51-785"><a href="#cb51-785" aria-hidden="true" tabindex="-1"></a>                                  <span class="dt">label</span><span class="op">:</span> <span class="st">'Islands:'</span></span>
+<span id="cb51-786"><a href="#cb51-786" aria-hidden="true" tabindex="-1"></a>                                  }</span>
+<span id="cb51-787"><a href="#cb51-787" aria-hidden="true" tabindex="-1"></a>                                 )</span>
+<span id="cb51-788"><a href="#cb51-788" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-789"><a href="#cb51-789" aria-hidden="true" tabindex="-1"></a>Plot<span class="op">.</span><span class="fu">rectY</span>(filtered<span class="op">,</span></span>
+<span id="cb51-790"><a href="#cb51-790" aria-hidden="true" tabindex="-1"></a>            Plot<span class="op">.</span><span class="fu">binX</span>(</span>
+<span id="cb51-791"><a href="#cb51-791" aria-hidden="true" tabindex="-1"></a>                      {<span class="dt">y</span><span class="op">:</span> <span class="st">'count'</span>}<span class="op">,</span></span>
+<span id="cb51-792"><a href="#cb51-792" aria-hidden="true" tabindex="-1"></a>                      {<span class="dt">x</span><span class="op">:</span> <span class="st">'body_mass_g'</span><span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> <span class="st">'species'</span><span class="op">,</span> <span class="dt">thresholds</span><span class="op">:</span> <span class="dv">20</span>}</span>
+<span id="cb51-793"><a href="#cb51-793" aria-hidden="true" tabindex="-1"></a>                      ))</span>
+<span id="cb51-794"><a href="#cb51-794" aria-hidden="true" tabindex="-1"></a> <span class="op">.</span><span class="fu">plot</span>({</span>
+<span id="cb51-795"><a href="#cb51-795" aria-hidden="true" tabindex="-1"></a>        <span class="dt">facet</span><span class="op">:</span> {</span>
+<span id="cb51-796"><a href="#cb51-796" aria-hidden="true" tabindex="-1"></a>                <span class="dt">data</span><span class="op">:</span> filtered<span class="op">,</span></span>
+<span id="cb51-797"><a href="#cb51-797" aria-hidden="true" tabindex="-1"></a>                <span class="dt">x</span><span class="op">:</span> <span class="st">'sex'</span><span class="op">,</span></span>
+<span id="cb51-798"><a href="#cb51-798" aria-hidden="true" tabindex="-1"></a>                <span class="dt">y</span><span class="op">:</span> <span class="st">'species'</span><span class="op">,</span></span>
+<span id="cb51-799"><a href="#cb51-799" aria-hidden="true" tabindex="-1"></a>                <span class="dt">marginRight</span><span class="op">:</span> <span class="dv">80</span></span>
+<span id="cb51-800"><a href="#cb51-800" aria-hidden="true" tabindex="-1"></a>                }<span class="op">,</span></span>
+<span id="cb51-801"><a href="#cb51-801" aria-hidden="true" tabindex="-1"></a>        <span class="dt">marks</span><span class="op">:</span> [</span>
+<span id="cb51-802"><a href="#cb51-802" aria-hidden="true" tabindex="-1"></a>                Plot<span class="op">.</span><span class="fu">frame</span>()<span class="op">,</span></span>
+<span id="cb51-803"><a href="#cb51-803" aria-hidden="true" tabindex="-1"></a>                ]</span>
+<span id="cb51-804"><a href="#cb51-804" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb51-805"><a href="#cb51-805" aria-hidden="true" tabindex="-1"></a>       )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-8-1" data-nodetype="declaration">
@@ -836,7 +842,7 @@ Plotly.newPlot(document.currentScript.parentElement,
 </div>
 </div>
 </div>
-<div class="sourceCode cell-code hidden" id="cb52" data-startfrom="805" data-source-offset="-953"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 804;"><span id="cb52-805"><a href="#cb52-805" aria-hidden="true" tabindex="-1"></a>Inputs<span class="op">.</span><span class="fu">table</span>(filtered)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb52" data-startfrom="806" data-source-offset="-953"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 805;"><span id="cb52-806"><a href="#cb52-806" aria-hidden="true" tabindex="-1"></a>Inputs<span class="op">.</span><span class="fu">table</span>(filtered)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-8-4" data-nodetype="expression">
@@ -844,11 +850,11 @@ Plotly.newPlot(document.currentScript.parentElement,
 </div>
 </div>
 </div>
-<div class="sourceCode cell-code hidden" id="cb53" data-startfrom="806" data-source-offset="-976"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 805;"><span id="cb53-806"><a href="#cb53-806" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> <span class="fu">FileAttachment</span>(<span class="st">'notebooks/datasets/palmer-penguins.csv'</span>)<span class="op">.</span><span class="fu">csv</span>({ <span class="dt">typed</span><span class="op">:</span> <span class="kw">true</span> })</span>
-<span id="cb53-807"><a href="#cb53-807" aria-hidden="true" tabindex="-1"></a>filtered <span class="op">=</span> data<span class="op">.</span><span class="fu">filter</span>(<span class="kw">function</span>(penguin) {</span>
-<span id="cb53-808"><a href="#cb53-808" aria-hidden="true" tabindex="-1"></a>                                           <span class="cf">return</span> bill_length_min <span class="op">&lt;</span> penguin<span class="op">.</span><span class="at">bill_length_mm</span> <span class="op">&amp;&amp;</span></span>
-<span id="cb53-809"><a href="#cb53-809" aria-hidden="true" tabindex="-1"></a>                                           islands<span class="op">.</span><span class="fu">includes</span>(penguin<span class="op">.</span><span class="at">island</span>)<span class="op">;</span></span>
-<span id="cb53-810"><a href="#cb53-810" aria-hidden="true" tabindex="-1"></a>                                           })</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb53" data-startfrom="807" data-source-offset="-976"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 806;"><span id="cb53-807"><a href="#cb53-807" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> <span class="fu">FileAttachment</span>(<span class="st">'notebooks/datasets/palmer-penguins.csv'</span>)<span class="op">.</span><span class="fu">csv</span>({ <span class="dt">typed</span><span class="op">:</span> <span class="kw">true</span> })</span>
+<span id="cb53-808"><a href="#cb53-808" aria-hidden="true" tabindex="-1"></a>filtered <span class="op">=</span> data<span class="op">.</span><span class="fu">filter</span>(<span class="kw">function</span>(penguin) {</span>
+<span id="cb53-809"><a href="#cb53-809" aria-hidden="true" tabindex="-1"></a>                                           <span class="cf">return</span> bill_length_min <span class="op">&lt;</span> penguin<span class="op">.</span><span class="at">bill_length_mm</span> <span class="op">&amp;&amp;</span></span>
+<span id="cb53-810"><a href="#cb53-810" aria-hidden="true" tabindex="-1"></a>                                           islands<span class="op">.</span><span class="fu">includes</span>(penguin<span class="op">.</span><span class="at">island</span>)<span class="op">;</span></span>
+<span id="cb53-811"><a href="#cb53-811" aria-hidden="true" tabindex="-1"></a>                                           })</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-8-5" data-nodetype="declaration">
@@ -912,7 +918,9 @@ Plotly.newPlot(document.currentScript.parentElement,
 <div class="sourceClojure">
 <div class="sourceCode" id="cb61"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a>tree-image</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<img src="kinds_files/1.png" style="width:100%;">
+<div class="clay-image">
+<img src="kinds_files/1.png">
+</div>
 </section>
 <section id="ml-models" class="level2" data-number="3.17">
 <h2 data-number="3.17" class="anchored" data-anchor-id="ml-models"><span class="header-section-number">3.17</span> ML models</h2>
@@ -1013,6 +1021,7 @@ Plotly.newPlot(document.currentScript.parentElement,
 <span id="cb72-2"><a href="#cb72-2" aria-hidden="true" tabindex="-1"></a> {<span class="at">:x</span> [<span class="dv">1</span> [<span class="dv">2</span> <span class="dv">3</span>] <span class="dv">4</span>]</span>
 <span id="cb72-3"><a href="#cb72-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">:y</span> [<span class="at">:A</span> <span class="at">:B</span> <span class="at">:C</span>]})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<div class="clay-dataset">
 <p>_unnamed [3 2]:</p>
 <table class="table">
 <thead>
@@ -1036,12 +1045,14 @@ Plotly.newPlot(document.currentScript.parentElement,
 </tr>
 </tbody>
 </table>
+</div>
 <p>Some elements might be missing:</p>
 <div class="sourceClojure">
 <div class="sourceCode" id="cb73"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a>(tc/dataset</span>
 <span id="cb73-2"><a href="#cb73-2" aria-hidden="true" tabindex="-1"></a> [{<span class="at">:x</span> <span class="dv">1</span> <span class="at">:y</span> <span class="dv">2</span> <span class="at">:z</span> <span class="dv">3</span>}</span>
 <span id="cb73-3"><a href="#cb73-3" aria-hidden="true" tabindex="-1"></a>  {<span class="at">:y</span> <span class="dv">4</span> <span class="at">:z</span> <span class="dv">5</span>}])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<div class="clay-dataset">
 <p>_unnamed [2 3]:</p>
 <table class="table">
 <thead>
@@ -1064,6 +1075,7 @@ Plotly.newPlot(document.currentScript.parentElement,
 </tr>
 </tbody>
 </table>
+</div>
 </section>
 <section id="tables" class="level2" data-number="3.19">
 <h2 data-number="3.19" class="anchored" data-anchor-id="tables"><span class="header-section-number">3.19</span> Tables</h2>
@@ -1073,6 +1085,7 @@ Plotly.newPlot(document.currentScript.parentElement,
 <div class="sourceClojure">
 <div class="sourceCode" id="cb74"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a>(kind/table squares-dataset)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<div class="clay-table">
 <div>
 <div class="table-responsive">
 <table class="table table-hover" data-quarto-postprocess="true">
@@ -1185,6 +1198,7 @@ Plotly.newPlot(document.currentScript.parentElement,
 </tr>
 </tbody>
 </table>
+</div>
 </div>
 </div>
 <p>A sequence of vectors and column-names information:</p>
@@ -1196,6 +1210,7 @@ Plotly.newPlot(document.currentScript.parentElement,
 <span id="cb75-5"><a href="#cb75-5" aria-hidden="true" tabindex="-1"></a>                            (<span class="kw">*</span> x x)])))</span>
 <span id="cb75-6"><a href="#cb75-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">:column-names</span> [<span class="at">:x</span> <span class="at">:y</span>]})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<div class="clay-table">
 <div>
 <div class="table-responsive">
 <table class="table table-hover" data-quarto-postprocess="true">
@@ -1308,6 +1323,7 @@ Plotly.newPlot(document.currentScript.parentElement,
 </tr>
 </tbody>
 </table>
+</div>
 </div>
 </div>
 <p>A sequence of maps and column-names information:</p>
@@ -1319,6 +1335,7 @@ Plotly.newPlot(document.currentScript.parentElement,
 <span id="cb76-5"><a href="#cb76-5" aria-hidden="true" tabindex="-1"></a>                         <span class="at">:y</span> (<span class="kw">*</span> x x)})))</span>
 <span id="cb76-6"><a href="#cb76-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">:column-names</span> [<span class="at">:x</span> <span class="at">:y</span>]})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<div class="clay-table">
 <div>
 <div class="table-responsive">
 <table class="table table-hover" data-quarto-postprocess="true">
@@ -1433,847 +1450,28 @@ Plotly.newPlot(document.currentScript.parentElement,
 </table>
 </div>
 </div>
+</div>
 <p>Some tools support <a href="https://datatables.net/">datatables</a> for displaying tables. This can be expressed using the <code>:use-datatables</code> option.</p>
 <div class="sourceClojure">
 <div class="sourceCode" id="cb77"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb77-1"><a href="#cb77-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">-&gt;</span> squares-dataset</span>
 <span id="cb77-2"><a href="#cb77-2" aria-hidden="true" tabindex="-1"></a>    (kind/table {<span class="at">:use-datatables</span> <span class="va">true</span>}))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<table class="table table-hover table-responsive">
-<thead>
-<tr>
-<th>
-:x
-</th>
-<th>
-:y
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<div>
-<p>
-0
-</p>
+<div class="clay-table">
+<div class="clay-table">
+<table class="table table-hover table-responsive"><thead><tr><th><div><p>:x</p></div></th><th><div><p>:y</p></div></th></tr></thead><tbody><tr><td><div><p>0</p></div></td><td><div><p>0</p></div></td></tr><tr><td><div><p>1</p></div></td><td><div><p>1</p></div></td></tr><tr><td><div><p>2</p></div></td><td><div><p>4</p></div></td></tr><tr><td><div><p>3</p></div></td><td><div><p>9</p></div></td></tr><tr><td><div><p>4</p></div></td><td><div><p>16</p></div></td></tr><tr><td><div><p>5</p></div></td><td><div><p>25</p></div></td></tr><tr><td><div><p>6</p></div></td><td><div><p>36</p></div></td></tr><tr><td><div><p>7</p></div></td><td><div><p>49</p></div></td></tr><tr><td><div><p>8</p></div></td><td><div><p>64</p></div></td></tr><tr><td><div><p>9</p></div></td><td><div><p>81</p></div></td></tr><tr><td><div><p>10</p></div></td><td><div><p>100</p></div></td></tr><tr><td><div><p>11</p></div></td><td><div><p>121</p></div></td></tr><tr><td><div><p>12</p></div></td><td><div><p>144</p></div></td></tr><tr><td><div><p>13</p></div></td><td><div><p>169</p></div></td></tr><tr><td><div><p>14</p></div></td><td><div><p>196</p></div></td></tr><tr><td><div><p>15</p></div></td><td><div><p>225</p></div></td></tr><tr><td><div><p>16</p></div></td><td><div><p>256</p></div></td></tr><tr><td><div><p>17</p></div></td><td><div><p>289</p></div></td></tr><tr><td><div><p>18</p></div></td><td><div><p>324</p></div></td></tr><tr><td><div><p>19</p></div></td><td><div><p>361</p></div></td></tr><tr><td><div><p>20</p></div></td><td><div><p>400</p></div></td></tr><tr><td><div><p>21</p></div></td><td><div><p>441</p></div></td></tr><tr><td><div><p>22</p></div></td><td><div><p>484</p></div></td></tr><tr><td><div><p>23</p></div></td><td><div><p>529</p></div></td></tr><tr><td><div><p>24</p></div></td><td><div><p>576</p></div></td></tr></tbody><script>new DataTable(document.currentScript.parentElement, {"paging":false,"scrollY":400,"sPaginationType":"full_numbers","order":[]});</script></table>
 </div>
-</td>
-<td>
-<div>
-<p>
-0
-</p>
 </div>
-</td>
-</tr>
-<tr>
-<td>
-<div>
-<p>
-1
-</p>
-</div>
-</td>
-<td>
-<div>
-<p>
-1
-</p>
-</div>
-</td>
-</tr>
-<tr>
-<td>
-<div>
-<p>
-2
-</p>
-</div>
-</td>
-<td>
-<div>
-<p>
-4
-</p>
-</div>
-</td>
-</tr>
-<tr>
-<td>
-<div>
-<p>
-3
-</p>
-</div>
-</td>
-<td>
-<div>
-<p>
-9
-</p>
-</div>
-</td>
-</tr>
-<tr>
-<td>
-<div>
-<p>
-4
-</p>
-</div>
-</td>
-<td>
-<div>
-<p>
-16
-</p>
-</div>
-</td>
-</tr>
-<tr>
-<td>
-<div>
-<p>
-5
-</p>
-</div>
-</td>
-<td>
-<div>
-<p>
-25
-</p>
-</div>
-</td>
-</tr>
-<tr>
-<td>
-<div>
-<p>
-6
-</p>
-</div>
-</td>
-<td>
-<div>
-<p>
-36
-</p>
-</div>
-</td>
-</tr>
-<tr>
-<td>
-<div>
-<p>
-7
-</p>
-</div>
-</td>
-<td>
-<div>
-<p>
-49
-</p>
-</div>
-</td>
-</tr>
-<tr>
-<td>
-<div>
-<p>
-8
-</p>
-</div>
-</td>
-<td>
-<div>
-<p>
-64
-</p>
-</div>
-</td>
-</tr>
-<tr>
-<td>
-<div>
-<p>
-9
-</p>
-</div>
-</td>
-<td>
-<div>
-<p>
-81
-</p>
-</div>
-</td>
-</tr>
-<tr>
-<td>
-<div>
-<p>
-10
-</p>
-</div>
-</td>
-<td>
-<div>
-<p>
-100
-</p>
-</div>
-</td>
-</tr>
-<tr>
-<td>
-<div>
-<p>
-11
-</p>
-</div>
-</td>
-<td>
-<div>
-<p>
-121
-</p>
-</div>
-</td>
-</tr>
-<tr>
-<td>
-<div>
-<p>
-12
-</p>
-</div>
-</td>
-<td>
-<div>
-<p>
-144
-</p>
-</div>
-</td>
-</tr>
-<tr>
-<td>
-<div>
-<p>
-13
-</p>
-</div>
-</td>
-<td>
-<div>
-<p>
-169
-</p>
-</div>
-</td>
-</tr>
-<tr>
-<td>
-<div>
-<p>
-14
-</p>
-</div>
-</td>
-<td>
-<div>
-<p>
-196
-</p>
-</div>
-</td>
-</tr>
-<tr>
-<td>
-<div>
-<p>
-15
-</p>
-</div>
-</td>
-<td>
-<div>
-<p>
-225
-</p>
-</div>
-</td>
-</tr>
-<tr>
-<td>
-<div>
-<p>
-16
-</p>
-</div>
-</td>
-<td>
-<div>
-<p>
-256
-</p>
-</div>
-</td>
-</tr>
-<tr>
-<td>
-<div>
-<p>
-17
-</p>
-</div>
-</td>
-<td>
-<div>
-<p>
-289
-</p>
-</div>
-</td>
-</tr>
-<tr>
-<td>
-<div>
-<p>
-18
-</p>
-</div>
-</td>
-<td>
-<div>
-<p>
-324
-</p>
-</div>
-</td>
-</tr>
-<tr>
-<td>
-<div>
-<p>
-19
-</p>
-</div>
-</td>
-<td>
-<div>
-<p>
-361
-</p>
-</div>
-</td>
-</tr>
-<tr>
-<td>
-<div>
-<p>
-20
-</p>
-</div>
-</td>
-<td>
-<div>
-<p>
-400
-</p>
-</div>
-</td>
-</tr>
-<tr>
-<td>
-<div>
-<p>
-21
-</p>
-</div>
-</td>
-<td>
-<div>
-<p>
-441
-</p>
-</div>
-</td>
-</tr>
-<tr>
-<td>
-<div>
-<p>
-22
-</p>
-</div>
-</td>
-<td>
-<div>
-<p>
-484
-</p>
-</div>
-</td>
-</tr>
-<tr>
-<td>
-<div>
-<p>
-23
-</p>
-</div>
-</td>
-<td>
-<div>
-<p>
-529
-</p>
-</div>
-</td>
-</tr>
-<tr>
-<td>
-<div>
-<p>
-24
-</p>
-</div>
-</td>
-<td>
-<div>
-<p>
-576
-</p>
-</div>
-</td>
-</tr>
-</tbody>
-<script>new DataTable(document.currentScript.parentElement, {"paging":false,"scrollY":400,"sPaginationType":"full_numbers","order":[]});</script>
-</table>
 <p>In addition, the <code>:datatables</code> option can be used to control <a href="https://datatables.net/manual/options">datatables options</a> (see <a href="https://datatables.net/reference/option/">the full list</a>).</p>
 <div class="sourceClojure">
 <div class="sourceCode" id="cb78"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">-&gt;</span> squares-dataset</span>
 <span id="cb78-2"><a href="#cb78-2" aria-hidden="true" tabindex="-1"></a>    (kind/table {<span class="at">:use-datatables</span> <span class="va">true</span></span>
 <span id="cb78-3"><a href="#cb78-3" aria-hidden="true" tabindex="-1"></a>                 <span class="at">:datatables</span> {<span class="at">:scrollY</span> <span class="dv">200</span>}}))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<table class="table table-hover table-responsive">
-<thead>
-<tr>
-<th>
-:x
-</th>
-<th>
-:y
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<div>
-<p>
-0
-</p>
+<div class="clay-table">
+<div class="clay-table">
+<table class="table table-hover table-responsive"><thead><tr><th><div><p>:x</p></div></th><th><div><p>:y</p></div></th></tr></thead><tbody><tr><td><div><p>0</p></div></td><td><div><p>0</p></div></td></tr><tr><td><div><p>1</p></div></td><td><div><p>1</p></div></td></tr><tr><td><div><p>2</p></div></td><td><div><p>4</p></div></td></tr><tr><td><div><p>3</p></div></td><td><div><p>9</p></div></td></tr><tr><td><div><p>4</p></div></td><td><div><p>16</p></div></td></tr><tr><td><div><p>5</p></div></td><td><div><p>25</p></div></td></tr><tr><td><div><p>6</p></div></td><td><div><p>36</p></div></td></tr><tr><td><div><p>7</p></div></td><td><div><p>49</p></div></td></tr><tr><td><div><p>8</p></div></td><td><div><p>64</p></div></td></tr><tr><td><div><p>9</p></div></td><td><div><p>81</p></div></td></tr><tr><td><div><p>10</p></div></td><td><div><p>100</p></div></td></tr><tr><td><div><p>11</p></div></td><td><div><p>121</p></div></td></tr><tr><td><div><p>12</p></div></td><td><div><p>144</p></div></td></tr><tr><td><div><p>13</p></div></td><td><div><p>169</p></div></td></tr><tr><td><div><p>14</p></div></td><td><div><p>196</p></div></td></tr><tr><td><div><p>15</p></div></td><td><div><p>225</p></div></td></tr><tr><td><div><p>16</p></div></td><td><div><p>256</p></div></td></tr><tr><td><div><p>17</p></div></td><td><div><p>289</p></div></td></tr><tr><td><div><p>18</p></div></td><td><div><p>324</p></div></td></tr><tr><td><div><p>19</p></div></td><td><div><p>361</p></div></td></tr><tr><td><div><p>20</p></div></td><td><div><p>400</p></div></td></tr><tr><td><div><p>21</p></div></td><td><div><p>441</p></div></td></tr><tr><td><div><p>22</p></div></td><td><div><p>484</p></div></td></tr><tr><td><div><p>23</p></div></td><td><div><p>529</p></div></td></tr><tr><td><div><p>24</p></div></td><td><div><p>576</p></div></td></tr></tbody><script>new DataTable(document.currentScript.parentElement, {"paging":false,"scrollY":200,"sPaginationType":"full_numbers","order":[]});</script></table>
 </div>
-</td>
-<td>
-<div>
-<p>
-0
-</p>
 </div>
-</td>
-</tr>
-<tr>
-<td>
-<div>
-<p>
-1
-</p>
-</div>
-</td>
-<td>
-<div>
-<p>
-1
-</p>
-</div>
-</td>
-</tr>
-<tr>
-<td>
-<div>
-<p>
-2
-</p>
-</div>
-</td>
-<td>
-<div>
-<p>
-4
-</p>
-</div>
-</td>
-</tr>
-<tr>
-<td>
-<div>
-<p>
-3
-</p>
-</div>
-</td>
-<td>
-<div>
-<p>
-9
-</p>
-</div>
-</td>
-</tr>
-<tr>
-<td>
-<div>
-<p>
-4
-</p>
-</div>
-</td>
-<td>
-<div>
-<p>
-16
-</p>
-</div>
-</td>
-</tr>
-<tr>
-<td>
-<div>
-<p>
-5
-</p>
-</div>
-</td>
-<td>
-<div>
-<p>
-25
-</p>
-</div>
-</td>
-</tr>
-<tr>
-<td>
-<div>
-<p>
-6
-</p>
-</div>
-</td>
-<td>
-<div>
-<p>
-36
-</p>
-</div>
-</td>
-</tr>
-<tr>
-<td>
-<div>
-<p>
-7
-</p>
-</div>
-</td>
-<td>
-<div>
-<p>
-49
-</p>
-</div>
-</td>
-</tr>
-<tr>
-<td>
-<div>
-<p>
-8
-</p>
-</div>
-</td>
-<td>
-<div>
-<p>
-64
-</p>
-</div>
-</td>
-</tr>
-<tr>
-<td>
-<div>
-<p>
-9
-</p>
-</div>
-</td>
-<td>
-<div>
-<p>
-81
-</p>
-</div>
-</td>
-</tr>
-<tr>
-<td>
-<div>
-<p>
-10
-</p>
-</div>
-</td>
-<td>
-<div>
-<p>
-100
-</p>
-</div>
-</td>
-</tr>
-<tr>
-<td>
-<div>
-<p>
-11
-</p>
-</div>
-</td>
-<td>
-<div>
-<p>
-121
-</p>
-</div>
-</td>
-</tr>
-<tr>
-<td>
-<div>
-<p>
-12
-</p>
-</div>
-</td>
-<td>
-<div>
-<p>
-144
-</p>
-</div>
-</td>
-</tr>
-<tr>
-<td>
-<div>
-<p>
-13
-</p>
-</div>
-</td>
-<td>
-<div>
-<p>
-169
-</p>
-</div>
-</td>
-</tr>
-<tr>
-<td>
-<div>
-<p>
-14
-</p>
-</div>
-</td>
-<td>
-<div>
-<p>
-196
-</p>
-</div>
-</td>
-</tr>
-<tr>
-<td>
-<div>
-<p>
-15
-</p>
-</div>
-</td>
-<td>
-<div>
-<p>
-225
-</p>
-</div>
-</td>
-</tr>
-<tr>
-<td>
-<div>
-<p>
-16
-</p>
-</div>
-</td>
-<td>
-<div>
-<p>
-256
-</p>
-</div>
-</td>
-</tr>
-<tr>
-<td>
-<div>
-<p>
-17
-</p>
-</div>
-</td>
-<td>
-<div>
-<p>
-289
-</p>
-</div>
-</td>
-</tr>
-<tr>
-<td>
-<div>
-<p>
-18
-</p>
-</div>
-</td>
-<td>
-<div>
-<p>
-324
-</p>
-</div>
-</td>
-</tr>
-<tr>
-<td>
-<div>
-<p>
-19
-</p>
-</div>
-</td>
-<td>
-<div>
-<p>
-361
-</p>
-</div>
-</td>
-</tr>
-<tr>
-<td>
-<div>
-<p>
-20
-</p>
-</div>
-</td>
-<td>
-<div>
-<p>
-400
-</p>
-</div>
-</td>
-</tr>
-<tr>
-<td>
-<div>
-<p>
-21
-</p>
-</div>
-</td>
-<td>
-<div>
-<p>
-441
-</p>
-</div>
-</td>
-</tr>
-<tr>
-<td>
-<div>
-<p>
-22
-</p>
-</div>
-</td>
-<td>
-<div>
-<p>
-484
-</p>
-</div>
-</td>
-</tr>
-<tr>
-<td>
-<div>
-<p>
-23
-</p>
-</div>
-</td>
-<td>
-<div>
-<p>
-529
-</p>
-</div>
-</td>
-</tr>
-<tr>
-<td>
-<div>
-<p>
-24
-</p>
-</div>
-</td>
-<td>
-<div>
-<p>
-576
-</p>
-</div>
-</td>
-</tr>
-</tbody>
-<script>new DataTable(document.currentScript.parentElement, {"paging":false,"scrollY":200,"sPaginationType":"full_numbers","order":[]});</script>
-</table>
 <p>and in this case the user may specify <a href="https://datatables.net/manual/options">datatables options</a> (see <a href="https://datatables.net/reference/option/">the full list</a>).</p>
 <p>The <code>kind/table</code> has recursive semantics: if the values inside them have kind information, they should be handled accordingly.</p>
 <div class="sourceClojure">
@@ -2288,6 +1486,7 @@ Plotly.newPlot(document.currentScript.parentElement,
 <span id="cb79-9"><a href="#cb79-9" aria-hidden="true" tabindex="-1"></a>                               tree-image])</span>
 <span id="cb79-10"><a href="#cb79-10" aria-hidden="true" tabindex="-1"></a>                 (kind/md <span class="st">"$x^2$"</span>)]]})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<div class="clay-table">
 <div>
 <div class="table-responsive">
 <table class="table table-hover" data-quarto-postprocess="true">
@@ -2320,12 +1519,13 @@ Plotly.newPlot(document.currentScript.parentElement,
 </tr>
 <tr class="odd">
 <td><div style="height:200;">
-<img src="kinds_files/1.png" class="img-fluid" style="width:100%;">
+<img src="kinds_files/1.png" class="clay-image img-fluid">
 </div></td>
 <td><span class="math inline">\(x^2\)</span></td>
 </tr>
 </tbody>
 </table>
+</div>
 </div>
 </div>
 </section>
@@ -2392,7 +1592,7 @@ Plotly.newPlot(document.currentScript.parentElement,
 <span id="cb87-2"><a href="#cb87-2" aria-hidden="true" tabindex="-1"></a> tree-image)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="printedClojure">
-<div class="sourceCode" id="cb88"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb88-1"><a href="#cb88-1" aria-hidden="true" tabindex="-1"></a>[#object[java.awt.image.BufferedImage <span class="bn">0x739d607b</span> <span class="st">"BufferedImage@739d607b: type = 5 ColorModel: #pixelBits = 24 numComponents = 3 color space = java.awt.color.ICC_ColorSpace@228a77d5 transparency = 1 has alpha = false isAlphaPre = false ByteInterleavedRaster: width = 480 height = 640 #numDataElements 3 dataOff[0] = 2"</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb88"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb88-1"><a href="#cb88-1" aria-hidden="true" tabindex="-1"></a>[#object[java.awt.image.BufferedImage <span class="bn">0x25131a9c</span> <span class="st">"BufferedImage@25131a9c: type = 5 ColorModel: #pixelBits = 24 numComponents = 3 color space = java.awt.color.ICC_ColorSpace@7006f84 transparency = 1 has alpha = false isAlphaPre = false ByteInterleavedRaster: width = 480 height = 640 #numDataElements 3 dataOff[0] = 2"</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="sourceClojure">
 <div class="sourceCode" id="cb89"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb89-1"><a href="#cb89-1" aria-hidden="true" tabindex="-1"></a>(kind/pprint</span>
