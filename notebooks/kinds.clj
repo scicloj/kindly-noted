@@ -32,6 +32,23 @@
 
 {1 "A" :B 'C}
 
+;; More examples:
+
+(def people-as-maps
+  (->> (range 29)
+       (mapv (fn [i]
+               {:preferred-language (["clojure" "clojurescript" "babashka"]
+                                     (rand-int 3))
+                :age (rand-int 100)}))))
+
+people-as-maps
+
+(def people-as-vectors
+  (->> people-as-maps
+       (mapv (juxt :preferred-language :age))))
+
+people-as-vectors
+
 ;; These kinds have recursive kind semantics:
 ;; if the values inside them have kind information,
 ;; they should be handled accordingly.
@@ -417,52 +434,80 @@ marketing-model
 
 ;; ## Tables
 
+;; The `kind/table` kind can be handy for an interactive table view. `kind/table` understands many structures which can be rendered as a table.
 
 
 
-;; A value of `kind/table` should be displayed as a table
-;; (using the tool's UI for tables, if any).
+;; A map containing either `:row-vectors` (sequence of sequences) or `row-maps` (sequence of maps) keys with optional `:column-names`.
 
-;; The table contents can be specified in different ways.
-
-;; A dataset:
-(kind/table squares-dataset)
-
-;; A sequence of vectors and column-names information:
 (kind/table
- {:row-vectors (->> (range 25)
-                    (map (fn [x]
-                           [x
-                            (* x x)])))
-  :column-names [:x :y]})
+ {:column-names [:preferred-language :age]
+  :row-vectors people-as-vectors})
 
-;; A sequence of vectors without column-names information:
-(kind/table
- {:row-vectors (->> (range 25)
-                    (map (fn [x]
-                           [x
-                            (* x x)])))})
+;; Lack of column names produces table without a header.
 
-;; A sequence of maps and column-names information:
 (kind/table
- {:row-maps (->> (range 25)
-                 (map (fn [x]
-                        {:x x
-                         :y (* x x)})))
-  :column-names [:x :y]})
+ {:row-vectors (take 5 people-as-vectors)})
+
+;; ;; Column names are inferred from a sequence of maps
+
+(kind/table
+ {:row-maps (take 5 people-as-maps)})
+
+;; ;; We can limit displayed columns for sequence of maps case.
+
+(kind/table
+ {:column-names [:preferred-language]
+  :row-maps (take 5 people-as-maps)})
+
+;; ;; Sequence of sequences and sequence of maps also work
+
+(kind/table (take 5 people-as-vectors))
+
+(kind/table (take 5 people-as-maps))
+
+;; ;; Additionally map of sequences is supported (unless it contains `:row-vectors` or `:row-maps` key, see such case above).
+
+(kind/table {:x (range 6)
+             :y [:A :B :C :A :B :C]})
+
+;; A dataset can be also treated as a table input.
+
+(def people-as-dataset
+  (tc/dataset people-as-maps))
+
+(-> people-as-dataset
+    kind/table)
+
+;; Additional options may hint at way the table should be rendered.
+(-> people-as-dataset
+    (kind/table {:element/max-height "300px"}))
+
+;; It is possible to use [datatables](https://datatables.net/) to reneder `kind/table`,
+;; and in this case the user may specify [datatables options](https://datatables.net/manual/options)
+;; (see [the full list](https://datatables.net/reference/option/)).
+
+(-> people-as-maps
+    tc/dataset
+    (kind/table {:use-datatables true}))
+
+(-> people-as-dataset
+    (kind/table {:use-datatables true
+                 :datatables {:scrollY 300
+                              :paging false}}))
 
 ;; Some tools support [datatables](https://datatables.net/)
 ;; for displaying tables.
 ;; This can be expressed using the `:use-datatables` option.
 
-(-> squares-dataset
+(-> people-as-dataset
     (kind/table {:use-datatables true}))
 
 ;; In addition, the `:datatables` option can be used to control
 ;; [datatables options](https://datatables.net/manual/options)
 ;; (see [the full list](https://datatables.net/reference/option/)).
 
-(-> squares-dataset
+(-> people-as-dataset
     (kind/table {:use-datatables true
                  :datatables {:scrollY 200}}))
 
