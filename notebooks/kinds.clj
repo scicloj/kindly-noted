@@ -645,3 +645,17 @@ marketing-model
                                             :color "lightgrey"}}
                               [:big [:p color]]])]))
      kind/fragment)
+
+;; ## Function
+
+;; `kind/fn` is a special kind. It is displayed by first evaluating
+;; the given function and arguments, then proceeding recursively
+;; with the resulting value.
+
+(kind/fn
+  [+ 1 2])
+
+(kind/fn
+  [tc/dataset
+   {:x (range 3)
+    :y (repeatedly 3 rand)}])
