@@ -2,5 +2,9 @@
                :branch "main"}
  :quarto {:format {:html {:toc true
                           :toc-depth 4
-                          :theme [:cosmo "notebooks/custom.scss"]}}}
+                          :theme [:cosmo "notebooks/custom.scss"]}}
+          :include-in-header {:text "<meta property=\"og:image\" content=\"notebooks/images/Kindly.svg.png\"/>
+<meta property=\"og:title\" content=\"Kindly\"/>
+<meta property=\"og:description\" content=\"A proposed standard for requesting data visualizations in Clojure\"/>
+<link rel = \"icon\" href = \"data:,\" />"}}
  :base-target-path "temp"}
