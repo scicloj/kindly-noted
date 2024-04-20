@@ -659,3 +659,7 @@ marketing-model
   [tc/dataset
    {:x (range 3)
     :y (repeatedly 3 rand)}])
+
+;; ## test-last
+
+;; `kind/test-last` allows to define a test over the previous form. This is still work-in-progress, and will be documented soon.
