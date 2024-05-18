@@ -656,9 +656,20 @@ marketing-model
   [+ 1 2])
 
 (kind/fn
+  {:kindly/f (fn [{:keys [x y]}]
+               (+ x y))
+   :x 1
+   :y 2})
+
+(kind/fn
   [tc/dataset
    {:x (range 3)
     :y (repeatedly 3 rand)}])
+
+(kind/fn
+  {:kindly/f tc/dataset
+   :x (range 3)
+   :y (repeatedly 3 rand)})
 
 ;; ## test-last
 
