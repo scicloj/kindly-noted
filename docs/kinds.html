@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.10">
+<meta name="generator" content="quarto-1.5.32">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -33,7 +33,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -109,7 +109,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta property="og:description" content="">
 <link rel="icon" href="data:,">
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <script type="text/javascript">
@@ -147,13 +147,13 @@ window.Quarto = {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./kinds.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Catalogue of visualization kinds</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -359,35 +359,35 @@ window.Quarto = {
 <div class="sourceCode" id="cb17"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>people-as-maps</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="printedClojure">
-<div class="sourceCode" id="cb18"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>[{<span class="at">:preferred-language</span> <span class="st">"babashka"</span>, <span class="at">:age</span> <span class="dv">31</span>}</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"babashka"</span>, <span class="at">:age</span> <span class="dv">94</span>}</span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojure"</span>, <span class="at">:age</span> <span class="dv">40</span>}</span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojurescript"</span>, <span class="at">:age</span> <span class="dv">56</span>}</span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojure"</span>, <span class="at">:age</span> <span class="dv">14</span>}</span>
-<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"babashka"</span>, <span class="at">:age</span> <span class="dv">90</span>}</span>
-<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojure"</span>, <span class="at">:age</span> <span class="dv">77</span>}</span>
-<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojure"</span>, <span class="at">:age</span> <span class="dv">40</span>}</span>
-<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojure"</span>, <span class="at">:age</span> <span class="dv">95</span>}</span>
-<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojurescript"</span>, <span class="at">:age</span> <span class="dv">35</span>}</span>
-<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"babashka"</span>, <span class="at">:age</span> <span class="dv">23</span>}</span>
-<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojure"</span>, <span class="at">:age</span> <span class="dv">31</span>}</span>
-<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojure"</span>, <span class="at">:age</span> <span class="dv">76</span>}</span>
-<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"babashka"</span>, <span class="at">:age</span> <span class="dv">22</span>}</span>
-<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojurescript"</span>, <span class="at">:age</span> <span class="dv">30</span>}</span>
-<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"babashka"</span>, <span class="at">:age</span> <span class="dv">8</span>}</span>
-<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"babashka"</span>, <span class="at">:age</span> <span class="dv">77</span>}</span>
-<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojure"</span>, <span class="at">:age</span> <span class="dv">85</span>}</span>
-<span id="cb18-19"><a href="#cb18-19" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojure"</span>, <span class="at">:age</span> <span class="dv">75</span>}</span>
-<span id="cb18-20"><a href="#cb18-20" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojure"</span>, <span class="at">:age</span> <span class="dv">89</span>}</span>
-<span id="cb18-21"><a href="#cb18-21" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"babashka"</span>, <span class="at">:age</span> <span class="dv">75</span>}</span>
-<span id="cb18-22"><a href="#cb18-22" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojurescript"</span>, <span class="at">:age</span> <span class="dv">38</span>}</span>
-<span id="cb18-23"><a href="#cb18-23" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojure"</span>, <span class="at">:age</span> <span class="dv">76</span>}</span>
-<span id="cb18-24"><a href="#cb18-24" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojure"</span>, <span class="at">:age</span> <span class="dv">14</span>}</span>
-<span id="cb18-25"><a href="#cb18-25" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"babashka"</span>, <span class="at">:age</span> <span class="dv">95</span>}</span>
-<span id="cb18-26"><a href="#cb18-26" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojurescript"</span>, <span class="at">:age</span> <span class="dv">84</span>}</span>
-<span id="cb18-27"><a href="#cb18-27" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojure"</span>, <span class="at">:age</span> <span class="dv">75</span>}</span>
-<span id="cb18-28"><a href="#cb18-28" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojure"</span>, <span class="at">:age</span> <span class="dv">47</span>}</span>
-<span id="cb18-29"><a href="#cb18-29" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojurescript"</span>, <span class="at">:age</span> <span class="dv">2</span>}]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>[{<span class="at">:preferred-language</span> <span class="st">"clojure"</span>, <span class="at">:age</span> <span class="dv">80</span>}</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojurescript"</span>, <span class="at">:age</span> <span class="dv">39</span>}</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojure"</span>, <span class="at">:age</span> <span class="dv">0</span>}</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojure"</span>, <span class="at">:age</span> <span class="dv">5</span>}</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojurescript"</span>, <span class="at">:age</span> <span class="dv">35</span>}</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojure"</span>, <span class="at">:age</span> <span class="dv">72</span>}</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojure"</span>, <span class="at">:age</span> <span class="dv">7</span>}</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojurescript"</span>, <span class="at">:age</span> <span class="dv">70</span>}</span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"babashka"</span>, <span class="at">:age</span> <span class="dv">41</span>}</span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"babashka"</span>, <span class="at">:age</span> <span class="dv">47</span>}</span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojurescript"</span>, <span class="at">:age</span> <span class="dv">67</span>}</span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojure"</span>, <span class="at">:age</span> <span class="dv">90</span>}</span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojure"</span>, <span class="at">:age</span> <span class="dv">50</span>}</span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojure"</span>, <span class="at">:age</span> <span class="dv">10</span>}</span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"babashka"</span>, <span class="at">:age</span> <span class="dv">55</span>}</span>
+<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojure"</span>, <span class="at">:age</span> <span class="dv">4</span>}</span>
+<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojure"</span>, <span class="at">:age</span> <span class="dv">54</span>}</span>
+<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojure"</span>, <span class="at">:age</span> <span class="dv">80</span>}</span>
+<span id="cb18-19"><a href="#cb18-19" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojurescript"</span>, <span class="at">:age</span> <span class="dv">71</span>}</span>
+<span id="cb18-20"><a href="#cb18-20" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojure"</span>, <span class="at">:age</span> <span class="dv">5</span>}</span>
+<span id="cb18-21"><a href="#cb18-21" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojurescript"</span>, <span class="at">:age</span> <span class="dv">94</span>}</span>
+<span id="cb18-22"><a href="#cb18-22" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojure"</span>, <span class="at">:age</span> <span class="dv">8</span>}</span>
+<span id="cb18-23"><a href="#cb18-23" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"babashka"</span>, <span class="at">:age</span> <span class="dv">4</span>}</span>
+<span id="cb18-24"><a href="#cb18-24" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojure"</span>, <span class="at">:age</span> <span class="dv">87</span>}</span>
+<span id="cb18-25"><a href="#cb18-25" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"babashka"</span>, <span class="at">:age</span> <span class="dv">19</span>}</span>
+<span id="cb18-26"><a href="#cb18-26" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojure"</span>, <span class="at">:age</span> <span class="dv">79</span>}</span>
+<span id="cb18-27"><a href="#cb18-27" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"babashka"</span>, <span class="at">:age</span> <span class="dv">15</span>}</span>
+<span id="cb18-28"><a href="#cb18-28" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"babashka"</span>, <span class="at">:age</span> <span class="dv">93</span>}</span>
+<span id="cb18-29"><a href="#cb18-29" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"babashka"</span>, <span class="at">:age</span> <span class="dv">88</span>}]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="sourceClojure">
 <div class="sourceCode" id="cb19"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>(<span class="bu">def</span><span class="fu"> people-as-vectors</span></span>
@@ -398,35 +398,35 @@ window.Quarto = {
 <div class="sourceCode" id="cb20"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>people-as-vectors</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="printedClojure">
-<div class="sourceCode" id="cb21"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>[[<span class="st">"babashka"</span> <span class="dv">31</span>]</span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a> [<span class="st">"babashka"</span> <span class="dv">94</span>]</span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojure"</span> <span class="dv">40</span>]</span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojurescript"</span> <span class="dv">56</span>]</span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojure"</span> <span class="dv">14</span>]</span>
-<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a> [<span class="st">"babashka"</span> <span class="dv">90</span>]</span>
-<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojure"</span> <span class="dv">77</span>]</span>
-<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojure"</span> <span class="dv">40</span>]</span>
-<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojure"</span> <span class="dv">95</span>]</span>
-<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojurescript"</span> <span class="dv">35</span>]</span>
-<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a> [<span class="st">"babashka"</span> <span class="dv">23</span>]</span>
-<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojure"</span> <span class="dv">31</span>]</span>
-<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojure"</span> <span class="dv">76</span>]</span>
-<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a> [<span class="st">"babashka"</span> <span class="dv">22</span>]</span>
-<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojurescript"</span> <span class="dv">30</span>]</span>
-<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a> [<span class="st">"babashka"</span> <span class="dv">8</span>]</span>
-<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a> [<span class="st">"babashka"</span> <span class="dv">77</span>]</span>
-<span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojure"</span> <span class="dv">85</span>]</span>
-<span id="cb21-19"><a href="#cb21-19" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojure"</span> <span class="dv">75</span>]</span>
-<span id="cb21-20"><a href="#cb21-20" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojure"</span> <span class="dv">89</span>]</span>
-<span id="cb21-21"><a href="#cb21-21" aria-hidden="true" tabindex="-1"></a> [<span class="st">"babashka"</span> <span class="dv">75</span>]</span>
-<span id="cb21-22"><a href="#cb21-22" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojurescript"</span> <span class="dv">38</span>]</span>
-<span id="cb21-23"><a href="#cb21-23" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojure"</span> <span class="dv">76</span>]</span>
-<span id="cb21-24"><a href="#cb21-24" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojure"</span> <span class="dv">14</span>]</span>
-<span id="cb21-25"><a href="#cb21-25" aria-hidden="true" tabindex="-1"></a> [<span class="st">"babashka"</span> <span class="dv">95</span>]</span>
-<span id="cb21-26"><a href="#cb21-26" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojurescript"</span> <span class="dv">84</span>]</span>
-<span id="cb21-27"><a href="#cb21-27" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojure"</span> <span class="dv">75</span>]</span>
-<span id="cb21-28"><a href="#cb21-28" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojure"</span> <span class="dv">47</span>]</span>
-<span id="cb21-29"><a href="#cb21-29" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojurescript"</span> <span class="dv">2</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>[[<span class="st">"clojure"</span> <span class="dv">80</span>]</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojurescript"</span> <span class="dv">39</span>]</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojure"</span> <span class="dv">0</span>]</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojure"</span> <span class="dv">5</span>]</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojurescript"</span> <span class="dv">35</span>]</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojure"</span> <span class="dv">72</span>]</span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojure"</span> <span class="dv">7</span>]</span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojurescript"</span> <span class="dv">70</span>]</span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a> [<span class="st">"babashka"</span> <span class="dv">41</span>]</span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a> [<span class="st">"babashka"</span> <span class="dv">47</span>]</span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojurescript"</span> <span class="dv">67</span>]</span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojure"</span> <span class="dv">90</span>]</span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojure"</span> <span class="dv">50</span>]</span>
+<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojure"</span> <span class="dv">10</span>]</span>
+<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a> [<span class="st">"babashka"</span> <span class="dv">55</span>]</span>
+<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojure"</span> <span class="dv">4</span>]</span>
+<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojure"</span> <span class="dv">54</span>]</span>
+<span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojure"</span> <span class="dv">80</span>]</span>
+<span id="cb21-19"><a href="#cb21-19" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojurescript"</span> <span class="dv">71</span>]</span>
+<span id="cb21-20"><a href="#cb21-20" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojure"</span> <span class="dv">5</span>]</span>
+<span id="cb21-21"><a href="#cb21-21" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojurescript"</span> <span class="dv">94</span>]</span>
+<span id="cb21-22"><a href="#cb21-22" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojure"</span> <span class="dv">8</span>]</span>
+<span id="cb21-23"><a href="#cb21-23" aria-hidden="true" tabindex="-1"></a> [<span class="st">"babashka"</span> <span class="dv">4</span>]</span>
+<span id="cb21-24"><a href="#cb21-24" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojure"</span> <span class="dv">87</span>]</span>
+<span id="cb21-25"><a href="#cb21-25" aria-hidden="true" tabindex="-1"></a> [<span class="st">"babashka"</span> <span class="dv">19</span>]</span>
+<span id="cb21-26"><a href="#cb21-26" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojure"</span> <span class="dv">79</span>]</span>
+<span id="cb21-27"><a href="#cb21-27" aria-hidden="true" tabindex="-1"></a> [<span class="st">"babashka"</span> <span class="dv">15</span>]</span>
+<span id="cb21-28"><a href="#cb21-28" aria-hidden="true" tabindex="-1"></a> [<span class="st">"babashka"</span> <span class="dv">93</span>]</span>
+<span id="cb21-29"><a href="#cb21-29" aria-hidden="true" tabindex="-1"></a> [<span class="st">"babashka"</span> <span class="dv">88</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>These kinds have recursive kind semantics: if the values inside them have kind information, they should be handled accordingly.</p>
 <p>Here is a vector of things of different kinds inside:</p>
@@ -590,7 +590,7 @@ window.Quarto = {
 <span id="cb34-11"><a href="#cb34-11" aria-hidden="true" tabindex="-1"></a>  {<span class="at">:initial-value</span> <span class="dv">9</span></span>
 <span id="cb34-12"><a href="#cb34-12" aria-hidden="true" tabindex="-1"></a>   <span class="at">:background-color</span> <span class="st">"#d4ebe9"</span>}])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="id1"><script type="application/x-scittle">(reagent.dom/render [(fn [{:keys [initial-value background-color]}] (let [*click-count (reagent.core/atom initial-value)] (fn [] [:div {:style {:background-color background-color}} "The atom " [:code "*click-count"] " has value: " (clojure.core/deref *click-count) ". " [:input {:type "button", :value "Click me!", :on-click (fn* [] (swap! *click-count inc))}]]))) {:initial-value 9, :background-color "#d4ebe9"}] (js/document.getElementById "id1"))</script></div>
+<div id="id2"><script type="application/x-scittle">(reagent.dom/render [(fn [{:keys [initial-value background-color]}] (let [*click-count (reagent.core/atom initial-value)] (fn [] [:div {:style {:background-color background-color}} "The atom " [:code "*click-count"] " has value: " (clojure.core/deref *click-count) ". " [:input {:type "button", :value "Click me!", :on-click (fn* [] (swap! *click-count inc))}]]))) {:initial-value 9, :background-color "#d4ebe9"}] (js/document.getElementById "id2"))</script></div>
 <p>The <code>:reagent/deps</code> option can be used to provide additional dependencies. This should be documented better soon.</p>
 </section>
 <section id="html" class="level2" data-number="3.9">
@@ -709,7 +709,7 @@ window.Quarto = {
 <span id="cb41-17"><a href="#cb41-17" aria-hidden="true" tabindex="-1"></a>                     <span class="at">:colorscale</span> <span class="at">:Viridis</span>}}]}))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div style="height:400px;width:100%;"><script>Plotly.newPlot(document.currentScript.parentElement,
-              [{"x":[0.8325174638522898,1.7227752339417706,2.306329693852092,3.59603871439195,4.883921657449221,6.326233908787096,6.892785403208468,7.966934828759219,8.729417155244576,10.151569285815201,11.325246968248234,12.818244363107748,14.014567549195355,14.9303089376684,16.177858536819357,16.980993963766704,17.77697136331278,18.349814960458282,19.348076907435242,20.327131839723247],"y":[-0.9937480274167972,-1.94660658621024,-2.5868414078909447,-3.189779771557246,-3.834586130634311,-4.963303670937372,-5.539182439514264,-6.474835791765812,-7.108896233094864,-7.632664349051993,-8.178386096156999,-9.577546707500831,-10.94530065643689,-11.532354225221978,-12.449904103127349,-13.59138768808295,-14.877289541463815,-15.788023455911791,-17.224140669683287,-18.07829251474084],"z":[2.9777737302364864,17.82254566507541,43.512617505867865,65.7839816809542,109.6278320760684,167.29666387273738,223.5715226270246,303.17095952144405,362.2544061065018,440.96080777429466,512.2001075003488,591.5893905885888,678.6341070321129,779.0468956540007,888.132698527162,1032.5732130294214,1197.7393760079951,1359.048910319425,1487.4618061265242,1648.1856030769552],"type":"scatter3d","mode":"lines+markers","opacity":0.2,"line":{"width":10},"marker":{"size":20,"colorscale":"Viridis"}}], {}, {});</script></div>
+              [{"x":[0.6379102248268612,1.6586076768884261,2.4698443401119317,3.569861213733388,4.666609300008559,5.5884589685971315,6.365118844484345,7.0243272001463,8.388167057867602,9.765434213032375,10.750518819513822,11.493771571554179,12.059634075964867,12.674952845767054,13.900932738396243,15.110345363296423,16.353438677463284,16.898278741770813,18.363214726920095,19.545486149520674],"y":[-0.7029434554643413,-2.0323118285914834,-3.4478963438689383,-4.854775992718889,-5.460668834651067,-6.378578719735108,-7.355921757787616,-8.06056009525568,-8.607769740403654,-9.904169013504038,-10.8967525074376,-11.473191001373257,-12.016118509469521,-13.023727497953539,-13.750111226148634,-14.386130635990781,-15.528083520593372,-16.6052181342289,-17.352617162994928,-18.791760846549703],"z":[5.07816324028751,21.710836724837225,40.76919253951206,77.09685297647307,113.38053534606976,166.5729298223614,217.6018458342776,265.5203770303697,319.9533104271797,413.86606877090264,510.24680066269605,582.3294157511267,682.7978810328268,774.1552656347134,870.766761569068,979.1809698722827,1093.3925370733364,1242.5278092800618,1410.2243720079484,1546.109072376997],"type":"scatter3d","mode":"lines+markers","opacity":0.2,"line":{"width":10},"marker":{"size":20,"colorscale":"Viridis"}}], {}, {});</script></div>
 </section>
 <section id="highcharts" class="level2" data-number="3.14">
 <h2 data-number="3.14" class="anchored" data-anchor-id="highcharts"><span class="header-section-number">3.14</span> Highcharts</h2>
@@ -1227,120 +1227,120 @@ window.Quarto = {
 </thead>
 <tbody>
 <tr class="odd">
-<td>babashka</td>
-<td>31</td>
-</tr>
-<tr class="even">
-<td>babashka</td>
-<td>94</td>
-</tr>
-<tr class="odd">
 <td>clojure</td>
-<td>40</td>
+<td>80</td>
 </tr>
 <tr class="even">
 <td>clojurescript</td>
-<td>56</td>
+<td>39</td>
 </tr>
 <tr class="odd">
 <td>clojure</td>
-<td>14</td>
+<td>0</td>
 </tr>
 <tr class="even">
-<td>babashka</td>
-<td>90</td>
+<td>clojure</td>
+<td>5</td>
 </tr>
 <tr class="odd">
-<td>clojure</td>
-<td>77</td>
-</tr>
-<tr class="even">
-<td>clojure</td>
-<td>40</td>
-</tr>
-<tr class="odd">
-<td>clojure</td>
-<td>95</td>
-</tr>
-<tr class="even">
 <td>clojurescript</td>
 <td>35</td>
 </tr>
-<tr class="odd">
-<td>babashka</td>
-<td>23</td>
-</tr>
 <tr class="even">
 <td>clojure</td>
-<td>31</td>
+<td>72</td>
 </tr>
 <tr class="odd">
 <td>clojure</td>
-<td>76</td>
-</tr>
-<tr class="even">
-<td>babashka</td>
-<td>22</td>
-</tr>
-<tr class="odd">
-<td>clojurescript</td>
-<td>30</td>
-</tr>
-<tr class="even">
-<td>babashka</td>
-<td>8</td>
-</tr>
-<tr class="odd">
-<td>babashka</td>
-<td>77</td>
-</tr>
-<tr class="even">
-<td>clojure</td>
-<td>85</td>
-</tr>
-<tr class="odd">
-<td>clojure</td>
-<td>75</td>
-</tr>
-<tr class="even">
-<td>clojure</td>
-<td>89</td>
-</tr>
-<tr class="odd">
-<td>babashka</td>
-<td>75</td>
+<td>7</td>
 </tr>
 <tr class="even">
 <td>clojurescript</td>
-<td>38</td>
-</tr>
-<tr class="odd">
-<td>clojure</td>
-<td>76</td>
-</tr>
-<tr class="even">
-<td>clojure</td>
-<td>14</td>
+<td>70</td>
 </tr>
 <tr class="odd">
 <td>babashka</td>
-<td>95</td>
+<td>41</td>
 </tr>
 <tr class="even">
-<td>clojurescript</td>
-<td>84</td>
-</tr>
-<tr class="odd">
-<td>clojure</td>
-<td>75</td>
-</tr>
-<tr class="even">
-<td>clojure</td>
+<td>babashka</td>
 <td>47</td>
 </tr>
 <tr class="odd">
 <td>clojurescript</td>
-<td>2</td>
+<td>67</td>
+</tr>
+<tr class="even">
+<td>clojure</td>
+<td>90</td>
+</tr>
+<tr class="odd">
+<td>clojure</td>
+<td>50</td>
+</tr>
+<tr class="even">
+<td>clojure</td>
+<td>10</td>
+</tr>
+<tr class="odd">
+<td>babashka</td>
+<td>55</td>
+</tr>
+<tr class="even">
+<td>clojure</td>
+<td>4</td>
+</tr>
+<tr class="odd">
+<td>clojure</td>
+<td>54</td>
+</tr>
+<tr class="even">
+<td>clojure</td>
+<td>80</td>
+</tr>
+<tr class="odd">
+<td>clojurescript</td>
+<td>71</td>
+</tr>
+<tr class="even">
+<td>clojure</td>
+<td>5</td>
+</tr>
+<tr class="odd">
+<td>clojurescript</td>
+<td>94</td>
+</tr>
+<tr class="even">
+<td>clojure</td>
+<td>8</td>
+</tr>
+<tr class="odd">
+<td>babashka</td>
+<td>4</td>
+</tr>
+<tr class="even">
+<td>clojure</td>
+<td>87</td>
+</tr>
+<tr class="odd">
+<td>babashka</td>
+<td>19</td>
+</tr>
+<tr class="even">
+<td>clojure</td>
+<td>79</td>
+</tr>
+<tr class="odd">
+<td>babashka</td>
+<td>15</td>
+</tr>
+<tr class="even">
+<td>babashka</td>
+<td>93</td>
+</tr>
+<tr class="odd">
+<td>babashka</td>
+<td>88</td>
 </tr>
 </tbody>
 </table>
@@ -1358,24 +1358,24 @@ window.Quarto = {
 <table class="table table-hover" data-quarto-postprocess="true">
 <tbody>
 <tr class="odd">
-<td>babashka</td>
-<td>31</td>
-</tr>
-<tr class="even">
-<td>babashka</td>
-<td>94</td>
-</tr>
-<tr class="odd">
 <td>clojure</td>
-<td>40</td>
+<td>80</td>
 </tr>
 <tr class="even">
 <td>clojurescript</td>
-<td>56</td>
+<td>39</td>
 </tr>
 <tr class="odd">
 <td>clojure</td>
-<td>14</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>clojure</td>
+<td>5</td>
+</tr>
+<tr class="odd">
+<td>clojurescript</td>
+<td>35</td>
 </tr>
 </tbody>
 </table>
@@ -1399,24 +1399,24 @@ window.Quarto = {
 </thead>
 <tbody>
 <tr class="odd">
-<td>babashka</td>
-<td>31</td>
-</tr>
-<tr class="even">
-<td>babashka</td>
-<td>94</td>
-</tr>
-<tr class="odd">
 <td>clojure</td>
-<td>40</td>
+<td>80</td>
 </tr>
 <tr class="even">
 <td>clojurescript</td>
-<td>56</td>
+<td>39</td>
 </tr>
 <tr class="odd">
 <td>clojure</td>
-<td>14</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>clojure</td>
+<td>5</td>
+</tr>
+<tr class="odd">
+<td>clojurescript</td>
+<td>35</td>
 </tr>
 </tbody>
 </table>
@@ -1440,12 +1440,6 @@ window.Quarto = {
 </thead>
 <tbody>
 <tr class="odd">
-<td>babashka</td>
-</tr>
-<tr class="even">
-<td>babashka</td>
-</tr>
-<tr class="odd">
 <td>clojure</td>
 </tr>
 <tr class="even">
@@ -1453,6 +1447,12 @@ window.Quarto = {
 </tr>
 <tr class="odd">
 <td>clojure</td>
+</tr>
+<tr class="even">
+<td>clojure</td>
+</tr>
+<tr class="odd">
+<td>clojurescript</td>
 </tr>
 </tbody>
 </table>
@@ -1469,24 +1469,24 @@ window.Quarto = {
 <table class="table table-hover" data-quarto-postprocess="true">
 <tbody>
 <tr class="odd">
-<td>babashka</td>
-<td>31</td>
-</tr>
-<tr class="even">
-<td>babashka</td>
-<td>94</td>
-</tr>
-<tr class="odd">
 <td>clojure</td>
-<td>40</td>
+<td>80</td>
 </tr>
 <tr class="even">
 <td>clojurescript</td>
-<td>56</td>
+<td>39</td>
 </tr>
 <tr class="odd">
 <td>clojure</td>
-<td>14</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>clojure</td>
+<td>5</td>
+</tr>
+<tr class="odd">
+<td>clojurescript</td>
+<td>35</td>
 </tr>
 </tbody>
 </table>
@@ -1508,24 +1508,24 @@ window.Quarto = {
 </thead>
 <tbody>
 <tr class="odd">
-<td>babashka</td>
-<td>31</td>
-</tr>
-<tr class="even">
-<td>babashka</td>
-<td>94</td>
-</tr>
-<tr class="odd">
 <td>clojure</td>
-<td>40</td>
+<td>80</td>
 </tr>
 <tr class="even">
 <td>clojurescript</td>
-<td>56</td>
+<td>39</td>
 </tr>
 <tr class="odd">
 <td>clojure</td>
-<td>14</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>clojure</td>
+<td>5</td>
+</tr>
+<tr class="odd">
+<td>clojurescript</td>
+<td>35</td>
 </tr>
 </tbody>
 </table>
@@ -1598,120 +1598,120 @@ window.Quarto = {
 </thead>
 <tbody>
 <tr class="odd">
-<td>babashka</td>
-<td>31</td>
-</tr>
-<tr class="even">
-<td>babashka</td>
-<td>94</td>
-</tr>
-<tr class="odd">
 <td>clojure</td>
-<td>40</td>
+<td>80</td>
 </tr>
 <tr class="even">
 <td>clojurescript</td>
-<td>56</td>
+<td>39</td>
 </tr>
 <tr class="odd">
 <td>clojure</td>
-<td>14</td>
+<td>0</td>
 </tr>
 <tr class="even">
-<td>babashka</td>
-<td>90</td>
+<td>clojure</td>
+<td>5</td>
 </tr>
 <tr class="odd">
-<td>clojure</td>
-<td>77</td>
-</tr>
-<tr class="even">
-<td>clojure</td>
-<td>40</td>
-</tr>
-<tr class="odd">
-<td>clojure</td>
-<td>95</td>
-</tr>
-<tr class="even">
 <td>clojurescript</td>
 <td>35</td>
 </tr>
-<tr class="odd">
-<td>babashka</td>
-<td>23</td>
-</tr>
 <tr class="even">
 <td>clojure</td>
-<td>31</td>
+<td>72</td>
 </tr>
 <tr class="odd">
 <td>clojure</td>
-<td>76</td>
-</tr>
-<tr class="even">
-<td>babashka</td>
-<td>22</td>
-</tr>
-<tr class="odd">
-<td>clojurescript</td>
-<td>30</td>
-</tr>
-<tr class="even">
-<td>babashka</td>
-<td>8</td>
-</tr>
-<tr class="odd">
-<td>babashka</td>
-<td>77</td>
-</tr>
-<tr class="even">
-<td>clojure</td>
-<td>85</td>
-</tr>
-<tr class="odd">
-<td>clojure</td>
-<td>75</td>
-</tr>
-<tr class="even">
-<td>clojure</td>
-<td>89</td>
-</tr>
-<tr class="odd">
-<td>babashka</td>
-<td>75</td>
+<td>7</td>
 </tr>
 <tr class="even">
 <td>clojurescript</td>
-<td>38</td>
-</tr>
-<tr class="odd">
-<td>clojure</td>
-<td>76</td>
-</tr>
-<tr class="even">
-<td>clojure</td>
-<td>14</td>
+<td>70</td>
 </tr>
 <tr class="odd">
 <td>babashka</td>
-<td>95</td>
+<td>41</td>
 </tr>
 <tr class="even">
-<td>clojurescript</td>
-<td>84</td>
-</tr>
-<tr class="odd">
-<td>clojure</td>
-<td>75</td>
-</tr>
-<tr class="even">
-<td>clojure</td>
+<td>babashka</td>
 <td>47</td>
 </tr>
 <tr class="odd">
 <td>clojurescript</td>
-<td>2</td>
+<td>67</td>
+</tr>
+<tr class="even">
+<td>clojure</td>
+<td>90</td>
+</tr>
+<tr class="odd">
+<td>clojure</td>
+<td>50</td>
+</tr>
+<tr class="even">
+<td>clojure</td>
+<td>10</td>
+</tr>
+<tr class="odd">
+<td>babashka</td>
+<td>55</td>
+</tr>
+<tr class="even">
+<td>clojure</td>
+<td>4</td>
+</tr>
+<tr class="odd">
+<td>clojure</td>
+<td>54</td>
+</tr>
+<tr class="even">
+<td>clojure</td>
+<td>80</td>
+</tr>
+<tr class="odd">
+<td>clojurescript</td>
+<td>71</td>
+</tr>
+<tr class="even">
+<td>clojure</td>
+<td>5</td>
+</tr>
+<tr class="odd">
+<td>clojurescript</td>
+<td>94</td>
+</tr>
+<tr class="even">
+<td>clojure</td>
+<td>8</td>
+</tr>
+<tr class="odd">
+<td>babashka</td>
+<td>4</td>
+</tr>
+<tr class="even">
+<td>clojure</td>
+<td>87</td>
+</tr>
+<tr class="odd">
+<td>babashka</td>
+<td>19</td>
+</tr>
+<tr class="even">
+<td>clojure</td>
+<td>79</td>
+</tr>
+<tr class="odd">
+<td>babashka</td>
+<td>15</td>
+</tr>
+<tr class="even">
+<td>babashka</td>
+<td>93</td>
+</tr>
+<tr class="odd">
+<td>babashka</td>
+<td>88</td>
 </tr>
 </tbody>
 </table>
@@ -1736,120 +1736,120 @@ window.Quarto = {
 </thead>
 <tbody>
 <tr class="odd">
-<td>babashka</td>
-<td>31</td>
-</tr>
-<tr class="even">
-<td>babashka</td>
-<td>94</td>
-</tr>
-<tr class="odd">
 <td>clojure</td>
-<td>40</td>
+<td>80</td>
 </tr>
 <tr class="even">
 <td>clojurescript</td>
-<td>56</td>
+<td>39</td>
 </tr>
 <tr class="odd">
 <td>clojure</td>
-<td>14</td>
+<td>0</td>
 </tr>
 <tr class="even">
-<td>babashka</td>
-<td>90</td>
+<td>clojure</td>
+<td>5</td>
 </tr>
 <tr class="odd">
-<td>clojure</td>
-<td>77</td>
-</tr>
-<tr class="even">
-<td>clojure</td>
-<td>40</td>
-</tr>
-<tr class="odd">
-<td>clojure</td>
-<td>95</td>
-</tr>
-<tr class="even">
 <td>clojurescript</td>
 <td>35</td>
 </tr>
-<tr class="odd">
-<td>babashka</td>
-<td>23</td>
-</tr>
 <tr class="even">
 <td>clojure</td>
-<td>31</td>
+<td>72</td>
 </tr>
 <tr class="odd">
 <td>clojure</td>
-<td>76</td>
-</tr>
-<tr class="even">
-<td>babashka</td>
-<td>22</td>
-</tr>
-<tr class="odd">
-<td>clojurescript</td>
-<td>30</td>
-</tr>
-<tr class="even">
-<td>babashka</td>
-<td>8</td>
-</tr>
-<tr class="odd">
-<td>babashka</td>
-<td>77</td>
-</tr>
-<tr class="even">
-<td>clojure</td>
-<td>85</td>
-</tr>
-<tr class="odd">
-<td>clojure</td>
-<td>75</td>
-</tr>
-<tr class="even">
-<td>clojure</td>
-<td>89</td>
-</tr>
-<tr class="odd">
-<td>babashka</td>
-<td>75</td>
+<td>7</td>
 </tr>
 <tr class="even">
 <td>clojurescript</td>
-<td>38</td>
-</tr>
-<tr class="odd">
-<td>clojure</td>
-<td>76</td>
-</tr>
-<tr class="even">
-<td>clojure</td>
-<td>14</td>
+<td>70</td>
 </tr>
 <tr class="odd">
 <td>babashka</td>
-<td>95</td>
+<td>41</td>
 </tr>
 <tr class="even">
-<td>clojurescript</td>
-<td>84</td>
-</tr>
-<tr class="odd">
-<td>clojure</td>
-<td>75</td>
-</tr>
-<tr class="even">
-<td>clojure</td>
+<td>babashka</td>
 <td>47</td>
 </tr>
 <tr class="odd">
 <td>clojurescript</td>
-<td>2</td>
+<td>67</td>
+</tr>
+<tr class="even">
+<td>clojure</td>
+<td>90</td>
+</tr>
+<tr class="odd">
+<td>clojure</td>
+<td>50</td>
+</tr>
+<tr class="even">
+<td>clojure</td>
+<td>10</td>
+</tr>
+<tr class="odd">
+<td>babashka</td>
+<td>55</td>
+</tr>
+<tr class="even">
+<td>clojure</td>
+<td>4</td>
+</tr>
+<tr class="odd">
+<td>clojure</td>
+<td>54</td>
+</tr>
+<tr class="even">
+<td>clojure</td>
+<td>80</td>
+</tr>
+<tr class="odd">
+<td>clojurescript</td>
+<td>71</td>
+</tr>
+<tr class="even">
+<td>clojure</td>
+<td>5</td>
+</tr>
+<tr class="odd">
+<td>clojurescript</td>
+<td>94</td>
+</tr>
+<tr class="even">
+<td>clojure</td>
+<td>8</td>
+</tr>
+<tr class="odd">
+<td>babashka</td>
+<td>4</td>
+</tr>
+<tr class="even">
+<td>clojure</td>
+<td>87</td>
+</tr>
+<tr class="odd">
+<td>babashka</td>
+<td>19</td>
+</tr>
+<tr class="even">
+<td>clojure</td>
+<td>79</td>
+</tr>
+<tr class="odd">
+<td>babashka</td>
+<td>15</td>
+</tr>
+<tr class="even">
+<td>babashka</td>
+<td>93</td>
+</tr>
+<tr class="odd">
+<td>babashka</td>
+<td>88</td>
 </tr>
 </tbody>
 </table>
@@ -1865,7 +1865,7 @@ window.Quarto = {
 </div>
 <div class="clay-table">
 <div class="clay-table">
-<table class="table table-hover table-responsive"><thead><tr><th>preferred-language</th><th>age</th></tr></thead><tbody><tr><td>babashka</td><td>31</td></tr><tr><td>babashka</td><td>94</td></tr><tr><td>clojure</td><td>40</td></tr><tr><td>clojurescript</td><td>56</td></tr><tr><td>clojure</td><td>14</td></tr><tr><td>babashka</td><td>90</td></tr><tr><td>clojure</td><td>77</td></tr><tr><td>clojure</td><td>40</td></tr><tr><td>clojure</td><td>95</td></tr><tr><td>clojurescript</td><td>35</td></tr><tr><td>babashka</td><td>23</td></tr><tr><td>clojure</td><td>31</td></tr><tr><td>clojure</td><td>76</td></tr><tr><td>babashka</td><td>22</td></tr><tr><td>clojurescript</td><td>30</td></tr><tr><td>babashka</td><td>8</td></tr><tr><td>babashka</td><td>77</td></tr><tr><td>clojure</td><td>85</td></tr><tr><td>clojure</td><td>75</td></tr><tr><td>clojure</td><td>89</td></tr><tr><td>babashka</td><td>75</td></tr><tr><td>clojurescript</td><td>38</td></tr><tr><td>clojure</td><td>76</td></tr><tr><td>clojure</td><td>14</td></tr><tr><td>babashka</td><td>95</td></tr><tr><td>clojurescript</td><td>84</td></tr><tr><td>clojure</td><td>75</td></tr><tr><td>clojure</td><td>47</td></tr><tr><td>clojurescript</td><td>2</td></tr></tbody><script>new DataTable(document.currentScript.parentElement, {"paging":false,"scrollY":400,"sPaginationType":"full_numbers","order":[]});</script></table>
+<table class="table table-hover table-responsive"><thead><tr><th>preferred-language</th><th>age</th></tr></thead><tbody><tr><td>clojure</td><td>80</td></tr><tr><td>clojurescript</td><td>39</td></tr><tr><td>clojure</td><td>0</td></tr><tr><td>clojure</td><td>5</td></tr><tr><td>clojurescript</td><td>35</td></tr><tr><td>clojure</td><td>72</td></tr><tr><td>clojure</td><td>7</td></tr><tr><td>clojurescript</td><td>70</td></tr><tr><td>babashka</td><td>41</td></tr><tr><td>babashka</td><td>47</td></tr><tr><td>clojurescript</td><td>67</td></tr><tr><td>clojure</td><td>90</td></tr><tr><td>clojure</td><td>50</td></tr><tr><td>clojure</td><td>10</td></tr><tr><td>babashka</td><td>55</td></tr><tr><td>clojure</td><td>4</td></tr><tr><td>clojure</td><td>54</td></tr><tr><td>clojure</td><td>80</td></tr><tr><td>clojurescript</td><td>71</td></tr><tr><td>clojure</td><td>5</td></tr><tr><td>clojurescript</td><td>94</td></tr><tr><td>clojure</td><td>8</td></tr><tr><td>babashka</td><td>4</td></tr><tr><td>clojure</td><td>87</td></tr><tr><td>babashka</td><td>19</td></tr><tr><td>clojure</td><td>79</td></tr><tr><td>babashka</td><td>15</td></tr><tr><td>babashka</td><td>93</td></tr><tr><td>babashka</td><td>88</td></tr></tbody><script>new DataTable(document.currentScript.parentElement, {"paging":false,"scrollY":400,"sPaginationType":"full_numbers","order":[]});</script></table>
 </div>
 </div>
 <div class="sourceClojure">
@@ -1876,7 +1876,7 @@ window.Quarto = {
 </div>
 <div class="clay-table">
 <div class="clay-table">
-<table class="table table-hover table-responsive"><thead><tr><th>preferred-language</th><th>age</th></tr></thead><tbody><tr><td>babashka</td><td>31</td></tr><tr><td>babashka</td><td>94</td></tr><tr><td>clojure</td><td>40</td></tr><tr><td>clojurescript</td><td>56</td></tr><tr><td>clojure</td><td>14</td></tr><tr><td>babashka</td><td>90</td></tr><tr><td>clojure</td><td>77</td></tr><tr><td>clojure</td><td>40</td></tr><tr><td>clojure</td><td>95</td></tr><tr><td>clojurescript</td><td>35</td></tr><tr><td>babashka</td><td>23</td></tr><tr><td>clojure</td><td>31</td></tr><tr><td>clojure</td><td>76</td></tr><tr><td>babashka</td><td>22</td></tr><tr><td>clojurescript</td><td>30</td></tr><tr><td>babashka</td><td>8</td></tr><tr><td>babashka</td><td>77</td></tr><tr><td>clojure</td><td>85</td></tr><tr><td>clojure</td><td>75</td></tr><tr><td>clojure</td><td>89</td></tr><tr><td>babashka</td><td>75</td></tr><tr><td>clojurescript</td><td>38</td></tr><tr><td>clojure</td><td>76</td></tr><tr><td>clojure</td><td>14</td></tr><tr><td>babashka</td><td>95</td></tr><tr><td>clojurescript</td><td>84</td></tr><tr><td>clojure</td><td>75</td></tr><tr><td>clojure</td><td>47</td></tr><tr><td>clojurescript</td><td>2</td></tr></tbody><script>new DataTable(document.currentScript.parentElement, {"paging":false,"scrollY":300,"sPaginationType":"full_numbers","order":[]});</script></table>
+<table class="table table-hover table-responsive"><thead><tr><th>preferred-language</th><th>age</th></tr></thead><tbody><tr><td>clojure</td><td>80</td></tr><tr><td>clojurescript</td><td>39</td></tr><tr><td>clojure</td><td>0</td></tr><tr><td>clojure</td><td>5</td></tr><tr><td>clojurescript</td><td>35</td></tr><tr><td>clojure</td><td>72</td></tr><tr><td>clojure</td><td>7</td></tr><tr><td>clojurescript</td><td>70</td></tr><tr><td>babashka</td><td>41</td></tr><tr><td>babashka</td><td>47</td></tr><tr><td>clojurescript</td><td>67</td></tr><tr><td>clojure</td><td>90</td></tr><tr><td>clojure</td><td>50</td></tr><tr><td>clojure</td><td>10</td></tr><tr><td>babashka</td><td>55</td></tr><tr><td>clojure</td><td>4</td></tr><tr><td>clojure</td><td>54</td></tr><tr><td>clojure</td><td>80</td></tr><tr><td>clojurescript</td><td>71</td></tr><tr><td>clojure</td><td>5</td></tr><tr><td>clojurescript</td><td>94</td></tr><tr><td>clojure</td><td>8</td></tr><tr><td>babashka</td><td>4</td></tr><tr><td>clojure</td><td>87</td></tr><tr><td>babashka</td><td>19</td></tr><tr><td>clojure</td><td>79</td></tr><tr><td>babashka</td><td>15</td></tr><tr><td>babashka</td><td>93</td></tr><tr><td>babashka</td><td>88</td></tr></tbody><script>new DataTable(document.currentScript.parentElement, {"paging":false,"scrollY":300,"sPaginationType":"full_numbers","order":[]});</script></table>
 </div>
 </div>
 <p>Some tools support <a href="https://datatables.net/">datatables</a> for displaying tables. This can be expressed using the <code>:use-datatables</code> option.</p>
@@ -1886,7 +1886,7 @@ window.Quarto = {
 </div>
 <div class="clay-table">
 <div class="clay-table">
-<table class="table table-hover table-responsive"><thead><tr><th>preferred-language</th><th>age</th></tr></thead><tbody><tr><td>babashka</td><td>31</td></tr><tr><td>babashka</td><td>94</td></tr><tr><td>clojure</td><td>40</td></tr><tr><td>clojurescript</td><td>56</td></tr><tr><td>clojure</td><td>14</td></tr><tr><td>babashka</td><td>90</td></tr><tr><td>clojure</td><td>77</td></tr><tr><td>clojure</td><td>40</td></tr><tr><td>clojure</td><td>95</td></tr><tr><td>clojurescript</td><td>35</td></tr><tr><td>babashka</td><td>23</td></tr><tr><td>clojure</td><td>31</td></tr><tr><td>clojure</td><td>76</td></tr><tr><td>babashka</td><td>22</td></tr><tr><td>clojurescript</td><td>30</td></tr><tr><td>babashka</td><td>8</td></tr><tr><td>babashka</td><td>77</td></tr><tr><td>clojure</td><td>85</td></tr><tr><td>clojure</td><td>75</td></tr><tr><td>clojure</td><td>89</td></tr><tr><td>babashka</td><td>75</td></tr><tr><td>clojurescript</td><td>38</td></tr><tr><td>clojure</td><td>76</td></tr><tr><td>clojure</td><td>14</td></tr><tr><td>babashka</td><td>95</td></tr><tr><td>clojurescript</td><td>84</td></tr><tr><td>clojure</td><td>75</td></tr><tr><td>clojure</td><td>47</td></tr><tr><td>clojurescript</td><td>2</td></tr></tbody><script>new DataTable(document.currentScript.parentElement, {"paging":false,"scrollY":400,"sPaginationType":"full_numbers","order":[]});</script></table>
+<table class="table table-hover table-responsive"><thead><tr><th>preferred-language</th><th>age</th></tr></thead><tbody><tr><td>clojure</td><td>80</td></tr><tr><td>clojurescript</td><td>39</td></tr><tr><td>clojure</td><td>0</td></tr><tr><td>clojure</td><td>5</td></tr><tr><td>clojurescript</td><td>35</td></tr><tr><td>clojure</td><td>72</td></tr><tr><td>clojure</td><td>7</td></tr><tr><td>clojurescript</td><td>70</td></tr><tr><td>babashka</td><td>41</td></tr><tr><td>babashka</td><td>47</td></tr><tr><td>clojurescript</td><td>67</td></tr><tr><td>clojure</td><td>90</td></tr><tr><td>clojure</td><td>50</td></tr><tr><td>clojure</td><td>10</td></tr><tr><td>babashka</td><td>55</td></tr><tr><td>clojure</td><td>4</td></tr><tr><td>clojure</td><td>54</td></tr><tr><td>clojure</td><td>80</td></tr><tr><td>clojurescript</td><td>71</td></tr><tr><td>clojure</td><td>5</td></tr><tr><td>clojurescript</td><td>94</td></tr><tr><td>clojure</td><td>8</td></tr><tr><td>babashka</td><td>4</td></tr><tr><td>clojure</td><td>87</td></tr><tr><td>babashka</td><td>19</td></tr><tr><td>clojure</td><td>79</td></tr><tr><td>babashka</td><td>15</td></tr><tr><td>babashka</td><td>93</td></tr><tr><td>babashka</td><td>88</td></tr></tbody><script>new DataTable(document.currentScript.parentElement, {"paging":false,"scrollY":400,"sPaginationType":"full_numbers","order":[]});</script></table>
 </div>
 </div>
 <p>In addition, the <code>:datatables</code> option can be used to control <a href="https://datatables.net/manual/options">datatables options</a> (see <a href="https://datatables.net/reference/option/">the full list</a>).</p>
@@ -1897,7 +1897,7 @@ window.Quarto = {
 </div>
 <div class="clay-table">
 <div class="clay-table">
-<table class="table table-hover table-responsive"><thead><tr><th>preferred-language</th><th>age</th></tr></thead><tbody><tr><td>babashka</td><td>31</td></tr><tr><td>babashka</td><td>94</td></tr><tr><td>clojure</td><td>40</td></tr><tr><td>clojurescript</td><td>56</td></tr><tr><td>clojure</td><td>14</td></tr><tr><td>babashka</td><td>90</td></tr><tr><td>clojure</td><td>77</td></tr><tr><td>clojure</td><td>40</td></tr><tr><td>clojure</td><td>95</td></tr><tr><td>clojurescript</td><td>35</td></tr><tr><td>babashka</td><td>23</td></tr><tr><td>clojure</td><td>31</td></tr><tr><td>clojure</td><td>76</td></tr><tr><td>babashka</td><td>22</td></tr><tr><td>clojurescript</td><td>30</td></tr><tr><td>babashka</td><td>8</td></tr><tr><td>babashka</td><td>77</td></tr><tr><td>clojure</td><td>85</td></tr><tr><td>clojure</td><td>75</td></tr><tr><td>clojure</td><td>89</td></tr><tr><td>babashka</td><td>75</td></tr><tr><td>clojurescript</td><td>38</td></tr><tr><td>clojure</td><td>76</td></tr><tr><td>clojure</td><td>14</td></tr><tr><td>babashka</td><td>95</td></tr><tr><td>clojurescript</td><td>84</td></tr><tr><td>clojure</td><td>75</td></tr><tr><td>clojure</td><td>47</td></tr><tr><td>clojurescript</td><td>2</td></tr></tbody><script>new DataTable(document.currentScript.parentElement, {"paging":false,"scrollY":200,"sPaginationType":"full_numbers","order":[]});</script></table>
+<table class="table table-hover table-responsive"><thead><tr><th>preferred-language</th><th>age</th></tr></thead><tbody><tr><td>clojure</td><td>80</td></tr><tr><td>clojurescript</td><td>39</td></tr><tr><td>clojure</td><td>0</td></tr><tr><td>clojure</td><td>5</td></tr><tr><td>clojurescript</td><td>35</td></tr><tr><td>clojure</td><td>72</td></tr><tr><td>clojure</td><td>7</td></tr><tr><td>clojurescript</td><td>70</td></tr><tr><td>babashka</td><td>41</td></tr><tr><td>babashka</td><td>47</td></tr><tr><td>clojurescript</td><td>67</td></tr><tr><td>clojure</td><td>90</td></tr><tr><td>clojure</td><td>50</td></tr><tr><td>clojure</td><td>10</td></tr><tr><td>babashka</td><td>55</td></tr><tr><td>clojure</td><td>4</td></tr><tr><td>clojure</td><td>54</td></tr><tr><td>clojure</td><td>80</td></tr><tr><td>clojurescript</td><td>71</td></tr><tr><td>clojure</td><td>5</td></tr><tr><td>clojurescript</td><td>94</td></tr><tr><td>clojure</td><td>8</td></tr><tr><td>babashka</td><td>4</td></tr><tr><td>clojure</td><td>87</td></tr><tr><td>babashka</td><td>19</td></tr><tr><td>clojure</td><td>79</td></tr><tr><td>babashka</td><td>15</td></tr><tr><td>babashka</td><td>93</td></tr><tr><td>babashka</td><td>88</td></tr></tbody><script>new DataTable(document.currentScript.parentElement, {"paging":false,"scrollY":200,"sPaginationType":"full_numbers","order":[]});</script></table>
 </div>
 </div>
 <p>and in this case the user may specify <a href="https://datatables.net/manual/options">datatables options</a> (see <a href="https://datatables.net/reference/option/">the full list</a>).</p>
@@ -2025,7 +2025,7 @@ window.Quarto = {
 <span id="cb105-2"><a href="#cb105-2" aria-hidden="true" tabindex="-1"></a> tree-image)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="printedClojure">
-<div class="sourceCode" id="cb106"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb106-1"><a href="#cb106-1" aria-hidden="true" tabindex="-1"></a>[#object[java.awt.image.BufferedImage <span class="bn">0x7d1998ef</span> <span class="st">"BufferedImage@7d1998ef: type = 5 ColorModel: #pixelBits = 24 numComponents = 3 color space = java.awt.color.ICC_ColorSpace@4621c4f8 transparency = 1 has alpha = false isAlphaPre = false ByteInterleavedRaster: width = 480 height = 640 #numDataElements 3 dataOff[0] = 2"</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb106"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb106-1"><a href="#cb106-1" aria-hidden="true" tabindex="-1"></a>[#object[java.awt.image.BufferedImage <span class="bn">0x5e4672af</span> <span class="st">"BufferedImage@5e4672af: type = 5 ColorModel: #pixelBits = 24 numComponents = 3 color space = java.awt.color.ICC_ColorSpace@4b9ea742 transparency = 1 has alpha = false isAlphaPre = false ByteInterleavedRaster: width = 480 height = 640 #numDataElements 3 dataOff[0] = 2"</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="sourceClojure">
 <div class="sourceCode" id="cb107"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb107-1"><a href="#cb107-1" aria-hidden="true" tabindex="-1"></a>(kind/pprint</span>
@@ -2121,9 +2121,19 @@ window.Quarto = {
 </div>
 <div class="sourceClojure">
 <div class="sourceCode" id="cb116"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb116-1"><a href="#cb116-1" aria-hidden="true" tabindex="-1"></a>(kind/fn</span>
-<span id="cb116-2"><a href="#cb116-2" aria-hidden="true" tabindex="-1"></a>  [tc/dataset</span>
-<span id="cb116-3"><a href="#cb116-3" aria-hidden="true" tabindex="-1"></a>   {<span class="at">:x</span> (<span class="kw">range</span> <span class="dv">3</span>)</span>
-<span id="cb116-4"><a href="#cb116-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">:y</span> (<span class="kw">repeatedly</span> <span class="dv">3</span> <span class="kw">rand</span>)}])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb116-2"><a href="#cb116-2" aria-hidden="true" tabindex="-1"></a>  {<span class="at">:kindly/f</span> (<span class="kw">fn</span> [{<span class="at">:keys</span> [x y]}]</span>
+<span id="cb116-3"><a href="#cb116-3" aria-hidden="true" tabindex="-1"></a>               (<span class="kw">+</span> x y))</span>
+<span id="cb116-4"><a href="#cb116-4" aria-hidden="true" tabindex="-1"></a>   <span class="at">:x</span> <span class="dv">1</span></span>
+<span id="cb116-5"><a href="#cb116-5" aria-hidden="true" tabindex="-1"></a>   <span class="at">:y</span> <span class="dv">2</span>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="printedClojure">
+<div class="sourceCode" id="cb117"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb117-1"><a href="#cb117-1" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="sourceClojure">
+<div class="sourceCode" id="cb118"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb118-1"><a href="#cb118-1" aria-hidden="true" tabindex="-1"></a>(kind/fn</span>
+<span id="cb118-2"><a href="#cb118-2" aria-hidden="true" tabindex="-1"></a>  [tc/dataset</span>
+<span id="cb118-3"><a href="#cb118-3" aria-hidden="true" tabindex="-1"></a>   {<span class="at">:x</span> (<span class="kw">range</span> <span class="dv">3</span>)</span>
+<span id="cb118-4"><a href="#cb118-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">:y</span> (<span class="kw">repeatedly</span> <span class="dv">3</span> <span class="kw">rand</span>)}])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="clay-dataset">
 <p>_unnamed [3 2]:</p>
@@ -2137,15 +2147,46 @@ window.Quarto = {
 <tbody>
 <tr class="odd">
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">0.35689612</td>
+<td style="text-align: right;">0.00744442</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">1</td>
-<td style="text-align: right;">0.87341354</td>
+<td style="text-align: right;">0.75792471</td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">2</td>
-<td style="text-align: right;">0.97273971</td>
+<td style="text-align: right;">0.58762147</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sourceClojure">
+<div class="sourceCode" id="cb119"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb119-1"><a href="#cb119-1" aria-hidden="true" tabindex="-1"></a>(kind/fn</span>
+<span id="cb119-2"><a href="#cb119-2" aria-hidden="true" tabindex="-1"></a>  {<span class="at">:kindly/f</span> tc/dataset</span>
+<span id="cb119-3"><a href="#cb119-3" aria-hidden="true" tabindex="-1"></a>   <span class="at">:x</span> (<span class="kw">range</span> <span class="dv">3</span>)</span>
+<span id="cb119-4"><a href="#cb119-4" aria-hidden="true" tabindex="-1"></a>   <span class="at">:y</span> (<span class="kw">repeatedly</span> <span class="dv">3</span> <span class="kw">rand</span>)})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="clay-dataset">
+<p>_unnamed [3 2]:</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th style="text-align: right;">:x</th>
+<th style="text-align: right;">:y</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.79275922</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.09444878</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0.04149982</td>
 </tr>
 </tbody>
 </table>
@@ -2207,18 +2248,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -2250,7 +2280,47 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -2285,7 +2355,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');
