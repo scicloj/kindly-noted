@@ -674,3 +674,6 @@ marketing-model
 ;; ## test-last
 
 ;; `kind/test-last` allows to define a test over the previous form. This is still work-in-progress, and will be documented soon.
+
+;; For now, pleaes see [the documentation at the Clay tool](https://scicloj.github.io/clay/#test-generation).
+w-
