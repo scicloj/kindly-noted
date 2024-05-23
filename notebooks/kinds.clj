@@ -677,3 +677,5 @@ marketing-model
 
 ;; For now, pleaes see [the documentation at the Clay tool](https://scicloj.github.io/clay/#test-generation).
 w-
+
+;; If you are interested in this option, please reach out. We can test it with your project needs, and it will help stabilizing a useful API.
