@@ -1,7 +1,7 @@
 {:deps {org.clojure/clojure {:mvn/version "1.11.1"}
-        org.scicloj/kindly {:mvn/version "4-beta4"}
+        org.scicloj/kindly {:mvn/version "4-beta5"}
         org.scicloj/kindly-advice {:mvn/version "1-beta1"}
         org.scicloj/kind-portal {:mvn/version "1-beta1"}
-        org.scicloj/clay {:mvn/version "2-beta10"}
+        org.scicloj/clay {:mvn/version "2-beta11"}
         org.scicloj/noj {:mvn/version "1-alpha34"}}
  :paths ["src" "notebooks"]}
