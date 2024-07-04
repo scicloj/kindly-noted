@@ -89,10 +89,14 @@ people-as-vectors
   "
 * Here is **some more** markdown."])
 
-;; Ideally, tools should support LaTeX inside Markown.
+;; Ideally, tools should support TeX inside Markown.
 
 (kind/md
  "If $x$ equals 9, then $$x^2+9=90$$")
+
+;; ## TeX
+
+(kind/tex "x^2=\\alpha")
 
 ;; ## Code
 
