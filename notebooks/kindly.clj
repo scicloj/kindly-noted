@@ -135,8 +135,11 @@ clj-image
 ;; ## Hiding code
 
 ;; To hide the the code of a given form and only show the output, here are a few options:
+
 ;; 1. Add the metadata `:kindly/hide-code true` to the form (e.g., by preceding it with `^:kindly/hide-code`).
+
 ;; 2. Add the metadata `:kindly/hide-code true` to the value (e.g., using `vary-meta`).
+
 ;; 3. Some tools such as Clay [allow](https://scicloj.github.io/clay/#hiding-code) the user to globally define certain kinds (e.g., `:kind/md`, `:kind/hiccup`) to always hide code
 
 ;; ## Passing options
