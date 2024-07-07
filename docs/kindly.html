@@ -462,15 +462,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <tbody>
 <tr class="odd">
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">0.09901920</td>
+<td style="text-align: right;">0.70567908</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">1</td>
-<td style="text-align: right;">0.03394981</td>
+<td style="text-align: right;">0.24702570</td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">2</td>
-<td style="text-align: right;">0.06642825</td>
+<td style="text-align: right;">0.34703335</td>
 </tr>
 </tbody>
 </table>
@@ -479,7 +479,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="hiding-code" class="level2" data-number="2.8">
 <h2 data-number="2.8" class="anchored" data-anchor-id="hiding-code"><span class="header-section-number">2.8</span> Hiding code</h2>
-<p>To the the code and only show the output, one may either use <code>:kindly/hide-code true</code> in the form metadata, or apply <code>kindly/hide-code</code> to the value.</p>
+<p>To hide the the code of a given form and only show the output, here are a few options:</p>
+<ol type="1">
+<li><p>Add the metadata <code>:kindly/hide-code true</code> to the form (e.g., by preceding it with <code>^:kindly/hide-code</code>).</p></li>
+<li><p>Add the metadata <code>:kindly/hide-code true</code> to the value (e.g., using <code>vary-meta</code>).</p></li>
+<li><p>Some tools such as Clay <a href="https://scicloj.github.io/clay/#hiding-code">allow</a> the user to globally define certain kinds (e.g., <code>:kind/md</code>, <code>:kind/hiccup</code>) to always hide code</p></li>
+</ol>
 </section>
 <section id="passing-options" class="level2" data-number="2.9">
 <h2 data-number="2.9" class="anchored" data-anchor-id="passing-options"><span class="header-section-number">2.9</span> Passing options</h2>
@@ -527,9 +532,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="printedClojure">
 <div class="sourceCode" id="cb27"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>{<span class="at">:source</span></span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a> <span class="st">"{:title {:text </span><span class="sc">\"</span><span class="st">Echarts Example</span><span class="sc">\"</span><span class="st">}</span><span class="sc">\n</span><span class="st">   :tooltip {}</span><span class="sc">\n</span><span class="st">   :legend {:data [</span><span class="sc">\"</span><span class="st">sales</span><span class="sc">\"</span><span class="st">]}</span><span class="sc">\n</span><span class="st">   :xAxis {:data [</span><span class="sc">\"</span><span class="st">Shirts</span><span class="sc">\"</span><span class="st">, </span><span class="sc">\"</span><span class="st">Cardigans</span><span class="sc">\"</span><span class="st">, </span><span class="sc">\"</span><span class="st">Chiffons</span><span class="sc">\"</span><span class="st">,</span><span class="sc">\n</span><span class="st">                  </span><span class="sc">\"</span><span class="st">Pants</span><span class="sc">\"</span><span class="st">, </span><span class="sc">\"</span><span class="st">Heels</span><span class="sc">\"</span><span class="st">, </span><span class="sc">\"</span><span class="st">Socks</span><span class="sc">\"</span><span class="st">]}</span><span class="sc">\n</span><span class="st">   :yAxis {}</span><span class="sc">\n</span><span class="st">   :series [{:name </span><span class="sc">\"</span><span class="st">sales</span><span class="sc">\"\n</span><span class="st">             :type </span><span class="sc">\"</span><span class="st">bar</span><span class="sc">\"\n</span><span class="st">             :data [5 20 36</span><span class="sc">\n</span><span class="st">                    10 10 20]}]}"</span>,</span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a> <span class="at">:line</span> <span class="dv">145</span>,</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a> <span class="at">:line</span> <span class="dv">150</span>,</span>
 <span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a> <span class="at">:column</span> <span class="dv">3</span>,</span>
-<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a> <span class="at">:end-line</span> <span class="dv">154</span>,</span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a> <span class="at">:end-line</span> <span class="dv">159</span>,</span>
 <span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a> <span class="at">:end-column</span> <span class="dv">33</span>,</span>
 <span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a> <span class="at">:kindly/options</span> #<span class="at">:element</span>{<span class="at">:style</span> {<span class="at">:width</span> <span class="st">"500px"</span>, <span class="at">:height</span> <span class="st">"200px"</span>}},</span>
 <span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a> <span class="at">:kindly/kind</span> <span class="at">:kind/echarts</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
