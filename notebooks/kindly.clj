@@ -43,12 +43,16 @@
 ;; ## Existing book/notebook projects using Kindly
 
 ;; - [Tablecloth documentation](https://scicloj.github.io/tablecloth/)
+;; - [Fastmath 3 documentation (WIP)](https://github.com/generateme/fastmath/tree/3.x)
 ;; - [ClojisR documentation](https://scicloj.github.io/clojisr/)
+;; - [Wolframite documentation](https://scicloj.github.io/wolframite)
 ;; - [Clay documentation](https://scicloj.github.io/clay/)
 ;; - [Kindly-noted](https://scicloj.github.io/kindly-noted/) - documenting the ecosystem around Kindly - WIP
 ;; - [Noj documentation](https://scicloj.github.io/noj/) - WIP
 ;; - [Clojure Tidy Tuesdays](https://kiramclean.github.io/clojure-tidy-tuesdays/) data-science explorations
 ;; - [Clojure Data Scrapbook](https://scicloj.github.io/clojure-data-scrapbook/)
+;; - [LLMs tutorial](https://kpassapk.github.io/llama.clj/llama.html) (in spanish) by Kyle Passarelli
+
 
                                         ;
 ;; ## Example
