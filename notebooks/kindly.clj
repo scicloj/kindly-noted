@@ -23,7 +23,7 @@
 ;; - [Bayesian optimization tutorial](https://nextjournal.com/generateme/bayesian-optimization) ([source](https://nextjournal.com/generateme/bayesian-optimization)) - written in [Nextjournal](https://nextjournal.com/)
 ;; - [scicloj.ml tutorials](https://github.com/scicloj/scicloj.ml-tutorials#tutorials-for-sciclojml) ([source](https://github.com/scicloj/scicloj.ml-tutorials/tree/main/src/scicloj/ml)) - written in [Notespace v3](https://github.com/scicloj/notespace/blob/master/doc/v3.md)
 ;; - [Clojure2d color tutorial](https://clojure2d.github.io/clojure2d/docs/notebooks/index.html#/notebooks/color.clj) ([source](https://github.com/Clojure2D/clojure2d/blob/master/notebooks/color.clj)) - written in [Clerk](https://github.com/nextjournal/)
-;; - [Tablecloth](https://scicloj.github.io/tablecloth) ([source](https://github.com/scicloj/tablecloth/blob/master/notebooks/index.clj)) - written in Kindly using [Clay](https://scicloj.github.io/clay)
+;; - [Tablecloth documentation](https://scicloj.github.io/tablecloth) ([source](https://github.com/scicloj/tablecloth/blob/master/notebooks/index.clj)) - written in Kindly using [Clay](https://scicloj.github.io/clay)
 ;; - ...
 
 ;; ## Goal
