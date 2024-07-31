@@ -272,6 +272,8 @@ window.Quarto = {
 }
 </style>
 <style>.clay-limit-image-width .clay-image {max-width: 100%}
+.clay-side-by-side .sourceCode {margin: 0}
+.clay-side-by-side {margin: 1em 0}
 </style>
 <script src="kinds_files/md-default2.js" type="text/javascript"></script>
 <script src="kinds_files/md-default3.js" type="text/javascript"></script>
@@ -361,35 +363,35 @@ window.Quarto = {
 <div class="sourceCode" id="cb17"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>people-as-maps</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="printedClojure">
-<div class="sourceCode" id="cb18"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>[{<span class="at">:preferred-language</span> <span class="st">"clojurescript"</span>, <span class="at">:age</span> <span class="dv">65</span>}</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojure"</span>, <span class="at">:age</span> <span class="dv">73</span>}</span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"babashka"</span>, <span class="at">:age</span> <span class="dv">22</span>}</span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojurescript"</span>, <span class="at">:age</span> <span class="dv">87</span>}</span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"babashka"</span>, <span class="at">:age</span> <span class="dv">88</span>}</span>
-<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojurescript"</span>, <span class="at">:age</span> <span class="dv">51</span>}</span>
-<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojure"</span>, <span class="at">:age</span> <span class="dv">81</span>}</span>
-<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"babashka"</span>, <span class="at">:age</span> <span class="dv">45</span>}</span>
-<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojurescript"</span>, <span class="at">:age</span> <span class="dv">10</span>}</span>
-<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojurescript"</span>, <span class="at">:age</span> <span class="dv">76</span>}</span>
-<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojurescript"</span>, <span class="at">:age</span> <span class="dv">50</span>}</span>
-<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"babashka"</span>, <span class="at">:age</span> <span class="dv">9</span>}</span>
-<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojurescript"</span>, <span class="at">:age</span> <span class="dv">2</span>}</span>
-<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojurescript"</span>, <span class="at">:age</span> <span class="dv">98</span>}</span>
-<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"babashka"</span>, <span class="at">:age</span> <span class="dv">52</span>}</span>
-<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojure"</span>, <span class="at">:age</span> <span class="dv">27</span>}</span>
-<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojure"</span>, <span class="at">:age</span> <span class="dv">49</span>}</span>
-<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojure"</span>, <span class="at">:age</span> <span class="dv">19</span>}</span>
-<span id="cb18-19"><a href="#cb18-19" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojure"</span>, <span class="at">:age</span> <span class="dv">44</span>}</span>
-<span id="cb18-20"><a href="#cb18-20" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"babashka"</span>, <span class="at">:age</span> <span class="dv">86</span>}</span>
-<span id="cb18-21"><a href="#cb18-21" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojure"</span>, <span class="at">:age</span> <span class="dv">10</span>}</span>
-<span id="cb18-22"><a href="#cb18-22" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"babashka"</span>, <span class="at">:age</span> <span class="dv">41</span>}</span>
-<span id="cb18-23"><a href="#cb18-23" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojure"</span>, <span class="at">:age</span> <span class="dv">23</span>}</span>
-<span id="cb18-24"><a href="#cb18-24" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojure"</span>, <span class="at">:age</span> <span class="dv">20</span>}</span>
-<span id="cb18-25"><a href="#cb18-25" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"babashka"</span>, <span class="at">:age</span> <span class="dv">27</span>}</span>
-<span id="cb18-26"><a href="#cb18-26" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"babashka"</span>, <span class="at">:age</span> <span class="dv">34</span>}</span>
-<span id="cb18-27"><a href="#cb18-27" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojure"</span>, <span class="at">:age</span> <span class="dv">29</span>}</span>
-<span id="cb18-28"><a href="#cb18-28" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"babashka"</span>, <span class="at">:age</span> <span class="dv">51</span>}</span>
-<span id="cb18-29"><a href="#cb18-29" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojure"</span>, <span class="at">:age</span> <span class="dv">58</span>}]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>[{<span class="at">:preferred-language</span> <span class="st">"clojure"</span>, <span class="at">:age</span> <span class="dv">50</span>}</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojure"</span>, <span class="at">:age</span> <span class="dv">48</span>}</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojurescript"</span>, <span class="at">:age</span> <span class="dv">42</span>}</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojure"</span>, <span class="at">:age</span> <span class="dv">28</span>}</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"babashka"</span>, <span class="at">:age</span> <span class="dv">52</span>}</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"babashka"</span>, <span class="at">:age</span> <span class="dv">21</span>}</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojure"</span>, <span class="at">:age</span> <span class="dv">42</span>}</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"babashka"</span>, <span class="at">:age</span> <span class="dv">56</span>}</span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojure"</span>, <span class="at">:age</span> <span class="dv">83</span>}</span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojurescript"</span>, <span class="at">:age</span> <span class="dv">73</span>}</span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"babashka"</span>, <span class="at">:age</span> <span class="dv">72</span>}</span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojurescript"</span>, <span class="at">:age</span> <span class="dv">78</span>}</span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojurescript"</span>, <span class="at">:age</span> <span class="dv">34</span>}</span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojure"</span>, <span class="at">:age</span> <span class="dv">41</span>}</span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojurescript"</span>, <span class="at">:age</span> <span class="dv">74</span>}</span>
+<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"babashka"</span>, <span class="at">:age</span> <span class="dv">89</span>}</span>
+<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojurescript"</span>, <span class="at">:age</span> <span class="dv">53</span>}</span>
+<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojurescript"</span>, <span class="at">:age</span> <span class="dv">41</span>}</span>
+<span id="cb18-19"><a href="#cb18-19" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojurescript"</span>, <span class="at">:age</span> <span class="dv">91</span>}</span>
+<span id="cb18-20"><a href="#cb18-20" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"babashka"</span>, <span class="at">:age</span> <span class="dv">57</span>}</span>
+<span id="cb18-21"><a href="#cb18-21" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojurescript"</span>, <span class="at">:age</span> <span class="dv">28</span>}</span>
+<span id="cb18-22"><a href="#cb18-22" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojurescript"</span>, <span class="at">:age</span> <span class="dv">73</span>}</span>
+<span id="cb18-23"><a href="#cb18-23" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojure"</span>, <span class="at">:age</span> <span class="dv">4</span>}</span>
+<span id="cb18-24"><a href="#cb18-24" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojurescript"</span>, <span class="at">:age</span> <span class="dv">42</span>}</span>
+<span id="cb18-25"><a href="#cb18-25" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojurescript"</span>, <span class="at">:age</span> <span class="dv">63</span>}</span>
+<span id="cb18-26"><a href="#cb18-26" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"babashka"</span>, <span class="at">:age</span> <span class="dv">92</span>}</span>
+<span id="cb18-27"><a href="#cb18-27" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojure"</span>, <span class="at">:age</span> <span class="dv">84</span>}</span>
+<span id="cb18-28"><a href="#cb18-28" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojure"</span>, <span class="at">:age</span> <span class="dv">56</span>}</span>
+<span id="cb18-29"><a href="#cb18-29" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojurescript"</span>, <span class="at">:age</span> <span class="dv">52</span>}]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="sourceClojure">
 <div class="sourceCode" id="cb19"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>(<span class="bu">def</span><span class="fu"> people-as-vectors</span></span>
@@ -400,35 +402,35 @@ window.Quarto = {
 <div class="sourceCode" id="cb20"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>people-as-vectors</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="printedClojure">
-<div class="sourceCode" id="cb21"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>[[<span class="st">"clojurescript"</span> <span class="dv">65</span>]</span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojure"</span> <span class="dv">73</span>]</span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a> [<span class="st">"babashka"</span> <span class="dv">22</span>]</span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojurescript"</span> <span class="dv">87</span>]</span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a> [<span class="st">"babashka"</span> <span class="dv">88</span>]</span>
-<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojurescript"</span> <span class="dv">51</span>]</span>
-<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojure"</span> <span class="dv">81</span>]</span>
-<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a> [<span class="st">"babashka"</span> <span class="dv">45</span>]</span>
-<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojurescript"</span> <span class="dv">10</span>]</span>
-<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojurescript"</span> <span class="dv">76</span>]</span>
-<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojurescript"</span> <span class="dv">50</span>]</span>
-<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a> [<span class="st">"babashka"</span> <span class="dv">9</span>]</span>
-<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojurescript"</span> <span class="dv">2</span>]</span>
-<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojurescript"</span> <span class="dv">98</span>]</span>
-<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a> [<span class="st">"babashka"</span> <span class="dv">52</span>]</span>
-<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojure"</span> <span class="dv">27</span>]</span>
-<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojure"</span> <span class="dv">49</span>]</span>
-<span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojure"</span> <span class="dv">19</span>]</span>
-<span id="cb21-19"><a href="#cb21-19" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojure"</span> <span class="dv">44</span>]</span>
-<span id="cb21-20"><a href="#cb21-20" aria-hidden="true" tabindex="-1"></a> [<span class="st">"babashka"</span> <span class="dv">86</span>]</span>
-<span id="cb21-21"><a href="#cb21-21" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojure"</span> <span class="dv">10</span>]</span>
-<span id="cb21-22"><a href="#cb21-22" aria-hidden="true" tabindex="-1"></a> [<span class="st">"babashka"</span> <span class="dv">41</span>]</span>
-<span id="cb21-23"><a href="#cb21-23" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojure"</span> <span class="dv">23</span>]</span>
-<span id="cb21-24"><a href="#cb21-24" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojure"</span> <span class="dv">20</span>]</span>
-<span id="cb21-25"><a href="#cb21-25" aria-hidden="true" tabindex="-1"></a> [<span class="st">"babashka"</span> <span class="dv">27</span>]</span>
-<span id="cb21-26"><a href="#cb21-26" aria-hidden="true" tabindex="-1"></a> [<span class="st">"babashka"</span> <span class="dv">34</span>]</span>
-<span id="cb21-27"><a href="#cb21-27" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojure"</span> <span class="dv">29</span>]</span>
-<span id="cb21-28"><a href="#cb21-28" aria-hidden="true" tabindex="-1"></a> [<span class="st">"babashka"</span> <span class="dv">51</span>]</span>
-<span id="cb21-29"><a href="#cb21-29" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojure"</span> <span class="dv">58</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>[[<span class="st">"clojure"</span> <span class="dv">50</span>]</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojure"</span> <span class="dv">48</span>]</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojurescript"</span> <span class="dv">42</span>]</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojure"</span> <span class="dv">28</span>]</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a> [<span class="st">"babashka"</span> <span class="dv">52</span>]</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a> [<span class="st">"babashka"</span> <span class="dv">21</span>]</span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojure"</span> <span class="dv">42</span>]</span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a> [<span class="st">"babashka"</span> <span class="dv">56</span>]</span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojure"</span> <span class="dv">83</span>]</span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojurescript"</span> <span class="dv">73</span>]</span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a> [<span class="st">"babashka"</span> <span class="dv">72</span>]</span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojurescript"</span> <span class="dv">78</span>]</span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojurescript"</span> <span class="dv">34</span>]</span>
+<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojure"</span> <span class="dv">41</span>]</span>
+<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojurescript"</span> <span class="dv">74</span>]</span>
+<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a> [<span class="st">"babashka"</span> <span class="dv">89</span>]</span>
+<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojurescript"</span> <span class="dv">53</span>]</span>
+<span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojurescript"</span> <span class="dv">41</span>]</span>
+<span id="cb21-19"><a href="#cb21-19" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojurescript"</span> <span class="dv">91</span>]</span>
+<span id="cb21-20"><a href="#cb21-20" aria-hidden="true" tabindex="-1"></a> [<span class="st">"babashka"</span> <span class="dv">57</span>]</span>
+<span id="cb21-21"><a href="#cb21-21" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojurescript"</span> <span class="dv">28</span>]</span>
+<span id="cb21-22"><a href="#cb21-22" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojurescript"</span> <span class="dv">73</span>]</span>
+<span id="cb21-23"><a href="#cb21-23" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojure"</span> <span class="dv">4</span>]</span>
+<span id="cb21-24"><a href="#cb21-24" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojurescript"</span> <span class="dv">42</span>]</span>
+<span id="cb21-25"><a href="#cb21-25" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojurescript"</span> <span class="dv">63</span>]</span>
+<span id="cb21-26"><a href="#cb21-26" aria-hidden="true" tabindex="-1"></a> [<span class="st">"babashka"</span> <span class="dv">92</span>]</span>
+<span id="cb21-27"><a href="#cb21-27" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojure"</span> <span class="dv">84</span>]</span>
+<span id="cb21-28"><a href="#cb21-28" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojure"</span> <span class="dv">56</span>]</span>
+<span id="cb21-29"><a href="#cb21-29" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojurescript"</span> <span class="dv">52</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>These kinds have recursive kind semantics: if the values inside them have kind information, they should be handled accordingly.</p>
 <p>Here is a vector of things of different kinds inside:</p>
@@ -597,7 +599,7 @@ window.Quarto = {
 <span id="cb35-11"><a href="#cb35-11" aria-hidden="true" tabindex="-1"></a>  {<span class="at">:initial-value</span> <span class="dv">9</span></span>
 <span id="cb35-12"><a href="#cb35-12" aria-hidden="true" tabindex="-1"></a>   <span class="at">:background-color</span> <span class="st">"#d4ebe9"</span>}])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="id2"><script type="application/x-scittle">(reagent.dom/render [(fn [{:keys [initial-value background-color]}] (let [*click-count (reagent.core/atom initial-value)] (fn [] [:div {:style {:background-color background-color}} "The atom " [:code "*click-count"] " has value: " (clojure.core/deref *click-count) ". " [:input {:type "button", :value "Click me!", :on-click (fn* [] (swap! *click-count inc))}]]))) {:initial-value 9, :background-color "#d4ebe9"}] (js/document.getElementById "id2"))</script></div>
+<div id="id4"><script type="application/x-scittle">(reagent.dom/render [(fn [{:keys [initial-value background-color]}] (let [*click-count (reagent.core/atom initial-value)] (fn [] [:div {:style {:background-color background-color}} "The atom " [:code "*click-count"] " has value: " (clojure.core/deref *click-count) ". " [:input {:type "button", :value "Click me!", :on-click (fn* [] (swap! *click-count inc))}]]))) {:initial-value 9, :background-color "#d4ebe9"}] (js/document.getElementById "id4"))</script></div>
 <p>The <code>:reagent/deps</code> option can be used to provide additional dependencies. This should be documented better soon.</p>
 </section>
 <section id="html" class="level2" data-number="3.10">
@@ -716,7 +718,7 @@ window.Quarto = {
 <span id="cb42-17"><a href="#cb42-17" aria-hidden="true" tabindex="-1"></a>                     <span class="at">:colorscale</span> <span class="at">:Viridis</span>}}]}))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div style="height:400px;width:100%;"><script>Plotly.newPlot(document.currentScript.parentElement,
-              [{"x":[1.2060465261649416,2.3752649461484565,3.4432002724940394,4.062395179496248,5.382080359475845,6.1229875124378,7.047427898319041,7.972942611320265,9.359148248771447,10.581316347414745,11.6001329891426,12.141439747018774,13.50757729892817,14.22831916409331,14.765390308185237,15.677357359907905,16.71960216345468,17.495668230394344,18.29556507935579,19.23777780190665],"y":[-0.9559261293562299,-1.9872373472435854,-2.9503132545913786,-4.386508024583285,-5.869084133374142,-6.624130249176524,-7.263412116869345,-8.636697356570597,-9.87126904024026,-11.283664933675961,-12.672212951648469,-13.532821240751362,-14.273592672279328,-15.625293502166457,-16.920196390314512,-17.535409770166424,-19.016651652504425,-19.79200394111335,-21.180864418845015,-22.459877195620646],"z":[6.2397282731464525,20.34143865422204,43.82956969458142,73.26004142850722,117.35143522387693,161.8967491554741,217.91084341544638,277.3981495503835,349.29573443131494,432.882564721527,511.3562197421076,593.7218664141034,673.7325543406205,791.4320056250433,885.3327814010663,984.0796137796639,1106.1802854062548,1225.4416096481966,1365.0398700082667,1550.431227383667],"type":"scatter3d","mode":"lines+markers","opacity":0.2,"line":{"width":10},"marker":{"size":20,"colorscale":"Viridis"}}], {}, {});</script></div>
+              [{"x":[1.3362646785509935,2.4047921936645253,3.3179244026287718,4.282538991186233,4.900959421635353,6.006833101149436,6.534527991625065,7.344765789388429,7.896000422966416,8.799498579524688,9.406648081914696,10.333234433281538,11.570685488275206,12.478640016579362,13.53253147815604,14.593843234090832,15.19589187327131,16.399349644709726,17.527546691261634,18.2169160027803],"y":[-0.831312331208969,-1.4029813175660677,-2.436760692078796,-3.274087628307373,-4.1965825169304445,-5.309458292369307,-6.745492925398313,-8.065421210386184,-8.806824887636118,-10.239893252012449,-10.789245894788788,-11.299460229020804,-12.185463250415653,-12.878989708112906,-13.400016413214326,-14.732907574394808,-15.452202435594163,-16.514405532170237,-17.86920125420286,-18.597107734642858],"z":[4.195372424447134,14.986576102352833,30.137132682482925,51.47818507052168,80.30769355097542,116.7165478418625,156.50686008245958,223.58559839579928,297.78211136257715,353.80743691770164,446.28047827293375,532.4972585841673,648.7981393783521,751.5989853952161,839.9800113781157,962.5224234179184,1089.4410157212185,1219.4436807841064,1336.428006484748,1522.3191630002436],"type":"scatter3d","mode":"lines+markers","opacity":0.2,"line":{"width":10},"marker":{"size":20,"colorscale":"Viridis"}}], {}, {});</script></div>
 </section>
 <section id="highcharts" class="level2" data-number="3.15">
 <h2 data-number="3.15" class="anchored" data-anchor-id="highcharts"><span class="header-section-number">3.15</span> Highcharts</h2>
@@ -770,7 +772,7 @@ window.Quarto = {
 <span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a> <span class="st">"athletes = FileAttachment('notebooks/datasets/athletes.csv').csv({typed: true})"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb45" data-startfrom="786" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 785;"><span id="cb45-786"><a href="#cb45-786" aria-hidden="true" tabindex="-1"></a>athletes <span class="op">=</span> <span class="fu">FileAttachment</span>(<span class="st">'notebooks/datasets/athletes.csv'</span>)<span class="op">.</span><span class="fu">csv</span>({<span class="dt">typed</span><span class="op">:</span> <span class="kw">true</span>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb45" data-startfrom="788" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 787;"><span id="cb45-788"><a href="#cb45-788" aria-hidden="true" tabindex="-1"></a>athletes <span class="op">=</span> <span class="fu">FileAttachment</span>(<span class="st">'notebooks/datasets/athletes.csv'</span>)<span class="op">.</span><span class="fu">csv</span>({<span class="dt">typed</span><span class="op">:</span> <span class="kw">true</span>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div id="ojs-cell-1" data-nodetype="declaration">
 
@@ -782,7 +784,7 @@ window.Quarto = {
 <span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a> <span class="st">"athletes"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb47" data-startfrom="801" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 800;"><span id="cb47-801"><a href="#cb47-801" aria-hidden="true" tabindex="-1"></a>athletes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb47" data-startfrom="803" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 802;"><span id="cb47-803"><a href="#cb47-803" aria-hidden="true" tabindex="-1"></a>athletes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div id="ojs-cell-2" data-nodetype="expression">
 
@@ -794,7 +796,7 @@ window.Quarto = {
 <span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a> <span class="st">"Inputs.table(athletes)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb49" data-startfrom="816" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 815;"><span id="cb49-816"><a href="#cb49-816" aria-hidden="true" tabindex="-1"></a>Inputs<span class="op">.</span><span class="fu">table</span>(athletes)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb49" data-startfrom="818" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 817;"><span id="cb49-818"><a href="#cb49-818" aria-hidden="true" tabindex="-1"></a>Inputs<span class="op">.</span><span class="fu">table</span>(athletes)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div id="ojs-cell-3" data-nodetype="expression">
 
@@ -821,20 +823,20 @@ window.Quarto = {
 <span id="cb50-17"><a href="#cb50-17" aria-hidden="true" tabindex="-1"></a><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb51" data-startfrom="846" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 845;"><span id="cb51-846"><a href="#cb51-846" aria-hidden="true" tabindex="-1"></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
-<span id="cb51-847"><a href="#cb51-847" aria-hidden="true" tabindex="-1"></a>  <span class="dt">grid</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span></span>
-<span id="cb51-848"><a href="#cb51-848" aria-hidden="true" tabindex="-1"></a>  <span class="dt">facet</span><span class="op">:</span> {</span>
-<span id="cb51-849"><a href="#cb51-849" aria-hidden="true" tabindex="-1"></a>    <span class="dt">data</span><span class="op">:</span> athletes<span class="op">,</span></span>
-<span id="cb51-850"><a href="#cb51-850" aria-hidden="true" tabindex="-1"></a>    <span class="dt">y</span><span class="op">:</span> <span class="st">'sex'</span></span>
-<span id="cb51-851"><a href="#cb51-851" aria-hidden="true" tabindex="-1"></a>  }<span class="op">,</span></span>
-<span id="cb51-852"><a href="#cb51-852" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
-<span id="cb51-853"><a href="#cb51-853" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">rectY</span>(</span>
-<span id="cb51-854"><a href="#cb51-854" aria-hidden="true" tabindex="-1"></a>      athletes<span class="op">,</span></span>
-<span id="cb51-855"><a href="#cb51-855" aria-hidden="true" tabindex="-1"></a>      Plot<span class="op">.</span><span class="fu">binX</span>({<span class="dt">y</span><span class="op">:</span> <span class="st">'count'</span>}<span class="op">,</span> {<span class="dt">x</span><span class="op">:</span> <span class="st">'weight'</span><span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> <span class="st">'sex'</span>})</span>
-<span id="cb51-856"><a href="#cb51-856" aria-hidden="true" tabindex="-1"></a>    )<span class="op">,</span></span>
-<span id="cb51-857"><a href="#cb51-857" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">ruleY</span>([<span class="dv">0</span>])</span>
-<span id="cb51-858"><a href="#cb51-858" aria-hidden="true" tabindex="-1"></a>  ]</span>
-<span id="cb51-859"><a href="#cb51-859" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb51" data-startfrom="848" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 847;"><span id="cb51-848"><a href="#cb51-848" aria-hidden="true" tabindex="-1"></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
+<span id="cb51-849"><a href="#cb51-849" aria-hidden="true" tabindex="-1"></a>  <span class="dt">grid</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span></span>
+<span id="cb51-850"><a href="#cb51-850" aria-hidden="true" tabindex="-1"></a>  <span class="dt">facet</span><span class="op">:</span> {</span>
+<span id="cb51-851"><a href="#cb51-851" aria-hidden="true" tabindex="-1"></a>    <span class="dt">data</span><span class="op">:</span> athletes<span class="op">,</span></span>
+<span id="cb51-852"><a href="#cb51-852" aria-hidden="true" tabindex="-1"></a>    <span class="dt">y</span><span class="op">:</span> <span class="st">'sex'</span></span>
+<span id="cb51-853"><a href="#cb51-853" aria-hidden="true" tabindex="-1"></a>  }<span class="op">,</span></span>
+<span id="cb51-854"><a href="#cb51-854" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
+<span id="cb51-855"><a href="#cb51-855" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">rectY</span>(</span>
+<span id="cb51-856"><a href="#cb51-856" aria-hidden="true" tabindex="-1"></a>      athletes<span class="op">,</span></span>
+<span id="cb51-857"><a href="#cb51-857" aria-hidden="true" tabindex="-1"></a>      Plot<span class="op">.</span><span class="fu">binX</span>({<span class="dt">y</span><span class="op">:</span> <span class="st">'count'</span>}<span class="op">,</span> {<span class="dt">x</span><span class="op">:</span> <span class="st">'weight'</span><span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> <span class="st">'sex'</span>})</span>
+<span id="cb51-858"><a href="#cb51-858" aria-hidden="true" tabindex="-1"></a>    )<span class="op">,</span></span>
+<span id="cb51-859"><a href="#cb51-859" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">ruleY</span>([<span class="dv">0</span>])</span>
+<span id="cb51-860"><a href="#cb51-860" aria-hidden="true" tabindex="-1"></a>  ]</span>
+<span id="cb51-861"><a href="#cb51-861" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div id="ojs-cell-4" data-nodetype="expression">
 
@@ -846,7 +848,7 @@ window.Quarto = {
 <span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a> <span class="st">"population = FileAttachment('notebooks/datasets/population.json').json()"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb53" data-startfrom="876" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 875;"><span id="cb53-876"><a href="#cb53-876" aria-hidden="true" tabindex="-1"></a>population <span class="op">=</span> <span class="fu">FileAttachment</span>(<span class="st">'notebooks/datasets/population.json'</span>)<span class="op">.</span><span class="fu">json</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb53" data-startfrom="878" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 877;"><span id="cb53-878"><a href="#cb53-878" aria-hidden="true" tabindex="-1"></a>population <span class="op">=</span> <span class="fu">FileAttachment</span>(<span class="st">'notebooks/datasets/population.json'</span>)<span class="op">.</span><span class="fu">json</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div id="ojs-cell-5" data-nodetype="declaration">
 
@@ -858,7 +860,7 @@ window.Quarto = {
 <span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a> <span class="st">"population"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb55" data-startfrom="891" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 890;"><span id="cb55-891"><a href="#cb55-891" aria-hidden="true" tabindex="-1"></a>population</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb55" data-startfrom="893" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 892;"><span id="cb55-893"><a href="#cb55-893" aria-hidden="true" tabindex="-1"></a>population</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div id="ojs-cell-6" data-nodetype="expression">
 
@@ -871,8 +873,8 @@ window.Quarto = {
 <span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a><span class="st"> chart"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb57" data-startfrom="908" data-source-offset="-1"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 907;"><span id="cb57-908"><a href="#cb57-908" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> { chart } <span class="cf">with</span> { population <span class="im">as</span> data } <span class="im">from</span> <span class="st">'@d3/zoomable-sunburst'</span></span>
-<span id="cb57-909"><a href="#cb57-909" aria-hidden="true" tabindex="-1"></a> chart</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb57" data-startfrom="910" data-source-offset="-1"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 909;"><span id="cb57-910"><a href="#cb57-910" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> { chart } <span class="cf">with</span> { population <span class="im">as</span> data } <span class="im">from</span> <span class="st">'@d3/zoomable-sunburst'</span></span>
+<span id="cb57-911"><a href="#cb57-911" aria-hidden="true" tabindex="-1"></a> chart</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-7-1" data-nodetype="declaration">
@@ -929,34 +931,34 @@ window.Quarto = {
 <span id="cb58-38"><a href="#cb58-38" aria-hidden="true" tabindex="-1"></a><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb59" data-startfrom="962" data-source-offset="-18"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 961;"><span id="cb59-962"><a href="#cb59-962" aria-hidden="true" tabindex="-1"></a>viewof bill_length_min <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>(</span>
-<span id="cb59-963"><a href="#cb59-963" aria-hidden="true" tabindex="-1"></a>                                      [<span class="dv">32</span><span class="op">,</span> <span class="dv">50</span>]<span class="op">,</span></span>
-<span id="cb59-964"><a href="#cb59-964" aria-hidden="true" tabindex="-1"></a>                                      {<span class="dt">value</span><span class="op">:</span> <span class="dv">35</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">'Bill length (min):'</span>}</span>
-<span id="cb59-965"><a href="#cb59-965" aria-hidden="true" tabindex="-1"></a>                                      )</span>
-<span id="cb59-966"><a href="#cb59-966" aria-hidden="true" tabindex="-1"></a>viewof islands <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">checkbox</span>(</span>
-<span id="cb59-967"><a href="#cb59-967" aria-hidden="true" tabindex="-1"></a>                                 [<span class="st">'Torgersen'</span><span class="op">,</span> <span class="st">'Biscoe'</span><span class="op">,</span> <span class="st">'Dream'</span>]<span class="op">,</span></span>
-<span id="cb59-968"><a href="#cb59-968" aria-hidden="true" tabindex="-1"></a>                                 { <span class="dt">value</span><span class="op">:</span> [<span class="st">'Torgersen'</span><span class="op">,</span> <span class="st">'Biscoe'</span>]<span class="op">,</span></span>
-<span id="cb59-969"><a href="#cb59-969" aria-hidden="true" tabindex="-1"></a>                                  <span class="dt">label</span><span class="op">:</span> <span class="st">'Islands:'</span></span>
-<span id="cb59-970"><a href="#cb59-970" aria-hidden="true" tabindex="-1"></a>                                  }</span>
-<span id="cb59-971"><a href="#cb59-971" aria-hidden="true" tabindex="-1"></a>                                 )</span>
-<span id="cb59-972"><a href="#cb59-972" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb59-973"><a href="#cb59-973" aria-hidden="true" tabindex="-1"></a>Plot<span class="op">.</span><span class="fu">rectY</span>(filtered<span class="op">,</span></span>
-<span id="cb59-974"><a href="#cb59-974" aria-hidden="true" tabindex="-1"></a>            Plot<span class="op">.</span><span class="fu">binX</span>(</span>
-<span id="cb59-975"><a href="#cb59-975" aria-hidden="true" tabindex="-1"></a>                      {<span class="dt">y</span><span class="op">:</span> <span class="st">'count'</span>}<span class="op">,</span></span>
-<span id="cb59-976"><a href="#cb59-976" aria-hidden="true" tabindex="-1"></a>                      {<span class="dt">x</span><span class="op">:</span> <span class="st">'body_mass_g'</span><span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> <span class="st">'species'</span><span class="op">,</span> <span class="dt">thresholds</span><span class="op">:</span> <span class="dv">20</span>}</span>
-<span id="cb59-977"><a href="#cb59-977" aria-hidden="true" tabindex="-1"></a>                      ))</span>
-<span id="cb59-978"><a href="#cb59-978" aria-hidden="true" tabindex="-1"></a> <span class="op">.</span><span class="fu">plot</span>({</span>
-<span id="cb59-979"><a href="#cb59-979" aria-hidden="true" tabindex="-1"></a>        <span class="dt">facet</span><span class="op">:</span> {</span>
-<span id="cb59-980"><a href="#cb59-980" aria-hidden="true" tabindex="-1"></a>                <span class="dt">data</span><span class="op">:</span> filtered<span class="op">,</span></span>
-<span id="cb59-981"><a href="#cb59-981" aria-hidden="true" tabindex="-1"></a>                <span class="dt">x</span><span class="op">:</span> <span class="st">'sex'</span><span class="op">,</span></span>
-<span id="cb59-982"><a href="#cb59-982" aria-hidden="true" tabindex="-1"></a>                <span class="dt">y</span><span class="op">:</span> <span class="st">'species'</span><span class="op">,</span></span>
-<span id="cb59-983"><a href="#cb59-983" aria-hidden="true" tabindex="-1"></a>                <span class="dt">marginRight</span><span class="op">:</span> <span class="dv">80</span></span>
-<span id="cb59-984"><a href="#cb59-984" aria-hidden="true" tabindex="-1"></a>                }<span class="op">,</span></span>
-<span id="cb59-985"><a href="#cb59-985" aria-hidden="true" tabindex="-1"></a>        <span class="dt">marks</span><span class="op">:</span> [</span>
-<span id="cb59-986"><a href="#cb59-986" aria-hidden="true" tabindex="-1"></a>                Plot<span class="op">.</span><span class="fu">frame</span>()<span class="op">,</span></span>
-<span id="cb59-987"><a href="#cb59-987" aria-hidden="true" tabindex="-1"></a>                ]</span>
-<span id="cb59-988"><a href="#cb59-988" aria-hidden="true" tabindex="-1"></a>        }</span>
-<span id="cb59-989"><a href="#cb59-989" aria-hidden="true" tabindex="-1"></a>       )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb59" data-startfrom="964" data-source-offset="-18"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 963;"><span id="cb59-964"><a href="#cb59-964" aria-hidden="true" tabindex="-1"></a>viewof bill_length_min <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>(</span>
+<span id="cb59-965"><a href="#cb59-965" aria-hidden="true" tabindex="-1"></a>                                      [<span class="dv">32</span><span class="op">,</span> <span class="dv">50</span>]<span class="op">,</span></span>
+<span id="cb59-966"><a href="#cb59-966" aria-hidden="true" tabindex="-1"></a>                                      {<span class="dt">value</span><span class="op">:</span> <span class="dv">35</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">'Bill length (min):'</span>}</span>
+<span id="cb59-967"><a href="#cb59-967" aria-hidden="true" tabindex="-1"></a>                                      )</span>
+<span id="cb59-968"><a href="#cb59-968" aria-hidden="true" tabindex="-1"></a>viewof islands <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">checkbox</span>(</span>
+<span id="cb59-969"><a href="#cb59-969" aria-hidden="true" tabindex="-1"></a>                                 [<span class="st">'Torgersen'</span><span class="op">,</span> <span class="st">'Biscoe'</span><span class="op">,</span> <span class="st">'Dream'</span>]<span class="op">,</span></span>
+<span id="cb59-970"><a href="#cb59-970" aria-hidden="true" tabindex="-1"></a>                                 { <span class="dt">value</span><span class="op">:</span> [<span class="st">'Torgersen'</span><span class="op">,</span> <span class="st">'Biscoe'</span>]<span class="op">,</span></span>
+<span id="cb59-971"><a href="#cb59-971" aria-hidden="true" tabindex="-1"></a>                                  <span class="dt">label</span><span class="op">:</span> <span class="st">'Islands:'</span></span>
+<span id="cb59-972"><a href="#cb59-972" aria-hidden="true" tabindex="-1"></a>                                  }</span>
+<span id="cb59-973"><a href="#cb59-973" aria-hidden="true" tabindex="-1"></a>                                 )</span>
+<span id="cb59-974"><a href="#cb59-974" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-975"><a href="#cb59-975" aria-hidden="true" tabindex="-1"></a>Plot<span class="op">.</span><span class="fu">rectY</span>(filtered<span class="op">,</span></span>
+<span id="cb59-976"><a href="#cb59-976" aria-hidden="true" tabindex="-1"></a>            Plot<span class="op">.</span><span class="fu">binX</span>(</span>
+<span id="cb59-977"><a href="#cb59-977" aria-hidden="true" tabindex="-1"></a>                      {<span class="dt">y</span><span class="op">:</span> <span class="st">'count'</span>}<span class="op">,</span></span>
+<span id="cb59-978"><a href="#cb59-978" aria-hidden="true" tabindex="-1"></a>                      {<span class="dt">x</span><span class="op">:</span> <span class="st">'body_mass_g'</span><span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> <span class="st">'species'</span><span class="op">,</span> <span class="dt">thresholds</span><span class="op">:</span> <span class="dv">20</span>}</span>
+<span id="cb59-979"><a href="#cb59-979" aria-hidden="true" tabindex="-1"></a>                      ))</span>
+<span id="cb59-980"><a href="#cb59-980" aria-hidden="true" tabindex="-1"></a> <span class="op">.</span><span class="fu">plot</span>({</span>
+<span id="cb59-981"><a href="#cb59-981" aria-hidden="true" tabindex="-1"></a>        <span class="dt">facet</span><span class="op">:</span> {</span>
+<span id="cb59-982"><a href="#cb59-982" aria-hidden="true" tabindex="-1"></a>                <span class="dt">data</span><span class="op">:</span> filtered<span class="op">,</span></span>
+<span id="cb59-983"><a href="#cb59-983" aria-hidden="true" tabindex="-1"></a>                <span class="dt">x</span><span class="op">:</span> <span class="st">'sex'</span><span class="op">,</span></span>
+<span id="cb59-984"><a href="#cb59-984" aria-hidden="true" tabindex="-1"></a>                <span class="dt">y</span><span class="op">:</span> <span class="st">'species'</span><span class="op">,</span></span>
+<span id="cb59-985"><a href="#cb59-985" aria-hidden="true" tabindex="-1"></a>                <span class="dt">marginRight</span><span class="op">:</span> <span class="dv">80</span></span>
+<span id="cb59-986"><a href="#cb59-986" aria-hidden="true" tabindex="-1"></a>                }<span class="op">,</span></span>
+<span id="cb59-987"><a href="#cb59-987" aria-hidden="true" tabindex="-1"></a>        <span class="dt">marks</span><span class="op">:</span> [</span>
+<span id="cb59-988"><a href="#cb59-988" aria-hidden="true" tabindex="-1"></a>                Plot<span class="op">.</span><span class="fu">frame</span>()<span class="op">,</span></span>
+<span id="cb59-989"><a href="#cb59-989" aria-hidden="true" tabindex="-1"></a>                ]</span>
+<span id="cb59-990"><a href="#cb59-990" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb59-991"><a href="#cb59-991" aria-hidden="true" tabindex="-1"></a>       )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-8-1" data-nodetype="declaration">
@@ -978,7 +980,7 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<div class="sourceCode cell-code hidden" id="cb60" data-startfrom="990" data-source-offset="-953"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 989;"><span id="cb60-990"><a href="#cb60-990" aria-hidden="true" tabindex="-1"></a>Inputs<span class="op">.</span><span class="fu">table</span>(filtered)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb60" data-startfrom="992" data-source-offset="-953"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 991;"><span id="cb60-992"><a href="#cb60-992" aria-hidden="true" tabindex="-1"></a>Inputs<span class="op">.</span><span class="fu">table</span>(filtered)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-8-4" data-nodetype="expression">
@@ -986,11 +988,11 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<div class="sourceCode cell-code hidden" id="cb61" data-startfrom="991" data-source-offset="-976"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 990;"><span id="cb61-991"><a href="#cb61-991" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> <span class="fu">FileAttachment</span>(<span class="st">'notebooks/datasets/palmer-penguins.csv'</span>)<span class="op">.</span><span class="fu">csv</span>({ <span class="dt">typed</span><span class="op">:</span> <span class="kw">true</span> })</span>
-<span id="cb61-992"><a href="#cb61-992" aria-hidden="true" tabindex="-1"></a>filtered <span class="op">=</span> data<span class="op">.</span><span class="fu">filter</span>(<span class="kw">function</span>(penguin) {</span>
-<span id="cb61-993"><a href="#cb61-993" aria-hidden="true" tabindex="-1"></a>                                           <span class="cf">return</span> bill_length_min <span class="op">&lt;</span> penguin<span class="op">.</span><span class="at">bill_length_mm</span> <span class="op">&amp;&amp;</span></span>
-<span id="cb61-994"><a href="#cb61-994" aria-hidden="true" tabindex="-1"></a>                                           islands<span class="op">.</span><span class="fu">includes</span>(penguin<span class="op">.</span><span class="at">island</span>)<span class="op">;</span></span>
-<span id="cb61-995"><a href="#cb61-995" aria-hidden="true" tabindex="-1"></a>                                           })</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb61" data-startfrom="993" data-source-offset="-976"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 992;"><span id="cb61-993"><a href="#cb61-993" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> <span class="fu">FileAttachment</span>(<span class="st">'notebooks/datasets/palmer-penguins.csv'</span>)<span class="op">.</span><span class="fu">csv</span>({ <span class="dt">typed</span><span class="op">:</span> <span class="kw">true</span> })</span>
+<span id="cb61-994"><a href="#cb61-994" aria-hidden="true" tabindex="-1"></a>filtered <span class="op">=</span> data<span class="op">.</span><span class="fu">filter</span>(<span class="kw">function</span>(penguin) {</span>
+<span id="cb61-995"><a href="#cb61-995" aria-hidden="true" tabindex="-1"></a>                                           <span class="cf">return</span> bill_length_min <span class="op">&lt;</span> penguin<span class="op">.</span><span class="at">bill_length_mm</span> <span class="op">&amp;&amp;</span></span>
+<span id="cb61-996"><a href="#cb61-996" aria-hidden="true" tabindex="-1"></a>                                           islands<span class="op">.</span><span class="fu">includes</span>(penguin<span class="op">.</span><span class="at">island</span>)<span class="op">;</span></span>
+<span id="cb61-997"><a href="#cb61-997" aria-hidden="true" tabindex="-1"></a>                                           })</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-8-5" data-nodetype="declaration">
@@ -1233,120 +1235,120 @@ window.Quarto = {
 </thead>
 <tbody>
 <tr class="odd">
-<td>clojurescript</td>
-<td>65</td>
-</tr>
-<tr class="even">
 <td>clojure</td>
-<td>73</td>
-</tr>
-<tr class="odd">
-<td>babashka</td>
-<td>22</td>
-</tr>
-<tr class="even">
-<td>clojurescript</td>
-<td>87</td>
-</tr>
-<tr class="odd">
-<td>babashka</td>
-<td>88</td>
-</tr>
-<tr class="even">
-<td>clojurescript</td>
-<td>51</td>
-</tr>
-<tr class="odd">
-<td>clojure</td>
-<td>81</td>
-</tr>
-<tr class="even">
-<td>babashka</td>
-<td>45</td>
-</tr>
-<tr class="odd">
-<td>clojurescript</td>
-<td>10</td>
-</tr>
-<tr class="even">
-<td>clojurescript</td>
-<td>76</td>
-</tr>
-<tr class="odd">
-<td>clojurescript</td>
 <td>50</td>
 </tr>
 <tr class="even">
-<td>babashka</td>
-<td>9</td>
+<td>clojure</td>
+<td>48</td>
 </tr>
 <tr class="odd">
 <td>clojurescript</td>
-<td>2</td>
+<td>42</td>
 </tr>
 <tr class="even">
-<td>clojurescript</td>
-<td>98</td>
+<td>clojure</td>
+<td>28</td>
 </tr>
 <tr class="odd">
 <td>babashka</td>
 <td>52</td>
 </tr>
 <tr class="even">
-<td>clojure</td>
-<td>27</td>
+<td>babashka</td>
+<td>21</td>
 </tr>
 <tr class="odd">
 <td>clojure</td>
-<td>49</td>
-</tr>
-<tr class="even">
-<td>clojure</td>
-<td>19</td>
-</tr>
-<tr class="odd">
-<td>clojure</td>
-<td>44</td>
+<td>42</td>
 </tr>
 <tr class="even">
 <td>babashka</td>
-<td>86</td>
+<td>56</td>
 </tr>
 <tr class="odd">
 <td>clojure</td>
-<td>10</td>
+<td>83</td>
 </tr>
 <tr class="even">
+<td>clojurescript</td>
+<td>73</td>
+</tr>
+<tr class="odd">
 <td>babashka</td>
+<td>72</td>
+</tr>
+<tr class="even">
+<td>clojurescript</td>
+<td>78</td>
+</tr>
+<tr class="odd">
+<td>clojurescript</td>
+<td>34</td>
+</tr>
+<tr class="even">
+<td>clojure</td>
 <td>41</td>
 </tr>
 <tr class="odd">
-<td>clojure</td>
-<td>23</td>
-</tr>
-<tr class="even">
-<td>clojure</td>
-<td>20</td>
-</tr>
-<tr class="odd">
-<td>babashka</td>
-<td>27</td>
+<td>clojurescript</td>
+<td>74</td>
 </tr>
 <tr class="even">
 <td>babashka</td>
-<td>34</td>
+<td>89</td>
 </tr>
 <tr class="odd">
-<td>clojure</td>
-<td>29</td>
+<td>clojurescript</td>
+<td>53</td>
+</tr>
+<tr class="even">
+<td>clojurescript</td>
+<td>41</td>
+</tr>
+<tr class="odd">
+<td>clojurescript</td>
+<td>91</td>
 </tr>
 <tr class="even">
 <td>babashka</td>
-<td>51</td>
+<td>57</td>
+</tr>
+<tr class="odd">
+<td>clojurescript</td>
+<td>28</td>
+</tr>
+<tr class="even">
+<td>clojurescript</td>
+<td>73</td>
 </tr>
 <tr class="odd">
 <td>clojure</td>
-<td>58</td>
+<td>4</td>
+</tr>
+<tr class="even">
+<td>clojurescript</td>
+<td>42</td>
+</tr>
+<tr class="odd">
+<td>clojurescript</td>
+<td>63</td>
+</tr>
+<tr class="even">
+<td>babashka</td>
+<td>92</td>
+</tr>
+<tr class="odd">
+<td>clojure</td>
+<td>84</td>
+</tr>
+<tr class="even">
+<td>clojure</td>
+<td>56</td>
+</tr>
+<tr class="odd">
+<td>clojurescript</td>
+<td>52</td>
 </tr>
 </tbody>
 </table>
@@ -1362,24 +1364,24 @@ window.Quarto = {
 <table class="table table-hover" data-quarto-postprocess="true">
 <tbody>
 <tr class="odd">
-<td>clojurescript</td>
-<td>65</td>
+<td>clojure</td>
+<td>50</td>
 </tr>
 <tr class="even">
 <td>clojure</td>
-<td>73</td>
+<td>48</td>
 </tr>
 <tr class="odd">
-<td>babashka</td>
-<td>22</td>
+<td>clojurescript</td>
+<td>42</td>
 </tr>
 <tr class="even">
-<td>clojurescript</td>
-<td>87</td>
+<td>clojure</td>
+<td>28</td>
 </tr>
 <tr class="odd">
 <td>babashka</td>
-<td>88</td>
+<td>52</td>
 </tr>
 </tbody>
 </table>
@@ -1401,24 +1403,24 @@ window.Quarto = {
 </thead>
 <tbody>
 <tr class="odd">
-<td>clojurescript</td>
-<td>65</td>
+<td>clojure</td>
+<td>50</td>
 </tr>
 <tr class="even">
 <td>clojure</td>
-<td>73</td>
+<td>48</td>
 </tr>
 <tr class="odd">
-<td>babashka</td>
-<td>22</td>
+<td>clojurescript</td>
+<td>42</td>
 </tr>
 <tr class="even">
-<td>clojurescript</td>
-<td>87</td>
+<td>clojure</td>
+<td>28</td>
 </tr>
 <tr class="odd">
 <td>babashka</td>
-<td>88</td>
+<td>52</td>
 </tr>
 </tbody>
 </table>
@@ -1440,16 +1442,16 @@ window.Quarto = {
 </thead>
 <tbody>
 <tr class="odd">
-<td>clojurescript</td>
+<td>clojure</td>
 </tr>
 <tr class="even">
 <td>clojure</td>
 </tr>
 <tr class="odd">
-<td>babashka</td>
+<td>clojurescript</td>
 </tr>
 <tr class="even">
-<td>clojurescript</td>
+<td>clojure</td>
 </tr>
 <tr class="odd">
 <td>babashka</td>
@@ -1467,24 +1469,24 @@ window.Quarto = {
 <table class="table table-hover" data-quarto-postprocess="true">
 <tbody>
 <tr class="odd">
-<td>clojurescript</td>
-<td>65</td>
+<td>clojure</td>
+<td>50</td>
 </tr>
 <tr class="even">
 <td>clojure</td>
-<td>73</td>
+<td>48</td>
 </tr>
 <tr class="odd">
-<td>babashka</td>
-<td>22</td>
+<td>clojurescript</td>
+<td>42</td>
 </tr>
 <tr class="even">
-<td>clojurescript</td>
-<td>87</td>
+<td>clojure</td>
+<td>28</td>
 </tr>
 <tr class="odd">
 <td>babashka</td>
-<td>88</td>
+<td>52</td>
 </tr>
 </tbody>
 </table>
@@ -1504,24 +1506,24 @@ window.Quarto = {
 </thead>
 <tbody>
 <tr class="odd">
-<td>clojurescript</td>
-<td>65</td>
+<td>clojure</td>
+<td>50</td>
 </tr>
 <tr class="even">
 <td>clojure</td>
-<td>73</td>
+<td>48</td>
 </tr>
 <tr class="odd">
-<td>babashka</td>
-<td>22</td>
+<td>clojurescript</td>
+<td>42</td>
 </tr>
 <tr class="even">
-<td>clojurescript</td>
-<td>87</td>
+<td>clojure</td>
+<td>28</td>
 </tr>
 <tr class="odd">
 <td>babashka</td>
-<td>88</td>
+<td>52</td>
 </tr>
 </tbody>
 </table>
@@ -1590,120 +1592,120 @@ window.Quarto = {
 </thead>
 <tbody>
 <tr class="odd">
-<td>clojurescript</td>
-<td>65</td>
-</tr>
-<tr class="even">
 <td>clojure</td>
-<td>73</td>
-</tr>
-<tr class="odd">
-<td>babashka</td>
-<td>22</td>
-</tr>
-<tr class="even">
-<td>clojurescript</td>
-<td>87</td>
-</tr>
-<tr class="odd">
-<td>babashka</td>
-<td>88</td>
-</tr>
-<tr class="even">
-<td>clojurescript</td>
-<td>51</td>
-</tr>
-<tr class="odd">
-<td>clojure</td>
-<td>81</td>
-</tr>
-<tr class="even">
-<td>babashka</td>
-<td>45</td>
-</tr>
-<tr class="odd">
-<td>clojurescript</td>
-<td>10</td>
-</tr>
-<tr class="even">
-<td>clojurescript</td>
-<td>76</td>
-</tr>
-<tr class="odd">
-<td>clojurescript</td>
 <td>50</td>
 </tr>
 <tr class="even">
-<td>babashka</td>
-<td>9</td>
+<td>clojure</td>
+<td>48</td>
 </tr>
 <tr class="odd">
 <td>clojurescript</td>
-<td>2</td>
+<td>42</td>
 </tr>
 <tr class="even">
-<td>clojurescript</td>
-<td>98</td>
+<td>clojure</td>
+<td>28</td>
 </tr>
 <tr class="odd">
 <td>babashka</td>
 <td>52</td>
 </tr>
 <tr class="even">
-<td>clojure</td>
-<td>27</td>
+<td>babashka</td>
+<td>21</td>
 </tr>
 <tr class="odd">
 <td>clojure</td>
-<td>49</td>
-</tr>
-<tr class="even">
-<td>clojure</td>
-<td>19</td>
-</tr>
-<tr class="odd">
-<td>clojure</td>
-<td>44</td>
+<td>42</td>
 </tr>
 <tr class="even">
 <td>babashka</td>
-<td>86</td>
+<td>56</td>
 </tr>
 <tr class="odd">
 <td>clojure</td>
-<td>10</td>
+<td>83</td>
 </tr>
 <tr class="even">
+<td>clojurescript</td>
+<td>73</td>
+</tr>
+<tr class="odd">
 <td>babashka</td>
+<td>72</td>
+</tr>
+<tr class="even">
+<td>clojurescript</td>
+<td>78</td>
+</tr>
+<tr class="odd">
+<td>clojurescript</td>
+<td>34</td>
+</tr>
+<tr class="even">
+<td>clojure</td>
 <td>41</td>
 </tr>
 <tr class="odd">
-<td>clojure</td>
-<td>23</td>
-</tr>
-<tr class="even">
-<td>clojure</td>
-<td>20</td>
-</tr>
-<tr class="odd">
-<td>babashka</td>
-<td>27</td>
+<td>clojurescript</td>
+<td>74</td>
 </tr>
 <tr class="even">
 <td>babashka</td>
-<td>34</td>
+<td>89</td>
 </tr>
 <tr class="odd">
-<td>clojure</td>
-<td>29</td>
+<td>clojurescript</td>
+<td>53</td>
+</tr>
+<tr class="even">
+<td>clojurescript</td>
+<td>41</td>
+</tr>
+<tr class="odd">
+<td>clojurescript</td>
+<td>91</td>
 </tr>
 <tr class="even">
 <td>babashka</td>
-<td>51</td>
+<td>57</td>
+</tr>
+<tr class="odd">
+<td>clojurescript</td>
+<td>28</td>
+</tr>
+<tr class="even">
+<td>clojurescript</td>
+<td>73</td>
 </tr>
 <tr class="odd">
 <td>clojure</td>
-<td>58</td>
+<td>4</td>
+</tr>
+<tr class="even">
+<td>clojurescript</td>
+<td>42</td>
+</tr>
+<tr class="odd">
+<td>clojurescript</td>
+<td>63</td>
+</tr>
+<tr class="even">
+<td>babashka</td>
+<td>92</td>
+</tr>
+<tr class="odd">
+<td>clojure</td>
+<td>84</td>
+</tr>
+<tr class="even">
+<td>clojure</td>
+<td>56</td>
+</tr>
+<tr class="odd">
+<td>clojurescript</td>
+<td>52</td>
 </tr>
 </tbody>
 </table>
@@ -1726,120 +1728,120 @@ window.Quarto = {
 </thead>
 <tbody>
 <tr class="odd">
-<td>clojurescript</td>
-<td>65</td>
-</tr>
-<tr class="even">
 <td>clojure</td>
-<td>73</td>
-</tr>
-<tr class="odd">
-<td>babashka</td>
-<td>22</td>
-</tr>
-<tr class="even">
-<td>clojurescript</td>
-<td>87</td>
-</tr>
-<tr class="odd">
-<td>babashka</td>
-<td>88</td>
-</tr>
-<tr class="even">
-<td>clojurescript</td>
-<td>51</td>
-</tr>
-<tr class="odd">
-<td>clojure</td>
-<td>81</td>
-</tr>
-<tr class="even">
-<td>babashka</td>
-<td>45</td>
-</tr>
-<tr class="odd">
-<td>clojurescript</td>
-<td>10</td>
-</tr>
-<tr class="even">
-<td>clojurescript</td>
-<td>76</td>
-</tr>
-<tr class="odd">
-<td>clojurescript</td>
 <td>50</td>
 </tr>
 <tr class="even">
-<td>babashka</td>
-<td>9</td>
+<td>clojure</td>
+<td>48</td>
 </tr>
 <tr class="odd">
 <td>clojurescript</td>
-<td>2</td>
+<td>42</td>
 </tr>
 <tr class="even">
-<td>clojurescript</td>
-<td>98</td>
+<td>clojure</td>
+<td>28</td>
 </tr>
 <tr class="odd">
 <td>babashka</td>
 <td>52</td>
 </tr>
 <tr class="even">
-<td>clojure</td>
-<td>27</td>
+<td>babashka</td>
+<td>21</td>
 </tr>
 <tr class="odd">
 <td>clojure</td>
-<td>49</td>
-</tr>
-<tr class="even">
-<td>clojure</td>
-<td>19</td>
-</tr>
-<tr class="odd">
-<td>clojure</td>
-<td>44</td>
+<td>42</td>
 </tr>
 <tr class="even">
 <td>babashka</td>
-<td>86</td>
+<td>56</td>
 </tr>
 <tr class="odd">
 <td>clojure</td>
-<td>10</td>
+<td>83</td>
 </tr>
 <tr class="even">
+<td>clojurescript</td>
+<td>73</td>
+</tr>
+<tr class="odd">
 <td>babashka</td>
+<td>72</td>
+</tr>
+<tr class="even">
+<td>clojurescript</td>
+<td>78</td>
+</tr>
+<tr class="odd">
+<td>clojurescript</td>
+<td>34</td>
+</tr>
+<tr class="even">
+<td>clojure</td>
 <td>41</td>
 </tr>
 <tr class="odd">
-<td>clojure</td>
-<td>23</td>
-</tr>
-<tr class="even">
-<td>clojure</td>
-<td>20</td>
-</tr>
-<tr class="odd">
-<td>babashka</td>
-<td>27</td>
+<td>clojurescript</td>
+<td>74</td>
 </tr>
 <tr class="even">
 <td>babashka</td>
-<td>34</td>
+<td>89</td>
 </tr>
 <tr class="odd">
-<td>clojure</td>
-<td>29</td>
+<td>clojurescript</td>
+<td>53</td>
+</tr>
+<tr class="even">
+<td>clojurescript</td>
+<td>41</td>
+</tr>
+<tr class="odd">
+<td>clojurescript</td>
+<td>91</td>
 </tr>
 <tr class="even">
 <td>babashka</td>
-<td>51</td>
+<td>57</td>
+</tr>
+<tr class="odd">
+<td>clojurescript</td>
+<td>28</td>
+</tr>
+<tr class="even">
+<td>clojurescript</td>
+<td>73</td>
 </tr>
 <tr class="odd">
 <td>clojure</td>
-<td>58</td>
+<td>4</td>
+</tr>
+<tr class="even">
+<td>clojurescript</td>
+<td>42</td>
+</tr>
+<tr class="odd">
+<td>clojurescript</td>
+<td>63</td>
+</tr>
+<tr class="even">
+<td>babashka</td>
+<td>92</td>
+</tr>
+<tr class="odd">
+<td>clojure</td>
+<td>84</td>
+</tr>
+<tr class="even">
+<td>clojure</td>
+<td>56</td>
+</tr>
+<tr class="odd">
+<td>clojurescript</td>
+<td>52</td>
 </tr>
 </tbody>
 </table>
@@ -1854,7 +1856,7 @@ window.Quarto = {
 </div>
 <div class="clay-table">
 <div class="clay-table">
-<table class="table table-hover table-responsive"><thead><tr><th>preferred-language</th><th>age</th></tr></thead><tbody><tr><td>clojurescript</td><td>65</td></tr><tr><td>clojure</td><td>73</td></tr><tr><td>babashka</td><td>22</td></tr><tr><td>clojurescript</td><td>87</td></tr><tr><td>babashka</td><td>88</td></tr><tr><td>clojurescript</td><td>51</td></tr><tr><td>clojure</td><td>81</td></tr><tr><td>babashka</td><td>45</td></tr><tr><td>clojurescript</td><td>10</td></tr><tr><td>clojurescript</td><td>76</td></tr><tr><td>clojurescript</td><td>50</td></tr><tr><td>babashka</td><td>9</td></tr><tr><td>clojurescript</td><td>2</td></tr><tr><td>clojurescript</td><td>98</td></tr><tr><td>babashka</td><td>52</td></tr><tr><td>clojure</td><td>27</td></tr><tr><td>clojure</td><td>49</td></tr><tr><td>clojure</td><td>19</td></tr><tr><td>clojure</td><td>44</td></tr><tr><td>babashka</td><td>86</td></tr><tr><td>clojure</td><td>10</td></tr><tr><td>babashka</td><td>41</td></tr><tr><td>clojure</td><td>23</td></tr><tr><td>clojure</td><td>20</td></tr><tr><td>babashka</td><td>27</td></tr><tr><td>babashka</td><td>34</td></tr><tr><td>clojure</td><td>29</td></tr><tr><td>babashka</td><td>51</td></tr><tr><td>clojure</td><td>58</td></tr></tbody><script>new DataTable(document.currentScript.parentElement, {"paging":false,"scrollY":400,"sPaginationType":"full_numbers","order":[]});</script></table>
+<table class="table table-hover table-responsive"><thead><tr><th>preferred-language</th><th>age</th></tr></thead><tbody><tr><td>clojure</td><td>50</td></tr><tr><td>clojure</td><td>48</td></tr><tr><td>clojurescript</td><td>42</td></tr><tr><td>clojure</td><td>28</td></tr><tr><td>babashka</td><td>52</td></tr><tr><td>babashka</td><td>21</td></tr><tr><td>clojure</td><td>42</td></tr><tr><td>babashka</td><td>56</td></tr><tr><td>clojure</td><td>83</td></tr><tr><td>clojurescript</td><td>73</td></tr><tr><td>babashka</td><td>72</td></tr><tr><td>clojurescript</td><td>78</td></tr><tr><td>clojurescript</td><td>34</td></tr><tr><td>clojure</td><td>41</td></tr><tr><td>clojurescript</td><td>74</td></tr><tr><td>babashka</td><td>89</td></tr><tr><td>clojurescript</td><td>53</td></tr><tr><td>clojurescript</td><td>41</td></tr><tr><td>clojurescript</td><td>91</td></tr><tr><td>babashka</td><td>57</td></tr><tr><td>clojurescript</td><td>28</td></tr><tr><td>clojurescript</td><td>73</td></tr><tr><td>clojure</td><td>4</td></tr><tr><td>clojurescript</td><td>42</td></tr><tr><td>clojurescript</td><td>63</td></tr><tr><td>babashka</td><td>92</td></tr><tr><td>clojure</td><td>84</td></tr><tr><td>clojure</td><td>56</td></tr><tr><td>clojurescript</td><td>52</td></tr></tbody><script>new DataTable(document.currentScript.parentElement, {"paging":false,"scrollY":400,"sPaginationType":"full_numbers","order":[]});</script></table>
 </div>
 </div>
 <div class="sourceClojure">
@@ -1865,7 +1867,7 @@ window.Quarto = {
 </div>
 <div class="clay-table">
 <div class="clay-table">
-<table class="table table-hover table-responsive"><thead><tr><th>preferred-language</th><th>age</th></tr></thead><tbody><tr><td>clojurescript</td><td>65</td></tr><tr><td>clojure</td><td>73</td></tr><tr><td>babashka</td><td>22</td></tr><tr><td>clojurescript</td><td>87</td></tr><tr><td>babashka</td><td>88</td></tr><tr><td>clojurescript</td><td>51</td></tr><tr><td>clojure</td><td>81</td></tr><tr><td>babashka</td><td>45</td></tr><tr><td>clojurescript</td><td>10</td></tr><tr><td>clojurescript</td><td>76</td></tr><tr><td>clojurescript</td><td>50</td></tr><tr><td>babashka</td><td>9</td></tr><tr><td>clojurescript</td><td>2</td></tr><tr><td>clojurescript</td><td>98</td></tr><tr><td>babashka</td><td>52</td></tr><tr><td>clojure</td><td>27</td></tr><tr><td>clojure</td><td>49</td></tr><tr><td>clojure</td><td>19</td></tr><tr><td>clojure</td><td>44</td></tr><tr><td>babashka</td><td>86</td></tr><tr><td>clojure</td><td>10</td></tr><tr><td>babashka</td><td>41</td></tr><tr><td>clojure</td><td>23</td></tr><tr><td>clojure</td><td>20</td></tr><tr><td>babashka</td><td>27</td></tr><tr><td>babashka</td><td>34</td></tr><tr><td>clojure</td><td>29</td></tr><tr><td>babashka</td><td>51</td></tr><tr><td>clojure</td><td>58</td></tr></tbody><script>new DataTable(document.currentScript.parentElement, {"paging":false,"scrollY":300,"sPaginationType":"full_numbers","order":[]});</script></table>
+<table class="table table-hover table-responsive"><thead><tr><th>preferred-language</th><th>age</th></tr></thead><tbody><tr><td>clojure</td><td>50</td></tr><tr><td>clojure</td><td>48</td></tr><tr><td>clojurescript</td><td>42</td></tr><tr><td>clojure</td><td>28</td></tr><tr><td>babashka</td><td>52</td></tr><tr><td>babashka</td><td>21</td></tr><tr><td>clojure</td><td>42</td></tr><tr><td>babashka</td><td>56</td></tr><tr><td>clojure</td><td>83</td></tr><tr><td>clojurescript</td><td>73</td></tr><tr><td>babashka</td><td>72</td></tr><tr><td>clojurescript</td><td>78</td></tr><tr><td>clojurescript</td><td>34</td></tr><tr><td>clojure</td><td>41</td></tr><tr><td>clojurescript</td><td>74</td></tr><tr><td>babashka</td><td>89</td></tr><tr><td>clojurescript</td><td>53</td></tr><tr><td>clojurescript</td><td>41</td></tr><tr><td>clojurescript</td><td>91</td></tr><tr><td>babashka</td><td>57</td></tr><tr><td>clojurescript</td><td>28</td></tr><tr><td>clojurescript</td><td>73</td></tr><tr><td>clojure</td><td>4</td></tr><tr><td>clojurescript</td><td>42</td></tr><tr><td>clojurescript</td><td>63</td></tr><tr><td>babashka</td><td>92</td></tr><tr><td>clojure</td><td>84</td></tr><tr><td>clojure</td><td>56</td></tr><tr><td>clojurescript</td><td>52</td></tr></tbody><script>new DataTable(document.currentScript.parentElement, {"paging":false,"scrollY":300,"sPaginationType":"full_numbers","order":[]});</script></table>
 </div>
 </div>
 <p>Some tools support <a href="https://datatables.net/">datatables</a> for displaying tables. This can be expressed using the <code>:use-datatables</code> option.</p>
@@ -1875,7 +1877,7 @@ window.Quarto = {
 </div>
 <div class="clay-table">
 <div class="clay-table">
-<table class="table table-hover table-responsive"><thead><tr><th>preferred-language</th><th>age</th></tr></thead><tbody><tr><td>clojurescript</td><td>65</td></tr><tr><td>clojure</td><td>73</td></tr><tr><td>babashka</td><td>22</td></tr><tr><td>clojurescript</td><td>87</td></tr><tr><td>babashka</td><td>88</td></tr><tr><td>clojurescript</td><td>51</td></tr><tr><td>clojure</td><td>81</td></tr><tr><td>babashka</td><td>45</td></tr><tr><td>clojurescript</td><td>10</td></tr><tr><td>clojurescript</td><td>76</td></tr><tr><td>clojurescript</td><td>50</td></tr><tr><td>babashka</td><td>9</td></tr><tr><td>clojurescript</td><td>2</td></tr><tr><td>clojurescript</td><td>98</td></tr><tr><td>babashka</td><td>52</td></tr><tr><td>clojure</td><td>27</td></tr><tr><td>clojure</td><td>49</td></tr><tr><td>clojure</td><td>19</td></tr><tr><td>clojure</td><td>44</td></tr><tr><td>babashka</td><td>86</td></tr><tr><td>clojure</td><td>10</td></tr><tr><td>babashka</td><td>41</td></tr><tr><td>clojure</td><td>23</td></tr><tr><td>clojure</td><td>20</td></tr><tr><td>babashka</td><td>27</td></tr><tr><td>babashka</td><td>34</td></tr><tr><td>clojure</td><td>29</td></tr><tr><td>babashka</td><td>51</td></tr><tr><td>clojure</td><td>58</td></tr></tbody><script>new DataTable(document.currentScript.parentElement, {"paging":false,"scrollY":400,"sPaginationType":"full_numbers","order":[]});</script></table>
+<table class="table table-hover table-responsive"><thead><tr><th>preferred-language</th><th>age</th></tr></thead><tbody><tr><td>clojure</td><td>50</td></tr><tr><td>clojure</td><td>48</td></tr><tr><td>clojurescript</td><td>42</td></tr><tr><td>clojure</td><td>28</td></tr><tr><td>babashka</td><td>52</td></tr><tr><td>babashka</td><td>21</td></tr><tr><td>clojure</td><td>42</td></tr><tr><td>babashka</td><td>56</td></tr><tr><td>clojure</td><td>83</td></tr><tr><td>clojurescript</td><td>73</td></tr><tr><td>babashka</td><td>72</td></tr><tr><td>clojurescript</td><td>78</td></tr><tr><td>clojurescript</td><td>34</td></tr><tr><td>clojure</td><td>41</td></tr><tr><td>clojurescript</td><td>74</td></tr><tr><td>babashka</td><td>89</td></tr><tr><td>clojurescript</td><td>53</td></tr><tr><td>clojurescript</td><td>41</td></tr><tr><td>clojurescript</td><td>91</td></tr><tr><td>babashka</td><td>57</td></tr><tr><td>clojurescript</td><td>28</td></tr><tr><td>clojurescript</td><td>73</td></tr><tr><td>clojure</td><td>4</td></tr><tr><td>clojurescript</td><td>42</td></tr><tr><td>clojurescript</td><td>63</td></tr><tr><td>babashka</td><td>92</td></tr><tr><td>clojure</td><td>84</td></tr><tr><td>clojure</td><td>56</td></tr><tr><td>clojurescript</td><td>52</td></tr></tbody><script>new DataTable(document.currentScript.parentElement, {"paging":false,"scrollY":400,"sPaginationType":"full_numbers","order":[]});</script></table>
 </div>
 </div>
 <p>In addition, the <code>:datatables</code> option can be used to control <a href="https://datatables.net/manual/options">datatables options</a> (see <a href="https://datatables.net/reference/option/">the full list</a>).</p>
@@ -1886,7 +1888,7 @@ window.Quarto = {
 </div>
 <div class="clay-table">
 <div class="clay-table">
-<table class="table table-hover table-responsive"><thead><tr><th>preferred-language</th><th>age</th></tr></thead><tbody><tr><td>clojurescript</td><td>65</td></tr><tr><td>clojure</td><td>73</td></tr><tr><td>babashka</td><td>22</td></tr><tr><td>clojurescript</td><td>87</td></tr><tr><td>babashka</td><td>88</td></tr><tr><td>clojurescript</td><td>51</td></tr><tr><td>clojure</td><td>81</td></tr><tr><td>babashka</td><td>45</td></tr><tr><td>clojurescript</td><td>10</td></tr><tr><td>clojurescript</td><td>76</td></tr><tr><td>clojurescript</td><td>50</td></tr><tr><td>babashka</td><td>9</td></tr><tr><td>clojurescript</td><td>2</td></tr><tr><td>clojurescript</td><td>98</td></tr><tr><td>babashka</td><td>52</td></tr><tr><td>clojure</td><td>27</td></tr><tr><td>clojure</td><td>49</td></tr><tr><td>clojure</td><td>19</td></tr><tr><td>clojure</td><td>44</td></tr><tr><td>babashka</td><td>86</td></tr><tr><td>clojure</td><td>10</td></tr><tr><td>babashka</td><td>41</td></tr><tr><td>clojure</td><td>23</td></tr><tr><td>clojure</td><td>20</td></tr><tr><td>babashka</td><td>27</td></tr><tr><td>babashka</td><td>34</td></tr><tr><td>clojure</td><td>29</td></tr><tr><td>babashka</td><td>51</td></tr><tr><td>clojure</td><td>58</td></tr></tbody><script>new DataTable(document.currentScript.parentElement, {"paging":false,"scrollY":200,"sPaginationType":"full_numbers","order":[]});</script></table>
+<table class="table table-hover table-responsive"><thead><tr><th>preferred-language</th><th>age</th></tr></thead><tbody><tr><td>clojure</td><td>50</td></tr><tr><td>clojure</td><td>48</td></tr><tr><td>clojurescript</td><td>42</td></tr><tr><td>clojure</td><td>28</td></tr><tr><td>babashka</td><td>52</td></tr><tr><td>babashka</td><td>21</td></tr><tr><td>clojure</td><td>42</td></tr><tr><td>babashka</td><td>56</td></tr><tr><td>clojure</td><td>83</td></tr><tr><td>clojurescript</td><td>73</td></tr><tr><td>babashka</td><td>72</td></tr><tr><td>clojurescript</td><td>78</td></tr><tr><td>clojurescript</td><td>34</td></tr><tr><td>clojure</td><td>41</td></tr><tr><td>clojurescript</td><td>74</td></tr><tr><td>babashka</td><td>89</td></tr><tr><td>clojurescript</td><td>53</td></tr><tr><td>clojurescript</td><td>41</td></tr><tr><td>clojurescript</td><td>91</td></tr><tr><td>babashka</td><td>57</td></tr><tr><td>clojurescript</td><td>28</td></tr><tr><td>clojurescript</td><td>73</td></tr><tr><td>clojure</td><td>4</td></tr><tr><td>clojurescript</td><td>42</td></tr><tr><td>clojurescript</td><td>63</td></tr><tr><td>babashka</td><td>92</td></tr><tr><td>clojure</td><td>84</td></tr><tr><td>clojure</td><td>56</td></tr><tr><td>clojurescript</td><td>52</td></tr></tbody><script>new DataTable(document.currentScript.parentElement, {"paging":false,"scrollY":200,"sPaginationType":"full_numbers","order":[]});</script></table>
 </div>
 </div>
 <p>and in this case the user may specify <a href="https://datatables.net/manual/options">datatables options</a> (see <a href="https://datatables.net/reference/option/">the full list</a>).</p>
@@ -2012,7 +2014,7 @@ window.Quarto = {
 <span id="cb106-2"><a href="#cb106-2" aria-hidden="true" tabindex="-1"></a> tree-image)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="printedClojure">
-<div class="sourceCode" id="cb107"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb107-1"><a href="#cb107-1" aria-hidden="true" tabindex="-1"></a>[#object[java.awt.image.BufferedImage <span class="bn">0xb327808</span> <span class="st">"BufferedImage@b327808: type = 5 ColorModel: #pixelBits = 24 numComponents = 3 color space = java.awt.color.ICC_ColorSpace@75b3cbc7 transparency = 1 has alpha = false isAlphaPre = false ByteInterleavedRaster: width = 480 height = 640 #numDataElements 3 dataOff[0] = 2"</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb107"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb107-1"><a href="#cb107-1" aria-hidden="true" tabindex="-1"></a>[#object[java.awt.image.BufferedImage <span class="bn">0x5180ae56</span> <span class="st">"BufferedImage@5180ae56: type = 5 ColorModel: #pixelBits = 24 numComponents = 3 color space = java.awt.color.ICC_ColorSpace@50c85948 transparency = 1 has alpha = false isAlphaPre = false ByteInterleavedRaster: width = 480 height = 640 #numDataElements 3 dataOff[0] = 2"</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="sourceClojure">
 <div class="sourceCode" id="cb108"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb108-1"><a href="#cb108-1" aria-hidden="true" tabindex="-1"></a>(kind/pprint</span>
@@ -2031,7 +2033,7 @@ window.Quarto = {
 </div>
 <div><script>portal_api.embed().renderOutputItem(
                 {'mime': 'x-application/edn',
-                 'text': (() => "^{:source \"{:x (range 3)}\", :line 613, :column 2, :end-line 613, :end-column 16} {^#:portal.viewer{:default :portal.viewer/hiccup} [:div nil [:portal.viewer/inspector :x]] (^#:portal.viewer{:default :portal.viewer/hiccup} [:div nil [:portal.viewer/inspector 0]] ^#:portal.viewer{:default :portal.viewer/hiccup} [:div nil [:portal.viewer/inspector 1]] ^#:portal.viewer{:default :portal.viewer/hiccup} [:div nil [:portal.viewer/inspector 2]])}")}
+                 'text': (() => "{^#:portal.viewer{:default :portal.viewer/hiccup} [:div nil [:portal.viewer/inspector :x]] (^#:portal.viewer{:default :portal.viewer/hiccup} [:div nil [:portal.viewer/inspector 0]] ^#:portal.viewer{:default :portal.viewer/hiccup} [:div nil [:portal.viewer/inspector 1]] ^#:portal.viewer{:default :portal.viewer/hiccup} [:div nil [:portal.viewer/inspector 2]])}")}
                 , document.currentScript.parentElement);</script></div>
 <p>This kind has recursive semantics: if the values inside them have kind information, they should be handled accordingly.</p>
 <p>Note that <code>kind/portal</code> applies the <a href="https://github.com/scicloj/kind-portal">kind-portal</a> adapter to nested kinds.</p>
@@ -2044,7 +2046,7 @@ window.Quarto = {
 </div>
 <div><script>portal_api.embed().renderOutputItem(
                 {'mime': 'x-application/edn',
-                 'text': (() => "[^{:source \"[:img {:height 50 :width 50\\n                      :src \\\"https://clojure.org/images/clojure-logo-120b.png\\\"}]\", :line 621, :column 16, :end-line 622, :end-column 80, :kindly/kind :kind/hiccup, :portal.viewer/default :portal.viewer/hiccup} [:img ^{:source \"{:height 50 :width 50\\n                      :src \\\"https://clojure.org/images/clojure-logo-120b.png\\\"}\", :line 621, :column 22, :end-line 622, :end-column 79} {:height 50, :width 50, :src \"https://clojure.org/images/clojure-logo-120b.png\"}] ^{:source \"[:img {:height 50 :width 50\\n                      :src \\\"https://raw.githubusercontent.com/djblue/portal/fbc54632adc06c6e94a3d059c858419f0063d1cf/resources/splash.svg\\\"}]\", :line 623, :column 16, :end-line 624, :end-column 141, :kindly/kind :kind/hiccup, :portal.viewer/default :portal.viewer/hiccup} [:img ^{:source \"{:height 50 :width 50\\n                      :src \\\"https://raw.githubusercontent.com/djblue/portal/fbc54632adc06c6e94a3d059c858419f0063d1cf/resources/splash.svg\\\"}\", :line 623, :column 22, :end-line 624, :end-column 140} {:height 50, :width 50, :src \"https://raw.githubusercontent.com/djblue/portal/fbc54632adc06c6e94a3d059c858419f0063d1cf/resources/splash.svg\"}]]")}
+                 'text': (() => "[^{:kindly/kind :kind/hiccup, :portal.viewer/default :portal.viewer/hiccup} [:img {:height 50, :width 50, :src \"https://clojure.org/images/clojure-logo-120b.png\"}] ^{:kindly/kind :kind/hiccup, :portal.viewer/default :portal.viewer/hiccup} [:img {:height 50, :width 50, :src \"https://raw.githubusercontent.com/djblue/portal/fbc54632adc06c6e94a3d059c858419f0063d1cf/resources/splash.svg\"}]]")}
                 , document.currentScript.parentElement);</script></div>
 <div class="sourceClojure">
 <div class="sourceCode" id="cb112"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb112-1"><a href="#cb112-1" aria-hidden="true" tabindex="-1"></a>(kind/portal</span>
@@ -2053,7 +2055,7 @@ window.Quarto = {
 </div>
 <div><script>portal_api.embed().renderOutputItem(
                 {'mime': 'x-application/edn',
-                 'text': (() => "[^{:source \"[:big [:big \\\"a plot\\\"]]\", :line 627, :column 16, :end-line 627, :end-column 38, :kindly/kind :kind/hiccup, :portal.viewer/default :portal.viewer/hiccup} [:big ^{:source \"[:big \\\"a plot\\\"]\", :line 627, :column 22, :end-line 627, :end-column 37} [:big \"a plot\"]] ^#:portal.viewer{:default :portal.viewer/hiccup} [:portal.viewer/vega-lite ^{:source \"{:encoding\\n    {:y {:field \\\"y\\\", :type \\\"quantitative\\\"},\\n     :size {:value 400},\\n     :x {:field \\\"x\\\", :type \\\"quantitative\\\"}},\\n    :mark {:type \\\"circle\\\", :tooltip true},\\n    :width 400,\\n    :background \\\"floralwhite\\\",\\n    :height 100,\\n    :data {:values \\\"x,y\\\\n1,1\\\\n2,-4\\\\n3,9\\\\n\\\", :format {:type \\\"csv\\\"}}}\", :line 184, :column 4, :end-line 192, :end-column 68, :kindly/kind :kind/vega-lite} {:encoding ^{:source \"{:y {:field \\\"y\\\", :type \\\"quantitative\\\"},\\n     :size {:value 400},\\n     :x {:field \\\"x\\\", :type \\\"quantitative\\\"}}\", :line 185, :column 5, :end-line 187, :end-column 44} {:y ^{:source \"{:field \\\"y\\\", :type \\\"quantitative\\\"}\", :line 185, :column 9, :end-line 185, :end-column 43} {:field \"y\", :type \"quantitative\"}, :size ^{:source \"{:value 400}\", :line 186, :column 12, :end-line 186, :end-column 24} {:value 400}, :x ^{:source \"{:field \\\"x\\\", :type \\\"quantitative\\\"}\", :line 187, :column 9, :end-line 187, :end-column 43} {:field \"x\", :type \"quantitative\"}}, :mark ^{:source \"{:type \\\"circle\\\", :tooltip true}\", :line 188, :column 11, :end-line 188, :end-column 42} {:type \"circle\", :tooltip true}, :width 400, :background \"floralwhite\", :height 100, :data ^{:source \"{:values \\\"x,y\\\\n1,1\\\\n2,-4\\\\n3,9\\\\n\\\", :format {:type \\\"csv\\\"}}\", :line 192, :column 11, :end-line 192, :end-column 67} {:values \"x,y\\n1,1\\n2,-4\\n3,9\\n\", :format ^{:source \"{:type \\\"csv\\\"}\", :line 192, :column 53, :end-line 192, :end-column 66} {:type \"csv\"}}}]]")}
+                 'text': (() => "[^{:kindly/kind :kind/hiccup, :portal.viewer/default :portal.viewer/hiccup} [:big [:big \"a plot\"]] ^#:portal.viewer{:default :portal.viewer/hiccup} [:portal.viewer/vega-lite ^#:kindly{:kind :kind/vega-lite} {:encoding {:y {:field \"y\", :type \"quantitative\"}, :size {:value 400}, :x {:field \"x\", :type \"quantitative\"}}, :mark {:type \"circle\", :tooltip true}, :width 400, :background \"floralwhite\", :height 100, :data {:values \"x,y\\n1,1\\n2,-4\\n3,9\\n\", :format {:type \"csv\"}}}]]")}
                 , document.currentScript.parentElement);</script></div>
 <div class="sourceClojure">
 <div class="sourceCode" id="cb113"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb113-1"><a href="#cb113-1" aria-hidden="true" tabindex="-1"></a>(kind/portal</span>
@@ -2068,7 +2070,7 @@ window.Quarto = {
 </div>
 <div><script>portal_api.embed().renderOutputItem(
                 {'mime': 'x-application/edn',
-                 'text': (() => "[^{:source \"[:p {:style {:background-color \\\"#ccddcc\\\"\\n                            :border-style \\\"solid\\\"}}\\n                \\\"hello\\\"]\", :line 631, :column 16, :end-line 633, :end-column 25, :kindly/kind :kind/hiccup, :portal.viewer/default :portal.viewer/hiccup} [:p ^{:source \"{:style {:background-color \\\"#ccddcc\\\"\\n                            :border-style \\\"solid\\\"}}\", :line 631, :column 20, :end-line 632, :end-column 52} {:style ^{:source \"{:background-color \\\"#ccddcc\\\"\\n                            :border-style \\\"solid\\\"}\", :line 631, :column 28, :end-line 632, :end-column 51} {:background-color \"#ccddcc\", :border-style \"solid\"}} \"hello\"] ^#:portal.viewer{:default :portal.viewer/hiccup} [:div [:portal.viewer/markdown \"hello *hello* **hello**\"]] ^#:portal.viewer{:default :portal.viewer/hiccup} [:div [:portal.viewer/code \"(defn f [x] (+  x 9))\"]] ^#:portal.viewer{:default :portal.viewer/hiccup} [:portal.viewer/vega-lite ^{:source \"{:encoding\\n    {:y {:field \\\"y\\\", :type \\\"quantitative\\\"},\\n     :size {:value 400},\\n     :x {:field \\\"x\\\", :type \\\"quantitative\\\"}},\\n    :mark {:type \\\"circle\\\", :tooltip true},\\n    :width 400,\\n    :background \\\"floralwhite\\\",\\n    :height 100,\\n    :data {:values \\\"x,y\\\\n1,1\\\\n2,-4\\\\n3,9\\\\n\\\", :format {:type \\\"csv\\\"}}}\", :line 184, :column 4, :end-line 192, :end-column 68, :kindly/kind :kind/vega-lite} {:encoding ^{:source \"{:y {:field \\\"y\\\", :type \\\"quantitative\\\"},\\n     :size {:value 400},\\n     :x {:field \\\"x\\\", :type \\\"quantitative\\\"}}\", :line 185, :column 5, :end-line 187, :end-column 44} {:y ^{:source \"{:field \\\"y\\\", :type \\\"quantitative\\\"}\", :line 185, :column 9, :end-line 185, :end-column 43} {:field \"y\", :type \"quantitative\"}, :size ^{:source \"{:value 400}\", :line 186, :column 12, :end-line 186, :end-column 24} {:value 400}, :x ^{:source \"{:field \\\"x\\\", :type \\\"quantitative\\\"}\", :line 187, :column 9, :end-line 187, :end-column 43} {:field \"x\", :type \"quantitative\"}}, :mark ^{:source \"{:type \\\"circle\\\", :tooltip true}\", :line 188, :column 11, :end-line 188, :end-column 42} {:type \"circle\", :tooltip true}, :width 400, :background \"floralwhite\", :height 100, :data ^{:source \"{:values \\\"x,y\\\\n1,1\\\\n2,-4\\\\n3,9\\\\n\\\", :format {:type \\\"csv\\\"}}\", :line 192, :column 11, :end-line 192, :end-column 67} {:values \"x,y\\n1,1\\n2,-4\\n3,9\\n\", :format ^{:source \"{:type \\\"csv\\\"}\", :line 192, :column 53, :end-line 192, :end-column 66} {:type \"csv\"}}}]]")}
+                 'text': (() => "[^{:kindly/kind :kind/hiccup, :portal.viewer/default :portal.viewer/hiccup} [:p {:style {:background-color \"#ccddcc\", :border-style \"solid\"}} \"hello\"] ^#:portal.viewer{:default :portal.viewer/hiccup} [:div [:portal.viewer/markdown \"hello *hello* **hello**\"]] ^#:portal.viewer{:default :portal.viewer/hiccup} [:div [:portal.viewer/code \"(defn f [x] (+  x 9))\"]] ^#:portal.viewer{:default :portal.viewer/hiccup} [:portal.viewer/vega-lite ^#:kindly{:kind :kind/vega-lite} {:encoding {:y {:field \"y\", :type \"quantitative\"}, :size {:value 400}, :x {:field \"x\", :type \"quantitative\"}}, :mark {:type \"circle\", :tooltip true}, :width 400, :background \"floralwhite\", :height 100, :data {:values \"x,y\\n1,1\\n2,-4\\n3,9\\n\", :format {:type \"csv\"}}}]]")}
                 , document.currentScript.parentElement);</script></div>
 </section>
 <section id="fragment" class="level2" data-number="3.24">
@@ -2134,15 +2136,15 @@ window.Quarto = {
 <tbody>
 <tr class="odd">
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">0.81011932</td>
+<td style="text-align: right;">0.62032092</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">1</td>
-<td style="text-align: right;">0.64160909</td>
+<td style="text-align: right;">0.90202578</td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">2</td>
-<td style="text-align: right;">0.92910287</td>
+<td style="text-align: right;">0.03919255</td>
 </tr>
 </tbody>
 </table>
@@ -2165,15 +2167,15 @@ window.Quarto = {
 <tbody>
 <tr class="odd">
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">0.63078369</td>
+<td style="text-align: right;">0.49664465</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">1</td>
-<td style="text-align: right;">0.32228059</td>
+<td style="text-align: right;">0.38605003</td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">2</td>
-<td style="text-align: right;">0.36581124</td>
+<td style="text-align: right;">0.34130784</td>
 </tr>
 </tbody>
 </table>
