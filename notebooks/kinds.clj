@@ -414,40 +414,6 @@ filtered = data.filter(function(penguin) {
 
 tree-image
 
-;; ## ML models
-
-;; By default (according to `kindly/advice`), a machine learning model of the [Smile](https://haifengl.github.io/) library is inferred to be of `kind/smile-model`.
-
-(smile.regression.OLS/fit
- (smile.data.formula.Formula/lhs "y")
- (smile.data.DataFrame/of (into-array [(double-array [1 1 2])
-                                       (double-array [2 4 5])
-                                       (double-array [3 9 13])
-                                       (double-array [4 16 19])])
-                          (into-array ["w" "x" "y"])))
-
-(defonce marketing-dataset
-  (tc/dataset "https://github.com/scicloj/datarium-CSV/raw/main/data/marketing.csv.gz"
-              {:key-fn keyword}))
-
-
-(require '[scicloj.noj.v1.stats :as noj.stats]
-         '[scicloj.metamorph.ml :as ml])
-
-(def marketing-model
-  (-> marketing-dataset
-      (noj.stats/linear-regression-model :sales
-                                         [:youtube
-                                          :facebook
-                                          :newspaper])
-      ml/thaw-model))
-
-(type marketing-model)
-
-marketing-model
-
-;; This kind is displayed by printing the value displaying it as code.
-
 ;; ## Datasets
 
 ;; By default (according to `kindly/advice`), [tech.ml.dataset](https://github.com/techascent/tech.ml.dataset) / [Tablecloth](https://scicloj.github.io/tablecloth) datasets are inferred to be of `kind/dataset`.
