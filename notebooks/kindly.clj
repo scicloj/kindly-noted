@@ -67,6 +67,8 @@
 
 (sort kindly/known-kinds)
 
+;; You can find more (details and examples of using these kinds)[/kindly-noted/kinds.html] in the Kindly book.
+
 ;; ## How to use Kinds?
 
 ;; ### Attaching metadata to forms
