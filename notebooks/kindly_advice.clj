@@ -94,7 +94,7 @@ In the following example, we add our own advisor, which recognizes vectors begin
 
 (kindly-advice/set-advisors!
  (cons #'my-advisor
-       kindly-advice/default-advidors))
+       kindly-advice/default-advisors))
 
 (-> {:form '[:div [:p "hello"]]}
     kindly-advice/advise
