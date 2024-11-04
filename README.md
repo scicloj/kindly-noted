@@ -1,5 +1,5 @@
 # kindly-noted
 
-This project documents the ecosystem of tools and libraries around the [Kindly](https://scicloj.github.io/kindly-noted/kindly) convention for requesting data visualizations.
+This project documents the ecosystem of tools and libraries around the [Kindly](https://scicloj.github.io/kindly-noted/kindly) standard for requesting data visualizations.
 
-[book](https://scicloj.github.io/kindly-noted/)
+[Book](https://scicloj.github.io/kindly-noted/)
