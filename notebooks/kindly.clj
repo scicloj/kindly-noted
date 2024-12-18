@@ -1,6 +1,6 @@
 ;; # Kindly
 
-;; Kindly is a proposed standard for requesting data visualizations in Clojure.
+;; Kindly is a standard for requesting data visualizations in Clojure.
 
 ;; It specifies in what kinds of way Clojure forms and values should be displayed.
 
