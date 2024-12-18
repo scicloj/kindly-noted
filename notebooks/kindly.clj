@@ -35,11 +35,9 @@
 
 ;; ## Status
 
-;; * Supported by Clay & Claykind
-;;
-;; * Has adapters for Portal (kind-portal) & Clerk (kind-clerk)
-;;
-;; * Ready to explore on other tools
+;; * supported by [Clay](https://scicloj.github.io/clay/)
+;; * implemented a partially working adapter for Portal ([kind-portal](https://github.com/scicloj/kind-portal))
+;; * actively working to support other tools such as Cursive  
 
 ;; ## Existing book/notebook projects using Kindly
 
