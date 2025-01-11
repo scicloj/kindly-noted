@@ -37,7 +37,8 @@
 
 ;; * supported by [Clay](https://scicloj.github.io/clay/)
 ;; * implemented a partially working adapter for Portal ([kind-portal](https://github.com/scicloj/kind-portal))
-;; * actively working to support other tools such as Cursive  
+;; * implemented a partially working adapter for Clerk ([kind-clerk](https://github.com/scicloj/kind-clerk))
+;; * actively working to support other tools such as Cursive, Calva, and Clojupyter  
 
 ;; ## Existing book/notebook projects using Kindly
 
