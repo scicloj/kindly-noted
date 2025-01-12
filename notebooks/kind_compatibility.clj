@@ -26,7 +26,7 @@
    {:clojupyter :u, :description :kind/set, :clay :c, :clerk :u, :kind :kind/set}
    {:clojupyter :n, :description :kind/reagent, :clay :c, :clerk :u, :kind :kind/reagent}
    {:clojupyter :u, :description :kind/var, :clay :c, :clerk :u, :kind :kind/var}
-   {:clojupyter :n, :description :kind/hidden, :clay :c, :clerk :u, :kind :kind/hidden}
+   {:clojupyter :c, :description :kind/hidden, :clay :c, :clerk :u, :kind :kind/hidden}
    {:clojupyter :c, :description :kind/hiccup, :clay :c, :clerk :u, :kind :kind/hiccup}
    {:clojupyter :c, :description :kind/md, :clay :c, :clerk :u, :kind :kind/md}
    {:clojupyter :r, :description :kind/tex, :clay :c, :clerk :u, :kind :kind/tex}
@@ -35,7 +35,7 @@
    {:clojupyter :n, :description :kind/video, :clay :c, :clerk :u, :kind :kind/video}
    {:clojupyter :n, :description :kind/observable, :clay :c, :clerk :u, :kind :kind/observable}
    {:clojupyter :u, :description :kind/emmy-viewers, :clay :c, :clerk :u, :kind :kind/emmy-viewers}
-   {:clojupyter :u, :description :kind/pprint, :clay :c, :clerk :u, :kind :kind/pprint}
+   {:clojupyter :r, :description :kind/pprint, :clay :c, :clerk :u, :kind :kind/pprint}
    {:clojupyter :c, :description :kind/highcharts, :clay :c, :clerk :u, :kind :kind/highcharts}
    {:clojupyter :r, :description :kind/table, :clay :c, :clerk :u, :kind :kind/table}
    {:clojupyter :e, :description :kind/fn, :clay :c, :clerk :u, :kind :kind/fn}
