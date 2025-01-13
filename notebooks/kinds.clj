@@ -414,6 +414,11 @@ filtered = data.filter(function(penguin) {
 
 tree-image
 
+;; URLS can be annotated as images as well.
+
+(kind/image
+ {:src "https://upload.wikimedia.org/wikipedia/commons/4/4e/Fifty-fifty_-_something_better_than_rolling_Easter_eggs_%28cropped%29.jpg"})
+
 ;; ## Datasets
 
 ;; By default (according to `kindly/advice`), [tech.ml.dataset](https://github.com/techascent/tech.ml.dataset) / [Tablecloth](https://scicloj.github.io/tablecloth) datasets are inferred to be of `kind/dataset`.
