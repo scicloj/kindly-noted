@@ -71,6 +71,19 @@ people-as-vectors
  (kind/md
   "**hello**") :x}
 
+;; Here is a more detailed example:
+
+{:vector-of-numbers [2 9 -1]
+ :vector-of-different-things ["hi"
+                              (kind/hiccup
+                               [:big [:big "hello"]])]
+ :map-of-different-things {:markdown (kind/md ["*hi*, **hi**"])
+                           :number 9999}
+ :hiccup (kind/hiccup
+          [:big [:big "bye"]])
+ :dataset (tc/dataset {:x (range 3)
+                       :y [:A :B :C]})}
+
 ;; ## Hidden
 
 ;; Values of `kind/hidden` are simply not displayed.
