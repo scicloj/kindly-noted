@@ -160,6 +160,57 @@ hello-hiccup
   (kind/code
    "(defn f [x] (+  x 9))")])
 
+;; A more detailed example:
+(kind/hiccup
+ [:div {:style {:background "#f5f3ff"
+                :border "solid"}}
+
+  [:hr]
+  [:pre [:code "kind/md"]]
+  (kind/md "*some text* **some more text**")
+
+  [:hr]
+  [:pre [:code "kind/code"]]
+  (kind/code "{:x (1 2 [3 4])}")
+
+  [:hr]
+  [:pre [:code "kind/dataset"]]
+  (tc/dataset {:x (range 13)
+               :y (map inc (range 13))})
+  [:hr]
+  [:pre [:code "kind/table"]]
+  (kind/table
+   (tc/dataset {:x (range 13)
+                :y (map inc (range 13))})
+   {:style {:height "200px"}})
+  [:hr]
+  [:pre [:code "kind/vega-lite"]]
+  vega-lite-plot
+  [:hr]
+  [:pre [:code "kind/vega-lite"]]
+  (-> {:data {:values "x,y
+1,1
+2,4
+3,9
+-1,1
+-2,4
+-3,9"
+              :format {:type :csv}},
+       :mark "point"
+       :encoding
+       {:x {:field "x", :type "quantitative"}
+        :y {:field "y", :type "quantitative"}}}
+      kind/vega-lite)
+
+  [:hr]
+  [:pre [:code "kind/reagent"]]
+  (kind/reagent
+   ['(fn [numbers]
+       [:p {:style {:background "#d4ebe9"}}
+        (pr-str (map inc numbers))])
+    (vec (range 40))])])
+
+
 ;; ## Reagent
 
 ;; Values of `kind/reagent` express [Reagent](https://reagent-project.github.io/) components.
