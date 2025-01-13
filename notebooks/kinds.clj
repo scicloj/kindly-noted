@@ -594,7 +594,8 @@ tree-image
  tree-image)
 
 (kind/pprint
- kind/dataset)
+ (tc/dataset {:x (range 3)
+              :y [:A :B :C]}))
 
 ;; ## Portal
 
