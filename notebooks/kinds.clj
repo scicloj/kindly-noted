@@ -185,9 +185,6 @@ hello-hiccup
    {:style {:height "200px"}})
   [:hr]
   [:pre [:code "kind/vega-lite"]]
-  vega-lite-plot
-  [:hr]
-  [:pre [:code "kind/vega-lite"]]
   (-> {:data {:values "x,y
 1,1
 2,4
