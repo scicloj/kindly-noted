@@ -227,6 +227,12 @@ vega-lite-plot
                   {:category :F :amount 53}
                   {:category :G :amount 19}
                   {:category :H :amount 87}]}
+  :signals [{:name :tooltip
+             :value {}
+             :on [{:events "rect:mouseover"
+                   :update :datum}
+                  {:events "rect:mouseout"
+                   :update "{}"}]}]
   :scales [{:name :xscale
             :type :band
             :domain {:data :table
