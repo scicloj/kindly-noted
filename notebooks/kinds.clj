@@ -732,6 +732,10 @@ tree-image
  (tc/dataset {:x (range 3)
               :y [:A :B :C]}))
 
+;; ## emmy-viewers
+;; The support for [Emmy-viewers](https://github.com/mentat-collective/emmy-viewers)
+;; is documented at the 📖 [Emmy-viewers chapter](./emmy_viewers.html)📖 of this book.
+
 ;; ## Portal
 
 ;; Values of `kind/portal` are displayed using an embedded
@@ -865,3 +869,4 @@ tree-image
 ;; For now, pleaes see [the documentation at the Clay tool](https://scicloj.github.io/clay/#test-generation).
 
 ;; If you are interested in this option, please reach out. We can test it with your project needs, and it will help stabilizing a useful API.
+
