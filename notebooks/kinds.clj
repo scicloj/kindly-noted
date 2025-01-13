@@ -526,24 +526,12 @@ tree-image
 (-> people-as-dataset
     (kind/table {:element/max-height "300px"}))
 
-;; It is possible to use [datatables](https://datatables.net/) to reneder `kind/table`,
-;; and in this case the user may specify [datatables options](https://datatables.net/manual/options)
-;; (see [the full list](https://datatables.net/reference/option/)).
-
-(-> people-as-maps
-    tc/dataset
-    (kind/table {:use-datatables true}))
-
-(-> people-as-dataset
-    (kind/table {:use-datatables true
-                 :datatables {:scrollY 300
-                              :paging false}}))
-
 ;; Some tools support [datatables](https://datatables.net/)
 ;; for displaying tables.
 ;; This can be expressed using the `:use-datatables` option.
 
-(-> people-as-dataset
+(-> people-as-maps
+    tc/dataset
     (kind/table {:use-datatables true}))
 
 ;; In addition, the `:datatables` option can be used to control
@@ -553,9 +541,6 @@ tree-image
 (-> people-as-dataset
     (kind/table {:use-datatables true
                  :datatables {:scrollY 200}}))
-
-;; and in this case the user may specify [datatables options](https://datatables.net/manual/options)
-;; (see [the full list](https://datatables.net/reference/option/)).
 
 ;; The `kind/table` has recursive semantics:
 ;; if the values inside them have kind information,
