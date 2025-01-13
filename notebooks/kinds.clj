@@ -401,7 +401,6 @@ vega-lite-plot
 
 ;; [Observable](https://observablehq.com/) visualizations can be written as Javascript. Some of us are working on a Clojure DSL to express the same.
 
-
 ;; Examples from [Quarto's Observable documentation](https://quarto.org/docs/interactive/ojs/):
 
 (kind/observable
@@ -484,7 +483,15 @@ filtered = data.filter(function(penguin) {
 ;; ## Video
 
 ;; Values of `kind/video` are specifications for embedded videos.
-;; See, e.g.,  [HTML Youtube Videos](https://www.w3schools.com/html/html_youtube.asp) on w3schools, for the relevant options.
+
+;; URLs that serve video files can be specified
+;; using the `:src` key:
+
+(kind/video {:src "https://www.sample-videos.com/video321/mp4/240/big_buck_bunny_240p_30mb.mp4"})
+
+;; Youtube videos can be spscified using
+;; the `:youtube-id` key:
+;; See [HTML Youtube Videos](https://www.w3schools.com/html/html_youtube.asp) on w3schools, for the relevant options.
 
 (kind/video
  {:youtube-id "DAQnvAgBma8"})
