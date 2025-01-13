@@ -102,8 +102,11 @@ people-as-vectors
 
 ;; Values of `kind/code` are rendered as Clojure code.
 
+(kind/code "(update {:x 9} :x inc)")
+
 (kind/code
- "(defn f [x] {:y (+  x 9)})")
+ ["(update {:x 9} :x inc)"
+  "(update {:x 9} :x dec)"])
 
 ;; ## Edn
 
