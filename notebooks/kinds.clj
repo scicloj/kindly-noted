@@ -422,6 +422,11 @@ tree-image
 (kind/image
  {:src "https://upload.wikimedia.org/wikipedia/commons/4/4e/Fifty-fifty_-_something_better_than_rolling_Easter_eggs_%28cropped%29.jpg"})
 
+;; Other image representations are currently not supported.
+
+(kind/image
+ "AN IMAGE")
+
 ;; ## Datasets
 
 ;; By default (according to `kindly/advice`), [tech.ml.dataset](https://github.com/techascent/tech.ml.dataset) / [Tablecloth](https://scicloj.github.io/tablecloth) datasets are inferred to be of `kind/dataset`.
