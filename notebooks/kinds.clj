@@ -290,26 +290,37 @@ vega-lite-plot
 (kind/cytoscape
  cytoscape-example)
 
-(-> cytoscape-example
-    (kind/cytoscape {:style
-                     {:width "100px"
-                      :height "100px"}}))
+(kind/cytoscape
+ cytoscape-example
+ {:style
+  {:width "100px"
+   :height "100px"
+   :background "floralwhite"}})
 
 ;; ## ECharts
 
 ;; This example is taken from Apache ECharts' [Getting Started](https://echarts.apache.org/handbook/en/get-started/).
 
+(def echarts-example
+  {:title {:text "Echarts Example"}
+   :tooltip {}
+   :legend {:data ["sales"]}
+   :xAxis {:data ["Shirts", "Cardigans", "Chiffons",
+                  "Pants", "Heels", "Socks"]}
+   :yAxis {}
+   :series [{:name "sales"
+             :type "bar"
+             :data [5 20 36
+                    10 10 20]}]})
+
 (kind/echarts
- {:title {:text "Echarts Example"}
-  :tooltip {}
-  :legend {:data ["sales"]}
-  :xAxis {:data ["Shirts", "Cardigans", "Chiffons",
-                 "Pants", "Heels", "Socks"]}
-  :yAxis {}
-  :series [{:name "sales"
-            :type "bar"
-            :data [5 20 36
-                   10 10 20]}]})
+ echarts-example)
+
+(-> echarts-example
+    (kind/echarts {:style
+                   {:width "500px"
+                    :height "200px"
+                    :background "floralwhite"}}))
 
 ;; ## Plotly
 
