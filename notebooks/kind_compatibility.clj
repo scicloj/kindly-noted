@@ -1,3 +1,5 @@
+;; # Kind compatibility matrix
+
 ^:kindly/hide-code
 (ns kind-compatibility
   (:require [scicloj.kindly.v4.api :as kindly]
