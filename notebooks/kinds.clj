@@ -1,11 +1,12 @@
 ;; # Catalogue of visualization kinds
 
 (ns kinds
-  (:require [scicloj.kindly.v4.api :as kindly]
-            [scicloj.kindly.v4.kind :as kind]
-            [clojure.math :as math]
-            [tablecloth.api :as tc]
-            [tablecloth.column.api :as tcc]))
+  (:require
+   [clojure.math :as math]
+   [clojure.test :refer [is]]
+   [scicloj.kindly.v4.kind :as kind]
+   [tablecloth.api :as tc]
+   [tablecloth.column.api :as tcc]))
 
 ;; ## Plain values
 
@@ -1081,7 +1082,7 @@ tree-image
    :x (range 3)
    :y (repeatedly 3 rand)})
 
-;; ## test and test-last
+;; ## test-last
 
 ;; `kind/test-last` allows to define a test over the previous form. This is still work-in-progress, and will be documented soon.
 
@@ -1089,8 +1090,12 @@ tree-image
 
 ;; If you are interested in this option, please reach out. We can test it with your project needs, and it will help stabilizing a useful API.
 
-(kind/test (= 1 1))
 (kind/test-last)
+
+;; test
+;;; `kind/test` displays as success or failure
+(kind/test (is (= 1 1)))
+
 
 
 ;; ## var
