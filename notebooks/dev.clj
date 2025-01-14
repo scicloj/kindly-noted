@@ -7,7 +7,7 @@
              :source-path ["index.clj"
                            "kindly.clj"
                            "kinds.clj"
-                           "kind_compatibility.clj"
+                           ;; "kind_compatibility.clj"
                            "emmy_viewers.clj"
                            "kindly_advice.clj"]
              :base-target-path "docs"
