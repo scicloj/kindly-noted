@@ -7,6 +7,7 @@
                            "kind_compatibility.clj"
                            "kindly.clj"
                            "kinds.clj"
+                           "emmy_viewers.clj"
                            "kindly_advice.clj"]
              :base-target-path "docs"
              :book {:title "Kindly Noted"}

@@ -36,3 +36,4 @@ clay_files
 *.qmd
 _quarto.yml
 
+.clj-kondo
