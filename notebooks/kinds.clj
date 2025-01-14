@@ -86,6 +86,25 @@ people-as-vectors
  :dataset (tc/dataset {:x (range 3)
                        :y [:A :B :C]})}
 
+;; ## kind/seq
+;; Renders as plain seq with recursive kind semantics
+(kind/seq [1 2 3 4])
+
+;; ## kind/vector
+;; Renders as plain vector with recursive kind semantics
+(kind/vector [1 2 3])
+
+
+;; ## kind/map
+;; Renders as plain map with recursive kind semantics
+(kind/map {1 "A" :B 'C})
+
+;; ## kind/set
+;; Renders as plain set with recursive kind semantics
+
+(kind/set #{1 2 3})
+
+
 ;; ## Hidden
 
 ;; Values of `kind/hidden` are simply not displayed.
@@ -1062,7 +1081,7 @@ tree-image
    :x (range 3)
    :y (repeatedly 3 rand)})
 
-;; ## test-last
+;; ## test and test-last
 
 ;; `kind/test-last` allows to define a test over the previous form. This is still work-in-progress, and will be documented soon.
 
@@ -1070,3 +1089,11 @@ tree-image
 
 ;; If you are interested in this option, please reach out. We can test it with your project needs, and it will help stabilizing a useful API.
 
+(kind/test (= 1 1))
+(kind/test-last)
+
+
+;; ## var
+;; `kind-var` renders as the var name of the defined var
+(kind/var
+ (def a "hello"))
