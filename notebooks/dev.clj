@@ -4,6 +4,7 @@
 (clay/make! {:format [:quarto :html]
              :base-source-path "notebooks"
              :source-path ["index.clj"
+                           "kind_compatibility.clj"
                            "kindly.clj"
                            "kinds.clj"
                            "emmy_viewers.clj"
