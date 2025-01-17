@@ -32,9 +32,9 @@
 ;; * for blog posts, books, slideshows, reports, dashboards, and interactive analyses,
 ;; * that just will work across different tools,
 ;; * without even mentioning those tools in the code.
-;; * we aim for copy/paste compatibility of visualisation code accross different tools
-;;   * as it is a given for normal Clojure code producing textual output in a text oriented repl
-;;   * visualisation code working in one tool should produce the same or very similar result in all compatible tools 
+;; * We aim for copy/paste compatibility of visualisation code accross different tools:
+;;   * as it is a given for normal Clojure code producing textual output in a text oriented repl,
+;;   * visualisation code working in one tool should produce the same or very similar result in all compatible tools.
 
 
 ;; ## Status
