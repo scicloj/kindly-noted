@@ -227,8 +227,29 @@ hello-hiccup
   {:initial-value 9
    :background-color "#d4ebe9"}])
 
-;; The `:reagent/deps` option can be used to provide additional dependencies.
-;; This should be documented better soon.
+;; The `:html/deps` option can be used to provide additional dependencies.
+
+(kind/reagent
+ ['(fn []
+     [:div {:style {:height "200px"}
+            :ref (fn [el]
+                   (let [m (-> js/L
+                               (.map el)
+                               (.setView (clj->js [51.505 -0.09])
+                                         13))]
+                     (-> js/L
+                         .-tileLayer
+                         (.provider "OpenStreetMap.Mapnik")
+                         (.addTo m))
+                     (-> js/L
+                         (.marker (clj->js [51.5 -0.09]))
+                         (.addTo m)
+                         (.bindPopup "A pretty CSS popup.<br> Easily customizable.")
+                         (.openPopup))))}])]
+ ;; Note we need to mention the dependency:
+ {:html/deps [:leaflet]})
+
+;; Possible ways to specify deps should be documented better soon.
 
 ;; ## HTML
 
