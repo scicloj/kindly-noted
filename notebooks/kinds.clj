@@ -162,7 +162,22 @@ hello-hiccup
   (kind/code
    "(defn f [x] (+  x 9))")])
 
-;; A more detailed example:
+;; Scittle and Reagent kinds are recognized automatically
+;; inside Hiccup:
+
+;; * A list beginning with a symbol means `kind/scittle`.
+;; * A vector with a list beginning with a symbol means `kind/reagent`.
+
+(kind/hiccup
+ [:div
+  ;; recognized as `kind/scittle`
+  '(defn g [x]
+     (+ x 9))
+  ;; recognized as `kind/reagent`
+  ['(fn []
+      [:p (g 11)])]])
+
+;; A more detailed nesting example:
 (kind/hiccup
  [:div {:style {:background "#f5f3ff"
                 :border "solid"}}
@@ -202,12 +217,13 @@ hello-hiccup
       kind/vega-lite)
 
   [:hr]
-  [:pre [:code "kind/reagent"]]
-  (kind/reagent
-   ['(fn [numbers]
-       [:p {:style {:background "#d4ebe9"}}
-        (pr-str (map inc numbers))])
-    (vec (range 40))])])
+  [:pre [:code "kind/reagent"]
+   [:p "(automatically recognized without annotation)"]]
+  ;; Recognized as `kind/reagent`:
+  ['(fn [numbers]
+      [:p {:style {:background "#d4ebe9"}}
+       (pr-str (map inc numbers))])
+   (vec (range 40))]])
 
 
 ;; ## Reagent
@@ -227,8 +243,45 @@ hello-hiccup
   {:initial-value 9
    :background-color "#d4ebe9"}])
 
-;; The `:reagent/deps` option can be used to provide additional dependencies.
-;; This should be documented better soon.
+;; The `:html/deps` option can be used to provide additional dependencies:
+
+(kind/reagent
+ ['(fn []
+     [:div {:style {:height "200px"}
+            :ref (fn [el]
+                   (let [m (-> js/L
+                               (.map el)
+                               (.setView (clj->js [51.505 -0.09])
+                                         13))]
+                     (-> js/L
+                         .-tileLayer
+                         (.provider "OpenStreetMap.Mapnik")
+                         (.addTo m))
+                     (-> js/L
+                         (.marker (clj->js [51.5 -0.09]))
+                         (.addTo m)
+                         (.bindPopup "A pretty CSS popup.<br> Easily customizable.")
+                         (.openPopup))))}])]
+ ;; Note we need to mention the dependency:
+ {:html/deps [:leaflet]})
+
+;; Possible ways to specify deps should be documented better soon.
+
+;; ## Scittle
+
+;; With `kind/scittle`, one may specify Clojurescript code to run through
+;; [Scittle](https://github.com/babashka/scittle).
+
+(kind/scittle
+ '(.log js/console "hello"))
+
+(kind/scittle
+ '(defn f [x]
+    (+ x 9)))
+
+(kind/reagent
+ ['(fn []
+     [:p (f 11)])])
 
 ;; ## HTML
 
