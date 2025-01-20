@@ -165,6 +165,9 @@ hello-hiccup
 ;; Scittle and Reagent kinds are recognized automatically
 ;; inside Hiccup:
 
+;; * A list beginning with a symbol means `kind/scittle`.
+;; * A vector with a list beginning with a symbol means `kind/reagent`.
+
 (kind/hiccup
  [:div
   ;; recognized as `kind/scittle`
