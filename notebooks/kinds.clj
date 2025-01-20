@@ -162,7 +162,19 @@ hello-hiccup
   (kind/code
    "(defn f [x] (+  x 9))")])
 
-;; A more detailed example:
+;; Scittle and Reagent kinds are recognized automatically
+;; inside Hiccup:
+
+(kind/hiccup
+ [:div
+  ;; recognized as `kind/scittle`
+  '(defn g [x]
+     (+ x 9))
+  ;; recognized as `kind/reagent`
+  ['(fn []
+      [:p (g 11)])]])
+
+;; A more detailed nesting example:
 (kind/hiccup
  [:div {:style {:background "#f5f3ff"
                 :border "solid"}}
@@ -202,12 +214,13 @@ hello-hiccup
       kind/vega-lite)
 
   [:hr]
-  [:pre [:code "kind/reagent"]]
-  (kind/reagent
-   ['(fn [numbers]
-       [:p {:style {:background "#d4ebe9"}}
-        (pr-str (map inc numbers))])
-    (vec (range 40))])])
+  [:pre [:code "kind/reagent"]
+   [:p "(automatically recognized without annotation)"]]
+  ;; Recognized as `kind/reagent`:
+  ['(fn [numbers]
+      [:p {:style {:background "#d4ebe9"}}
+       (pr-str (map inc numbers))])
+   (vec (range 40))]])
 
 
 ;; ## Reagent
