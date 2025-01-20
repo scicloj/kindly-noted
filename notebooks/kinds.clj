@@ -227,7 +227,7 @@ hello-hiccup
   {:initial-value 9
    :background-color "#d4ebe9"}])
 
-;; The `:html/deps` option can be used to provide additional dependencies.
+;; The `:html/deps` option can be used to provide additional dependencies:
 
 (kind/reagent
  ['(fn []
@@ -250,6 +250,22 @@ hello-hiccup
  {:html/deps [:leaflet]})
 
 ;; Possible ways to specify deps should be documented better soon.
+
+;; ## Scittle
+
+;; With `kind/scittle`, one may specify Clojurescript code to run through
+;; [Scittle](https://github.com/babashka/scittle).
+
+(kind/scittle
+ '(.log js/console "hello"))
+
+(kind/scittle
+ '(defn f [x]
+    (+ x 9)))
+
+(kind/reagent
+ ['(fn []
+     [:p (f 11)])])
 
 ;; ## HTML
 
