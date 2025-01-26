@@ -14,9 +14,11 @@ This book documents the ecosystem of tools and libraries around the [Kindly](htt
 
 ## In this book
 
-- [Kindly](./kindly.html) intro
+- [Kindly intro](./kindly.html)
 
 - [Catalogue of visualization kinds](./kinds.html)
+
+- [Kind compatibility matrix](./kind_compatibility.html)
      
 - [Emmy-viewers](./emmy_viewers.html)
 
