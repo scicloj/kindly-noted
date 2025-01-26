@@ -44,49 +44,31 @@
    {:clojupyter :n, :description :kind/htmlwidgets-ggplotly, :clay :c, :clerk :u, :kind :kind/htmlwidgets-ggplotly}
    {:clojupyter :n, :description :kind/fragment, :clay :c, :clerk :n, :kind :kind/fragment}
    {:clojupyter :n, :description :kind/scittle, :clay :c, :clerk :n, :kind :kind/scittle}
-   {:clojupyter :r, :description :kind/test-last, :clay :c, :clerk :n, :kind :kind/test-last}
-
-
-   ])
+   {:clojupyter :r, :description :kind/test-last, :clay :c, :clerk :n, :kind :kind/test-last}])
 
 ^:kindly/hide-code
 (defn status->upper [m k]
-  
   (update m k (fn [v] 
                 (case v 
                   :c  (kind/hiccup [:div {:style "background-color:green"} (-> v name str/upper-case)])
                   :u (kind/hiccup [:div {:style "background-color:grey"} (-> v name str/upper-case)])
                   :n (kind/hiccup [:div {:style "background-color:red"} (-> v name str/upper-case)])
                   :e (kind/hiccup [:div {:style "background-color:red"} (-> v name str/upper-case)])
-                  :r (kind/hiccup [:div {:style "background-color:yellow"} (-> v name str/upper-case)])
-                                        ;(-> v name str/upper-case)
-
-                  )
-                
-                )
-          
-          ))
+                  :r (kind/hiccup [:div {:style "background-color:yellow"} (-> v name str/upper-case)])))))
 
 ^:kindly/hide-code
 (def t
-  (-> 
-   (map
-    #(-> % 
-         (status->upper :clay)
-         (status->upper :clerk)
-         (status->upper :clojupyter)
-         (update :kind (fn [v] (str v)))
-         
-         
-         )
-    kind-status
-    )
- (tc/dataset)
- (tc/reorder-columns [:kind :description :clay :clojupyter :clerk])
- (tc/order-by [:kind])  
- ;(tech.v3.dataset.print/print-range  :all)
-  (tc/rows) 
-   ))
+  (-> (map #(-> % 
+                (status->upper :clay)
+                (status->upper :clerk)
+                (status->upper :clojupyter)
+                (update :kind (fn [v] (str v))))
+           kind-status)
+      (tc/dataset)
+      (tc/reorder-columns [:kind :description :clay :clojupyter :clerk])
+      (tc/order-by [:kind])  
+      #_(tech.v3.dataset.print/print-range  :all)
+      (tc/rows)))
 
 ^:kindly/hide-code
 {:c :compatible
@@ -99,7 +81,4 @@
 ^:kindly/hide-code
 (kind/table 
  {:row-vectors t
-  :column-names [:kind :description :clay :clojupyter :clerk]
-  }
- 
- )
+  :column-names [:kind :description :clay :clojupyter :clerk]})
