@@ -10,7 +10,7 @@
             ))
 ^:kindly/hide-code
 (def kind-status
-  [{:clojupyter :n, :description :kind/edn, :clay :c, :clerk :n, :kind :kind/edn}
+  [{:clojupyter :n, :description :kind/edn, :clay :n, :clerk :n, :kind :kind/edn}
    {:clojupyter :r, :description :kind/code, :clay :c, :clerk :n, :kind :kind/code}
    {:clojupyter :n, :description :kind/vega, :clay :c, :clerk :c, :kind :kind/vega}
    {:clojupyter :n, :description :kind/smile-model, :clay :c, :clerk :n, :kind :kind/smile-model}
