@@ -16,7 +16,7 @@
    {:clojupyter :n, :description :kind/smile-model, :clay :c, :clerk :n, :kind :kind/smile-model}
    {:clojupyter :c, :description :kind/image, :clay :c, :clerk :r, :kind :kind/image}
    {:clojupyter :c, :description :kind/plotly, :clay :c, :clerk :c, :kind :kind/plotly}
-   {:clojupyter :c, :description :kind/echarts, :clay :c, :clerk :u, :kind :kind/echarts}
+   {:clojupyter :c, :description :kind/echarts, :clay :c, :clerk :c, :kind :kind/echarts}
    {:clojupyter :r, :description :kind/map, :clay :c, :clerk :c, :kind :kind/map}
    {:clojupyter :n, :description :kind/portal, :clay :c, :clerk :n, :kind :kind/portal}
    {:clojupyter :r, :description :kind/test, :clay :c, :clerk :n, :kind :kind/test}
@@ -70,6 +70,16 @@
       #_(tech.v3.dataset.print/print-range  :all)
       (tc/rows)))
 
+;; The following table maps the landscape of tools supporing the Kindly standard.
+
+;; ## Notes
+
+;; * Currently, the table does not provide any details regarding the **nesting** of kinds:
+;; whether it is possible to contain a `kind/image` inside `kind/hiccup`, etc.
+;; This will require a more detailed exploration.
+
+;; ## Legend
+
 ^:kindly/hide-code
 {:c :compatible
  :u :unknown
@@ -77,6 +87,14 @@
  :e :exception
  :r :rendering-differs-to-clay} 
 
+;; ## Tools to be added
+
+;; * Kindly-render (generic tool-agnostic infrastructure)
+;; * Portal
+;; * Cursive
+;; * Calva
+
+;; ## Details
 
 ^:kindly/hide-code
 (kind/table 
