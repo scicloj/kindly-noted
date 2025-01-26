@@ -103,4 +103,4 @@
 ^:kindly/hide-code
 (kind/table 
  {:row-vectors t
-  :column-names [:kind  :clay :clojupyter :clerk]})
+  :column-names [:kind :clay :clojupyter :clerk]})
