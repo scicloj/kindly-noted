@@ -9,41 +9,41 @@
 
 ^:kindly/hide-code
 (def kind-status
-  [{:clojupyter :n, :clay :c, :clerk :u, :kind :kind/edn}
-   {:clojupyter :r, :clay :c, :clerk :u, :kind :kind/code}
-   {:clojupyter :c, :clay :c, :clerk :u, :kind :kind/vega}
-   {:clojupyter :n, :clay :c, :clerk :u, :kind :kind/smile-model}
-   {:clojupyter :c, :clay :c, :clerk :u, :kind :kind/image}
-   {:clojupyter :c, :clay :c, :clerk :u, :kind :kind/plotly}
-   {:clojupyter :c, :clay :c, :clerk :u, :kind :kind/echarts}
-   {:clojupyter :r, :clay :c, :clerk :u, :kind :kind/map}
-   {:clojupyter :n, :clay :c, :clerk :u, :kind :kind/portal}
-   {:clojupyter :r, :clay :c, :clerk :u, :kind :kind/test}
-   {:clojupyter :c, :clay :c, :clerk :u, :kind :kind/dataset}
-   {:clojupyter :c, :clay :c, :clerk :u, :kind :kind/vega-lite}
-   {:clojupyter :c, :clay :c, :clerk :u, :kind :kind/html}
-   {:clojupyter :c, :clay :c, :clerk :u, :kind :kind/cytoscape}
-   {:clojupyter :r, :clay :c, :clerk :u, :kind :kind/set}
-   {:clojupyter :c, :clay :c, :clerk :u, :kind :kind/reagent}
-   {:clojupyter :c, :clay :c, :clerk :u, :kind :kind/var}
-   {:clojupyter :c, :clay :c, :clerk :u, :kind :kind/hidden}
-   {:clojupyter :c, :clay :c, :clerk :u, :kind :kind/hiccup}
-   {:clojupyter :c, :clay :c, :clerk :u, :kind :kind/md}
-   {:clojupyter :r, :clay :c, :clerk :u, :kind :kind/tex}
-   {:clojupyter :r, :clay :c, :clerk :u, :kind :kind/seq}
-   {:clojupyter :n, :clay :c, :clerk :u, :kind :kind/htmlwidgets-plotly}
-   {:clojupyter :r, :clay :c, :clerk :u, :kind :kind/video}
-   {:clojupyter :n, :clay :c, :clerk :u, :kind :kind/observable}
-   {:clojupyter :n, :clay :c, :clerk :u, :kind :kind/emmy-viewers}
-   {:clojupyter :r, :clay :c, :clerk :u, :kind :kind/pprint}
-   {:clojupyter :c, :clay :c, :clerk :u, :kind :kind/highcharts}
-   {:clojupyter :r, :clay :c, :clerk :u, :kind :kind/table}
-   {:clojupyter :c, :clay :c, :clerk :u, :kind :kind/fn}
-   {:clojupyter :r, :clay :c, :clerk :u, :kind :kind/vector}
+  [{:clojupyter :n, :clay :n, :clerk :n, :kind :kind/edn}
+   {:clojupyter :r, :clay :c, :clerk :n, :kind :kind/code}
+   {:clojupyter :c, :clay :c, :clerk :c, :kind :kind/vega}
+   {:clojupyter :n, :clay :c, :clerk :n, :kind :kind/smile-model}
+   {:clojupyter :c, :clay :c, :clerk :r, :kind :kind/image}
+   {:clojupyter :c, :clay :c, :clerk :c, :kind :kind/plotly}
+   {:clojupyter :c, :clay :c, :clerk :c, :kind :kind/echarts}
+   {:clojupyter :r, :clay :c, :clerk :c, :kind :kind/map}
+   {:clojupyter :n, :clay :c, :clerk :n, :kind :kind/portal}
+   {:clojupyter :r, :clay :c, :clerk :n, :kind :kind/test}
+   {:clojupyter :c, :clay :c, :clerk :c, :kind :kind/dataset}
+   {:clojupyter :c, :clay :c, :clerk :c, :kind :kind/vega-lite}
+   {:clojupyter :c, :clay :c, :clerk :n, :kind :kind/html}
+   {:clojupyter :c, :clay :c, :clerk :c, :kind :kind/cytoscape}
+   {:clojupyter :r, :clay :c, :clerk :c, :kind :kind/set}
+   {:clojupyter :c, :clay :c, :clerk :n, :kind :kind/reagent}
+   {:clojupyter :c, :clay :c, :clerk :n, :kind :kind/var}
+   {:clojupyter :c, :clay :c, :clerk :n, :kind :kind/hidden}
+   {:clojupyter :c, :clay :c, :clerk :c, :kind :kind/hiccup}
+   {:clojupyter :c, :clay :c, :clerk :c, :kind :kind/md}
+   {:clojupyter :r, :clay :c, :clerk :n :kind :kind/tex}
+   {:clojupyter :r, :clay :c, :clerk :c, :kind :kind/seq}
+   {:clojupyter :n, :clay :c, :clerk :n, :kind :kind/htmlwidgets-plotly}
+   {:clojupyter :r, :clay :c, :clerk :n, :kind :kind/video}
+   {:clojupyter :n, :clay :c, :clerk :n, :kind :kind/observable}
+   {:clojupyter :n, :clay :c, :clerk :n, :kind :kind/emmy-viewers}
+   {:clojupyter :r, :clay :c, :clerk :n, :kind :kind/pprint}
+   {:clojupyter :c, :clay :c, :clerk :n, :kind :kind/highcharts}
+   {:clojupyter :r, :clay :c, :clerk :r, :kind :kind/table}
+   {:clojupyter :c, :clay :c, :clerk :n, :kind :kind/fn}
+   {:clojupyter :r, :clay :c, :clerk :c, :kind :kind/vector}
    {:clojupyter :n, :clay :c, :clerk :u, :kind :kind/htmlwidgets-ggplotly}
-   {:clojupyter :n, :clay :c, :clerk :u, :kind :kind/fragment}
-   {:clojupyter :c, :clay :c, :clerk :u, :kind :kind/scittle}
-   {:clojupyter :r, :clay :c, :clerk :u, :kind :kind/test-last}])
+   {:clojupyter :n, :clay :c, :clerk :n, :kind :kind/fragment}
+   {:clojupyter :c, :clay :c, :clerk :n, :kind :kind/scittle}
+   {:clojupyter :r, :clay :c, :clerk :n, :kind :kind/test-last}])
 
 
 ^:kindly/hide-code
