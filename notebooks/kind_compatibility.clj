@@ -104,3 +104,7 @@
 (kind/table 
  {:row-vectors t
   :column-names [:kind :clay :clojupyter :clerk]})
+
+;; ## kind/table support in Clojupyter
+;; Currently the support for `kind/table` in Clojupyter is less complete then in Clay.
+
