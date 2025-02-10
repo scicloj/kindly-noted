@@ -194,6 +194,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#legend" id="toc-legend" class="nav-link" data-scroll-target="#legend"><span class="header-section-number">4.2</span> Legend</a></li>
   <li><a href="#tools-to-be-added" id="toc-tools-to-be-added" class="nav-link" data-scroll-target="#tools-to-be-added"><span class="header-section-number">4.3</span> Tools to be added</a></li>
   <li><a href="#details" id="toc-details" class="nav-link" data-scroll-target="#details"><span class="header-section-number">4.4</span> Details</a></li>
+  <li><a href="#kindtable-support-in-clojupyter" id="toc-kindtable-support-in-clojupyter" class="nav-link" data-scroll-target="#kindtable-support-in-clojupyter"><span class="header-section-number">4.5</span> kind/table support in Clojupyter</a></li>
   </ul>
 </nav>
     </div>
@@ -263,16 +264,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="table-responsive">
 <table class="table table-hover clay-table caption-top" data-quarto-postprocess="true">
 <colgroup>
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
 </colgroup>
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th">kind</th>
-<th data-quarto-table-cell-role="th">description</th>
 <th data-quarto-table-cell-role="th">clay</th>
 <th data-quarto-table-cell-role="th">clojupyter</th>
 <th data-quarto-table-cell-role="th">clerk</th>
@@ -280,8 +279,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </thead>
 <tbody>
 <tr class="odd">
-<td>:kind/code</td>
-<td>code</td>
+<td><a href="https://scicloj.github.io/kindly-noted/kinds.html#code">code</a></td>
 <td><div style="background-color:green">
 C
 </div></td>
@@ -293,8 +291,7 @@ N
 </div></td>
 </tr>
 <tr class="even">
-<td>:kind/cytoscape</td>
-<td>cytoscape</td>
+<td><a href="https://scicloj.github.io/kindly-noted/kinds.html#cytoscape">cytoscape</a></td>
 <td><div style="background-color:green">
 C
 </div></td>
@@ -306,8 +303,7 @@ C
 </div></td>
 </tr>
 <tr class="odd">
-<td>:kind/dataset</td>
-<td>dataset</td>
+<td><a href="https://scicloj.github.io/kindly-noted/kinds.html#dataset">dataset</a></td>
 <td><div style="background-color:green">
 C
 </div></td>
@@ -319,8 +315,7 @@ C
 </div></td>
 </tr>
 <tr class="even">
-<td>:kind/echarts</td>
-<td>echarts</td>
+<td><a href="https://scicloj.github.io/kindly-noted/kinds.html#echarts">echarts</a></td>
 <td><div style="background-color:green">
 C
 </div></td>
@@ -332,8 +327,7 @@ C
 </div></td>
 </tr>
 <tr class="odd">
-<td>:kind/edn</td>
-<td>edn</td>
+<td><a href="https://scicloj.github.io/kindly-noted/kinds.html#edn">edn</a></td>
 <td><div style="background-color:red">
 N
 </div></td>
@@ -345,8 +339,7 @@ N
 </div></td>
 </tr>
 <tr class="even">
-<td>:kind/emmy-viewers</td>
-<td>emmy-viewers</td>
+<td><a href="https://scicloj.github.io/kindly-noted/kinds.html#emmy-viewers">emmy-viewers</a></td>
 <td><div style="background-color:green">
 C
 </div></td>
@@ -358,60 +351,7 @@ N
 </div></td>
 </tr>
 <tr class="odd">
-<td>:kind/fn</td>
-<td>fn</td>
-<td><div style="background-color:green">
-C
-</div></td>
-<td><div style="background-color:red">
-E
-</div></td>
-<td><div style="background-color:red">
-N
-</div></td>
-</tr>
-<tr class="even">
-<td>:kind/fragment</td>
-<td>fragment</td>
-<td><div style="background-color:green">
-C
-</div></td>
-<td><div style="background-color:red">
-N
-</div></td>
-<td><div style="background-color:red">
-N
-</div></td>
-</tr>
-<tr class="odd">
-<td>:kind/hiccup</td>
-<td>hiccup</td>
-<td><div style="background-color:green">
-C
-</div></td>
-<td><div style="background-color:green">
-C
-</div></td>
-<td><div style="background-color:green">
-C
-</div></td>
-</tr>
-<tr class="even">
-<td>:kind/hidden</td>
-<td>hidden</td>
-<td><div style="background-color:green">
-C
-</div></td>
-<td><div style="background-color:green">
-C
-</div></td>
-<td><div style="background-color:red">
-N
-</div></td>
-</tr>
-<tr class="odd">
-<td>:kind/highcharts</td>
-<td>highcharts</td>
+<td><a href="https://scicloj.github.io/kindly-noted/kinds.html#fn">fn</a></td>
 <td><div style="background-color:green">
 C
 </div></td>
@@ -423,8 +363,31 @@ N
 </div></td>
 </tr>
 <tr class="even">
-<td>:kind/html</td>
-<td>html</td>
+<td><a href="https://scicloj.github.io/kindly-noted/kinds.html#fragment">fragment</a></td>
+<td><div style="background-color:green">
+C
+</div></td>
+<td><div style="background-color:red">
+N
+</div></td>
+<td><div style="background-color:red">
+N
+</div></td>
+</tr>
+<tr class="odd">
+<td><a href="https://scicloj.github.io/kindly-noted/kinds.html#hiccup">hiccup</a></td>
+<td><div style="background-color:green">
+C
+</div></td>
+<td><div style="background-color:green">
+C
+</div></td>
+<td><div style="background-color:green">
+C
+</div></td>
+</tr>
+<tr class="even">
+<td><a href="https://scicloj.github.io/kindly-noted/kinds.html#hidden">hidden</a></td>
 <td><div style="background-color:green">
 C
 </div></td>
@@ -436,8 +399,31 @@ N
 </div></td>
 </tr>
 <tr class="odd">
-<td>:kind/htmlwidgets-ggplotly</td>
-<td>htmlwidgets-ggplotly</td>
+<td><a href="https://scicloj.github.io/kindly-noted/kinds.html#highcharts">highcharts</a></td>
+<td><div style="background-color:green">
+C
+</div></td>
+<td><div style="background-color:green">
+C
+</div></td>
+<td><div style="background-color:red">
+N
+</div></td>
+</tr>
+<tr class="even">
+<td><a href="https://scicloj.github.io/kindly-noted/kinds.html#html">html</a></td>
+<td><div style="background-color:green">
+C
+</div></td>
+<td><div style="background-color:green">
+C
+</div></td>
+<td><div style="background-color:red">
+N
+</div></td>
+</tr>
+<tr class="odd">
+<td><a href="https://scicloj.github.io/kindly-noted/kinds.html#htmlwidgets-ggplotly">htmlwidgets-ggplotly</a></td>
 <td><div style="background-color:green">
 C
 </div></td>
@@ -449,8 +435,7 @@ U
 </div></td>
 </tr>
 <tr class="even">
-<td>:kind/htmlwidgets-plotly</td>
-<td>htmlwidgets-plotly</td>
+<td><a href="https://scicloj.github.io/kindly-noted/kinds.html#htmlwidgets-plotly">htmlwidgets-plotly</a></td>
 <td><div style="background-color:green">
 C
 </div></td>
@@ -462,8 +447,7 @@ N
 </div></td>
 </tr>
 <tr class="odd">
-<td>:kind/image</td>
-<td>image</td>
+<td><a href="https://scicloj.github.io/kindly-noted/kinds.html#image">image</a></td>
 <td><div style="background-color:green">
 C
 </div></td>
@@ -475,8 +459,7 @@ R
 </div></td>
 </tr>
 <tr class="even">
-<td>:kind/map</td>
-<td>map</td>
+<td><a href="https://scicloj.github.io/kindly-noted/kinds.html#map">map</a></td>
 <td><div style="background-color:green">
 C
 </div></td>
@@ -488,8 +471,7 @@ C
 </div></td>
 </tr>
 <tr class="odd">
-<td>:kind/md</td>
-<td>md</td>
+<td><a href="https://scicloj.github.io/kindly-noted/kinds.html#md">md</a></td>
 <td><div style="background-color:green">
 C
 </div></td>
@@ -501,8 +483,7 @@ C
 </div></td>
 </tr>
 <tr class="even">
-<td>:kind/observable</td>
-<td>observable</td>
+<td><a href="https://scicloj.github.io/kindly-noted/kinds.html#observable">observable</a></td>
 <td><div style="background-color:green">
 C
 </div></td>
@@ -514,8 +495,7 @@ N
 </div></td>
 </tr>
 <tr class="odd">
-<td>:kind/plotly</td>
-<td>plotly</td>
+<td><a href="https://scicloj.github.io/kindly-noted/kinds.html#plotly">plotly</a></td>
 <td><div style="background-color:green">
 C
 </div></td>
@@ -527,8 +507,7 @@ C
 </div></td>
 </tr>
 <tr class="even">
-<td>:kind/portal</td>
-<td>portal</td>
+<td><a href="https://scicloj.github.io/kindly-noted/kinds.html#portal">portal</a></td>
 <td><div style="background-color:green">
 C
 </div></td>
@@ -540,8 +519,7 @@ N
 </div></td>
 </tr>
 <tr class="odd">
-<td>:kind/pprint</td>
-<td>pprint</td>
+<td><a href="https://scicloj.github.io/kindly-noted/kinds.html#pprint">pprint</a></td>
 <td><div style="background-color:green">
 C
 </div></td>
@@ -553,34 +531,31 @@ N
 </div></td>
 </tr>
 <tr class="even">
-<td>:kind/reagent</td>
-<td>reagent</td>
+<td><a href="https://scicloj.github.io/kindly-noted/kinds.html#reagent">reagent</a></td>
 <td><div style="background-color:green">
 C
 </div></td>
-<td><div style="background-color:red">
-N
+<td><div style="background-color:green">
+C
 </div></td>
 <td><div style="background-color:red">
 N
 </div></td>
 </tr>
 <tr class="odd">
-<td>:kind/scittle</td>
-<td>scittle</td>
+<td><a href="https://scicloj.github.io/kindly-noted/kinds.html#scittle">scittle</a></td>
+<td><div style="background-color:green">
+C
+</div></td>
 <td><div style="background-color:green">
 C
 </div></td>
 <td><div style="background-color:red">
 N
 </div></td>
-<td><div style="background-color:red">
-N
-</div></td>
 </tr>
 <tr class="even">
-<td>:kind/seq</td>
-<td>seq</td>
+<td><a href="https://scicloj.github.io/kindly-noted/kinds.html#seq">seq</a></td>
 <td><div style="background-color:green">
 C
 </div></td>
@@ -592,8 +567,7 @@ C
 </div></td>
 </tr>
 <tr class="odd">
-<td>:kind/set</td>
-<td>set</td>
+<td><a href="https://scicloj.github.io/kindly-noted/kinds.html#set">set</a></td>
 <td><div style="background-color:green">
 C
 </div></td>
@@ -605,8 +579,7 @@ C
 </div></td>
 </tr>
 <tr class="even">
-<td>:kind/smile-model</td>
-<td>smile-model</td>
+<td><a href="https://scicloj.github.io/kindly-noted/kinds.html#smile-model">smile-model</a></td>
 <td><div style="background-color:green">
 C
 </div></td>
@@ -618,8 +591,7 @@ N
 </div></td>
 </tr>
 <tr class="odd">
-<td>:kind/table</td>
-<td>table</td>
+<td><a href="https://scicloj.github.io/kindly-noted/kinds.html#table">table</a></td>
 <td><div style="background-color:green">
 C
 </div></td>
@@ -631,8 +603,7 @@ R
 </div></td>
 </tr>
 <tr class="even">
-<td>:kind/test</td>
-<td>test</td>
+<td><a href="https://scicloj.github.io/kindly-noted/kinds.html#test">test</a></td>
 <td><div style="background-color:green">
 C
 </div></td>
@@ -644,8 +615,7 @@ N
 </div></td>
 </tr>
 <tr class="odd">
-<td>:kind/test-last</td>
-<td>test-last</td>
+<td><a href="https://scicloj.github.io/kindly-noted/kinds.html#test-last">test-last</a></td>
 <td><div style="background-color:green">
 C
 </div></td>
@@ -657,8 +627,7 @@ N
 </div></td>
 </tr>
 <tr class="even">
-<td>:kind/tex</td>
-<td>tex</td>
+<td><a href="https://scicloj.github.io/kindly-noted/kinds.html#tex">tex</a></td>
 <td><div style="background-color:green">
 C
 </div></td>
@@ -670,21 +639,19 @@ N
 </div></td>
 </tr>
 <tr class="odd">
-<td>:kind/var</td>
-<td>var</td>
+<td><a href="https://scicloj.github.io/kindly-noted/kinds.html#var">var</a></td>
+<td><div style="background-color:green">
+C
+</div></td>
 <td><div style="background-color:green">
 C
 </div></td>
 <td><div style="background-color:red">
 N
 </div></td>
-<td><div style="background-color:red">
-N
-</div></td>
 </tr>
 <tr class="even">
-<td>:kind/vector</td>
-<td>vector</td>
+<td><a href="https://scicloj.github.io/kindly-noted/kinds.html#vector">vector</a></td>
 <td><div style="background-color:green">
 C
 </div></td>
@@ -696,21 +663,19 @@ C
 </div></td>
 </tr>
 <tr class="odd">
-<td>:kind/vega</td>
-<td>vega</td>
+<td><a href="https://scicloj.github.io/kindly-noted/kinds.html#vega">vega</a></td>
 <td><div style="background-color:green">
 C
 </div></td>
-<td><div style="background-color:red">
-N
+<td><div style="background-color:green">
+C
 </div></td>
 <td><div style="background-color:green">
 C
 </div></td>
 </tr>
 <tr class="even">
-<td>:kind/vega-lite</td>
-<td>vega-lite</td>
+<td><a href="https://scicloj.github.io/kindly-noted/kinds.html#vega-lite">vega-lite</a></td>
 <td><div style="background-color:green">
 C
 </div></td>
@@ -722,8 +687,7 @@ C
 </div></td>
 </tr>
 <tr class="odd">
-<td>:kind/video</td>
-<td>video</td>
+<td><a href="https://scicloj.github.io/kindly-noted/kinds.html#video">video</a></td>
 <td><div style="background-color:green">
 C
 </div></td>
@@ -738,6 +702,10 @@ N
 </table>
 </div>
 </div>
+</section>
+<section id="kindtable-support-in-clojupyter" class="level2" data-number="4.5">
+<h2 data-number="4.5" class="anchored" data-anchor-id="kindtable-support-in-clojupyter"><span class="header-section-number">4.5</span> kind/table support in Clojupyter</h2>
+<p>Currently the support for <code>kind/table</code> in Clojupyter is less complete then in Clay.</p>
 <div style="background-color:grey;height:2px;width:100%;"></div>
 <div><pre><small><small>source: <a href="https://github.com/scicloj/kindly-noted/blob/main/notebooks/kind_compatibility.clj">notebooks/kind_compatibility.clj</a></small></small></pre></div>
 

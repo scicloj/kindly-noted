@@ -237,12 +237,12 @@ window.Quarto = {
   <li><a href="#cytoscape" id="toc-cytoscape" class="nav-link" data-scroll-target="#cytoscape"><span class="header-section-number">3.14</span> Cytoscape</a></li>
   <li><a href="#echarts" id="toc-echarts" class="nav-link" data-scroll-target="#echarts"><span class="header-section-number">3.15</span> ECharts</a></li>
   <li><a href="#plotly" id="toc-plotly" class="nav-link" data-scroll-target="#plotly"><span class="header-section-number">3.16</span> Plotly</a></li>
-  <li><a href="#ggplotly" id="toc-ggplotly" class="nav-link" data-scroll-target="#ggplotly"><span class="header-section-number">3.17</span> ggplotly</a></li>
+  <li><a href="#htmlwidgets-ggplotly" id="toc-htmlwidgets-ggplotly" class="nav-link" data-scroll-target="#htmlwidgets-ggplotly"><span class="header-section-number">3.17</span> htmlwidgets-ggplotly</a></li>
   <li><a href="#highcharts" id="toc-highcharts" class="nav-link" data-scroll-target="#highcharts"><span class="header-section-number">3.18</span> Highcharts</a></li>
   <li><a href="#observable" id="toc-observable" class="nav-link" data-scroll-target="#observable"><span class="header-section-number">3.19</span> Observable</a></li>
   <li><a href="#video" id="toc-video" class="nav-link" data-scroll-target="#video"><span class="header-section-number">3.20</span> Video</a></li>
   <li><a href="#image" id="toc-image" class="nav-link" data-scroll-target="#image"><span class="header-section-number">3.21</span> Image</a></li>
-  <li><a href="#datasets" id="toc-datasets" class="nav-link" data-scroll-target="#datasets"><span class="header-section-number">3.22</span> Datasets</a></li>
+  <li><a href="#dataset" id="toc-dataset" class="nav-link" data-scroll-target="#dataset"><span class="header-section-number">3.22</span> Dataset</a></li>
   <li><a href="#tables" id="toc-tables" class="nav-link" data-scroll-target="#tables"><span class="header-section-number">3.23</span> Tables</a></li>
   <li><a href="#pretty-printing" id="toc-pretty-printing" class="nav-link" data-scroll-target="#pretty-printing"><span class="header-section-number">3.24</span> Pretty printing</a></li>
   <li><a href="#emmy-viewers" id="toc-emmy-viewers" class="nav-link" data-scroll-target="#emmy-viewers"><span class="header-section-number">3.25</span> emmy-viewers</a></li>
@@ -389,35 +389,35 @@ window.Quarto = {
 <div class="sourceCode" id="cb17"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>people-as-maps</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="printedClojure">
-<div class="sourceCode" id="cb18"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>[{<span class="at">:preferred-language</span> <span class="st">"clojure"</span>, <span class="at">:age</span> <span class="dv">13</span>}</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojure"</span>, <span class="at">:age</span> <span class="dv">74</span>}</span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojure"</span>, <span class="at">:age</span> <span class="dv">80</span>}</span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojure"</span>, <span class="at">:age</span> <span class="dv">73</span>}</span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojurescript"</span>, <span class="at">:age</span> <span class="dv">76</span>}</span>
-<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"babashka"</span>, <span class="at">:age</span> <span class="dv">24</span>}</span>
-<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"babashka"</span>, <span class="at">:age</span> <span class="dv">66</span>}</span>
-<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojurescript"</span>, <span class="at">:age</span> <span class="dv">95</span>}</span>
-<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojure"</span>, <span class="at">:age</span> <span class="dv">67</span>}</span>
-<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojurescript"</span>, <span class="at">:age</span> <span class="dv">15</span>}</span>
-<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojurescript"</span>, <span class="at">:age</span> <span class="dv">86</span>}</span>
-<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojure"</span>, <span class="at">:age</span> <span class="dv">5</span>}</span>
-<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"babashka"</span>, <span class="at">:age</span> <span class="dv">52</span>}</span>
-<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojurescript"</span>, <span class="at">:age</span> <span class="dv">66</span>}</span>
-<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojurescript"</span>, <span class="at">:age</span> <span class="dv">44</span>}</span>
-<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojure"</span>, <span class="at">:age</span> <span class="dv">20</span>}</span>
-<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojurescript"</span>, <span class="at">:age</span> <span class="dv">17</span>}</span>
-<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojure"</span>, <span class="at">:age</span> <span class="dv">0</span>}</span>
-<span id="cb18-19"><a href="#cb18-19" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"babashka"</span>, <span class="at">:age</span> <span class="dv">44</span>}</span>
-<span id="cb18-20"><a href="#cb18-20" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojure"</span>, <span class="at">:age</span> <span class="dv">66</span>}</span>
-<span id="cb18-21"><a href="#cb18-21" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojurescript"</span>, <span class="at">:age</span> <span class="dv">56</span>}</span>
-<span id="cb18-22"><a href="#cb18-22" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"babashka"</span>, <span class="at">:age</span> <span class="dv">88</span>}</span>
-<span id="cb18-23"><a href="#cb18-23" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojure"</span>, <span class="at">:age</span> <span class="dv">46</span>}</span>
-<span id="cb18-24"><a href="#cb18-24" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojurescript"</span>, <span class="at">:age</span> <span class="dv">5</span>}</span>
-<span id="cb18-25"><a href="#cb18-25" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojurescript"</span>, <span class="at">:age</span> <span class="dv">89</span>}</span>
-<span id="cb18-26"><a href="#cb18-26" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"babashka"</span>, <span class="at">:age</span> <span class="dv">2</span>}</span>
-<span id="cb18-27"><a href="#cb18-27" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojure"</span>, <span class="at">:age</span> <span class="dv">44</span>}</span>
-<span id="cb18-28"><a href="#cb18-28" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojurescript"</span>, <span class="at">:age</span> <span class="dv">18</span>}</span>
-<span id="cb18-29"><a href="#cb18-29" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojure"</span>, <span class="at">:age</span> <span class="dv">19</span>}]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>[{<span class="at">:preferred-language</span> <span class="st">"clojure"</span>, <span class="at">:age</span> <span class="dv">63</span>}</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojure"</span>, <span class="at">:age</span> <span class="dv">97</span>}</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"babashka"</span>, <span class="at">:age</span> <span class="dv">92</span>}</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojure"</span>, <span class="at">:age</span> <span class="dv">29</span>}</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojure"</span>, <span class="at">:age</span> <span class="dv">82</span>}</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojurescript"</span>, <span class="at">:age</span> <span class="dv">95</span>}</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojure"</span>, <span class="at">:age</span> <span class="dv">46</span>}</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojurescript"</span>, <span class="at">:age</span> <span class="dv">60</span>}</span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojure"</span>, <span class="at">:age</span> <span class="dv">34</span>}</span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojure"</span>, <span class="at">:age</span> <span class="dv">33</span>}</span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"babashka"</span>, <span class="at">:age</span> <span class="dv">60</span>}</span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojure"</span>, <span class="at">:age</span> <span class="dv">24</span>}</span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"babashka"</span>, <span class="at">:age</span> <span class="dv">60</span>}</span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"babashka"</span>, <span class="at">:age</span> <span class="dv">66</span>}</span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojure"</span>, <span class="at">:age</span> <span class="dv">92</span>}</span>
+<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"babashka"</span>, <span class="at">:age</span> <span class="dv">94</span>}</span>
+<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojurescript"</span>, <span class="at">:age</span> <span class="dv">78</span>}</span>
+<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojure"</span>, <span class="at">:age</span> <span class="dv">27</span>}</span>
+<span id="cb18-19"><a href="#cb18-19" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"babashka"</span>, <span class="at">:age</span> <span class="dv">29</span>}</span>
+<span id="cb18-20"><a href="#cb18-20" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojure"</span>, <span class="at">:age</span> <span class="dv">92</span>}</span>
+<span id="cb18-21"><a href="#cb18-21" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojure"</span>, <span class="at">:age</span> <span class="dv">99</span>}</span>
+<span id="cb18-22"><a href="#cb18-22" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojure"</span>, <span class="at">:age</span> <span class="dv">21</span>}</span>
+<span id="cb18-23"><a href="#cb18-23" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojure"</span>, <span class="at">:age</span> <span class="dv">12</span>}</span>
+<span id="cb18-24"><a href="#cb18-24" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojure"</span>, <span class="at">:age</span> <span class="dv">14</span>}</span>
+<span id="cb18-25"><a href="#cb18-25" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojure"</span>, <span class="at">:age</span> <span class="dv">14</span>}</span>
+<span id="cb18-26"><a href="#cb18-26" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojurescript"</span>, <span class="at">:age</span> <span class="dv">44</span>}</span>
+<span id="cb18-27"><a href="#cb18-27" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"babashka"</span>, <span class="at">:age</span> <span class="dv">37</span>}</span>
+<span id="cb18-28"><a href="#cb18-28" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojurescript"</span>, <span class="at">:age</span> <span class="dv">76</span>}</span>
+<span id="cb18-29"><a href="#cb18-29" aria-hidden="true" tabindex="-1"></a> {<span class="at">:preferred-language</span> <span class="st">"clojurescript"</span>, <span class="at">:age</span> <span class="dv">30</span>}]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="sourceClojure">
 <div class="sourceCode" id="cb19"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>(<span class="bu">def</span><span class="fu"> people-as-vectors</span></span>
@@ -428,35 +428,35 @@ window.Quarto = {
 <div class="sourceCode" id="cb20"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>people-as-vectors</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="printedClojure">
-<div class="sourceCode" id="cb21"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>[[<span class="st">"clojure"</span> <span class="dv">13</span>]</span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojure"</span> <span class="dv">74</span>]</span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojure"</span> <span class="dv">80</span>]</span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojure"</span> <span class="dv">73</span>]</span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojurescript"</span> <span class="dv">76</span>]</span>
-<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a> [<span class="st">"babashka"</span> <span class="dv">24</span>]</span>
-<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a> [<span class="st">"babashka"</span> <span class="dv">66</span>]</span>
-<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojurescript"</span> <span class="dv">95</span>]</span>
-<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojure"</span> <span class="dv">67</span>]</span>
-<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojurescript"</span> <span class="dv">15</span>]</span>
-<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojurescript"</span> <span class="dv">86</span>]</span>
-<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojure"</span> <span class="dv">5</span>]</span>
-<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a> [<span class="st">"babashka"</span> <span class="dv">52</span>]</span>
-<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojurescript"</span> <span class="dv">66</span>]</span>
-<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojurescript"</span> <span class="dv">44</span>]</span>
-<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojure"</span> <span class="dv">20</span>]</span>
-<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojurescript"</span> <span class="dv">17</span>]</span>
-<span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojure"</span> <span class="dv">0</span>]</span>
-<span id="cb21-19"><a href="#cb21-19" aria-hidden="true" tabindex="-1"></a> [<span class="st">"babashka"</span> <span class="dv">44</span>]</span>
-<span id="cb21-20"><a href="#cb21-20" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojure"</span> <span class="dv">66</span>]</span>
-<span id="cb21-21"><a href="#cb21-21" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojurescript"</span> <span class="dv">56</span>]</span>
-<span id="cb21-22"><a href="#cb21-22" aria-hidden="true" tabindex="-1"></a> [<span class="st">"babashka"</span> <span class="dv">88</span>]</span>
-<span id="cb21-23"><a href="#cb21-23" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojure"</span> <span class="dv">46</span>]</span>
-<span id="cb21-24"><a href="#cb21-24" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojurescript"</span> <span class="dv">5</span>]</span>
-<span id="cb21-25"><a href="#cb21-25" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojurescript"</span> <span class="dv">89</span>]</span>
-<span id="cb21-26"><a href="#cb21-26" aria-hidden="true" tabindex="-1"></a> [<span class="st">"babashka"</span> <span class="dv">2</span>]</span>
-<span id="cb21-27"><a href="#cb21-27" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojure"</span> <span class="dv">44</span>]</span>
-<span id="cb21-28"><a href="#cb21-28" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojurescript"</span> <span class="dv">18</span>]</span>
-<span id="cb21-29"><a href="#cb21-29" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojure"</span> <span class="dv">19</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>[[<span class="st">"clojure"</span> <span class="dv">63</span>]</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojure"</span> <span class="dv">97</span>]</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a> [<span class="st">"babashka"</span> <span class="dv">92</span>]</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojure"</span> <span class="dv">29</span>]</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojure"</span> <span class="dv">82</span>]</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojurescript"</span> <span class="dv">95</span>]</span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojure"</span> <span class="dv">46</span>]</span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojurescript"</span> <span class="dv">60</span>]</span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojure"</span> <span class="dv">34</span>]</span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojure"</span> <span class="dv">33</span>]</span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a> [<span class="st">"babashka"</span> <span class="dv">60</span>]</span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojure"</span> <span class="dv">24</span>]</span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a> [<span class="st">"babashka"</span> <span class="dv">60</span>]</span>
+<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a> [<span class="st">"babashka"</span> <span class="dv">66</span>]</span>
+<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojure"</span> <span class="dv">92</span>]</span>
+<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a> [<span class="st">"babashka"</span> <span class="dv">94</span>]</span>
+<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojurescript"</span> <span class="dv">78</span>]</span>
+<span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojure"</span> <span class="dv">27</span>]</span>
+<span id="cb21-19"><a href="#cb21-19" aria-hidden="true" tabindex="-1"></a> [<span class="st">"babashka"</span> <span class="dv">29</span>]</span>
+<span id="cb21-20"><a href="#cb21-20" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojure"</span> <span class="dv">92</span>]</span>
+<span id="cb21-21"><a href="#cb21-21" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojure"</span> <span class="dv">99</span>]</span>
+<span id="cb21-22"><a href="#cb21-22" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojure"</span> <span class="dv">21</span>]</span>
+<span id="cb21-23"><a href="#cb21-23" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojure"</span> <span class="dv">12</span>]</span>
+<span id="cb21-24"><a href="#cb21-24" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojure"</span> <span class="dv">14</span>]</span>
+<span id="cb21-25"><a href="#cb21-25" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojure"</span> <span class="dv">14</span>]</span>
+<span id="cb21-26"><a href="#cb21-26" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojurescript"</span> <span class="dv">44</span>]</span>
+<span id="cb21-27"><a href="#cb21-27" aria-hidden="true" tabindex="-1"></a> [<span class="st">"babashka"</span> <span class="dv">37</span>]</span>
+<span id="cb21-28"><a href="#cb21-28" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojurescript"</span> <span class="dv">76</span>]</span>
+<span id="cb21-29"><a href="#cb21-29" aria-hidden="true" tabindex="-1"></a> [<span class="st">"clojurescript"</span> <span class="dv">30</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>These kinds have recursive kind semantics: if the values inside them have kind information, they should be handled accordingly.</p>
 <p>Here is a vector of things of different kinds inside:</p>
@@ -1223,7 +1223,7 @@ window.Quarto = {
 <span id="cb65-2"><a href="#cb65-2" aria-hidden="true" tabindex="-1"></a> plotly-example)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div style="height:400px;width:100%;"><script>Plotly.newPlot(document.currentScript.parentElement,
-              [{"x":[1.188572615145199,2.6186176965426764,3.4199401418133064,4.38056435400028,5.241986917201876,5.9017176677074366,6.747951400135341,7.252366999484898,8.098462778984628,8.927824493833663,9.841696292246295,11.28007051674157,11.963918160337727,13.23028617546861,13.765788537764264,15.107234380438761,16.574781181597487,17.904663756903453,18.789449584403023,19.764924370073366],"y":[-1.1618823754015088,-2.294466732787261,-3.041683340789443,-3.9273162076258505,-4.785920814972925,-5.614310405359086,-6.375315804157636,-7.7792485628201025,-8.396006220043285,-9.094272187049105,-10.131494850348231,-11.436582267205333,-12.443739829527493,-13.241797958179417,-14.567099777047643,-15.259660235120101,-15.827246570889471,-17.30526196100646,-17.926457013445724,-18.679986834559113],"z":[5.646072569795305,23.05976377134119,52.803008871719,88.6024278220906,119.57169899780727,166.28981893659866,218.62742736046914,285.01091927478797,360.2141125760708,429.5869513936805,524.0202278543971,626.5518319138916,718.3152401975169,821.534448776646,953.5519060276876,1094.4758329042038,1230.6158976505078,1357.4157044422238,1530.5590783043324,1679.1281149443184],"type":"scatter3d","mode":"lines+markers","opacity":0.2,"line":{"width":10},"marker":{"size":20,"colorscale":"Viridis"}}], {}, {});</script></div>
+              [{"x":[1.1623058287596661,1.8866644774212888,2.4174453910732487,3.2724193961145116,4.7300827485607435,5.591101699328226,6.594160184545931,7.223964605586684,8.665971329648775,9.789644490965546,11.184515437024908,12.451551442500428,13.681814939445152,14.801611907501078,16.214565287245232,17.106377408113563,18.53158456359004,19.658525714262495,21.030251316510892,22.168725645995753],"y":[-1.2812498066296498,-2.3051795331936775,-3.0770172597848138,-4.560249727098263,-5.793509403926127,-6.972304289357583,-8.355743432458091,-9.849642830333599,-10.519310095978547,-11.185702437949907,-11.896824588727487,-12.407970603031435,-12.929202428438034,-14.385885207028192,-15.639699278853476,-16.618276559634175,-17.761880953466065,-18.87021381609307,-19.737275711134213,-20.251647991249857],"z":[2.6602747188873934,13.590400777996777,28.565000376996853,51.95449937622276,80.44709286089646,115.05136994793004,159.57003988295176,220.98546026519114,272.66953245760203,345.79723613766544,440.9695010018822,510.89357329280097,608.3222491777956,700.4888769574652,794.8052485393732,902.9618924640108,1059.2978979456245,1179.4092518114205,1337.4307898686197,1481.5851275340715],"type":"scatter3d","mode":"lines+markers","opacity":0.2,"line":{"width":10},"marker":{"size":20,"colorscale":"Viridis"}}], {}, {});</script></div>
 <div class="sourceClojure">
 <div class="sourceCode" id="cb66"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">-&gt;</span> plotly-example</span>
 <span id="cb66-2"><a href="#cb66-2" aria-hidden="true" tabindex="-1"></a>    (kind/plotly {<span class="at">:style</span></span>
@@ -1231,10 +1231,10 @@ window.Quarto = {
 <span id="cb66-4"><a href="#cb66-4" aria-hidden="true" tabindex="-1"></a>                   <span class="at">:height</span> <span class="st">"300px"</span>}}))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div style="height:300px;width:300px;"><script>Plotly.newPlot(document.currentScript.parentElement,
-              [{"x":[1.188572615145199,2.6186176965426764,3.4199401418133064,4.38056435400028,5.241986917201876,5.9017176677074366,6.747951400135341,7.252366999484898,8.098462778984628,8.927824493833663,9.841696292246295,11.28007051674157,11.963918160337727,13.23028617546861,13.765788537764264,15.107234380438761,16.574781181597487,17.904663756903453,18.789449584403023,19.764924370073366],"y":[-1.1618823754015088,-2.294466732787261,-3.041683340789443,-3.9273162076258505,-4.785920814972925,-5.614310405359086,-6.375315804157636,-7.7792485628201025,-8.396006220043285,-9.094272187049105,-10.131494850348231,-11.436582267205333,-12.443739829527493,-13.241797958179417,-14.567099777047643,-15.259660235120101,-15.827246570889471,-17.30526196100646,-17.926457013445724,-18.679986834559113],"z":[5.646072569795305,23.05976377134119,52.803008871719,88.6024278220906,119.57169899780727,166.28981893659866,218.62742736046914,285.01091927478797,360.2141125760708,429.5869513936805,524.0202278543971,626.5518319138916,718.3152401975169,821.534448776646,953.5519060276876,1094.4758329042038,1230.6158976505078,1357.4157044422238,1530.5590783043324,1679.1281149443184],"type":"scatter3d","mode":"lines+markers","opacity":0.2,"line":{"width":10},"marker":{"size":20,"colorscale":"Viridis"}}], {}, {});</script></div>
+              [{"x":[1.1623058287596661,1.8866644774212888,2.4174453910732487,3.2724193961145116,4.7300827485607435,5.591101699328226,6.594160184545931,7.223964605586684,8.665971329648775,9.789644490965546,11.184515437024908,12.451551442500428,13.681814939445152,14.801611907501078,16.214565287245232,17.106377408113563,18.53158456359004,19.658525714262495,21.030251316510892,22.168725645995753],"y":[-1.2812498066296498,-2.3051795331936775,-3.0770172597848138,-4.560249727098263,-5.793509403926127,-6.972304289357583,-8.355743432458091,-9.849642830333599,-10.519310095978547,-11.185702437949907,-11.896824588727487,-12.407970603031435,-12.929202428438034,-14.385885207028192,-15.639699278853476,-16.618276559634175,-17.761880953466065,-18.87021381609307,-19.737275711134213,-20.251647991249857],"z":[2.6602747188873934,13.590400777996777,28.565000376996853,51.95449937622276,80.44709286089646,115.05136994793004,159.57003988295176,220.98546026519114,272.66953245760203,345.79723613766544,440.9695010018822,510.89357329280097,608.3222491777956,700.4888769574652,794.8052485393732,902.9618924640108,1059.2978979456245,1179.4092518114205,1337.4307898686197,1481.5851275340715],"type":"scatter3d","mode":"lines+markers","opacity":0.2,"line":{"width":10},"marker":{"size":20,"colorscale":"Viridis"}}], {}, {});</script></div>
 </section>
-<section id="ggplotly" class="level2" data-number="3.17">
-<h2 data-number="3.17" class="anchored" data-anchor-id="ggplotly"><span class="header-section-number">3.17</span> ggplotly</h2>
+<section id="htmlwidgets-ggplotly" class="level2" data-number="3.17">
+<h2 data-number="3.17" class="anchored" data-anchor-id="htmlwidgets-ggplotly"><span class="header-section-number">3.17</span> htmlwidgets-ggplotly</h2>
 <p><code>kind/htmlwidgets-ggplotly</code> supports rendering plots through the JS client side of <a href="https://plotly.com/ggplot2/">ggplotly</a> - an R package offering a Plotly fronted for ggplot2’s grammar of graphics implementation. This package is part of the <a href="https://www.htmlwidgets.org/">htmlwidgets</a> ecosystem, and we represent that in the kind’s name.</p>
 <p>The following is a work-in-progress attempt to generate JSON specs of the kind consumed by ggplotly’s client side.</p>
 <p>The following spec function was generaged by mimicking R’s <code>ggplotly(ggplot(mtcars, aes(wt, mpg)) + geom_point())</code>. Therefore, some parts are hard-coded and require generalization. Other parts are missing (e.g., specifying colours).</p>
@@ -1424,7 +1424,7 @@ window.Quarto = {
 <span id="cb68-14"><a href="#cb68-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">:labels</span> {<span class="at">:x</span> <span class="st">"wt"</span></span>
 <span id="cb68-15"><a href="#cb68-15" aria-hidden="true" tabindex="-1"></a>             <span class="at">:y</span> <span class="st">"mpg"</span>}}))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="plotly html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-11" style="width:100%;height:400px;"><script data-for="htmlwidget-11" type="application/htmlwidget-sizing">{"viewer":{"width":"100%","height":400,"padding":"0","fille":true},"browser":{"width":"100%","height":400,"padding":"0","fille":true}}</script><script data-for="htmlwidget-11" type="application/json">{"x":{"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"layout":{"plot_bgcolor":"rgba(235,235,235,1)","paper_bgcolor":"rgba(255,255,255,1)","legend":{"bgcolor":"rgba(255,255,255,1)","bordercolor":"transparent","borderwidth":1.88976377952756,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895}},"xaxis":{"linewidth":0,"nticks":null,"linecolor":null,"ticklen":3.65296803652968,"tickcolor":"rgba(51,51,51,1)","tickmode":"array","gridcolor":"rgba(255,255,255,1)","automargin":true,"type":"linear","tickvals":[0.0,16.0,32.0,48.0,64.0,80.0,96.0],"zeroline":false,"title":{"text":"wt","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"autorange":false,"showticklabels":true,"showline":false,"showgrid":true,"ticktext":["0.0","16.0","32.0","48.0","64.0","80.0","96.0"],"ticks":"outside","gridwidth":0.66417600664176,"anchor":"y","domain":[0,1],"hoverformat":".2f","tickangle":0,"tickwidth":0.66417600664176,"categoryarray":["0.0","16.0","32.0","48.0","64.0","80.0","96.0"],"categoryorder":"array","range":[-9.9,108.9]},"font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"showlegend":false,"barmode":"relative","yaxis":{"linewidth":0,"nticks":null,"linecolor":null,"ticklen":3.65296803652968,"tickcolor":"rgba(51,51,51,1)","tickmode":"array","gridcolor":"rgba(255,255,255,1)","automargin":true,"type":"linear","tickvals":[-2.0,-1.0,0.0,1.0],"zeroline":false,"title":{"text":"mpg","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"autorange":false,"showticklabels":true,"showline":false,"showgrid":true,"ticktext":["-2.0","-1.0","0.0","1.0"],"ticks":"outside","gridwidth":0.66417600664176,"anchor":"x","domain":[0,1],"hoverformat":".2f","tickangle":0,"tickwidth":0.66417600664176,"categoryarray":["-2.0","-1.0","0.0","1.0"],"categoryorder":"array","range":[-3.274688076283477,2.0342127782886217]},"hovermode":"closest","margin":{"t":25.7412480974125,"r":7.30593607305936,"b":39.6955859969559,"l":37.2602739726027},"shapes":[{"yref":"paper","fillcolor":null,"xref":"paper","y1":1,"type":"rect","line":{"color":null,"width":0,"linetype":[]},"y0":0,"x1":1,"x0":0}]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"base_url":"https:\/\/plot.ly","cur_data":"1f2fea5b54d146","source":"A","shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"attrs":{"1f2fea5b54d146":{"x":{},"y":{},"type":"scatter"}},"data":[{"y":[-0.21627235558126845,-0.15079404614735137,-0.09863139698622558,-0.5751748485577097,-0.09188400895116533,-0.36535568941926333,-0.5986864472214511,-0.131159626761294,-0.6155736142653586,-0.6229449096436761,-0.39859281615008124,-0.5764123035584058,-0.7452849739469123,-0.7055438646927985,-1.1603623316676446,-1.6411916431250337,-2.103648377299092,-2.3053842094742403,-2.1650814938438834,-2.4302076677423976,-2.0807250839578253,-2.1906447858678826,-1.8110799180835229,-2.0178251030200705,-1.5900406374854976,-1.6355934695039456,-2.105976856599698,-1.9787905085397979,-2.245725204368672,-2.35134485904413,-2.550246300644316,-2.565691802042012,-2.3309966470520997,-2.594690104144659,-2.8322796717358023,-2.7774393725035207,-2.589232384901778,-2.7260820775054087,-2.7733576128958903,-2.6859827256863547,-2.463480576129675,-2.1088319160119875,-1.850469343276279,-1.9762461421029438,-1.8134599213317266,-1.764887742737871,-2.2605374652564407,-2.581877670557777,-2.2258887075407974,-2.5032256593756697,-2.7463204764052964,-2.4418629279675006,-2.6793697468338724,-2.1898858747204306,-2.1570724888494532,-2.6353545954032356,-2.404037399250475,-2.309034023692366,-1.8409412912833618,-1.3492120296715175,-1.1637462692930236,-0.8471177293240079,-1.3360811199184361,-1.1697329058300079,-0.759747644415915,-0.6922225542354042,-0.3185446989369275,0.05811056005609205,-0.18456091758192972,-0.05310983298005467,-0.25220267316701483,0.21894284215553084,0.5818982611468465,0.2578595801306157,0.45578569753237297,0.37125772082361885,0.7699234170148803,0.5916467467281252,0.8860566746433981,1.1098238978775292,1.5918043737409469,1.1736220515126656,0.9913226762711812,0.9471489150573948,0.5541085027568067,0.9813876902130282,1.0789340812618162,1.3638771434134997,1.229038870051233,0.812806647163832,0.9441548654639869,0.7621036074783832,1.0471290908273816,0.966269776839521,1.367840335447995,1.299848882906721,1.1336175585467536,1.076448057428879,0.7323657925338983,0.6143585719984409],"hoveron":"points","frame":null,"hoverinfo":"text","marker":{"autocolorscale":false,"color":"rgba(0,0,0,1)","opacity":1,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(0,0,0,1)"}},"mode":"markers","type":"scatter","xaxis":"x","showlegend":false,"yaxis":"y","x":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99],"text":["{:x 0, :y -0.21627235558126845}","{:x 1, :y -0.15079404614735137}","{:x 2, :y -0.09863139698622558}","{:x 3, :y -0.5751748485577097}","{:x 4, :y -0.09188400895116533}","{:x 5, :y -0.36535568941926333}","{:x 6, :y -0.5986864472214511}","{:x 7, :y -0.131159626761294}","{:x 8, :y -0.6155736142653586}","{:x 9, :y -0.6229449096436761}","{:x 10, :y -0.39859281615008124}","{:x 11, :y -0.5764123035584058}","{:x 12, :y -0.7452849739469123}","{:x 13, :y -0.7055438646927985}","{:x 14, :y -1.1603623316676446}","{:x 15, :y -1.6411916431250337}","{:x 16, :y -2.103648377299092}","{:x 17, :y -2.3053842094742403}","{:x 18, :y -2.1650814938438834}","{:x 19, :y -2.4302076677423976}","{:x 20, :y -2.0807250839578253}","{:x 21, :y -2.1906447858678826}","{:x 22, :y -1.8110799180835229}","{:x 23, :y -2.0178251030200705}","{:x 24, :y -1.5900406374854976}","{:x 25, :y -1.6355934695039456}","{:x 26, :y -2.105976856599698}","{:x 27, :y -1.9787905085397979}","{:x 28, :y -2.245725204368672}","{:x 29, :y -2.35134485904413}","{:x 30, :y -2.550246300644316}","{:x 31, :y -2.565691802042012}","{:x 32, :y -2.3309966470520997}","{:x 33, :y -2.594690104144659}","{:x 34, :y -2.8322796717358023}","{:x 35, :y -2.7774393725035207}","{:x 36, :y -2.589232384901778}","{:x 37, :y -2.7260820775054087}","{:x 38, :y -2.7733576128958903}","{:x 39, :y -2.6859827256863547}","{:x 40, :y -2.463480576129675}","{:x 41, :y -2.1088319160119875}","{:x 42, :y -1.850469343276279}","{:x 43, :y -1.9762461421029438}","{:x 44, :y -1.8134599213317266}","{:x 45, :y -1.764887742737871}","{:x 46, :y -2.2605374652564407}","{:x 47, :y -2.581877670557777}","{:x 48, :y -2.2258887075407974}","{:x 49, :y -2.5032256593756697}","{:x 50, :y -2.7463204764052964}","{:x 51, :y -2.4418629279675006}","{:x 52, :y -2.6793697468338724}","{:x 53, :y -2.1898858747204306}","{:x 54, :y -2.1570724888494532}","{:x 55, :y -2.6353545954032356}","{:x 56, :y -2.404037399250475}","{:x 57, :y -2.309034023692366}","{:x 58, :y -1.8409412912833618}","{:x 59, :y -1.3492120296715175}","{:x 60, :y -1.1637462692930236}","{:x 61, :y -0.8471177293240079}","{:x 62, :y -1.3360811199184361}","{:x 63, :y -1.1697329058300079}","{:x 64, :y -0.759747644415915}","{:x 65, :y -0.6922225542354042}","{:x 66, :y -0.3185446989369275}","{:x 67, :y 0.05811056005609205}","{:x 68, :y -0.18456091758192972}","{:x 69, :y -0.05310983298005467}","{:x 70, :y -0.25220267316701483}","{:x 71, :y 0.21894284215553084}","{:x 72, :y 0.5818982611468465}","{:x 73, :y 0.2578595801306157}","{:x 74, :y 0.45578569753237297}","{:x 75, :y 0.37125772082361885}","{:x 76, :y 0.7699234170148803}","{:x 77, :y 0.5916467467281252}","{:x 78, :y 0.8860566746433981}","{:x 79, :y 1.1098238978775292}","{:x 80, :y 1.5918043737409469}","{:x 81, :y 1.1736220515126656}","{:x 82, :y 0.9913226762711812}","{:x 83, :y 0.9471489150573948}","{:x 84, :y 0.5541085027568067}","{:x 85, :y 0.9813876902130282}","{:x 86, :y 1.0789340812618162}","{:x 87, :y 1.3638771434134997}","{:x 88, :y 1.229038870051233}","{:x 89, :y 0.812806647163832}","{:x 90, :y 0.9441548654639869}","{:x 91, :y 0.7621036074783832}","{:x 92, :y 1.0471290908273816}","{:x 93, :y 0.966269776839521}","{:x 94, :y 1.367840335447995}","{:x 95, :y 1.299848882906721}","{:x 96, :y 1.1336175585467536}","{:x 97, :y 1.076448057428879}","{:x 98, :y 0.7323657925338983}","{:x 99, :y 0.6143585719984409}"]}]},"evals":[],"jsHooks":[]}</script></div>
+<div class="plotly html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-11" style="width:100%;height:400px;"><script data-for="htmlwidget-11" type="application/htmlwidget-sizing">{"viewer":{"width":"100%","height":400,"padding":"0","fille":true},"browser":{"width":"100%","height":400,"padding":"0","fille":true}}</script><script data-for="htmlwidget-11" type="application/json">{"x":{"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"layout":{"plot_bgcolor":"rgba(235,235,235,1)","paper_bgcolor":"rgba(255,255,255,1)","legend":{"bgcolor":"rgba(255,255,255,1)","bordercolor":"transparent","borderwidth":1.88976377952756,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895}},"xaxis":{"linewidth":0,"nticks":null,"linecolor":null,"ticklen":3.65296803652968,"tickcolor":"rgba(51,51,51,1)","tickmode":"array","gridcolor":"rgba(255,255,255,1)","automargin":true,"type":"linear","tickvals":[0.0,16.0,32.0,48.0,64.0,80.0,96.0],"zeroline":false,"title":{"text":"wt","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"autorange":false,"showticklabels":true,"showline":false,"showgrid":true,"ticktext":["0.0","16.0","32.0","48.0","64.0","80.0","96.0"],"ticks":"outside","gridwidth":0.66417600664176,"anchor":"y","domain":[0,1],"hoverformat":".2f","tickangle":0,"tickwidth":0.66417600664176,"categoryarray":["0.0","16.0","32.0","48.0","64.0","80.0","96.0"],"categoryorder":"array","range":[-9.9,108.9]},"font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"showlegend":false,"barmode":"relative","yaxis":{"linewidth":0,"nticks":null,"linecolor":null,"ticklen":3.65296803652968,"tickcolor":"rgba(51,51,51,1)","tickmode":"array","gridcolor":"rgba(255,255,255,1)","automargin":true,"type":"linear","tickvals":[-0.0,1.0,2.0,3.0],"zeroline":false,"title":{"text":"mpg","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"autorange":false,"showticklabels":true,"showline":false,"showgrid":true,"ticktext":["-0.0","1.0","2.0","3.0"],"ticks":"outside","gridwidth":0.66417600664176,"anchor":"x","domain":[0,1],"hoverformat":".2f","tickangle":0,"tickwidth":0.66417600664176,"categoryarray":["-0.0","1.0","2.0","3.0"],"categoryorder":"array","range":[-0.6622437003622454,3.455649041707843]},"hovermode":"closest","margin":{"t":25.7412480974125,"r":7.30593607305936,"b":39.6955859969559,"l":37.2602739726027},"shapes":[{"yref":"paper","fillcolor":null,"xref":"paper","y1":1,"type":"rect","line":{"color":null,"width":0,"linetype":[]},"y0":0,"x1":1,"x0":0}]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"base_url":"https:\/\/plot.ly","cur_data":"1f2fea5b54d146","source":"A","shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"attrs":{"1f2fea5b54d146":{"x":{},"y":{},"type":"scatter"}},"data":[{"y":[-0.28075386759699306,-0.30016533746323315,-0.06117229352326603,-0.31908597185640475,0.021162221728139308,0.08779165143057843,0.23085897013907608,0.5336844818370929,0.26533263083348024,0.31136675091211374,0.672292306206471,0.35378823714440466,0.763556073237574,0.35127540372550614,-0.010111242218052707,0.1326324275316828,0.4648052593984231,0.8632264913868934,1.2941384659228237,1.6178148657095672,1.8229982271684944,1.9993781894351224,2.4073531720184618,2.2650694175504658,2.2543656236446754,2.2529041804968934,2.5312645934759446,2.724416504933184,3.002624278334743,2.8569243249418257,3.0455456135271364,2.9846079613167342,3.107243449091926,2.6744489031235545,2.607698108344685,2.4104271554703653,2.5823202580784366,2.1127875951478807,2.201436894929115,2.2717870055746054,1.9859698278910713,1.5090822560973298,1.4800395583923582,1.1068534422421303,1.417678778463407,1.788236911835292,1.7981290070987825,1.5086145543514662,1.7487711473033598,2.115538745585857,1.8450092050218487,1.80041468944614,1.6939922662522564,1.878690639686872,1.909983683370711,1.69597699804723,1.295228870290393,1.762809134260233,1.6500529205877663,1.5483497318596937,1.6365525584636376,2.0521802226507213,1.9180075600986761,2.305028222516099,2.268098966201261,2.729211988380867,2.869214575802512,2.928229003851413,3.009776487537281,2.569073686054005,2.323325916890009,1.934921608587719,1.6594359653378206,1.3729695564411957,1.3377318476069542,0.9857600549655556,0.7689269784291679,0.8688601733455059,1.2778272243107271,1.2304986233987987,1.2004160435380313,0.7607135023882567,0.47006241383235625,0.5248247550299315,0.7594492679692263,1.0510461273317633,0.9223105242942304,0.794796924923608,0.9455037054330447,1.221596629715021,1.717297849760482,1.8652366999358532,1.8901916169983797,2.258463653594128,2.6537172722085827,3.1124913132020025,2.9928563654158613,2.975935826076859,2.651171802684356,2.4749567131686687],"hoveron":"points","frame":null,"hoverinfo":"text","marker":{"autocolorscale":false,"color":"rgba(0,0,0,1)","opacity":1,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(0,0,0,1)"}},"mode":"markers","type":"scatter","xaxis":"x","showlegend":false,"yaxis":"y","x":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99],"text":["{:x 0, :y -0.28075386759699306}","{:x 1, :y -0.30016533746323315}","{:x 2, :y -0.06117229352326603}","{:x 3, :y -0.31908597185640475}","{:x 4, :y 0.021162221728139308}","{:x 5, :y 0.08779165143057843}","{:x 6, :y 0.23085897013907608}","{:x 7, :y 0.5336844818370929}","{:x 8, :y 0.26533263083348024}","{:x 9, :y 0.31136675091211374}","{:x 10, :y 0.672292306206471}","{:x 11, :y 0.35378823714440466}","{:x 12, :y 0.763556073237574}","{:x 13, :y 0.35127540372550614}","{:x 14, :y -0.010111242218052707}","{:x 15, :y 0.1326324275316828}","{:x 16, :y 0.4648052593984231}","{:x 17, :y 0.8632264913868934}","{:x 18, :y 1.2941384659228237}","{:x 19, :y 1.6178148657095672}","{:x 20, :y 1.8229982271684944}","{:x 21, :y 1.9993781894351224}","{:x 22, :y 2.4073531720184618}","{:x 23, :y 2.2650694175504658}","{:x 24, :y 2.2543656236446754}","{:x 25, :y 2.2529041804968934}","{:x 26, :y 2.5312645934759446}","{:x 27, :y 2.724416504933184}","{:x 28, :y 3.002624278334743}","{:x 29, :y 2.8569243249418257}","{:x 30, :y 3.0455456135271364}","{:x 31, :y 2.9846079613167342}","{:x 32, :y 3.107243449091926}","{:x 33, :y 2.6744489031235545}","{:x 34, :y 2.607698108344685}","{:x 35, :y 2.4104271554703653}","{:x 36, :y 2.5823202580784366}","{:x 37, :y 2.1127875951478807}","{:x 38, :y 2.201436894929115}","{:x 39, :y 2.2717870055746054}","{:x 40, :y 1.9859698278910713}","{:x 41, :y 1.5090822560973298}","{:x 42, :y 1.4800395583923582}","{:x 43, :y 1.1068534422421303}","{:x 44, :y 1.417678778463407}","{:x 45, :y 1.788236911835292}","{:x 46, :y 1.7981290070987825}","{:x 47, :y 1.5086145543514662}","{:x 48, :y 1.7487711473033598}","{:x 49, :y 2.115538745585857}","{:x 50, :y 1.8450092050218487}","{:x 51, :y 1.80041468944614}","{:x 52, :y 1.6939922662522564}","{:x 53, :y 1.878690639686872}","{:x 54, :y 1.909983683370711}","{:x 55, :y 1.69597699804723}","{:x 56, :y 1.295228870290393}","{:x 57, :y 1.762809134260233}","{:x 58, :y 1.6500529205877663}","{:x 59, :y 1.5483497318596937}","{:x 60, :y 1.6365525584636376}","{:x 61, :y 2.0521802226507213}","{:x 62, :y 1.9180075600986761}","{:x 63, :y 2.305028222516099}","{:x 64, :y 2.268098966201261}","{:x 65, :y 2.729211988380867}","{:x 66, :y 2.869214575802512}","{:x 67, :y 2.928229003851413}","{:x 68, :y 3.009776487537281}","{:x 69, :y 2.569073686054005}","{:x 70, :y 2.323325916890009}","{:x 71, :y 1.934921608587719}","{:x 72, :y 1.6594359653378206}","{:x 73, :y 1.3729695564411957}","{:x 74, :y 1.3377318476069542}","{:x 75, :y 0.9857600549655556}","{:x 76, :y 0.7689269784291679}","{:x 77, :y 0.8688601733455059}","{:x 78, :y 1.2778272243107271}","{:x 79, :y 1.2304986233987987}","{:x 80, :y 1.2004160435380313}","{:x 81, :y 0.7607135023882567}","{:x 82, :y 0.47006241383235625}","{:x 83, :y 0.5248247550299315}","{:x 84, :y 0.7594492679692263}","{:x 85, :y 1.0510461273317633}","{:x 86, :y 0.9223105242942304}","{:x 87, :y 0.794796924923608}","{:x 88, :y 0.9455037054330447}","{:x 89, :y 1.221596629715021}","{:x 90, :y 1.717297849760482}","{:x 91, :y 1.8652366999358532}","{:x 92, :y 1.8901916169983797}","{:x 93, :y 2.258463653594128}","{:x 94, :y 2.6537172722085827}","{:x 95, :y 3.1124913132020025}","{:x 96, :y 2.9928563654158613}","{:x 97, :y 2.975935826076859}","{:x 98, :y 2.651171802684356}","{:x 99, :y 2.4749567131686687}"]}]},"evals":[],"jsHooks":[]}</script></div>
 </section>
 <section id="highcharts" class="level2" data-number="3.18">
 <h2 data-number="3.18" class="anchored" data-anchor-id="highcharts"><span class="header-section-number">3.18</span> Highcharts</h2>
@@ -1798,8 +1798,8 @@ window.Quarto = {
 <p class="clay-image">unsupported image format</p>
 </div>
 </section>
-<section id="datasets" class="level2" data-number="3.22">
-<h2 data-number="3.22" class="anchored" data-anchor-id="datasets"><span class="header-section-number">3.22</span> Datasets</h2>
+<section id="dataset" class="level2" data-number="3.22">
+<h2 data-number="3.22" class="anchored" data-anchor-id="dataset"><span class="header-section-number">3.22</span> Dataset</h2>
 <p>By default (according to <code>kindly/advice</code>), <a href="https://github.com/techascent/tech.ml.dataset">tech.ml.dataset</a> / <a href="https://scicloj.github.io/tablecloth">Tablecloth</a> datasets are inferred to be of <code>kind/dataset</code>.</p>
 <p>This kind should be printed and rendered as Markdown, possibly with some tool-specific table styling.</p>
 <div class="sourceClojure">
@@ -1936,31 +1936,23 @@ window.Quarto = {
 <tbody>
 <tr class="odd">
 <td>clojure</td>
-<td>13</td>
+<td>63</td>
 </tr>
 <tr class="even">
 <td>clojure</td>
-<td>74</td>
-</tr>
-<tr class="odd">
-<td>clojure</td>
-<td>80</td>
-</tr>
-<tr class="even">
-<td>clojure</td>
-<td>73</td>
-</tr>
-<tr class="odd">
-<td>clojurescript</td>
-<td>76</td>
-</tr>
-<tr class="even">
-<td>babashka</td>
-<td>24</td>
+<td>97</td>
 </tr>
 <tr class="odd">
 <td>babashka</td>
-<td>66</td>
+<td>92</td>
+</tr>
+<tr class="even">
+<td>clojure</td>
+<td>29</td>
+</tr>
+<tr class="odd">
+<td>clojure</td>
+<td>82</td>
 </tr>
 <tr class="even">
 <td>clojurescript</td>
@@ -1968,87 +1960,95 @@ window.Quarto = {
 </tr>
 <tr class="odd">
 <td>clojure</td>
-<td>67</td>
-</tr>
-<tr class="even">
-<td>clojurescript</td>
-<td>15</td>
-</tr>
-<tr class="odd">
-<td>clojurescript</td>
-<td>86</td>
-</tr>
-<tr class="even">
-<td>clojure</td>
-<td>5</td>
-</tr>
-<tr class="odd">
-<td>babashka</td>
-<td>52</td>
-</tr>
-<tr class="even">
-<td>clojurescript</td>
-<td>66</td>
-</tr>
-<tr class="odd">
-<td>clojurescript</td>
-<td>44</td>
-</tr>
-<tr class="even">
-<td>clojure</td>
-<td>20</td>
-</tr>
-<tr class="odd">
-<td>clojurescript</td>
-<td>17</td>
-</tr>
-<tr class="even">
-<td>clojure</td>
-<td>0</td>
-</tr>
-<tr class="odd">
-<td>babashka</td>
-<td>44</td>
-</tr>
-<tr class="even">
-<td>clojure</td>
-<td>66</td>
-</tr>
-<tr class="odd">
-<td>clojurescript</td>
-<td>56</td>
-</tr>
-<tr class="even">
-<td>babashka</td>
-<td>88</td>
-</tr>
-<tr class="odd">
-<td>clojure</td>
 <td>46</td>
 </tr>
 <tr class="even">
 <td>clojurescript</td>
-<td>5</td>
+<td>60</td>
 </tr>
 <tr class="odd">
-<td>clojurescript</td>
-<td>89</td>
+<td>clojure</td>
+<td>34</td>
+</tr>
+<tr class="even">
+<td>clojure</td>
+<td>33</td>
+</tr>
+<tr class="odd">
+<td>babashka</td>
+<td>60</td>
+</tr>
+<tr class="even">
+<td>clojure</td>
+<td>24</td>
+</tr>
+<tr class="odd">
+<td>babashka</td>
+<td>60</td>
 </tr>
 <tr class="even">
 <td>babashka</td>
-<td>2</td>
+<td>66</td>
 </tr>
 <tr class="odd">
 <td>clojure</td>
-<td>44</td>
+<td>92</td>
+</tr>
+<tr class="even">
+<td>babashka</td>
+<td>94</td>
+</tr>
+<tr class="odd">
+<td>clojurescript</td>
+<td>78</td>
+</tr>
+<tr class="even">
+<td>clojure</td>
+<td>27</td>
+</tr>
+<tr class="odd">
+<td>babashka</td>
+<td>29</td>
+</tr>
+<tr class="even">
+<td>clojure</td>
+<td>92</td>
+</tr>
+<tr class="odd">
+<td>clojure</td>
+<td>99</td>
+</tr>
+<tr class="even">
+<td>clojure</td>
+<td>21</td>
+</tr>
+<tr class="odd">
+<td>clojure</td>
+<td>12</td>
+</tr>
+<tr class="even">
+<td>clojure</td>
+<td>14</td>
+</tr>
+<tr class="odd">
+<td>clojure</td>
+<td>14</td>
 </tr>
 <tr class="even">
 <td>clojurescript</td>
-<td>18</td>
+<td>44</td>
 </tr>
 <tr class="odd">
-<td>clojure</td>
-<td>19</td>
+<td>babashka</td>
+<td>37</td>
+</tr>
+<tr class="even">
+<td>clojurescript</td>
+<td>76</td>
+</tr>
+<tr class="odd">
+<td>clojurescript</td>
+<td>30</td>
 </tr>
 </tbody>
 </table>
@@ -2065,23 +2065,23 @@ window.Quarto = {
 <tbody>
 <tr class="odd">
 <td>clojure</td>
-<td>13</td>
+<td>63</td>
 </tr>
 <tr class="even">
 <td>clojure</td>
-<td>74</td>
+<td>97</td>
 </tr>
 <tr class="odd">
-<td>clojure</td>
-<td>80</td>
+<td>babashka</td>
+<td>92</td>
 </tr>
 <tr class="even">
 <td>clojure</td>
-<td>73</td>
+<td>29</td>
 </tr>
 <tr class="odd">
-<td>clojurescript</td>
-<td>76</td>
+<td>clojure</td>
+<td>82</td>
 </tr>
 </tbody>
 </table>
@@ -2104,23 +2104,23 @@ window.Quarto = {
 <tbody>
 <tr class="odd">
 <td>clojure</td>
-<td>13</td>
+<td>63</td>
 </tr>
 <tr class="even">
 <td>clojure</td>
-<td>74</td>
+<td>97</td>
 </tr>
 <tr class="odd">
-<td>clojure</td>
-<td>80</td>
+<td>babashka</td>
+<td>92</td>
 </tr>
 <tr class="even">
 <td>clojure</td>
-<td>73</td>
+<td>29</td>
 </tr>
 <tr class="odd">
-<td>clojurescript</td>
-<td>76</td>
+<td>clojure</td>
+<td>82</td>
 </tr>
 </tbody>
 </table>
@@ -2148,13 +2148,13 @@ window.Quarto = {
 <td>clojure</td>
 </tr>
 <tr class="odd">
-<td>clojure</td>
+<td>babashka</td>
 </tr>
 <tr class="even">
 <td>clojure</td>
 </tr>
 <tr class="odd">
-<td>clojurescript</td>
+<td>clojure</td>
 </tr>
 </tbody>
 </table>
@@ -2170,23 +2170,23 @@ window.Quarto = {
 <tbody>
 <tr class="odd">
 <td>clojure</td>
-<td>13</td>
+<td>63</td>
 </tr>
 <tr class="even">
 <td>clojure</td>
-<td>74</td>
+<td>97</td>
 </tr>
 <tr class="odd">
-<td>clojure</td>
-<td>80</td>
+<td>babashka</td>
+<td>92</td>
 </tr>
 <tr class="even">
 <td>clojure</td>
-<td>73</td>
+<td>29</td>
 </tr>
 <tr class="odd">
-<td>clojurescript</td>
-<td>76</td>
+<td>clojure</td>
+<td>82</td>
 </tr>
 </tbody>
 </table>
@@ -2207,23 +2207,23 @@ window.Quarto = {
 <tbody>
 <tr class="odd">
 <td>clojure</td>
-<td>13</td>
+<td>63</td>
 </tr>
 <tr class="even">
 <td>clojure</td>
-<td>74</td>
+<td>97</td>
 </tr>
 <tr class="odd">
-<td>clojure</td>
-<td>80</td>
+<td>babashka</td>
+<td>92</td>
 </tr>
 <tr class="even">
 <td>clojure</td>
-<td>73</td>
+<td>29</td>
 </tr>
 <tr class="odd">
-<td>clojurescript</td>
-<td>76</td>
+<td>clojure</td>
+<td>82</td>
 </tr>
 </tbody>
 </table>
@@ -2293,31 +2293,23 @@ window.Quarto = {
 <tbody>
 <tr class="odd">
 <td>clojure</td>
-<td>13</td>
+<td>63</td>
 </tr>
 <tr class="even">
 <td>clojure</td>
-<td>74</td>
-</tr>
-<tr class="odd">
-<td>clojure</td>
-<td>80</td>
-</tr>
-<tr class="even">
-<td>clojure</td>
-<td>73</td>
-</tr>
-<tr class="odd">
-<td>clojurescript</td>
-<td>76</td>
-</tr>
-<tr class="even">
-<td>babashka</td>
-<td>24</td>
+<td>97</td>
 </tr>
 <tr class="odd">
 <td>babashka</td>
-<td>66</td>
+<td>92</td>
+</tr>
+<tr class="even">
+<td>clojure</td>
+<td>29</td>
+</tr>
+<tr class="odd">
+<td>clojure</td>
+<td>82</td>
 </tr>
 <tr class="even">
 <td>clojurescript</td>
@@ -2325,87 +2317,95 @@ window.Quarto = {
 </tr>
 <tr class="odd">
 <td>clojure</td>
-<td>67</td>
-</tr>
-<tr class="even">
-<td>clojurescript</td>
-<td>15</td>
-</tr>
-<tr class="odd">
-<td>clojurescript</td>
-<td>86</td>
-</tr>
-<tr class="even">
-<td>clojure</td>
-<td>5</td>
-</tr>
-<tr class="odd">
-<td>babashka</td>
-<td>52</td>
-</tr>
-<tr class="even">
-<td>clojurescript</td>
-<td>66</td>
-</tr>
-<tr class="odd">
-<td>clojurescript</td>
-<td>44</td>
-</tr>
-<tr class="even">
-<td>clojure</td>
-<td>20</td>
-</tr>
-<tr class="odd">
-<td>clojurescript</td>
-<td>17</td>
-</tr>
-<tr class="even">
-<td>clojure</td>
-<td>0</td>
-</tr>
-<tr class="odd">
-<td>babashka</td>
-<td>44</td>
-</tr>
-<tr class="even">
-<td>clojure</td>
-<td>66</td>
-</tr>
-<tr class="odd">
-<td>clojurescript</td>
-<td>56</td>
-</tr>
-<tr class="even">
-<td>babashka</td>
-<td>88</td>
-</tr>
-<tr class="odd">
-<td>clojure</td>
 <td>46</td>
 </tr>
 <tr class="even">
 <td>clojurescript</td>
-<td>5</td>
+<td>60</td>
 </tr>
 <tr class="odd">
-<td>clojurescript</td>
-<td>89</td>
+<td>clojure</td>
+<td>34</td>
+</tr>
+<tr class="even">
+<td>clojure</td>
+<td>33</td>
+</tr>
+<tr class="odd">
+<td>babashka</td>
+<td>60</td>
+</tr>
+<tr class="even">
+<td>clojure</td>
+<td>24</td>
+</tr>
+<tr class="odd">
+<td>babashka</td>
+<td>60</td>
 </tr>
 <tr class="even">
 <td>babashka</td>
-<td>2</td>
+<td>66</td>
 </tr>
 <tr class="odd">
 <td>clojure</td>
-<td>44</td>
+<td>92</td>
+</tr>
+<tr class="even">
+<td>babashka</td>
+<td>94</td>
+</tr>
+<tr class="odd">
+<td>clojurescript</td>
+<td>78</td>
+</tr>
+<tr class="even">
+<td>clojure</td>
+<td>27</td>
+</tr>
+<tr class="odd">
+<td>babashka</td>
+<td>29</td>
+</tr>
+<tr class="even">
+<td>clojure</td>
+<td>92</td>
+</tr>
+<tr class="odd">
+<td>clojure</td>
+<td>99</td>
+</tr>
+<tr class="even">
+<td>clojure</td>
+<td>21</td>
+</tr>
+<tr class="odd">
+<td>clojure</td>
+<td>12</td>
+</tr>
+<tr class="even">
+<td>clojure</td>
+<td>14</td>
+</tr>
+<tr class="odd">
+<td>clojure</td>
+<td>14</td>
 </tr>
 <tr class="even">
 <td>clojurescript</td>
-<td>18</td>
+<td>44</td>
 </tr>
 <tr class="odd">
-<td>clojure</td>
-<td>19</td>
+<td>babashka</td>
+<td>37</td>
+</tr>
+<tr class="even">
+<td>clojurescript</td>
+<td>76</td>
+</tr>
+<tr class="odd">
+<td>clojurescript</td>
+<td>30</td>
 </tr>
 </tbody>
 </table>
@@ -2429,31 +2429,23 @@ window.Quarto = {
 <tbody>
 <tr class="odd">
 <td>clojure</td>
-<td>13</td>
+<td>63</td>
 </tr>
 <tr class="even">
 <td>clojure</td>
-<td>74</td>
-</tr>
-<tr class="odd">
-<td>clojure</td>
-<td>80</td>
-</tr>
-<tr class="even">
-<td>clojure</td>
-<td>73</td>
-</tr>
-<tr class="odd">
-<td>clojurescript</td>
-<td>76</td>
-</tr>
-<tr class="even">
-<td>babashka</td>
-<td>24</td>
+<td>97</td>
 </tr>
 <tr class="odd">
 <td>babashka</td>
-<td>66</td>
+<td>92</td>
+</tr>
+<tr class="even">
+<td>clojure</td>
+<td>29</td>
+</tr>
+<tr class="odd">
+<td>clojure</td>
+<td>82</td>
 </tr>
 <tr class="even">
 <td>clojurescript</td>
@@ -2461,87 +2453,95 @@ window.Quarto = {
 </tr>
 <tr class="odd">
 <td>clojure</td>
-<td>67</td>
-</tr>
-<tr class="even">
-<td>clojurescript</td>
-<td>15</td>
-</tr>
-<tr class="odd">
-<td>clojurescript</td>
-<td>86</td>
-</tr>
-<tr class="even">
-<td>clojure</td>
-<td>5</td>
-</tr>
-<tr class="odd">
-<td>babashka</td>
-<td>52</td>
-</tr>
-<tr class="even">
-<td>clojurescript</td>
-<td>66</td>
-</tr>
-<tr class="odd">
-<td>clojurescript</td>
-<td>44</td>
-</tr>
-<tr class="even">
-<td>clojure</td>
-<td>20</td>
-</tr>
-<tr class="odd">
-<td>clojurescript</td>
-<td>17</td>
-</tr>
-<tr class="even">
-<td>clojure</td>
-<td>0</td>
-</tr>
-<tr class="odd">
-<td>babashka</td>
-<td>44</td>
-</tr>
-<tr class="even">
-<td>clojure</td>
-<td>66</td>
-</tr>
-<tr class="odd">
-<td>clojurescript</td>
-<td>56</td>
-</tr>
-<tr class="even">
-<td>babashka</td>
-<td>88</td>
-</tr>
-<tr class="odd">
-<td>clojure</td>
 <td>46</td>
 </tr>
 <tr class="even">
 <td>clojurescript</td>
-<td>5</td>
+<td>60</td>
 </tr>
 <tr class="odd">
-<td>clojurescript</td>
-<td>89</td>
+<td>clojure</td>
+<td>34</td>
+</tr>
+<tr class="even">
+<td>clojure</td>
+<td>33</td>
+</tr>
+<tr class="odd">
+<td>babashka</td>
+<td>60</td>
+</tr>
+<tr class="even">
+<td>clojure</td>
+<td>24</td>
+</tr>
+<tr class="odd">
+<td>babashka</td>
+<td>60</td>
 </tr>
 <tr class="even">
 <td>babashka</td>
-<td>2</td>
+<td>66</td>
 </tr>
 <tr class="odd">
 <td>clojure</td>
-<td>44</td>
+<td>92</td>
+</tr>
+<tr class="even">
+<td>babashka</td>
+<td>94</td>
+</tr>
+<tr class="odd">
+<td>clojurescript</td>
+<td>78</td>
+</tr>
+<tr class="even">
+<td>clojure</td>
+<td>27</td>
+</tr>
+<tr class="odd">
+<td>babashka</td>
+<td>29</td>
+</tr>
+<tr class="even">
+<td>clojure</td>
+<td>92</td>
+</tr>
+<tr class="odd">
+<td>clojure</td>
+<td>99</td>
+</tr>
+<tr class="even">
+<td>clojure</td>
+<td>21</td>
+</tr>
+<tr class="odd">
+<td>clojure</td>
+<td>12</td>
+</tr>
+<tr class="even">
+<td>clojure</td>
+<td>14</td>
+</tr>
+<tr class="odd">
+<td>clojure</td>
+<td>14</td>
 </tr>
 <tr class="even">
 <td>clojurescript</td>
-<td>18</td>
+<td>44</td>
 </tr>
 <tr class="odd">
-<td>clojure</td>
-<td>19</td>
+<td>babashka</td>
+<td>37</td>
+</tr>
+<tr class="even">
+<td>clojurescript</td>
+<td>76</td>
+</tr>
+<tr class="odd">
+<td>clojurescript</td>
+<td>30</td>
 </tr>
 </tbody>
 </table>
@@ -2556,7 +2556,7 @@ window.Quarto = {
 </div>
 <div class="clay-table">
 <div class="clay-table">
-<table class="table table-hover table-responsive clay-table"><thead><tr><th>preferred-language</th><th>age</th></tr></thead><tbody><tr><td>clojure</td><td>13</td></tr><tr><td>clojure</td><td>74</td></tr><tr><td>clojure</td><td>80</td></tr><tr><td>clojure</td><td>73</td></tr><tr><td>clojurescript</td><td>76</td></tr><tr><td>babashka</td><td>24</td></tr><tr><td>babashka</td><td>66</td></tr><tr><td>clojurescript</td><td>95</td></tr><tr><td>clojure</td><td>67</td></tr><tr><td>clojurescript</td><td>15</td></tr><tr><td>clojurescript</td><td>86</td></tr><tr><td>clojure</td><td>5</td></tr><tr><td>babashka</td><td>52</td></tr><tr><td>clojurescript</td><td>66</td></tr><tr><td>clojurescript</td><td>44</td></tr><tr><td>clojure</td><td>20</td></tr><tr><td>clojurescript</td><td>17</td></tr><tr><td>clojure</td><td>0</td></tr><tr><td>babashka</td><td>44</td></tr><tr><td>clojure</td><td>66</td></tr><tr><td>clojurescript</td><td>56</td></tr><tr><td>babashka</td><td>88</td></tr><tr><td>clojure</td><td>46</td></tr><tr><td>clojurescript</td><td>5</td></tr><tr><td>clojurescript</td><td>89</td></tr><tr><td>babashka</td><td>2</td></tr><tr><td>clojure</td><td>44</td></tr><tr><td>clojurescript</td><td>18</td></tr><tr><td>clojure</td><td>19</td></tr></tbody><script>new DataTable(document.currentScript.parentElement, {"paging":false,"scrollY":400,"sPaginationType":"full_numbers","order":[]});</script></table>
+<table class="table table-hover table-responsive clay-table"><thead><tr><th>preferred-language</th><th>age</th></tr></thead><tbody><tr><td>clojure</td><td>63</td></tr><tr><td>clojure</td><td>97</td></tr><tr><td>babashka</td><td>92</td></tr><tr><td>clojure</td><td>29</td></tr><tr><td>clojure</td><td>82</td></tr><tr><td>clojurescript</td><td>95</td></tr><tr><td>clojure</td><td>46</td></tr><tr><td>clojurescript</td><td>60</td></tr><tr><td>clojure</td><td>34</td></tr><tr><td>clojure</td><td>33</td></tr><tr><td>babashka</td><td>60</td></tr><tr><td>clojure</td><td>24</td></tr><tr><td>babashka</td><td>60</td></tr><tr><td>babashka</td><td>66</td></tr><tr><td>clojure</td><td>92</td></tr><tr><td>babashka</td><td>94</td></tr><tr><td>clojurescript</td><td>78</td></tr><tr><td>clojure</td><td>27</td></tr><tr><td>babashka</td><td>29</td></tr><tr><td>clojure</td><td>92</td></tr><tr><td>clojure</td><td>99</td></tr><tr><td>clojure</td><td>21</td></tr><tr><td>clojure</td><td>12</td></tr><tr><td>clojure</td><td>14</td></tr><tr><td>clojure</td><td>14</td></tr><tr><td>clojurescript</td><td>44</td></tr><tr><td>babashka</td><td>37</td></tr><tr><td>clojurescript</td><td>76</td></tr><tr><td>clojurescript</td><td>30</td></tr></tbody><script>new DataTable(document.currentScript.parentElement, {"paging":false,"scrollY":400,"sPaginationType":"full_numbers","order":[]});</script></table>
 </div>
 </div>
 <p>In addition, the <code>:datatables</code> option can be used to control <a href="https://datatables.net/manual/options">datatables options</a> (see <a href="https://datatables.net/reference/option/">the full list</a>).</p>
@@ -2567,7 +2567,7 @@ window.Quarto = {
 </div>
 <div class="clay-table">
 <div class="clay-table">
-<table class="table table-hover table-responsive clay-table"><thead><tr><th>preferred-language</th><th>age</th></tr></thead><tbody><tr><td>clojure</td><td>13</td></tr><tr><td>clojure</td><td>74</td></tr><tr><td>clojure</td><td>80</td></tr><tr><td>clojure</td><td>73</td></tr><tr><td>clojurescript</td><td>76</td></tr><tr><td>babashka</td><td>24</td></tr><tr><td>babashka</td><td>66</td></tr><tr><td>clojurescript</td><td>95</td></tr><tr><td>clojure</td><td>67</td></tr><tr><td>clojurescript</td><td>15</td></tr><tr><td>clojurescript</td><td>86</td></tr><tr><td>clojure</td><td>5</td></tr><tr><td>babashka</td><td>52</td></tr><tr><td>clojurescript</td><td>66</td></tr><tr><td>clojurescript</td><td>44</td></tr><tr><td>clojure</td><td>20</td></tr><tr><td>clojurescript</td><td>17</td></tr><tr><td>clojure</td><td>0</td></tr><tr><td>babashka</td><td>44</td></tr><tr><td>clojure</td><td>66</td></tr><tr><td>clojurescript</td><td>56</td></tr><tr><td>babashka</td><td>88</td></tr><tr><td>clojure</td><td>46</td></tr><tr><td>clojurescript</td><td>5</td></tr><tr><td>clojurescript</td><td>89</td></tr><tr><td>babashka</td><td>2</td></tr><tr><td>clojure</td><td>44</td></tr><tr><td>clojurescript</td><td>18</td></tr><tr><td>clojure</td><td>19</td></tr></tbody><script>new DataTable(document.currentScript.parentElement, {"scrollY":200,"paging":false,"sPaginationType":"full_numbers","order":[]});</script></table>
+<table class="table table-hover table-responsive clay-table"><thead><tr><th>preferred-language</th><th>age</th></tr></thead><tbody><tr><td>clojure</td><td>63</td></tr><tr><td>clojure</td><td>97</td></tr><tr><td>babashka</td><td>92</td></tr><tr><td>clojure</td><td>29</td></tr><tr><td>clojure</td><td>82</td></tr><tr><td>clojurescript</td><td>95</td></tr><tr><td>clojure</td><td>46</td></tr><tr><td>clojurescript</td><td>60</td></tr><tr><td>clojure</td><td>34</td></tr><tr><td>clojure</td><td>33</td></tr><tr><td>babashka</td><td>60</td></tr><tr><td>clojure</td><td>24</td></tr><tr><td>babashka</td><td>60</td></tr><tr><td>babashka</td><td>66</td></tr><tr><td>clojure</td><td>92</td></tr><tr><td>babashka</td><td>94</td></tr><tr><td>clojurescript</td><td>78</td></tr><tr><td>clojure</td><td>27</td></tr><tr><td>babashka</td><td>29</td></tr><tr><td>clojure</td><td>92</td></tr><tr><td>clojure</td><td>99</td></tr><tr><td>clojure</td><td>21</td></tr><tr><td>clojure</td><td>12</td></tr><tr><td>clojure</td><td>14</td></tr><tr><td>clojure</td><td>14</td></tr><tr><td>clojurescript</td><td>44</td></tr><tr><td>babashka</td><td>37</td></tr><tr><td>clojurescript</td><td>76</td></tr><tr><td>clojurescript</td><td>30</td></tr></tbody><script>new DataTable(document.currentScript.parentElement, {"scrollY":200,"paging":false,"sPaginationType":"full_numbers","order":[]});</script></table>
 </div>
 </div>
 <p>The <code>kind/table</code> has recursive semantics: if the values inside them have kind information, they should be handled accordingly.</p>
@@ -2692,7 +2692,7 @@ window.Quarto = {
 <span id="cb127-2"><a href="#cb127-2" aria-hidden="true" tabindex="-1"></a> tree-image)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="printedClojure">
-<div class="sourceCode" id="cb128"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb128-1"><a href="#cb128-1" aria-hidden="true" tabindex="-1"></a>[#object[java.awt.image.BufferedImage <span class="bn">0x2b8e6679</span> <span class="st">"BufferedImage@2b8e6679: type = 5 ColorModel: #pixelBits = 24 numComponents = 3 color space = java.awt.color.ICC_ColorSpace@240f2547 transparency = 1 has alpha = false isAlphaPre = false ByteInterleavedRaster: width = 480 height = 640 #numDataElements 3 dataOff[0] = 2"</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb128"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb128-1"><a href="#cb128-1" aria-hidden="true" tabindex="-1"></a>[#object[java.awt.image.BufferedImage <span class="bn">0x7aa90e50</span> <span class="st">"BufferedImage@7aa90e50: type = 5 ColorModel: #pixelBits = 24 numComponents = 3 color space = java.awt.color.ICC_ColorSpace@6f0ee195 transparency = 1 has alpha = false isAlphaPre = false ByteInterleavedRaster: width = 480 height = 640 #numDataElements 3 dataOff[0] = 2"</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="sourceClojure">
 <div class="sourceCode" id="cb129"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb129-1"><a href="#cb129-1" aria-hidden="true" tabindex="-1"></a>(kind/pprint</span>
@@ -2846,15 +2846,15 @@ window.Quarto = {
 <tbody>
 <tr class="odd">
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">0.49797445</td>
+<td style="text-align: right;">0.76307345</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">1</td>
-<td style="text-align: right;">0.50531660</td>
+<td style="text-align: right;">0.51451229</td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">2</td>
-<td style="text-align: right;">0.43607293</td>
+<td style="text-align: right;">0.22173806</td>
 </tr>
 </tbody>
 </table>
@@ -2877,15 +2877,15 @@ window.Quarto = {
 <tbody>
 <tr class="odd">
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">0.82774362</td>
+<td style="text-align: right;">0.80735064</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">1</td>
-<td style="text-align: right;">0.88735265</td>
+<td style="text-align: right;">0.53248085</td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">2</td>
-<td style="text-align: right;">0.75961000</td>
+<td style="text-align: right;">0.45445089</td>
 </tr>
 </tbody>
 </table>
@@ -2908,15 +2908,15 @@ window.Quarto = {
 <tbody>
 <tr class="odd">
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">0.87224256</td>
+<td style="text-align: right;">0.32455731</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">1</td>
-<td style="text-align: right;">0.23231846</td>
+<td style="text-align: right;">0.07163507</td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">2</td>
-<td style="text-align: right;">0.99073522</td>
+<td style="text-align: right;">0.40791231</td>
 </tr>
 </tbody>
 </table>
@@ -2960,15 +2960,15 @@ window.Quarto = {
 <tbody>
 <tr class="odd">
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">0.82655456</td>
+<td style="text-align: right;">0.67867783</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">1</td>
-<td style="text-align: right;">0.14844377</td>
+<td style="text-align: right;">0.85532698</td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">2</td>
-<td style="text-align: right;">0.79029786</td>
+<td style="text-align: right;">0.52561471</td>
 </tr>
 </tbody>
 </table>
@@ -2991,15 +2991,15 @@ window.Quarto = {
 <tbody>
 <tr class="odd">
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">0.55418482</td>
+<td style="text-align: right;">0.06566639</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">1</td>
-<td style="text-align: right;">0.39188035</td>
+<td style="text-align: right;">0.52035437</td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">2</td>
-<td style="text-align: right;">0.08741769</td>
+<td style="text-align: right;">0.01979160</td>
 </tr>
 </tbody>
 </table>
