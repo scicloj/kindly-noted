@@ -10,7 +10,7 @@
 ^:kindly/hide-code
 (def kind-status
   [{:clojupyter :n, :clay :n, :clerk :n, :kind :kind/edn}
-   {:clojupyter :r, :clay :c, :clerk :n, :kind :kind/code}
+   {:clojupyter :c, :clay :c, :clerk :n, :kind :kind/code}
    {:clojupyter :c, :clay :c, :clerk :c, :kind :kind/vega}
    {:clojupyter :n, :clay :c, :clerk :n, :kind :kind/smile-model}
    {:clojupyter :c, :clay :c, :clerk :r, :kind :kind/image}
@@ -29,13 +29,13 @@
    {:clojupyter :c, :clay :c, :clerk :n, :kind :kind/hidden}
    {:clojupyter :c, :clay :c, :clerk :c, :kind :kind/hiccup}
    {:clojupyter :c, :clay :c, :clerk :c, :kind :kind/md}
-   {:clojupyter :r, :clay :c, :clerk :n :kind :kind/tex}
+   {:clojupyter :r, :clay :c, :clerk :n  :kind :kind/tex}
    {:clojupyter :r, :clay :c, :clerk :c, :kind :kind/seq}
    {:clojupyter :n, :clay :c, :clerk :n, :kind :kind/htmlwidgets-plotly}
-   {:clojupyter :r, :clay :c, :clerk :n, :kind :kind/video}
+   {:clojupyter :c, :clay :c, :clerk :n, :kind :kind/video}
    {:clojupyter :n, :clay :c, :clerk :n, :kind :kind/observable}
    {:clojupyter :n, :clay :c, :clerk :n, :kind :kind/emmy-viewers}
-   {:clojupyter :r, :clay :c, :clerk :n, :kind :kind/pprint}
+   {:clojupyter :c, :clay :c, :clerk :n, :kind :kind/pprint}
    {:clojupyter :c, :clay :c, :clerk :n, :kind :kind/highcharts}
    {:clojupyter :r, :clay :c, :clerk :r, :kind :kind/table}
    {:clojupyter :c, :clay :c, :clerk :n, :kind :kind/fn}
