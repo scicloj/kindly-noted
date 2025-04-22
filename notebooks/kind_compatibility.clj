@@ -35,6 +35,7 @@
    {:clojupyter :c, :clay :c, :clerk :n, :kind :kind/video}
    {:clojupyter :n, :clay :c, :clerk :n, :kind :kind/observable}
    {:clojupyter :n, :clay :c, :clerk :n, :kind :kind/emmy-viewers}
+   {:clojupyter :n, :clay :c, :clerk :n, :kind :kind/println}
    {:clojupyter :c, :clay :c, :clerk :n, :kind :kind/pprint}
    {:clojupyter :c, :clay :c, :clerk :n, :kind :kind/highcharts}
    {:clojupyter :r, :clay :c, :clerk :r, :kind :kind/table}
