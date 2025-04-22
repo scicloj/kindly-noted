@@ -954,6 +954,13 @@ tree-image
                                tree-image])
                  (kind/md "$x^2$")]]})
 
+;; ## Printing
+
+;; Values of kind `kind/pprint` should be printed.
+
+(->> (range 30)
+     (apply array-map)
+     kind/println)
 
 ;; ## Pretty printing
 
