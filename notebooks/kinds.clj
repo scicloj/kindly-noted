@@ -1,11 +1,12 @@
 ;; # Catalogue of visualization kinds
 
 (ns kinds
-  (:require [scicloj.kindly.v4.api :as kindly]
-            [scicloj.kindly.v4.kind :as kind]
-            [clojure.math :as math]
-            [tablecloth.api :as tc]
-            [tablecloth.column.api :as tcc]))
+  (:require
+   [clojure.math :as math]
+   [clojure.test :refer [is]]
+   [scicloj.kindly.v4.kind :as kind]
+   [tablecloth.api :as tc]
+   [tablecloth.column.api :as tcc]))
 
 ;; ## Plain values
 
@@ -85,6 +86,25 @@ people-as-vectors
           [:big [:big "bye"]])
  :dataset (tc/dataset {:x (range 3)
                        :y [:A :B :C]})}
+
+;; ## kind/seq
+;; Renders as plain seq with recursive kind semantics
+(kind/seq [1 2 3 4])
+
+;; ## kind/vector
+;; Renders as plain vector with recursive kind semantics
+(kind/vector [1 2 3])
+
+
+;; ## kind/map
+;; Renders as plain map with recursive kind semantics
+(kind/map {1 "A" :B 'C})
+
+;; ## kind/set
+;; Renders as plain set with recursive kind semantics
+
+(kind/set #{1 2 3})
+
 
 ;; ## Hidden
 
@@ -1130,3 +1150,15 @@ tree-image
 
 ;; If you are interested in this option, please reach out. We can test it with your project needs, and it will help stabilizing a useful API.
 
+(kind/test-last)
+
+;; test
+;;; `kind/test` displays as success or failure
+(kind/test (is (= 1 1)))
+
+
+
+;; ## var
+;; `kind-var` renders as the var name of the defined var
+(kind/var
+ (def a "hello"))
