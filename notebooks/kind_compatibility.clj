@@ -30,6 +30,7 @@
    {:clojupyter :c, :clay :c, :clerk :c, :kind :kind/hiccup}
    {:clojupyter :c, :clay :c, :clerk :c, :kind :kind/md}
    {:clojupyter :r, :clay :c, :clerk :n  :kind :kind/tex}
+   {:clojupyter :n, :clay :c, :clerk :n  :kind :kind/mermaid}
    {:clojupyter :r, :clay :c, :clerk :c, :kind :kind/seq}
    {:clojupyter :n, :clay :c, :clerk :n, :kind :kind/htmlwidgets-plotly}
    {:clojupyter :c, :clay :c, :clerk :n, :kind :kind/video}

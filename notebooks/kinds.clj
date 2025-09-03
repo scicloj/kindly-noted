@@ -113,6 +113,18 @@ people-as-vectors
 
 (kind/tex "x^2=\\alpha")
 
+;; ## Mermaid
+
+(kind/mermaid
+ "
+flowchart TD
+    A[Christmas] -->|Get money| B(Go shopping)
+    B --> C{Let me think}
+    C -->|One| D[Laptop]
+    C -->|Two| E[iPhone]
+    C -->|Three| F[fa:fa-car Car]
+  ")
+
 ;; ## Code
 
 ;; Values of `kind/code` are rendered as Clojure code.
