@@ -5,7 +5,8 @@
             [scicloj.kindly.v4.kind :as kind]
             [clojure.math :as math]
             [tablecloth.api :as tc]
-            [tablecloth.column.api :as tcc]))
+            [tablecloth.column.api :as tcc]
+            [clojure.java.io :as io]))
 
 ;; ## Plain values
 
@@ -830,9 +831,9 @@ filtered = data.filter(function(penguin) {
 ;; are inferred to be of `kind/image`.
 
 (defonce tree-image
-  (->  "https://upload.wikimedia.org/wikipedia/commons/e/eb/Ash_Tree_-_geograph.org.uk_-_590710.jpg"
-       (java.net.URL.)
-       (javax.imageio.ImageIO/read)))
+  (-> "notebooks/images/Kindly.svg.png"
+      io/file
+      (javax.imageio.ImageIO/read)))
 
 (type tree-image)
 
