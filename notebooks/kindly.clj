@@ -7,7 +7,8 @@
 (ns kindly
   (:require [scicloj.kindly.v4.api :as kindly]
             [scicloj.kindly.v4.kind :as kind]
-            [tablecloth.api :as tc]))
+            [tablecloth.api :as tc]
+            [clojure.java.io :as io]))
 
 ;; ![Kindly logo](notebooks/images/Kindly.svg.png)
 
@@ -131,10 +132,13 @@
 
 ;; For example, images:
 
+(import javax.imageio.ImageIO
+        java.net.URL)
+
 (def clj-image
-  (->  "https://upload.wikimedia.org/wikipedia/commons/e/eb/Ash_Tree_-_geograph.org.uk_-_590710.jpg"
-       (java.net.URL.)
-       (javax.imageio.ImageIO/read)))
+  (->  "notebooks/clojure-logo-120b.png"
+       io/file
+       (ImageIO/read)))
 
 clj-image
 

@@ -14,6 +14,7 @@
    {:clojupyter :c, :clay :c, :clerk :c, :kind :kind/vega}
    {:clojupyter :n, :clay :c, :clerk :n, :kind :kind/smile-model}
    {:clojupyter :c, :clay :c, :clerk :r, :kind :kind/image}
+   {:clojupyter :n, :clay :c, :clerk :n, :kind :kind/audio}
    {:clojupyter :c, :clay :c, :clerk :c, :kind :kind/plotly}
    {:clojupyter :c, :clay :c, :clerk :c, :kind :kind/echarts}
    {:clojupyter :r, :clay :c, :clerk :c, :kind :kind/map}

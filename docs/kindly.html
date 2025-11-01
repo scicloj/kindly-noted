@@ -77,7 +77,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-4a8c7ccbdd8e2b2d80c0e9a685095f70.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-f4917b1368723fa8dc124a0229668374.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -203,6 +203,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#using-values-annotated-by-libraries" id="toc-using-values-annotated-by-libraries" class="nav-link" data-scroll-target="#using-values-annotated-by-libraries"><span class="header-section-number">2.7.4</span> Using values annotated by libraries</a></li>
   <li><a href="#automatically-inferred-kinds" id="toc-automatically-inferred-kinds" class="nav-link" data-scroll-target="#automatically-inferred-kinds"><span class="header-section-number">2.7.5</span> Automatically-inferred kinds</a></li>
   </ul></li>
+  <li><a href="#hiding-code" id="toc-hiding-code" class="nav-link" data-scroll-target="#hiding-code"><span class="header-section-number">2.8</span> Hiding code</a></li>
+  <li><a href="#passing-options" id="toc-passing-options" class="nav-link" data-scroll-target="#passing-options"><span class="header-section-number">2.9</span> Passing options</a></li>
+  <li><a href="#fragments" id="toc-fragments" class="nav-link" data-scroll-target="#fragments"><span class="header-section-number">2.10</span> Fragments</a>
+  <ul>
+  <li><a href="#subsection-purple" id="toc-subsection-purple" class="nav-link" data-scroll-target="#subsection-purple"><span class="header-section-number">2.10.1</span> subsection: purple</a></li>
+  <li><a href="#subsection-darkgreen" id="toc-subsection-darkgreen" class="nav-link" data-scroll-target="#subsection-darkgreen"><span class="header-section-number">2.10.2</span> subsection: darkgreen</a></li>
+  <li><a href="#subsection-goldenrod" id="toc-subsection-goldenrod" class="nav-link" data-scroll-target="#subsection-goldenrod"><span class="header-section-number">2.10.3</span> subsection: goldenrod</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -238,15 +246,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 .clay-side-by-side .sourceCode {margin: 0}
 .clay-side-by-side {margin: 1em 0}
 </style>
-<script src="kindly_files/md-default0.js" type="text/javascript"></script>
-<script src="kindly_files/md-default1.js" type="text/javascript"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" type="text/javascript"></script>
+<script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js" type="text/javascript"></script>
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.4.1/dist/echarts.min.js" type="text/javascript"></script>
 <p>Kindly is a standard for requesting data visualizations in Clojure.</p>
 <p>It specifies in what kinds of way Clojure forms and values should be displayed.</p>
 <div class="sourceClojure">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">ns</span> kindly</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  (<span class="at">:require</span> [scicloj.kindly.v4.api <span class="at">:as</span> kindly]</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>            [scicloj.kindly.v4.kind <span class="at">:as</span> kind]</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>            [tablecloth.api <span class="at">:as</span> tc]))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>            [tablecloth.api <span class="at">:as</span> tc]</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>            [clojure.java.io <span class="at">:as</span> io]))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -325,44 +335,45 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">sort</span> kindly/known-kinds)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="printedClojure">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>(<span class="at">:kind/code</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a> <span class="at">:kind/cytoscape</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a> <span class="at">:kind/dataset</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a> <span class="at">:kind/echarts</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a> <span class="at">:kind/edn</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a> <span class="at">:kind/emmy-viewers</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a> <span class="at">:kind/fn</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a> <span class="at">:kind/fragment</span></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a> <span class="at">:kind/graphviz</span></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a> <span class="at">:kind/hiccup</span></span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a> <span class="at">:kind/hidden</span></span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a> <span class="at">:kind/highcharts</span></span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a> <span class="at">:kind/html</span></span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a> <span class="at">:kind/htmlwidgets-ggplotly</span></span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a> <span class="at">:kind/htmlwidgets-plotly</span></span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a> <span class="at">:kind/image</span></span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a> <span class="at">:kind/map</span></span>
-<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a> <span class="at">:kind/md</span></span>
-<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a> <span class="at">:kind/mermaid</span></span>
-<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a> <span class="at">:kind/observable</span></span>
-<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a> <span class="at">:kind/plotly</span></span>
-<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a> <span class="at">:kind/portal</span></span>
-<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a> <span class="at">:kind/pprint</span></span>
-<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a> <span class="at">:kind/println</span></span>
-<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a> <span class="at">:kind/reagent</span></span>
-<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a> <span class="at">:kind/scittle</span></span>
-<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a> <span class="at">:kind/seq</span></span>
-<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a> <span class="at">:kind/set</span></span>
-<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a> <span class="at">:kind/smile-model</span></span>
-<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a> <span class="at">:kind/table</span></span>
-<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a> <span class="at">:kind/test</span></span>
-<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a> <span class="at">:kind/test-last</span></span>
-<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a> <span class="at">:kind/tex</span></span>
-<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a> <span class="at">:kind/var</span></span>
-<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a> <span class="at">:kind/vector</span></span>
-<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a> <span class="at">:kind/vega</span></span>
-<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a> <span class="at">:kind/vega-lite</span></span>
-<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a> <span class="at">:kind/video</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>(<span class="at">:kind/audio</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a> <span class="at">:kind/code</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a> <span class="at">:kind/cytoscape</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a> <span class="at">:kind/dataset</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a> <span class="at">:kind/echarts</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a> <span class="at">:kind/edn</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a> <span class="at">:kind/emmy-viewers</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a> <span class="at">:kind/fn</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a> <span class="at">:kind/fragment</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a> <span class="at">:kind/graphviz</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a> <span class="at">:kind/hiccup</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a> <span class="at">:kind/hidden</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a> <span class="at">:kind/highcharts</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a> <span class="at">:kind/html</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a> <span class="at">:kind/htmlwidgets-ggplotly</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a> <span class="at">:kind/htmlwidgets-plotly</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a> <span class="at">:kind/image</span></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a> <span class="at">:kind/map</span></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a> <span class="at">:kind/md</span></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a> <span class="at">:kind/mermaid</span></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a> <span class="at">:kind/observable</span></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a> <span class="at">:kind/plotly</span></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a> <span class="at">:kind/portal</span></span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a> <span class="at">:kind/pprint</span></span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a> <span class="at">:kind/println</span></span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a> <span class="at">:kind/reagent</span></span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a> <span class="at">:kind/scittle</span></span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a> <span class="at">:kind/seq</span></span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a> <span class="at">:kind/set</span></span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a> <span class="at">:kind/smile-model</span></span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a> <span class="at">:kind/table</span></span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a> <span class="at">:kind/test</span></span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a> <span class="at">:kind/test-last</span></span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a> <span class="at">:kind/tex</span></span>
+<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a> <span class="at">:kind/var</span></span>
+<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a> <span class="at">:kind/vector</span></span>
+<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a> <span class="at">:kind/vega</span></span>
+<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a> <span class="at">:kind/vega-lite</span></span>
+<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a> <span class="at">:kind/video</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>You can find more (details and examples of using these kinds)[/kindly-noted/kinds.html] in the Kindly book.</p>
 </section>
@@ -453,44 +464,144 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>In certain situations, kinds are inferred without annotation. The kindly-advice library provides the default inference behaviour and an option to extend it.</p>
 <p>For example, images:</p>
 <div class="sourceClojure">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>(<span class="bu">def</span><span class="fu"> clj-image</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">-&gt;</span>  <span class="st">"https://upload.wikimedia.org/wikipedia/commons/e/eb/Ash_Tree_-_geograph.org.uk_-_590710.jpg"</span></span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>       (java.net.URL.)</span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>       (javax.imageio.ImageIO/read)))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">import</span> javax.imageio.ImageIO</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>        java.net.URL)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+<div class="printedClojure">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>java.net.URL</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Important</span>Syntax error macroexpanding at (dev.clj:137:8).
+<div class="sourceClojure">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>(<span class="bu">def</span><span class="fu"> clj-image</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">-&gt;</span>  <span class="st">"notebooks/clojure-logo-120b.png"</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>       io/file</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>       (ImageIO/read)))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+<div class="sourceClojure">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>clj-image</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse show">
-<div class="callout-body-container callout-body">
-<p>Can’t get input stream from URL! Server returned HTTP response code: 403 for URL: https://upload.wikimedia.org/wikipedia/commons/e/eb/Ash_Tree_-<em>geograph.org.uk</em>-_590710.jpg</p>
-<pre><code>                                               clojure.core/eval                         core.clj: 3215
-                                                             ...                                      
-          jdk.internal.reflect.DirectMethodHandleAccessor.invoke  DirectMethodHandleAccessor.java:  103
-                                      javax.imageio.ImageIO.read                     ImageIO.java: 1405
-                                         java.net.URL.openStream                         URL.java: 1325
-sun.net.www.protocol.https.HttpsURLConnectionImpl.getInputStream      HttpsURLConnectionImpl.java:  223
-      sun.net.www.protocol.http.HttpURLConnection.getInputStream           HttpURLConnection.java: 1615
-     sun.net.www.protocol.http.HttpURLConnection.getInputStream0           HttpURLConnection.java: 2014
-                    java.io.IOException: Server returned HTTP response code: 403 for URL: https://upload.wikimedia.org/wikipedia/commons/e/eb/Ash_Tree_-_geograph.org.uk_-_590710.jpg
-             javax.imageio.IIOException: Can't get input stream from URL!
-clojure.lang.Compiler$CompilerException: Syntax error macroexpanding at (dev.clj:137:8).
-    data: #:clojure.error{:phase :execution,
-                      :line 137,
-                      :column 8,
-                      :source "dev.clj"}
-
-</code></pre>
+<div class="clay-image">
+<p><img src="kindly_files/image1.png" class="img-fluid"></p>
 </div>
+<div class="sourceClojure">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">require</span> '[tablecloth.api <span class="at">:as</span> tc])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
+<div class="sourceClojure">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>(tc/dataset {<span class="at">:x</span> (<span class="kw">range</span> <span class="dv">3</span>)</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>             <span class="at">:y</span> (<span class="kw">repeatedly</span> <span class="dv">3</span> <span class="kw">rand</span>)})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
+<div class="clay-dataset">
+<p>_unnamed [3 2]:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: right;">:x</th>
+<th style="text-align: right;">:y</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.74970527</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.60905435</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0.44306005</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+<section id="hiding-code" class="level2" data-number="2.8">
+<h2 data-number="2.8" class="anchored" data-anchor-id="hiding-code"><span class="header-section-number">2.8</span> Hiding code</h2>
+<p>To hide the the code of a given form and only show the output, here are a few options:</p>
+<ol type="1">
+<li><p>Add the metadata <code>:kindly/hide-code true</code> to the form (e.g., by preceding it with <code>^:kindly/hide-code</code>).</p></li>
+<li><p>Add the metadata <code>:kindly/hide-code true</code> to the value (e.g., using <code>vary-meta</code>).</p></li>
+<li><p>Some tools such as Clay <a href="https://scicloj.github.io/clay/#hiding-code">allow</a> the user to globally define certain kinds (e.g., <code>:kind/md</code>, <code>:kind/hiccup</code>) to always hide code</p></li>
+</ol>
+</section>
+<section id="passing-options" class="level2" data-number="2.9">
+<h2 data-number="2.9" class="anchored" data-anchor-id="passing-options"><span class="header-section-number">2.9</span> Passing options</h2>
+<p>The functions in the <code>kind</code> namespace may recieve an additiona map argument, which is attached at the <code>:kindly/options</code> key of a value’s metadata.</p>
+<div class="sourceClojure">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>(<span class="bu">def</span><span class="fu"> echarts-example</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>  {<span class="at">:title</span> {<span class="at">:text</span> <span class="st">"Echarts Example"</span>}</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>   <span class="at">:tooltip</span> {}</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>   <span class="at">:legend</span> {<span class="at">:data</span> [<span class="st">"sales"</span>]}</span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>   <span class="at">:xAxis</span> {<span class="at">:data</span> [<span class="st">"Shirts"</span>, <span class="st">"Cardigans"</span>, <span class="st">"Chiffons"</span>,</span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>                  <span class="st">"Pants"</span>, <span class="st">"Heels"</span>, <span class="st">"Socks"</span>]}</span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>   <span class="at">:yAxis</span> {}</span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>   <span class="at">:series</span> [{<span class="at">:name</span> <span class="st">"sales"</span></span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a>             <span class="at">:type</span> <span class="st">"bar"</span></span>
+<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a>             <span class="at">:data</span> [<span class="dv">5</span> <span class="dv">20</span> <span class="dv">36</span></span>
+<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a>                    <span class="dv">10</span> <span class="dv">10</span> <span class="dv">20</span>]}]})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="sourceClojure">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb26"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>(kind/echarts</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a> echarts-example)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div style="height:400px;width:100%;"><script>
+{
+  var myChart = echarts.init(document.currentScript.parentElement);
+  myChart.setOption({"title":{"text":"Echarts Example"},"tooltip":{},"legend":{"data":["sales"]},"xAxis":{"data":["Shirts","Cardigans","Chiffons","Pants","Heels","Socks"]},"yAxis":{},"series":[{"name":"sales","type":"bar","data":[5,20,36,10,10,20]}]});
+};</script></div>
+<div class="sourceClojure">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">-&gt;</span> echarts-example</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>    (kind/echarts {<span class="at">:element/style</span></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>                   {<span class="at">:width</span> <span class="st">"500px"</span></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>                    <span class="at">:height</span> <span class="st">"200px"</span>}}))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div style="height:200px;width:500px;"><script>
+{
+  var myChart = echarts.init(document.currentScript.parentElement);
+  myChart.setOption({"title":{"text":"Echarts Example"},"tooltip":{},"legend":{"data":["sales"]},"xAxis":{"data":["Shirts","Cardigans","Chiffons","Pants","Heels","Socks"]},"yAxis":{},"series":[{"name":"sales","type":"bar","data":[5,20,36,10,10,20]}]});
+};</script></div>
+<div class="sourceClojure">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">-&gt;</span> echarts-example</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>    (kind/echarts {<span class="at">:element/style</span></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>                   {<span class="at">:width</span> <span class="st">"500px"</span></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>                    <span class="at">:height</span> <span class="st">"200px"</span>}})</span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">meta</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="printedClojure">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb29"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>{<span class="at">:source</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a> <span class="st">"{:title {:text </span><span class="sc">\"</span><span class="st">Echarts Example</span><span class="sc">\"</span><span class="st">}</span><span class="sc">\n</span><span class="st">   :tooltip {}</span><span class="sc">\n</span><span class="st">   :legend {:data [</span><span class="sc">\"</span><span class="st">sales</span><span class="sc">\"</span><span class="st">]}</span><span class="sc">\n</span><span class="st">   :xAxis {:data [</span><span class="sc">\"</span><span class="st">Shirts</span><span class="sc">\"</span><span class="st">, </span><span class="sc">\"</span><span class="st">Cardigans</span><span class="sc">\"</span><span class="st">, </span><span class="sc">\"</span><span class="st">Chiffons</span><span class="sc">\"</span><span class="st">,</span><span class="sc">\n</span><span class="st">                  </span><span class="sc">\"</span><span class="st">Pants</span><span class="sc">\"</span><span class="st">, </span><span class="sc">\"</span><span class="st">Heels</span><span class="sc">\"</span><span class="st">, </span><span class="sc">\"</span><span class="st">Socks</span><span class="sc">\"</span><span class="st">]}</span><span class="sc">\n</span><span class="st">   :yAxis {}</span><span class="sc">\n</span><span class="st">   :series [{:name </span><span class="sc">\"</span><span class="st">sales</span><span class="sc">\"\n</span><span class="st">             :type </span><span class="sc">\"</span><span class="st">bar</span><span class="sc">\"\n</span><span class="st">             :data [5 20 36</span><span class="sc">\n</span><span class="st">                    10 10 20]}]}"</span>,</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a> <span class="at">:line</span> <span class="dv">166</span>,</span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a> <span class="at">:column</span> <span class="dv">3</span>,</span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a> <span class="at">:end-line</span> <span class="dv">175</span>,</span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a> <span class="at">:end-column</span> <span class="dv">33</span>,</span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a> <span class="at">:kindly/kind</span> <span class="at">:kind/echarts</span>,</span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a> <span class="at">:kindly/options</span> #<span class="at">:element</span>{<span class="at">:style</span> {<span class="at">:width</span> <span class="st">"500px"</span>, <span class="at">:height</span> <span class="st">"200px"</span>}}}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="fragments" class="level2" data-number="2.10">
+<h2 data-number="2.10" class="anchored" data-anchor-id="fragments"><span class="header-section-number">2.10</span> Fragments</h2>
+<p><code>kind/fragment</code> is a special kind. It expects a sequential value and generates multiple items, of potentially multiple kinds, from its elements.</p>
+<div class="sourceClojure">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb30"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">-&gt;&gt;</span> [<span class="st">"purple"</span> <span class="st">"darkgreen"</span> <span class="st">"goldenrod"</span>]</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>     (<span class="kw">mapcat</span> (<span class="kw">fn</span> [color]</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>               [(kind/md (<span class="kw">str</span> <span class="st">"### subsection: "</span> color))</span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>                (kind/hiccup [<span class="at">:div</span> {<span class="at">:style</span> {<span class="at">:background-color</span> color</span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>                                            <span class="at">:color</span> <span class="st">"lightgrey"</span>}}</span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>                              [<span class="at">:big</span> [<span class="at">:p</span> color]]])]))</span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a>     kind/fragment)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<section id="subsection-purple" class="level3" data-number="2.10.1">
+<h3 data-number="2.10.1" class="anchored" data-anchor-id="subsection-purple"><span class="header-section-number">2.10.1</span> subsection: purple</h3>
+<div style="background-color:purple;color:lightgrey;"><big><p>purple</p></big></div>
+</section>
+<section id="subsection-darkgreen" class="level3" data-number="2.10.2">
+<h3 data-number="2.10.2" class="anchored" data-anchor-id="subsection-darkgreen"><span class="header-section-number">2.10.2</span> subsection: darkgreen</h3>
+<div style="background-color:darkgreen;color:lightgrey;"><big><p>darkgreen</p></big></div>
+</section>
+<section id="subsection-goldenrod" class="level3" data-number="2.10.3">
+<h3 data-number="2.10.3" class="anchored" data-anchor-id="subsection-goldenrod"><span class="header-section-number">2.10.3</span> subsection: goldenrod</h3>
+<div style="background-color:goldenrod;color:lightgrey;"><big><p>goldenrod</p></big></div>
 <div style="background-color:grey;height:2px;width:100%;"></div>
 <div><pre><small><small>source: <a href="https://github.com/scicloj/kindly-noted/blob/main/notebooks/kindly.clj">notebooks/kindly.clj</a></small></small></pre></div>
 
