@@ -47,7 +47,8 @@
    {:clojupyter :n, :clay :c, :clerk :u, :kind :kind/htmlwidgets-ggplotly}
    {:clojupyter :n, :clay :c, :clerk :n, :kind :kind/fragment}
    {:clojupyter :c, :clay :c, :clerk :n, :kind :kind/scittle}
-   {:clojupyter :r, :clay :c, :clerk :n, :kind :kind/test-last}])
+   {:clojupyter :n, :clay :c, :clerk :n, :kind :kind/test-last}
+   {:clojupyter :n, :clay :c, :clerk :n, :kind :kind/doc}])
 
 
 ^:kindly/hide-code

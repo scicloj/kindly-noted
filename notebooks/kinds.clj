@@ -909,7 +909,7 @@ tree-image
 ;; ## Dataset
 
 ;; By default (according to `kindly/advice`), [tech.ml.dataset](https://github.com/techascent/tech.ml.dataset) / [Tablecloth](https://scicloj.github.io/tablecloth) datasets are inferred to be of `kind/dataset`.
-(Sun 02 Nov 2025 01:42:16 AM IST)
+
 ;; This kind should be printed and rendered as Markdown,
 ;; possibly with some tool-specific table styling.
 
@@ -1200,3 +1200,28 @@ tree-image
 
 ;; If you are interested in this option, please reach out. We can test it with your project needs, and it will help stabilizing a useful API.
 
+;; ## Documentation
+;; (experimental 🧪)
+
+;; With `kind/doc`, one may create a documentation item for a value.
+;; The documentation is rendered as markdown, and can be structured
+;; with user-defined given prefix and suffix.
+
+;; Often, the prefix will be used to speficy the Markdown heading,
+;; e.g., `"### "`, which conveniently adds a table-of-contents item
+;; for the the documentation entry when rendered through Quarto.
+
+;; For example:
+
+(kind/doc :abcd/efgh
+          {:prefix "### "
+           :suffix "🍃 This is a very important keyword of deep meaning. 🍂"})
+
+;; The value can be a var, in which case, the typical var metadata
+;; (arglists if present, and docstring) are added.
+
+;; For example:
+
+(kind/doc #'clojure.core/eduction
+          {:prefix "### "
+           :suffix "😼"})
