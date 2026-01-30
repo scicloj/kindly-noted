@@ -263,10 +263,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a> <span class="at">:kindly/options</span> {<span class="at">:hide-code</span> <span class="va">true</span>},</span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a> <span class="at">:kind</span> <span class="at">:kind/hiccup</span>,</span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a> <span class="at">:advice</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a> [[<span class="at">:kind/hiccup</span>]</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  [<span class="at">:kind/hiccup</span> {<span class="at">:reason</span> <span class="at">:metadata</span>}]</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  [<span class="at">:kind/vector</span> {<span class="at">:reason</span> <span class="at">:predicate</span>}]</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  [<span class="at">:kind/seq</span> {<span class="at">:reason</span> <span class="at">:predicate</span>}]]}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a> [[<span class="at">:kind/hiccup</span> {<span class="at">:reason</span> <span class="at">:metadata</span>}]</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  [<span class="at">:kind/vector</span> {<span class="at">:reason</span> <span class="at">:predicate</span>}]</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  [<span class="at">:kind/seq</span> {<span class="at">:reason</span> <span class="at">:predicate</span>}]]}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>The <code>:kind</code> field is the important one, expressing the bottom line of the inference: Kindly-advice recommends the tool handles this value as Hiccup.</p>
 <p>The tool’s job will usually be to display the <code>:value</code> field based on the <code>:kind</code> field.</p>
@@ -284,10 +283,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a> <span class="at">:kindly/options</span> {<span class="at">:hide-code</span> <span class="va">true</span>},</span>
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a> <span class="at">:kind</span> <span class="at">:kind/hiccup</span>,</span>
 <span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a> <span class="at">:advice</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a> [[<span class="at">:kind/hiccup</span>]</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  [<span class="at">:kind/hiccup</span> {<span class="at">:reason</span> <span class="at">:metadata</span>}]</span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  [<span class="at">:kind/vector</span> {<span class="at">:reason</span> <span class="at">:predicate</span>}]</span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  [<span class="at">:kind/seq</span> {<span class="at">:reason</span> <span class="at">:predicate</span>}]]}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a> [[<span class="at">:kind/hiccup</span> {<span class="at">:reason</span> <span class="at">:metadata</span>}]</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  [<span class="at">:kind/vector</span> {<span class="at">:reason</span> <span class="at">:predicate</span>}]</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  [<span class="at">:kind/seq</span> {<span class="at">:reason</span> <span class="at">:predicate</span>}]]}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Sometimes, there is no inferred kind, as no metadata or relevant predicates say anything useful:</p>
 <div class="sourceClojure">
@@ -359,7 +357,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="printedClojure">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>(<span class="va">#'kindly-advice/my-advisor</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a> #function[scicloj.kindly-advice.v1.advisors/meta-kind-advisor]</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a> #function[scicloj.kindly-advice.v1.advisors/predicate-based-advisor/fn--<span class="dv">33623</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a> #function[scicloj.kindly-advice.v1.advisors/predicate-based-advisor/fn--<span class="dv">42040</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="sourceClojure">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">-&gt;</span> {<span class="at">:form</span> '[<span class="at">:div</span> [<span class="at">:p</span> <span class="st">"hello"</span>]]}</span>
